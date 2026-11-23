@@ -1,0 +1,10 @@
+{
+  "launcher": {
+    "type": "SCRIPT",
+    "target": "abrir-oposiciones.ps1",
+    "args": [],
+    "openUrl": "http://localhost:8097/",
+    "waitSeconds": 20,
+    "stopArgs": ["-Parar"]
+  }
+}
