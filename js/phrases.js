@@ -22,6 +22,10 @@ export const SOUNDS = {
   panda: (n) => `${n} mordisquea bambú con cara de felicidad.`,
   raton: (n) => `${n} se asoma entre los libros y mordisquea un trocito de queso.`,
   buho: (n) => `${n} gira la cabeza y te mira muy serio: «uuuh».`,
+  abeja: (n) => `${n} zumba alrededor del tarro de miel.`,
+  pinguino: (n) => `${n} da pasitos graciosos y aletea contento.`,
+  paloma: (n) => `${n} arrulla: «cu-curucú».`,
+  camaleon: (n) => `${n} cambia de color de la emoción.`,
 };
 
 /** Frase para una especie; si algún día falta, una genérica (nunca lanza). */

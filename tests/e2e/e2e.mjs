@@ -599,6 +599,7 @@ try {
   await shot('37-cria');
 
   // Temporadas (la fecha se fuerza solo en localhost)
+  await evaluate("localStorage.removeItem('op-room')");
   await goto(`${base}?fecha=2026-12-24&hora=12`);
   assert.equal(await evaluate('!!document.querySelector(".xmas-tree")'), true, 'árbol de Navidad');
   assert.ok((await evaluate('document.querySelectorAll(".snow").length')) > 5, 'nieve');
@@ -768,6 +769,29 @@ try {
   await tap('g.lamp[data-lamp=lampara-mesa]');
   await shot('45-estudio-noche');
   await goto(base);
+
+  // Cocina y terraza: nuevas habitaciones (y la elegida se recuerda)
+  await evaluate('window.__store().update((d) => { d.coins = 2000; })');
+  await click('nav.tabs [data-v=tienda]');
+  await click('[data-act=cat][data-c=vivos]');
+  assert.equal(await evaluate('document.querySelector("[data-testid=item-abeja] button").disabled'), true, 'la abeja necesita la cocina');
+  await buyThing('cocina', 'cocina');
+  for (const id of ['nevera', 'fogon', 'mesa', 'cafetera', 'lampara-cocina']) await buyThing('cocina', id);
+  await buyThing('herramientas', 'tarro');
+  await buyPet('abeja', 'Zum');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("room-cocina")'), true, 'la abeja se ve en la cocina');
+  await shot('47-cocina');
+  await click('nav.tabs [data-v=tienda]');
+  await buyThing('terraza', 'terraza');
+  for (const id of ['toldo', 'hamaca', 'barbacoa', 'telescopio', 'farol-terraza']) await buyThing('terraza', id);
+  await buyThing('herramientas', 'comedero-aves');
+  await buyPet('paloma', 'Lola');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("room-terraza")'), true, 'la paloma se ve en la terraza');
+  await shot('48-terraza');
+  await goto(base);
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("room-terraza")'), true, 'recuerda la última habitación');
+  assert.ok((await evaluate('document.querySelectorAll(".room-tabs button").length')) >= 5, 'cinco habitaciones');
+  await click('[data-act=room][data-r=casa]');
 
   // Estadísticas: gráficos nuevos
   await evaluate('window.__store().update((d) => { d.exams = [4, 5.5, 7, 6, 8].map((score, i) => ({ at: 1700000000000 + i * 86400000, n: 20, ok: 10, ko: 4, blank: 6, score, secs: 300 })); })');

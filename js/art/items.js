@@ -211,6 +211,88 @@ export const ITEM_ART = {
     w: 54, h: 44,
     svg: `<rect x="4" y="0" width="46" height="31" rx="3" fill="#1f2937"/><rect x="7" y="3" width="40" height="25" rx="1.5" fill="#bae6fd"/><path d="M10 8h22M10 13h28M10 18h18" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/><rect x="24" y="31" width="6" height="6" fill="#374151"/><rect x="16" y="36" width="22" height="3" rx="1.5" fill="#374151"/><rect x="6" y="40" width="42" height="4" rx="1.5" fill="#9ca3af"/>`,
   },
+  // ----- Cocina -----
+  cocina: {
+    w: 48, h: 48,
+    svg: `<ellipse cx="24" cy="39" rx="17" ry="5" fill="#64748b"/><path d="M8 21h32v15q0 6-8 6H16q-8 0-8-6z" fill="#94a3b8"/><rect x="5" y="17" width="38" height="6" rx="3" fill="#cbd5e1"/><path d="M16 12q-3-5 0-8M24 12q-3-5 0-8M32 12q-3-5 0-8" stroke="#cbd5e1" stroke-width="2.4" fill="none" stroke-linecap="round"/>`,
+  },
+  fruta: {
+    w: 28, h: 18,
+    svg: `<path d="M2 8h24q0 10-12 10T2 8z" fill="#2563eb"/><circle cx="9" cy="6" r="5" fill="#ef4444"/><circle cx="16" cy="5" r="5" fill="#f59e0b"/><circle cx="22" cy="7.5" r="4" fill="#84cc16"/>`,
+  },
+  taburete: {
+    w: 28, h: 40,
+    svg: `<ellipse cx="14" cy="6" rx="13" ry="5" fill="#c8924f"/><rect x="3" y="8" width="3.5" height="32" fill="#8b5a2b"/><rect x="21.5" y="8" width="3.5" height="32" fill="#8b5a2b"/><rect x="5" y="24" width="18" height="3" fill="#8b5a2b"/>`,
+  },
+  cafetera: {
+    w: 20, h: 30,
+    svg: `<rect x="2" y="2" width="14" height="5" rx="2" fill="#1f2937"/><path d="M3 7h12l-1 17H4z" fill="#ef4444"/><rect x="1" y="24" width="16" height="5" rx="2" fill="#374151"/><path d="M15 11q5 0 4 7" fill="none" stroke="#1f2937" stroke-width="2"/><path d="M6 12v8" stroke="#fff" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>`,
+  },
+  'lampara-cocina': {
+    w: 36, h: 56,
+    svg: `<path d="M18 0v20" stroke="#374151" stroke-width="2"/><circle cx="18" cy="42" r="14" fill="#fde68a" opacity=".35"/><path d="M5 38q13-24 26 0z" fill="#dc2626"/><path d="M5 38h26" stroke="#991b1b" stroke-width="2"/><ellipse cx="18" cy="40" rx="7" ry="3" fill="#fff7c2"/>`,
+  },
+  mesa: {
+    w: 96, h: 50,
+    svg: `<rect x="0" y="0" width="96" height="9" rx="3" fill="#c8924f"/><rect x="6" y="9" width="8" height="41" fill="#8b5a2b"/><rect x="82" y="9" width="8" height="41" fill="#8b5a2b"/><rect x="14" y="14" width="68" height="4" fill="#a9703a"/><path d="M0 3h96" stroke="#fff" stroke-opacity=".25"/>`,
+  },
+  nevera: {
+    w: 50, h: 112,
+    svg: `<rect width="50" height="112" rx="5" fill="#e2e8f0"/><rect x="3" y="3" width="44" height="34" rx="3" fill="#f1f5f9"/><rect x="3" y="40" width="44" height="69" rx="3" fill="#f8fafc"/><rect x="39" y="12" width="3.4" height="18" rx="1.5" fill="#94a3b8"/><rect x="39" y="50" width="3.4" height="30" rx="1.5" fill="#94a3b8"/><rect x="9" y="14" width="10" height="12" fill="#fde68a"/><circle cx="26" cy="20" r="4" fill="#ef4444"/><path d="M3 38h44" stroke="#cbd5e1" stroke-width="2"/>`,
+  },
+  fogon: {
+    w: 72, h: 64,
+    svg: `<path d="M14 12q-3-6 0-10M24 12q-3-6 0-10" stroke="#e5e7eb" stroke-width="2.4" fill="none" stroke-linecap="round"/><rect x="10" y="14" width="26" height="12" rx="2" fill="#475569"/><rect x="8" y="12" width="30" height="4" rx="2" fill="#94a3b8"/><rect x="0" y="26" width="72" height="38" rx="4" fill="#cbd5e1"/><rect x="0" y="26" width="72" height="6" rx="3" fill="#94a3b8"/><circle cx="14" cy="29" r="3" fill="#64748b"/><circle cx="54" cy="29" r="3" fill="#64748b"/><rect x="8" y="38" width="56" height="22" rx="3" fill="#475569"/><rect x="12" y="42" width="48" height="14" rx="2" fill="#1f2937"/><rect x="16" y="46" width="40" height="3" rx="1.5" fill="#fff" opacity=".2"/><rect x="44" y="12" width="20" height="12" rx="2" fill="#475569"/>`,
+  },
+  tarro: {
+    w: 24, h: 26,
+    svg: `<rect x="3" y="2" width="18" height="5" rx="2" fill="#78350f"/><path d="M3 7h18l1 15q0 3-4 3H6q-4 0-4-3z" fill="#f59e0b"/><rect x="6" y="12" width="12" height="8" rx="1" fill="#fef3c7"/><path d="M8 16h8" stroke="#b45309" stroke-width="1.4"/><path d="M6 9v10" stroke="#fff" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"/>`,
+  },
+  'cubo-hielo': {
+    w: 48, h: 30,
+    svg: `<path d="M4 7h40l-4 21H8z" fill="#7dd3fc"/><ellipse cx="24" cy="7" rx="20" ry="4" fill="#bae6fd"/><rect x="12" y="2" width="9" height="8" rx="1.5" fill="#fff" opacity=".9" transform="rotate(-10 16 6)"/><rect x="25" y="1" width="9" height="8" rx="1.5" fill="#fff" opacity=".9" transform="rotate(12 30 5)"/><path d="M12 12v12" stroke="#fff" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>`,
+  },
+  // ----- Terraza -----
+  terraza: {
+    w: 48, h: 48,
+    svg: `<path d="M2 4h44l-3 12H5z" fill="#ef4444"/><path d="M9 4l-1 12M19 4l-1 12M29 4l1 12M39 4l1 12" stroke="#fff" stroke-width="4"/><rect x="2" y="26" width="44" height="3" fill="#475569"/><g fill="#475569"><rect x="5" y="29" width="3" height="16"/><rect x="15" y="29" width="3" height="16"/><rect x="25" y="29" width="3" height="16"/><rect x="35" y="29" width="3" height="16"/></g><circle cx="12" cy="22" r="4" fill="#f472b6"/><circle cx="30" cy="21" r="4" fill="#fbbf24"/>`,
+  },
+  macetero: {
+    w: 80, h: 36,
+    svg: `<path d="M4 18h72l-6 18H10z" fill="#a8704a"/><rect x="2" y="15" width="76" height="6" rx="2.5" fill="#c58859"/><g fill="#22c55e"><ellipse cx="14" cy="10" rx="6" ry="8"/><ellipse cx="34" cy="9" rx="6" ry="8"/><ellipse cx="54" cy="10" rx="6" ry="8"/><ellipse cx="68" cy="11" rx="5" ry="7"/></g><circle cx="14" cy="4" r="4" fill="#f472b6"/><circle cx="34" cy="3" r="4" fill="#fbbf24"/><circle cx="54" cy="4" r="4" fill="#ef4444"/><circle cx="68" cy="6" r="3.4" fill="#a78bfa"/>`,
+  },
+  'mesita-terraza': {
+    w: 54, h: 44,
+    svg: `<ellipse cx="27" cy="6" rx="26" ry="5" fill="#475569"/><rect x="25" y="8" width="4" height="30" fill="#64748b"/><ellipse cx="27" cy="40" rx="14" ry="3.5" fill="#475569"/><rect x="31" y="-2" width="8" height="8" rx="1.5" fill="#fff"/><path d="M39 0q4 0 3 4t-3 2" fill="none" stroke="#fff" stroke-width="1.5"/>`,
+  },
+  'farol-terraza': {
+    w: 22, h: 44,
+    svg: `<rect x="9.5" y="14" width="3" height="28" fill="#374151"/><ellipse cx="11" cy="42" rx="8" ry="2.4" fill="#374151"/><path d="M3 5h16l-8-5z" fill="#374151"/><rect x="4" y="5" width="14" height="13" rx="2.5" fill="#fde68a" stroke="#374151" stroke-width="1.5"/><path d="M11 5v13" stroke="#374151"/>`,
+  },
+  toldo: {
+    w: 360, h: 44,
+    svg: `<g><path d="M0 0h360v28H0z" fill="#fff"/><path d="M0 0h30v28H0zM60 0h30v28H60zM120 0h30v28h-30zM180 0h30v28h-30zM240 0h30v28h-30zM300 0h30v28h-30z" fill="#ef4444"/></g><g><path d="M0 28q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0q15 16 30 0z" fill="#fff"/><path d="M0 28q15 16 30 0M60 28q15 16 30 0M120 28q15 16 30 0M180 28q15 16 30 0M240 28q15 16 30 0M300 28q15 16 30 0" fill="#ef4444"/></g>`,
+  },
+  barbacoa: {
+    w: 56, h: 52,
+    svg: `<path d="M16 6q-3-5 0-6M28 8q-3-6 0-8" stroke="#d1d5db" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M2 14h52q0 14-26 16T2 14z" fill="#1f2937"/><rect x="2" y="12" width="52" height="4" rx="2" fill="#4b5563"/><path d="M8 12h40" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="3 3"/><path d="M14 30L8 52M42 30l6 22M28 31v21" stroke="#374151" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="22" r="2.4" fill="#f97316"/><circle cx="30" cy="24" r="2.4" fill="#ef4444"/>`,
+  },
+  hamaca: {
+    w: 100, h: 60,
+    svg: `<rect x="2" y="2" width="5" height="58" rx="2" fill="#8b5a2b"/><rect x="93" y="2" width="5" height="58" rx="2" fill="#8b5a2b"/><path d="M7 12q43 46 86 0" fill="none" stroke="#e5e7eb" stroke-width="2"/><path d="M7 14q43 42 86 0q-8 20-43 22T7 14z" fill="#38bdf8"/><path d="M14 22q36 30 72 0" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2.4" stroke-dasharray="6 5"/>`,
+  },
+  telescopio: {
+    w: 44, h: 90,
+    svg: `<path d="M22 48L8 88M22 48l14 40M22 48v40" stroke="#374151" stroke-width="3" stroke-linecap="round"/><rect x="2" y="12" width="38" height="12" rx="4" fill="#475569" transform="rotate(-28 21 18)"/><rect x="0" y="18" width="14" height="10" rx="3" fill="#94a3b8" transform="rotate(-28 6 22)"/><rect x="30" y="2" width="12" height="10" rx="3" fill="#1f2937" transform="rotate(-28 36 7)"/><circle cx="22" cy="46" r="4" fill="#f59e0b"/>`,
+  },
+  'comedero-aves': {
+    w: 28, h: 40,
+    svg: `<path d="M14 0v8" stroke="#374151" stroke-width="1.6"/><path d="M5 8h18l3 6H2z" fill="#dc2626"/><rect x="5" y="14" width="18" height="18" rx="2" fill="#bae6fd" fill-opacity=".6" stroke="#7dd3fc" stroke-width="1.5"/><path d="M7 28h14v4H7z" fill="#fbbf24"/><rect x="2" y="32" width="24" height="4" rx="2" fill="#92400e"/>`,
+  },
+  rama: {
+    w: 70, h: 46,
+    svg: `<path d="M0 30q20-8 40-4t30-8" fill="none" stroke="#7c4a21" stroke-width="7" stroke-linecap="round"/><path d="M40 26l10 14M24 28l-6 14" stroke="#7c4a21" stroke-width="4" stroke-linecap="round"/><g fill="#4ade80"><ellipse cx="56" cy="10" rx="8" ry="5" transform="rotate(-30 56 10)"/><ellipse cx="14" cy="14" rx="8" ry="5" transform="rotate(20 14 14)"/><ellipse cx="50" cy="42" rx="7" ry="4" transform="rotate(30 50 42)"/><ellipse cx="14" cy="42" rx="7" ry="4" transform="rotate(-20 14 42)"/></g>`,
+  },
   // ----- Exclusivos (caja misteriosa) -----
   guirnalda: {
     w: 348, h: 26,

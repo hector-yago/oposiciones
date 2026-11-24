@@ -64,6 +64,10 @@ const perro = () => `
 
 const ANGER_MARK = '<path d="M43 5c3 0 4 3 4 5M51 5c-3 0-4 3-4 5M43 17c3 0 4-3 4-5M51 17c-3 0-4-3-4-5" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>';
 const BROWS = {
+  abeja: '<path d="M7 29l9 3M17 29l-5 3" stroke="#1f2937" stroke-width="2" stroke-linecap="round"/>',
+  pinguino: '<path d="M19 11l9 3M41 11l-9 3" stroke="#e5e7eb" stroke-width="2.2" stroke-linecap="round"/>',
+  paloma: '<path d="M13 19l9 3" stroke="#334155" stroke-width="2.2" stroke-linecap="round"/>',
+  camaleon: '<path d="M6 27l11 4" stroke="#365314" stroke-width="2.4" stroke-linecap="round"/>',
   raton: '<path d="M19 21l9 3M41 21l-9 3" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>',
   buho: '<path d="M15 13l11 6M45 13l-11 6" stroke="#451a03" stroke-width="3" stroke-linecap="round"/>',
   pollito: '<path d="M18 27l8 3M42 27l-8 3" stroke="#a16207" stroke-width="2.2" stroke-linecap="round"/>',
@@ -253,7 +257,49 @@ const buho = () => `
   <circle cx="23" cy="22.4" r="3.2" fill="#111827"/><circle cx="37" cy="22.4" r="3.2" fill="#111827"/><circle cx="24" cy="21.2" r="1" fill="#fff"/><circle cx="38" cy="21.2" r="1" fill="#fff"/>
   <path d="M27.5 26.5l2.5 5.5 2.5-5.5z" fill="#f59e0b"/>`;
 
-const DRAW = { cactus, margarita, pez, pollito, hamster, raton, canario, patito, tortuga, erizo, gato, bonsai, cerdito, conejo, ovejita, buho, loro, zorro, perro, panda };
+const abeja = () => `
+  <ellipse cx="25" cy="22" rx="9" ry="5.5" fill="#e0f2fe" opacity=".85" transform="rotate(-25 25 22)"/><ellipse cx="38" cy="21" rx="9" ry="5.5" fill="#e0f2fe" opacity=".85" transform="rotate(25 38 21)"/>
+  <path d="M44 36l9 2-9 2z" fill="#1f2937"/>
+  <ellipse cx="31" cy="37" rx="15" ry="12" fill="#fbbf24"/>
+  <path d="M25 26v22M32 25v24M39 27v20" stroke="#1f2937" stroke-width="4.2"/>
+  <circle cx="15" cy="37" r="8.5" fill="#fbbf24"/>
+  <circle cx="12" cy="35" r="2.3" fill="#1f2937"/><circle cx="12.6" cy="34.4" r=".7" fill="#fff"/>
+  <path d="M10 41q3 2 6 0" fill="none" stroke="#7c2d12" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M13 29q-3-7-8-8M18 29q1-8 6-10" fill="none" stroke="#1f2937" stroke-width="1.5" stroke-linecap="round"/><circle cx="5" cy="21" r="1.6" fill="#1f2937"/><circle cx="24" cy="19" r="1.6" fill="#1f2937"/>
+  <path d="M22 48v5M31 49v5M39 47v5" stroke="#1f2937" stroke-width="1.6" stroke-linecap="round"/>`;
+
+const pinguino = () => `
+  <ellipse cx="22" cy="57" rx="6.5" ry="3" fill="#f97316"/><ellipse cx="38" cy="57" rx="6.5" ry="3" fill="#f97316"/>
+  <ellipse cx="30" cy="38" rx="15" ry="20" fill="#1f2937"/>
+  <ellipse cx="14" cy="40" rx="4" ry="11" fill="#111827" transform="rotate(10 14 40)"/><ellipse cx="46" cy="40" rx="4" ry="11" fill="#111827" transform="rotate(-10 46 40)"/>
+  <ellipse cx="30" cy="42" rx="10" ry="15" fill="#f8fafc"/>
+  <circle cx="30" cy="18" r="11" fill="#1f2937"/>
+  <ellipse cx="30" cy="21" rx="7.5" ry="6.5" fill="#f8fafc"/>
+  <circle cx="25.5" cy="17" r="3" fill="#fff"/><circle cx="34.5" cy="17" r="3" fill="#fff"/><circle cx="25.8" cy="17.2" r="1.5" fill="#111827"/><circle cx="34.2" cy="17.2" r="1.5" fill="#111827"/>
+  <path d="M27 22.5l3 5 3-5z" fill="#f97316"/>
+  <circle cx="21.5" cy="23" r="2.4" fill="#fca5a5" opacity=".5"/><circle cx="38.5" cy="23" r="2.4" fill="#fca5a5" opacity=".5"/>`;
+
+const paloma = () => `
+  <path d="M44 48l14 8-16 2z" fill="#64748b"/>
+  <path d="M26 56h4M34 56h4" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+  <ellipse cx="31" cy="42" rx="16" ry="13" fill="#94a3b8"/>
+  <ellipse cx="36" cy="42" rx="10" ry="8.5" fill="#64748b"/>
+  <ellipse cx="24" cy="35" rx="7" ry="6" fill="#a78bfa" opacity=".7"/>
+  <circle cx="21" cy="26" r="9" fill="#94a3b8"/>
+  <path d="M13 26l-7 2 7 2z" fill="#f59e0b"/>
+  <circle cx="19" cy="24" r="2.3" fill="#f97316"/><circle cx="19" cy="24" r="1" fill="#111827"/>`;
+
+const camaleon = () => `
+  <path d="M43 47c11 0 15 9 7 13-7 3-11-3-7-6" fill="none" stroke="#84cc16" stroke-width="4.2" stroke-linecap="round"/>
+  <rect x="20" y="51" width="4.5" height="7" rx="2" fill="#65a30d"/><rect x="33" y="51" width="4.5" height="7" rx="2" fill="#65a30d"/>
+  <ellipse cx="28" cy="44" rx="16" ry="11.5" fill="#84cc16"/>
+  <circle cx="24" cy="42" r="2.6" fill="#65a30d"/><circle cx="33" cy="40" r="2.3" fill="#bef264"/><circle cx="38" cy="46" r="2.4" fill="#65a30d"/><circle cx="29" cy="49" r="2" fill="#bef264"/>
+  <path d="M8 31l4-7 4 5 4-6 3 7z" fill="#65a30d"/>
+  <ellipse cx="14" cy="37" rx="10" ry="8.5" fill="#a3e635"/>
+  <circle cx="13" cy="33" r="5.6" fill="#fde047" stroke="#4d7c0f" stroke-width="1.5"/><circle cx="13" cy="33" r="2.3" fill="#111827"/><circle cx="13.7" cy="32.3" r=".8" fill="#fff"/>
+  <path d="M5 40q5 3 10 1" fill="none" stroke="#4d7c0f" stroke-width="1.4" stroke-linecap="round"/>`;
+
+const DRAW = { cactus, margarita, pez, abeja, pollito, paloma, hamster, raton, canario, patito, tortuga, erizo, gato, bonsai, cerdito, conejo, ovejita, buho, loro, camaleon, zorro, perro, pinguino, panda };
 
 /** Dibujo local (caja 60×60) de una mascota en la etapa dada. */
 export const petSvg = (species, stage = 2, mood = 'ok') => DRAW[species](stage, mood) + (mood === 'angry' ? angryOverlay(species) : '');

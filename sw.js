@@ -1,5 +1,5 @@
 // Service worker: la app funciona sin conexión. Red primero (siempre la última versión si hay conexión) y caché de respaldo.
-const VERSION = '0.5.0'; // sincronizado por tools/sync-version.mjs
+const VERSION = '0.6.0'; // sincronizado por tools/sync-version.mjs
 const CACHE = `oposiciones-${VERSION}`;
 const SHELL = [
   './',
@@ -12,6 +12,8 @@ const SHELL = [
   'js/economy.js',
   'js/scheduler.js',
   'js/catalog.js',
+  'js/art/terraza.js',
+  'js/art/cocina.js',
   'js/theme-boot.js',
   'js/phrases.js',
   'js/art/study.js',

@@ -13,6 +13,8 @@ import { byArticle, lastDays, masteryByGroup, weeklyAccuracy } from './stats.js'
 import { isNightHour, sceneSvg } from './art/scene.js';
 import { gardenSvg } from './art/garden.js';
 import { studySvg } from './art/study.js';
+import { cocinaSvg } from './art/cocina.js';
+import { terrazaSvg } from './art/terraza.js';
 import { buildNotices } from './notifications.js';
 import { backupDue, daysSinceBackup, ensureFirstUse, markBackup, reasonLabel } from './backup.js';
 import { clearFlags, flaggedReport, toggleFlag } from './review.js';
@@ -46,7 +48,13 @@ let jokerTimer = null;
 let nightTimer = null;
 let lastNight = false;
 let activeTema = 'ce'; // tema que usan los modos de estudio
-let room = 'casa'; // habitación que se ve en Casa: 'casa' (salón) o 'jardin'
+let room = (() => {
+  try {
+    return localStorage.getItem('op-room') || 'casa';
+  } catch {
+    return 'casa';
+  }
+})(); // habitación que se ve en Casa: 'casa' (salón) o 'jardin'
 
 /** Hora local (en localhost se puede forzar con ?hora=22 para probar). */
 function currentHour() {
@@ -361,7 +369,8 @@ function noticeBanner() {
 
 /** SVG de la habitación actual. */
 function roomSvg(opts) {
-  return room === 'jardin' ? gardenSvg(opts) : room === 'estudio' ? studySvg(opts) : sceneSvg(opts);
+  const draw = { jardin: gardenSvg, estudio: studySvg, cocina: cocinaSvg, terraza: terrazaSvg }[room] ?? sceneSvg;
+  return draw(opts);
 }
 
 function petRows() {
@@ -390,6 +399,11 @@ function viewCasa() {
     hintTab() === 'tienda' ? (d.inventory.length || !d.flags.introSeen ? 'Toca «Tienda» en el menú de abajo.' : 'Ya tienes monedas: toca «Tienda» para comprar algo.') : hintTab() === 'preguntas' ? 'Toca «Preguntas» para ganar tus primeras monedas.' : '';
   const rooms = ROOMS.filter((r) => !r.req || ownedIds(d).has(r.req));
   if (!rooms.some((r) => r.id === room)) room = 'casa';
+  try {
+    localStorage.setItem('op-room', room);
+  } catch {
+    /* sin localStorage */
+  }
   const opts = { gender: d.profile.gender, inventory: d.inventory, hopUid, night: isNight(), lampOff: Boolean(d.flags.lampOff), outfit: d.outfit, season: currentSeason() };
   const tabs = rooms.length > 1 ? `<div class="seg full room-tabs" role="group" aria-label="Habitación">${rooms.map((r) => `<button data-act="room" data-r="${r.id}" aria-pressed="${room === r.id}">${r.name}</button>`).join('')}</div>` : '';
   const tools = '<div class="actions casa-actions"><button class="btn small" data-act="go" data-v="armario" data-testid="open-wardrobe">Armario</button><button class="btn small" data-act="share" data-testid="share">Compartir mi casa</button></div>';
@@ -463,7 +477,7 @@ async function buyItem(itemId, name) {
     await go('casa');
     setTimeout(() => (hopUid = null), 1200);
   } else {
-    toast(item.cat === 'ropa' ? `Has comprado: ${item.name}. Póntela en el Armario (en Casa).` : item.id === 'jardin' ? '¡Jardín desbloqueado! Míralo en Casa.' : item.id === 'estudio' ? '¡Estudio desbloqueado! Míralo en Casa.' : `Has comprado: ${item.name}`);
+    toast(item.cat === 'ropa' ? `Has comprado: ${item.name}. Póntela en el Armario (en Casa).` : ROOMS.some((r) => r.id === item.id) ? `¡${item.name} desbloqueado! Míralo en Casa.` : `Has comprado: ${item.name}`);
     void logros;
     render();
   }
@@ -800,6 +814,7 @@ function viewAjustes() {
     <section class="card"><h3>Accesibilidad y temporadas</h3><div class="field"><span class="lbl">Tamaño del texto</span><div class="seg" role="group" aria-label="Tamaño del texto">
       ${[['normal', 'Normal'], ['large', 'Grande'], ['xlarge', 'Muy grande']].map(([v, l]) => `<button data-act="font" data-v="${v}" aria-pressed="${d.settings.fontScale === v}">${l}</button>`).join('')}</div></div>
       <div class="actions"><button class="btn" data-act="calm" aria-pressed="${d.settings.calm}">Menos movimiento: ${d.settings.calm ? 'sí' : 'no'}</button><button class="btn" data-act="season" aria-pressed="${d.settings.season !== 'off'}">Decoración de temporada: ${d.settings.season === 'off' ? 'no' : 'sí'}</button><button class="btn" data-act="sound" data-testid="sound-toggle" aria-pressed="${d.settings.sound}">Sonidos: ${d.settings.sound ? 'sí' : 'no'}</button></div></section>
+      <section class="card"><h3>Modo prueba</h3><p class="muted">Temporal en esta versión, para probar toda la tienda. Se quitará después.</p><div class="actions"><button class="btn" data-act="gift" data-testid="gift-coins">+99 999 monedas</button></div></section>
     <section class="card"><h3>Copia de seguridad</h3><p>Tus datos solo viven en este dispositivo. Guarda una copia de vez en cuando. Para pasar tu progreso a otro móvil: «Copiar código» aquí, y «Pegar código» allí.</p>
       <p class="muted" data-testid="backup-info">${backupInfoText(d)}</p>
       <div class="actions"><button class="btn" data-act="copy-code" data-testid="copy-code">Copiar código</button><button class="btn" data-act="paste-code" data-testid="paste-code">Pegar código</button><button class="btn" data-act="list-backups" data-testid="list-backups">Copias automáticas</button><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
@@ -850,6 +865,11 @@ document.addEventListener('click', async (e) => {
     if (act === 'go') await go(el.dataset.v);
     else if (act === 'room') {
       room = el.dataset.r;
+      try {
+        localStorage.setItem('op-room', room);
+      } catch {
+        /* sin localStorage */
+      }
       render();
     } else if (act === 'share') await shareHouse();
     else if (act === 'tema') {
@@ -857,6 +877,12 @@ document.addEventListener('click', async (e) => {
       render();
     } else if (act === 'reload') {
       location.reload();
+    } else if (act === 'gift') {
+      await store.update((d) => {
+        d.coins += 99999;
+      });
+      toast('+99 999 monedas de prueba');
+      render();
     } else if (act === 'sound') {
       await store.update((d) => {
         d.settings.sound = !d.settings.sound;

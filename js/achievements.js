@@ -134,6 +134,17 @@ export const ACHIEVEMENTS = [
   A('backup_first', 'Constancia', 'Prevenido', 'Guarda tu primera copia de seguridad.', (c) => (c.doc.meta.lastExport ? 1 : 0), 1, { txt: '💾' }),
   A('flag_first', 'Constancia', 'Ojo crítico', 'Marca una pregunta como dudosa.', (c) => Object.keys(c.doc.flagged).length, 1, { txt: '?' }),
 
+  // --- Cocina y terraza ---
+  A('kitchen_open', 'Casa', 'A los fogones', 'Desbloquea la cocina.', (c) => bool(has(c, 'cocina')), 1, { item: 'cocina' }),
+  A('terrace_open', 'Casa', 'Con vistas', 'Desbloquea la terraza.', (c) => bool(has(c, 'terraza')), 1, { item: 'terraza' }),
+  A('all_rooms', 'Casa', 'Casa grande', 'Desbloquea las cuatro habitaciones extra: jardín, estudio, cocina y terraza.', (c) => ['jardin', 'estudio', 'cocina', 'terraza'].filter((id) => has(c, id)).length, 4, { item: 'jardin' }),
+  A('has_abeja', 'Mascotas', 'Dulce compañía', 'Consigue una abeja.', (c) => speciesCount(c, 'abeja'), 1, { pet: 'abeja' }),
+  A('has_pinguino', 'Mascotas', 'Frescura polar', 'Consigue un pingüino.', (c) => speciesCount(c, 'pinguino'), 1, { pet: 'pinguino' }),
+  A('has_paloma', 'Mascotas', 'Mensajera', 'Consigue una paloma.', (c) => speciesCount(c, 'paloma'), 1, { pet: 'paloma' }),
+  A('has_camaleon', 'Mascotas', 'Cambio de color', 'Consigue un camaleón.', (c) => speciesCount(c, 'camaleon'), 1, { pet: 'camaleon' }),
+  A('kitchen_full', 'Casa', 'Cocina equipada', 'Ten nevera, cocina de gas, mesa y cafetera.', (c) => ['nevera', 'fogon', 'mesa', 'cafetera'].filter((id) => has(c, id)).length, 4, { item: 'nevera' }),
+  A('terrace_full', 'Casa', 'Terraza de ensueño', 'Ten toldo, hamaca, barbacoa y telescopio.', (c) => ['toldo', 'hamaca', 'barbacoa', 'telescopio'].filter((id) => has(c, id)).length, 4, { item: 'hamaca' }),
+
   // --- Casa ---
   A('first_tool', 'Casa', 'Manos a la obra', 'Compra tu primera herramienta.', (c) => CATALOG.filter((i) => i.cat === 'herramientas' && has(c, i.id)).length, 1, { item: 'regadera' }),
   A('aquarium', 'Casa', 'Decora tu pecera', 'Ten una pecera con un pez dentro.', (c) => bool(has(c, 'pecera') && speciesCount(c, 'pez') > 0), 1, { item: 'pecera' }),
