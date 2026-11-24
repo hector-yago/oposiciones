@@ -66,3 +66,11 @@ test('exportar e importar conserva los datos y deja copia previa', async () => {
   await assert.rejects(() => b.importJson('{"app":"otra"}'), /no es una exportación/);
   await assert.rejects(() => b.importJson('no json'), /JSON válido/);
 });
+
+test('el fixture v2 se carga sin cambios (formato actual estable)', () => {
+  const raw = fixture('v2.json');
+  const { doc, from, to } = migrate(raw);
+  assert.equal(from, 2);
+  assert.equal(to, CURRENT_SCHEMA);
+  assert.deepEqual(doc, raw);
+});

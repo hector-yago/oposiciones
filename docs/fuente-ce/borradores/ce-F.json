@@ -1,0 +1,1602 @@
+[
+ {
+  "id": "ce-600",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.1",
+  "enunciado": "¿Cómo deben ser los Jueces y Magistrados que integran el poder judicial según la Constitución?",
+  "opciones": [
+   "Independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley",
+   "Independientes, electivos, responsables y sometidos a las instrucciones del Consejo General del Poder Judicial",
+   "Inamovibles, dependientes del Gobierno y sometidos al imperio de la ley",
+   "Independientes, temporales, irresponsables y sometidos a la jurisprudencia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.1 CE: los Jueces y Magistrados son independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-601",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.2",
+  "enunciado": "¿En qué supuestos pueden ser separados, suspendidos, trasladados o jubilados los Jueces y Magistrados?",
+  "opciones": [
+   "Solo por las causas y con las garantías previstas en la ley",
+   "Cuando lo acuerde el Gobierno por razones de interés general",
+   "Cuando lo decida el Ministerio de Justicia previo informe del Fiscal General",
+   "Cuando lo disponga el Tribunal Supremo por mayoría simple"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.2 CE: no podrán ser separados, suspendidos, trasladados ni jubilados sino por alguna de las causas y con las garantías previstas en la ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-602",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.3",
+  "enunciado": "¿A quién corresponde en exclusiva el ejercicio de la potestad jurisdiccional, juzgando y haciendo ejecutar lo juzgado?",
+  "opciones": [
+   "A los Juzgados y Tribunales determinados por las leyes",
+   "Al Consejo General del Poder Judicial",
+   "Al Ministerio Fiscal y a los Tribunales",
+   "A los Juzgados, Tribunales y órganos administrativos con potestad sancionadora"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.3 CE: la potestad jurisdiccional corresponde exclusivamente a los Juzgados y Tribunales determinados por las leyes.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-603",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.5",
+  "enunciado": "¿Cuál es la base de la organización y funcionamiento de los Tribunales según el artículo 117?",
+  "opciones": [
+   "El principio de unidad jurisdiccional",
+   "El principio de especialización por materias",
+   "El principio de descentralización territorial",
+   "El principio de jerarquía normativa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.5 CE: el principio de unidad jurisdiccional es la base de la organización y funcionamiento de los Tribunales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-604",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.6",
+  "enunciado": "¿Qué establece la Constitución respecto a los Tribunales de excepción?",
+  "opciones": [
+   "Que se prohíben",
+   "Que solo pueden crearse en estado de sitio",
+   "Que pueden crearse por ley orgánica",
+   "Que pueden crearse para delitos de terrorismo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.6 CE: se prohíben los Tribunales de excepción.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-605",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.5",
+  "enunciado": "¿Para qué ámbito prevé la Constitución que la ley regule el ejercicio de la jurisdicción militar?",
+  "opciones": [
+   "El estrictamente castrense y los supuestos de estado de sitio",
+   "Todos los delitos cometidos por militares en cualquier circunstancia",
+   "Los delitos contra la seguridad del Estado",
+   "Únicamente el tiempo de guerra declarada"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.5 CE: jurisdicción militar en el ámbito estrictamente castrense y en los supuestos de estado de sitio.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-606",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "118",
+  "enunciado": "Según el artículo 118, ¿qué es obligado respecto a las sentencias y demás resoluciones firmes de Jueces y Tribunales?",
+  "opciones": [
+   "Cumplirlas, así como prestar la colaboración requerida en el proceso y en la ejecución",
+   "Cumplirlas únicamente cuando hayan sido publicadas en el BOE",
+   "Cumplirlas salvo que el Gobierno acuerde su suspensión",
+   "Cumplirlas tras la ratificación del Consejo General del Poder Judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 118 CE: es obligado cumplir las resoluciones firmes y prestar la colaboración requerida por los Jueces y Tribunales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-607",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "119",
+  "enunciado": "¿Cuándo será gratuita la justicia en todo caso?",
+  "opciones": [
+   "Respecto de quienes acrediten insuficiencia de recursos para litigar",
+   "Para todos los ciudadanos en procesos penales",
+   "Para los españoles con ingresos inferiores al salario mínimo interprofesional",
+   "Para quienes lo solicite el Ministerio Fiscal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 119 CE: la justicia será gratuita cuando lo disponga la ley y, en todo caso, para quienes acrediten insuficiencia de recursos para litigar.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-608",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "120.1",
+  "enunciado": "Según el artículo 120, las actuaciones judiciales serán...",
+  "opciones": [
+   "Públicas, con las excepciones que prevean las leyes de procedimiento",
+   "Secretas, salvo que el Juez acuerde su publicidad",
+   "Públicas sin excepción alguna",
+   "Públicas solo en materia penal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 120.1 CE: las actuaciones judiciales serán públicas, con las excepciones que prevean las leyes de procedimiento.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-609",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "120.2",
+  "enunciado": "¿Cómo será el procedimiento, sobre todo en materia criminal, según el artículo 120?",
+  "opciones": [
+   "Predominantemente oral",
+   "Predominantemente escrito",
+   "Exclusivamente oral",
+   "Escrito, con audiencia oral facultativa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 120.2 CE: el procedimiento será predominantemente oral, sobre todo en materia criminal.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-610",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "120.3",
+  "enunciado": "¿Qué requisitos exige la Constitución a las sentencias?",
+  "opciones": [
+   "Que sean siempre motivadas y se pronuncien en audiencia pública",
+   "Que sean motivadas, salvo en materia penal, y se notifiquen por escrito",
+   "Que sean breves y se publiquen en el BOE",
+   "Que se pronuncien en audiencia pública y sin necesidad de motivación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 120.3 CE: las sentencias serán siempre motivadas y se pronunciarán en audiencia pública.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-611",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "121",
+  "enunciado": "¿Quién debe indemnizar los daños causados por error judicial o por el funcionamiento anormal de la Administración de Justicia?",
+  "opciones": [
+   "El Estado, conforme a la ley",
+   "El Juez que cometió el error, personalmente",
+   "El Consejo General del Poder Judicial",
+   "La Comunidad Autónoma donde radique el órgano judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 121 CE: dan derecho a una indemnización a cargo del Estado, conforme a la ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-612",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.1",
+  "enunciado": "¿Qué norma determina la constitución, funcionamiento y gobierno de los Juzgados y Tribunales?",
+  "opciones": [
+   "La ley orgánica del poder judicial",
+   "El Reglamento del Consejo General del Poder Judicial",
+   "Un real decreto del Gobierno",
+   "La ley de enjuiciamiento civil"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.1 CE: la ley orgánica del poder judicial determina la constitución, funcionamiento y gobierno de los Juzgados y Tribunales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-613",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.2",
+  "enunciado": "Según la Constitución, ¿cuál es el órgano de gobierno del poder judicial?",
+  "opciones": [
+   "El Consejo General del Poder Judicial",
+   "El Tribunal Supremo",
+   "El Ministerio de Justicia",
+   "El Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.2 CE: el Consejo General del Poder Judicial es el órgano de gobierno del mismo.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-614",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.3",
+  "enunciado": "¿Cuántos de los veinte miembros del Consejo General del Poder Judicial se eligen entre Jueces y Magistrados de todas las categorías judiciales?",
+  "opciones": [
+   "Doce",
+   "Ocho",
+   "Diez",
+   "Catorce"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.3 CE: de los veinte miembros, doce entre Jueces y Magistrados; cuatro a propuesta del Congreso y cuatro del Senado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-615",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.3",
+  "enunciado": "¿Qué mayoría se exige en el Congreso y el Senado para proponer a los miembros del Consejo General del Poder Judicial elegidos entre juristas?",
+  "opciones": [
+   "Tres quintos de sus miembros",
+   "Mayoría absoluta",
+   "Dos tercios de sus miembros",
+   "Mayoría simple"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.3 CE: elegidos en ambos casos por mayoría de tres quintos de sus miembros.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-616",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.3",
+  "enunciado": "¿Quién nombra a los veinte miembros del Consejo General del Poder Judicial y por cuánto tiempo?",
+  "opciones": [
+   "El Rey, por cinco años",
+   "El Presidente del Gobierno, por cinco años",
+   "El Rey, por seis años",
+   "El Congreso de los Diputados, por cuatro años"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.3 CE: veinte miembros nombrados por el Rey por un período de cinco años.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-617",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.3",
+  "enunciado": "¿Cuántos años de ejercicio profesional se exigen a los abogados y juristas propuestos por las Cortes para el Consejo General del Poder Judicial?",
+  "opciones": [
+   "Más de quince",
+   "Más de diez",
+   "Más de veinte",
+   "Más de doce"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.3 CE: juristas de reconocida competencia y con más de quince años de ejercicio en su profesión.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-618",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "123.1",
+  "enunciado": "¿Qué órgano es el jurisdiccional superior en todos los órdenes, salvo en materia de garantías constitucionales?",
+  "opciones": [
+   "El Tribunal Supremo",
+   "La Audiencia Nacional",
+   "El Consejo General del Poder Judicial",
+   "El Tribunal Superior de Justicia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 123.1 CE: el Tribunal Supremo, con jurisdicción en toda España, es el órgano jurisdiccional superior en todos los órdenes, salvo garantías constitucionales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-619",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "123.2",
+  "enunciado": "¿Quién nombra al Presidente del Tribunal Supremo y a propuesta de quién?",
+  "opciones": [
+   "El Rey, a propuesta del Consejo General del Poder Judicial",
+   "El Rey, a propuesta del Gobierno",
+   "El Presidente del Gobierno, a propuesta del Senado",
+   "El Congreso de los Diputados, a propuesta del Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 123.2 CE: nombrado por el Rey, a propuesta del Consejo General del Poder Judicial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-620",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "124.1",
+  "enunciado": "¿Cuál es la misión del Ministerio Fiscal según el artículo 124?",
+  "opciones": [
+   "Promover la acción de la justicia en defensa de la legalidad, de los derechos de los ciudadanos y del interés público",
+   "Dictar sentencias en procesos penales",
+   "Gobernar el poder judicial",
+   "Representar al Gobierno ante los Tribunales en todos los procesos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 124.1 CE: promover la acción de la justicia en defensa de la legalidad, los derechos de los ciudadanos y el interés público tutelado por la ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-621",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "124.2",
+  "enunciado": "¿Por qué principios ejerce sus funciones el Ministerio Fiscal, además de los de legalidad e imparcialidad?",
+  "opciones": [
+   "Unidad de actuación y dependencia jerárquica",
+   "Autonomía funcional y colegialidad",
+   "Inamovilidad y rotación",
+   "Oportunidad y elección democrática"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 124.2 CE: unidad de actuación y dependencia jerárquica, con sujeción a los de legalidad e imparcialidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-622",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "124.4",
+  "enunciado": "¿Cómo se nombra al Fiscal General del Estado?",
+  "opciones": [
+   "Por el Rey, a propuesta del Gobierno, oído el Consejo General del Poder Judicial",
+   "Por el Rey, a propuesta del Consejo General del Poder Judicial",
+   "Por el Congreso de los Diputados por mayoría absoluta",
+   "Por el Presidente del Gobierno, oído el Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 124.4 CE: nombrado por el Rey, a propuesta del Gobierno, oído el Consejo General del Poder Judicial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-623",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "125",
+  "enunciado": "¿Mediante qué instituciones pueden los ciudadanos participar en la Administración de Justicia según el artículo 125?",
+  "opciones": [
+   "Acción popular y Jurado, además de los Tribunales consuetudinarios y tradicionales",
+   "Acción popular y Defensor del Pueblo",
+   "Jurado y Consejo de Estado",
+   "Iniciativa legislativa popular y Jurado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 125 CE: acción popular, Jurado y Tribunales consuetudinarios y tradicionales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-624",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "126",
+  "enunciado": "¿De quién depende la policía judicial en sus funciones de averiguación del delito?",
+  "opciones": [
+   "De los Jueces, de los Tribunales y del Ministerio Fiscal",
+   "Del Ministerio del Interior exclusivamente",
+   "Del Consejo General del Poder Judicial",
+   "De las Delegaciones del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 126 CE: la policía judicial depende de los Jueces, de los Tribunales y del Ministerio Fiscal.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-625",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "127.1",
+  "enunciado": "¿Qué no pueden hacer los Jueces, Magistrados y Fiscales mientras se hallen en activo?",
+  "opciones": [
+   "Pertenecer a partidos políticos o sindicatos",
+   "Asociarse profesionalmente",
+   "Ejercer la docencia universitaria",
+   "Ejercer el derecho de sufragio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 127.1 CE: no podrán desempeñar otros cargos públicos ni pertenecer a partidos políticos o sindicatos.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-626",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "128.1",
+  "enunciado": "¿A qué está subordinada toda la riqueza del país, sea cual fuere su titularidad?",
+  "opciones": [
+   "Al interés general",
+   "A la planificación económica del Gobierno",
+   "A la iniciativa privada",
+   "A las Comunidades Autónomas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 128.1 CE: toda la riqueza del país está subordinada al interés general.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-627",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "128.2",
+  "enunciado": "¿Qué se reconoce en el artículo 128.2 en la actividad económica?",
+  "opciones": [
+   "La iniciativa pública",
+   "El monopolio del Estado en todos los sectores",
+   "La prohibición de empresas públicas",
+   "El derecho exclusivo de los sindicatos a participar"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 128.2 CE: se reconoce la iniciativa pública en la actividad económica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-628",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "131.1",
+  "enunciado": "¿Quién puede planificar la actividad económica general y mediante qué instrumento?",
+  "opciones": [
+   "El Estado, mediante ley",
+   "El Gobierno, mediante real decreto",
+   "Las Comunidades Autónomas, mediante sus Estatutos",
+   "El Consejo de Estado, mediante dictamen"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 131.1 CE: el Estado, mediante ley, podrá planificar la actividad económica general.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-629",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "132.1",
+  "enunciado": "¿Qué principios deben inspirar el régimen jurídico de los bienes de dominio público y comunales?",
+  "opciones": [
+   "Inalienabilidad, imprescriptibilidad e inembargabilidad",
+   "Alienabilidad, prescriptibilidad y embargabilidad",
+   "Inalienabilidad, prescriptibilidad e inembargabilidad",
+   "Temporalidad, gratuidad y publicidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 132.1 CE: principios de inalienabilidad, imprescriptibilidad e inembargabilidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-630",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "132.2",
+  "enunciado": "¿Cuál de estos bienes es de dominio público estatal en todo caso?",
+  "opciones": [
+   "La zona marítimo-terrestre",
+   "Los montes vecinales",
+   "Los bienes del Patrimonio Nacional",
+   "Los ríos de interés local"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 132.2 CE: en todo caso, la zona marítimo-terrestre, las playas, el mar territorial y los recursos naturales de la zona económica y la plataforma continental.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-631",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "133.1",
+  "enunciado": "¿A quién corresponde la potestad originaria para establecer los tributos?",
+  "opciones": [
+   "Exclusivamente al Estado, mediante ley",
+   "A las Comunidades Autónomas y al Estado por igual",
+   "Al Gobierno, mediante decreto",
+   "A las Cortes Generales y a las Corporaciones locales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 133.1 CE: la potestad originaria para establecer tributos corresponde exclusivamente al Estado, mediante ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-632",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "133.4",
+  "enunciado": "¿De acuerdo con qué podrán las administraciones públicas contraer obligaciones financieras y realizar gastos?",
+  "opciones": [
+   "De acuerdo con las leyes",
+   "De acuerdo con los reglamentos",
+   "De acuerdo con las instrucciones del Tribunal de Cuentas",
+   "De acuerdo con los Presupuestos de cada ejercicio únicamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 133.4 CE: solo podrán contraer obligaciones financieras y realizar gastos de acuerdo con las leyes.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-633",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.1",
+  "enunciado": "¿A quién corresponde la elaboración de los Presupuestos Generales del Estado y a quién su examen, enmienda y aprobación?",
+  "opciones": [
+   "Al Gobierno su elaboración y a las Cortes Generales su examen, enmienda y aprobación",
+   "A las Cortes Generales su elaboración y al Gobierno su aprobación",
+   "Al Ministerio de Hacienda su elaboración y al Congreso su aprobación exclusiva",
+   "Al Gobierno su elaboración y al Congreso, en exclusiva, su aprobación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.1 CE: el Gobierno elabora; las Cortes Generales examinan, enmiendan y aprueban.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-634",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.3",
+  "enunciado": "¿Con qué antelación mínima debe presentar el Gobierno al Congreso los Presupuestos Generales del Estado respecto a la expiración de los del año anterior?",
+  "opciones": [
+   "Al menos tres meses",
+   "Al menos un mes",
+   "Al menos seis meses",
+   "Al menos dos meses"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.3 CE: al menos tres meses antes de la expiración de los del año anterior.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-635",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.4",
+  "enunciado": "¿Qué ocurre si la Ley de Presupuestos no se aprueba antes del primer día del ejercicio económico?",
+  "opciones": [
+   "Se consideran automáticamente prorrogados los Presupuestos del ejercicio anterior",
+   "Se disuelven las Cortes Generales",
+   "El Gobierno aprueba unos presupuestos provisionales por decreto",
+   "Se suspende el gasto público salvo el de personal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.4 CE: se consideran automáticamente prorrogados los del ejercicio anterior hasta la aprobación de los nuevos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-636",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.7",
+  "enunciado": "¿Qué establece la Constitución sobre la Ley de Presupuestos y los tributos?",
+  "opciones": [
+   "No puede crear tributos, pero puede modificarlos cuando una ley tributaria sustantiva así lo prevea",
+   "Puede crear y modificar tributos libremente",
+   "No puede crear ni modificar tributos en ningún caso",
+   "Puede crear tributos pero no modificarlos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.7 CE: la Ley de Presupuestos no puede crear tributos; podrá modificarlos cuando una ley tributaria sustantiva así lo prevea.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-637",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.6",
+  "enunciado": "¿Qué requiere para su tramitación toda proposición o enmienda que suponga aumento de créditos o disminución de ingresos presupuestarios?",
+  "opciones": [
+   "La conformidad del Gobierno",
+   "La mayoría absoluta del Congreso",
+   "El dictamen del Tribunal de Cuentas",
+   "El informe del Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.6 CE: requerirá la conformidad del Gobierno para su tramitación.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-638",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.1",
+  "enunciado": "¿Qué necesita el Gobierno para emitir Deuda Pública o contraer crédito?",
+  "opciones": [
+   "Estar autorizado por ley",
+   "La aprobación del Tribunal de Cuentas",
+   "Un acuerdo del Consejo de Estado",
+   "La autorización del Banco de España"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.1 CE: el Gobierno habrá de estar autorizado por ley para emitir Deuda Pública o contraer crédito.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-639",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "136.1",
+  "enunciado": "¿Cómo define la Constitución al Tribunal de Cuentas?",
+  "opciones": [
+   "Supremo órgano fiscalizador de las cuentas y de la gestión económica del Estado y del sector público",
+   "Órgano jurisdiccional encargado de aprobar los Presupuestos",
+   "Órgano consultivo del Gobierno en materia fiscal",
+   "Órgano dependiente del Ministerio de Hacienda"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 136.1 CE: supremo órgano fiscalizador de las cuentas y de la gestión económica del Estado, así como del sector público.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-640",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "136.1",
+  "enunciado": "¿De quién depende directamente el Tribunal de Cuentas?",
+  "opciones": [
+   "De las Cortes Generales",
+   "Del Gobierno",
+   "Del Consejo General del Poder Judicial",
+   "Del Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 136.1 CE: dependerá directamente de las Cortes Generales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-641",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "137",
+  "enunciado": "¿En qué entidades se organiza territorialmente el Estado según el artículo 137?",
+  "opciones": [
+   "Municipios, provincias y Comunidades Autónomas que se constituyan",
+   "Municipios, comarcas y Comunidades Autónomas",
+   "Provincias, islas y regiones",
+   "Municipios, provincias y regiones históricas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 137 CE: municipios, provincias y Comunidades Autónomas que se constituyan, todas con autonomía para la gestión de sus intereses.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-642",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "138.2",
+  "enunciado": "¿Qué no pueden implicar en ningún caso las diferencias entre los Estatutos de las distintas Comunidades Autónomas?",
+  "opciones": [
+   "Privilegios económicos o sociales",
+   "Diferencias en las instituciones de autogobierno",
+   "Competencias distintas",
+   "Denominaciones distintas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 138.2 CE: las diferencias entre Estatutos no podrán implicar, en ningún caso, privilegios económicos o sociales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-643",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "139.2",
+  "enunciado": "¿Qué medidas no puede adoptar ninguna autoridad según el artículo 139.2?",
+  "opciones": [
+   "Las que obstaculicen la libertad de circulación y establecimiento de las personas y la libre circulación de bienes",
+   "Las que limiten la libertad de expresión",
+   "Las que regulen el comercio exterior",
+   "Las que fijen el régimen fiscal de las Comunidades"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 139.2 CE: ninguna autoridad podrá adoptar medidas que obstaculicen la libre circulación y establecimiento de personas y bienes.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-644",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "140",
+  "enunciado": "¿Por quiénes están integrados los Ayuntamientos, órganos de gobierno y administración de los municipios?",
+  "opciones": [
+   "Por los Alcaldes y los Concejales",
+   "Por el Alcalde y los Diputados provinciales",
+   "Por los Concejales y los Delegados del Gobierno",
+   "Por el Pleno y la Junta de Vecinos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 140 CE: los Ayuntamientos están integrados por los Alcaldes y los Concejales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-645",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "140",
+  "enunciado": "¿Cómo son elegidos los Concejales según la Constitución?",
+  "opciones": [
+   "Por los vecinos del municipio mediante sufragio universal, igual, libre, directo y secreto",
+   "Por el Pleno de la Diputación provincial",
+   "Por los Alcaldes entre los vecinos",
+   "Por sufragio indirecto a través de compromisarios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 140 CE: los Concejales serán elegidos por los vecinos mediante sufragio universal, igual, libre, directo y secreto.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-646",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "140",
+  "enunciado": "¿Qué régimen especial menciona el artículo 140 que la ley regulará?",
+  "opciones": [
+   "El concejo abierto",
+   "El régimen de capitalidad",
+   "La mancomunidad",
+   "El consorcio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 140 CE: la ley regulará las condiciones en las que proceda el régimen del concejo abierto.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-647",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "141.1",
+  "enunciado": "¿Quién debe aprobar mediante ley orgánica cualquier alteración de los límites provinciales?",
+  "opciones": [
+   "Las Cortes Generales",
+   "El Gobierno",
+   "Las Diputaciones afectadas",
+   "El Senado en exclusiva"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 141.1 CE: aprobada por las Cortes Generales mediante ley orgánica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-648",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "141.2",
+  "enunciado": "¿A quién se encomienda el gobierno y la administración autónoma de las provincias?",
+  "opciones": [
+   "A Diputaciones u otras Corporaciones de carácter representativo",
+   "A los Delegados del Gobierno",
+   "A los Gobernadores civiles",
+   "A los Alcaldes de las capitales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 141.2 CE: encomendados a Diputaciones u otras Corporaciones de carácter representativo.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-649",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "141.4",
+  "enunciado": "¿Qué forma de administración propia tienen las islas en los archipiélagos?",
+  "opciones": [
+   "Cabildos o Consejos",
+   "Mancomunidades",
+   "Diputaciones forales",
+   "Delegaciones insulares del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 141.4 CE: en los archipiélagos, las islas tendrán su administración propia en forma de Cabildos o Consejos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-650",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "142",
+  "enunciado": "¿De qué deben nutrirse fundamentalmente las Haciendas locales?",
+  "opciones": [
+   "De tributos propios y de participación en los del Estado y de las Comunidades Autónomas",
+   "De transferencias exclusivas del Estado",
+   "De la emisión de deuda pública",
+   "De las tasas autonómicas únicamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 142 CE: se nutrirán fundamentalmente de tributos propios y de participación en los del Estado y de las Comunidades Autónomas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-651",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "143.2",
+  "enunciado": "¿Qué proporción de municipios, cuya población represente al menos la mayoría del censo electoral de cada provincia o isla, debe respaldar la iniciativa del proceso autonómico del artículo 143?",
+  "opciones": [
+   "Las dos terceras partes",
+   "Las tres cuartas partes",
+   "La mitad más uno",
+   "Los tres quintos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 143.2 CE: dos terceras partes de los municipios cuya población represente, al menos, la mayoría del censo electoral.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-652",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "143.2",
+  "enunciado": "¿En qué plazo deben cumplirse los requisitos de iniciativa autonómica desde el primer acuerdo de alguna Corporación local interesada?",
+  "opciones": [
+   "Seis meses",
+   "Tres meses",
+   "Un año",
+   "Cinco años"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 143.2 CE: plazo de seis meses desde el primer acuerdo adoptado por alguna de las Corporaciones locales interesadas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-653",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "145.1",
+  "enunciado": "¿Qué prohíbe el artículo 145.1 respecto a las Comunidades Autónomas?",
+  "opciones": [
+   "La federación de Comunidades Autónomas",
+   "Los convenios entre Comunidades Autónomas",
+   "La creación de policías autonómicas",
+   "La cooperación con el Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 145.1 CE: en ningún caso se admitirá la federación de Comunidades Autónomas.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-654",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "145.2",
+  "enunciado": "¿Qué necesitan los acuerdos de cooperación entre Comunidades Autónomas que no sean los convenios previstos en sus Estatutos?",
+  "opciones": [
+   "La autorización de las Cortes Generales",
+   "La aprobación del Gobierno",
+   "El dictamen del Consejo de Estado",
+   "La ratificación mediante referéndum"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 145.2 CE: en los demás supuestos, los acuerdos de cooperación necesitarán la autorización de las Cortes Generales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-655",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "147.1",
+  "enunciado": "¿Qué son los Estatutos de autonomía en cada Comunidad Autónoma según la Constitución?",
+  "opciones": [
+   "La norma institucional básica de cada Comunidad Autónoma",
+   "Una norma de rango reglamentario",
+   "Un convenio con el Estado",
+   "Una ley de bases estatal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 147.1 CE: los Estatutos serán la norma institucional básica de cada Comunidad Autónoma.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-656",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "147.2",
+  "enunciado": "¿Cuál de estos contenidos NO figura entre los que deben contener los Estatutos de autonomía según el artículo 147.2?",
+  "opciones": [
+   "El sistema electoral del Senado",
+   "La denominación de la Comunidad",
+   "La delimitación de su territorio",
+   "Las competencias asumidas y las bases para el traspaso de los servicios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 147.2 CE: denominación, delimitación del territorio, instituciones propias y competencias asumidas; nada dice del sistema electoral del Senado.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-657",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "147.3",
+  "enunciado": "¿Qué requiere en todo caso la reforma de los Estatutos según el artículo 147.3?",
+  "opciones": [
+   "La aprobación por las Cortes Generales mediante ley orgánica",
+   "La aprobación del Gobierno mediante real decreto-ley",
+   "La aprobación del Senado únicamente",
+   "El dictamen del Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 147.3 CE: se ajustará al procedimiento del propio Estatuto y requerirá la aprobación por las Cortes Generales mediante ley orgánica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-658",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "148.2",
+  "enunciado": "¿Cuánto tiempo debe transcurrir para que, mediante reforma de sus Estatutos, las Comunidades Autónomas puedan ampliar sucesivamente sus competencias dentro del marco del artículo 149?",
+  "opciones": [
+   "Cinco años",
+   "Tres años",
+   "Diez años",
+   "Dos años"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 148.2 CE: transcurridos cinco años, y mediante la reforma de sus Estatutos, podrán ampliar sucesivamente sus competencias.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-659",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "148.1",
+  "enunciado": "¿Cuál de estas materias pueden asumir las Comunidades Autónomas según el artículo 148.1?",
+  "opciones": [
+   "Ordenación del territorio, urbanismo y vivienda",
+   "Defensa y Fuerzas Armadas",
+   "Relaciones internacionales",
+   "Legislación mercantil"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 148.1.3.ª CE: ordenación del territorio, urbanismo y vivienda. Las demás son competencia exclusiva del Estado (art. 149.1).",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-660",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "¿Cuál de estas materias es de competencia exclusiva del Estado?",
+  "opciones": [
+   "Relaciones internacionales",
+   "Asistencia social",
+   "Promoción del turismo",
+   "Ferias interiores"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.3.ª CE: relaciones internacionales. Las otras son materias que pueden asumir las Comunidades (art. 148.1).",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-661",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "¿Qué materia, entre estas, es de competencia exclusiva del Estado según el artículo 149.1?",
+  "opciones": [
+   "Nacionalidad, inmigración, emigración, extranjería y derecho de asilo",
+   "Museos y bibliotecas de interés de la Comunidad",
+   "Patrimonio monumental de interés de la Comunidad",
+   "Fomento de la cultura y de la lengua de la Comunidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.2.ª CE: nacionalidad, inmigración, emigración, extranjería y derecho de asilo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-662",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.3",
+  "enunciado": "¿A quién corresponde la competencia sobre las materias que no hayan sido asumidas por los Estatutos de Autonomía?",
+  "opciones": [
+   "Al Estado",
+   "A las provincias",
+   "A los municipios",
+   "A cada Comunidad Autónoma por defecto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.3 CE: la competencia sobre las materias no asumidas por los Estatutos corresponderá al Estado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-663",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.3",
+  "enunciado": "¿Qué carácter tiene el derecho estatal respecto al derecho de las Comunidades Autónomas, en todo caso?",
+  "opciones": [
+   "Supletorio",
+   "Derogatorio",
+   "Subsidiario solo en materias civiles",
+   "Facultativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.3 CE: el derecho estatal será, en todo caso, supletorio del derecho de las Comunidades Autónomas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-664",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "¿Qué legislación es competencia exclusiva del Estado, sin perjuicio de su ejecución por los órganos de las Comunidades Autónomas?",
+  "opciones": [
+   "La legislación laboral",
+   "La legislación sobre ferias interiores",
+   "La legislación sobre artesanía",
+   "La legislación sobre asistencia social"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.7.ª CE: legislación laboral, sin perjuicio de su ejecución por los órganos de las Comunidades Autónomas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-665",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "150.1",
+  "enunciado": "¿Mediante qué instrumento pueden las Cortes Generales atribuir a las Comunidades Autónomas la facultad de dictar normas legislativas en el marco de principios, bases y directrices estatales?",
+  "opciones": [
+   "Una ley marco",
+   "Una ley de armonización",
+   "Una ley de transferencia",
+   "Un decreto legislativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 150.1 CE: las Cortes Generales pueden hacerlo mediante leyes marco.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-666",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "150.2",
+  "enunciado": "¿Mediante qué tipo de ley puede el Estado transferir o delegar en las Comunidades Autónomas facultades de titularidad estatal?",
+  "opciones": [
+   "Ley orgánica",
+   "Ley ordinaria",
+   "Ley de bases",
+   "Real decreto legislativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 150.2 CE: mediante ley orgánica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-667",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "150.3",
+  "enunciado": "¿Qué mayoría se requiere en las Cortes Generales para apreciar la necesidad de dictar leyes de armonización?",
+  "opciones": [
+   "Mayoría absoluta de cada Cámara",
+   "Mayoría simple de cada Cámara",
+   "Tres quintos del Congreso",
+   "Dos tercios de cada Cámara"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 150.3 CE: corresponde a las Cortes Generales, por mayoría absoluta de cada Cámara, apreciar esta necesidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-668",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.2",
+  "enunciado": "¿Qué órgano convoca, en el procedimiento del artículo 151, a los Diputados y Senadores para constituirse en Asamblea que elabore el proyecto de Estatuto?",
+  "opciones": [
+   "El Gobierno",
+   "El Rey",
+   "El Presidente del Senado",
+   "El Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.2.1.º CE: el Gobierno convocará a todos los Diputados y Senadores elegidos en las circunscripciones comprendidas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-669",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.2",
+  "enunciado": "¿En qué plazo debe examinar la Comisión Constitucional del Congreso el proyecto de Estatuto aprobado por la Asamblea de Parlamentarios?",
+  "opciones": [
+   "Dos meses",
+   "Un mes",
+   "Tres meses",
+   "Seis meses"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.2.2.º CE: dentro del plazo de dos meses.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-670",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "152.1",
+  "enunciado": "¿Quién elige al Presidente del Consejo de Gobierno en las Comunidades del artículo 151, y quién lo nombra?",
+  "opciones": [
+   "Lo elige la Asamblea de entre sus miembros y lo nombra el Rey",
+   "Lo elige el Pleno del Senado y lo nombra el Rey",
+   "Lo elige directamente el pueblo y lo nombra el Presidente del Gobierno",
+   "Lo elige el Parlamento y lo nombra el Delegado del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 152.1 CE: Presidente elegido por la Asamblea, de entre sus miembros, y nombrado por el Rey.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-671",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "152.1",
+  "enunciado": "¿Qué órgano culmina la organización judicial en el ámbito territorial de la Comunidad Autónoma?",
+  "opciones": [
+   "Un Tribunal Superior de Justicia",
+   "La Audiencia Nacional",
+   "Un Consejo de Justicia autonómico",
+   "El Tribunal de Cuentas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 152.1 CE: un Tribunal Superior de Justicia, sin perjuicio de la jurisdicción del Tribunal Supremo.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-672",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "153",
+  "enunciado": "¿Qué órgano controla la constitucionalidad de las disposiciones normativas con fuerza de ley de las Comunidades Autónomas?",
+  "opciones": [
+   "El Tribunal Constitucional",
+   "El Tribunal Supremo",
+   "El Consejo de Estado",
+   "La jurisdicción contencioso-administrativa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 153.a CE: el Tribunal Constitucional ejerce el control de constitucionalidad de sus disposiciones con fuerza de ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-673",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "153",
+  "enunciado": "¿Qué órgano controla el aspecto económico y presupuestario de las Comunidades Autónomas?",
+  "opciones": [
+   "El Tribunal de Cuentas",
+   "El Tribunal Constitucional",
+   "El Consejo de Estado",
+   "El Defensor del Pueblo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 153.d CE: el Tribunal de Cuentas, el económico y presupuestario.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-674",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "154",
+  "enunciado": "¿Quién nombra al Delegado que dirige la Administración del Estado en el territorio de la Comunidad Autónoma?",
+  "opciones": [
+   "El Gobierno",
+   "El Rey",
+   "El Presidente de la Comunidad Autónoma",
+   "El Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 154 CE: un Delegado nombrado por el Gobierno dirigirá la Administración del Estado en la Comunidad Autónoma.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-675",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "155.1",
+  "enunciado": "¿Qué se necesita para que el Gobierno adopte medidas de coerción sobre una Comunidad Autónoma que incumple sus obligaciones, además del requerimiento previo a su Presidente?",
+  "opciones": [
+   "La aprobación por mayoría absoluta del Senado",
+   "La aprobación por mayoría absoluta del Congreso",
+   "La autorización del Tribunal Constitucional",
+   "El voto favorable de dos tercios de las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 155.1 CE: previo requerimiento al Presidente de la Comunidad y, si no es atendido, con aprobación por mayoría absoluta del Senado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-676",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "156.1",
+  "enunciado": "¿Con arreglo a qué principios gozan las Comunidades Autónomas de autonomía financiera?",
+  "opciones": [
+   "Coordinación con la Hacienda estatal y solidaridad entre todos los españoles",
+   "Jerarquía y competencia",
+   "Suficiencia y reciprocidad",
+   "Subsidiariedad y proporcionalidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 156.1 CE: principios de coordinación con la Hacienda estatal y de solidaridad entre todos los españoles.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-677",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "157.1",
+  "enunciado": "¿Cuál de estos NO es un recurso de las Comunidades Autónomas según el artículo 157.1?",
+  "opciones": [
+   "La participación en el producto de la Deuda Pública estatal",
+   "Impuestos cedidos total o parcialmente por el Estado",
+   "Sus propios impuestos, tasas y contribuciones especiales",
+   "Rendimientos de su patrimonio e ingresos de derecho privado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 157.1 CE enumera las demás; no figura la participación en la Deuda Pública estatal.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-678",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "157.2",
+  "enunciado": "¿Qué no podrán adoptar en ningún caso las Comunidades Autónomas según el artículo 157.2?",
+  "opciones": [
+   "Medidas tributarias sobre bienes situados fuera de su territorio",
+   "Medidas tributarias sobre sus propios bienes",
+   "Recargos sobre impuestos estatales",
+   "Operaciones de crédito"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 157.2 CE: no podrán adoptar medidas tributarias sobre bienes situados fuera de su territorio o que obstaculicen la libre circulación.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-679",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.1",
+  "enunciado": "¿Cuántos miembros del Tribunal Constitucional se proponen por el Gobierno?",
+  "opciones": [
+   "Dos",
+   "Cuatro",
+   "Uno",
+   "Tres"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.1 CE: cuatro Congreso, cuatro Senado, dos Gobierno y dos Consejo General del Poder Judicial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-680",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.1",
+  "enunciado": "¿Qué mayoría se exige en el Congreso para proponer a los cuatro miembros del Tribunal Constitucional que le corresponden?",
+  "opciones": [
+   "Tres quintos",
+   "Mayoría absoluta",
+   "Dos tercios",
+   "Mayoría simple"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.1 CE: cuatro a propuesta del Congreso por mayoría de tres quintos de sus miembros.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-681",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.3",
+  "enunciado": "¿Cómo se renuevan los miembros del Tribunal Constitucional?",
+  "opciones": [
+   "Por terceras partes cada tres años",
+   "Por mitades cada cuatro años",
+   "Por terceras partes cada cinco años",
+   "Íntegramente cada nueve años"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.3 CE: período de nueve años, con renovación por terceras partes cada tres.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-682",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.2",
+  "enunciado": "¿Cuántos años de ejercicio profesional deben acreditar como mínimo los miembros del Tribunal Constitucional?",
+  "opciones": [
+   "Más de quince",
+   "Más de diez",
+   "Más de veinte",
+   "Más de ocho"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.2 CE: juristas de reconocida competencia con más de quince años de ejercicio profesional.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-683",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.4",
+  "enunciado": "¿Con qué es incompatible la condición de miembro del Tribunal Constitucional?",
+  "opciones": [
+   "Con cualquier actividad profesional o mercantil",
+   "Con la docencia universitaria jurídica",
+   "Con la afiliación a un partido político sin cargo directivo",
+   "Con la pertenencia a una asociación cultural"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.4 CE: incompatible con mandato representativo, cargos políticos o administrativos, funciones directivas en partidos o sindicatos, carreras judicial y fiscal y cualquier actividad profesional o mercantil.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-684",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "160",
+  "enunciado": "¿Por cuánto tiempo y cómo se nombra al Presidente del Tribunal Constitucional?",
+  "opciones": [
+   "Tres años, nombrado por el Rey a propuesta del Pleno del Tribunal entre sus miembros",
+   "Nueve años, nombrado por el Rey a propuesta del Gobierno",
+   "Tres años, elegido por el Congreso",
+   "Cinco años, nombrado por el Consejo General del Poder Judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 160 CE: nombrado entre sus miembros por el Rey, a propuesta del Tribunal en pleno, por tres años.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-685",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "161.1",
+  "enunciado": "¿De cuál de estos asuntos conoce el Tribunal Constitucional?",
+  "opciones": [
+   "Del recurso de amparo por violación de los derechos y libertades referidos en el artículo 53.2",
+   "De los recursos de casación en materia penal",
+   "De los recursos contencioso-administrativos contra el Gobierno",
+   "De la responsabilidad penal del Presidente del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 161.1.b CE: recurso de amparo por violación de los derechos y libertades del art. 53.2.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-686",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "161.2",
+  "enunciado": "¿En qué plazo máximo debe el Tribunal Constitucional ratificar o levantar la suspensión producida por la impugnación del Gobierno de disposiciones de las Comunidades Autónomas?",
+  "opciones": [
+   "Cinco meses",
+   "Tres meses",
+   "Un mes",
+   "Seis meses"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 161.2 CE: plazo no superior a cinco meses.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-687",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "162.1",
+  "enunciado": "¿Cuántos Diputados están legitimados para interponer el recurso de inconstitucionalidad?",
+  "opciones": [
+   "50",
+   "35",
+   "100",
+   "1/10 de la Cámara"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 162.1.a CE: Presidente del Gobierno, Defensor del Pueblo, 50 Diputados, 50 Senadores, etc.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-688",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "162.1",
+  "enunciado": "¿Quiénes están legitimados para interponer el recurso de amparo?",
+  "opciones": [
+   "Toda persona natural o jurídica que invoque un interés legítimo, el Defensor del Pueblo y el Ministerio Fiscal",
+   "Solo las personas físicas con nacionalidad española",
+   "Solo el Defensor del Pueblo y el Ministerio Fiscal",
+   "Cualquier ciudadano sin necesidad de interés alguno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 162.1.b CE.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-689",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "163",
+  "enunciado": "¿Qué efectos tiene la cuestión de inconstitucionalidad planteada por un órgano judicial sobre el proceso?",
+  "opciones": [
+   "En ningún caso serán suspensivos",
+   "Suspenden siempre el proceso",
+   "Suspenden el proceso hasta tres meses",
+   "Suspenden el proceso solo en materia penal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 163 CE: los efectos de la cuestión que establezca la ley no serán en ningún caso suspensivos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-690",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "164.1",
+  "enunciado": "¿Desde cuándo tienen valor de cosa juzgada las sentencias del Tribunal Constitucional?",
+  "opciones": [
+   "Desde el día siguiente al de su publicación",
+   "Desde su fecha de firma",
+   "Desde los quince días de su publicación",
+   "Desde la ratificación por las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 164.1 CE: valor de cosa juzgada a partir del día siguiente de su publicación y no cabe recurso alguno.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-691",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "164.2",
+  "enunciado": "Salvo que el fallo disponga otra cosa, ¿qué ocurre con la ley declarada inconstitucional en la parte no afectada por la inconstitucionalidad?",
+  "opciones": [
+   "Subsiste su vigencia",
+   "Queda derogada íntegramente",
+   "Queda suspendida un año",
+   "Debe ser ratificada por las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 164.2 CE: subsistirá la vigencia de la ley en la parte no afectada.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-692",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "165",
+  "enunciado": "¿Qué norma regula el funcionamiento del Tribunal Constitucional, el estatuto de sus miembros y el procedimiento ante él?",
+  "opciones": [
+   "Una ley orgánica",
+   "Un real decreto",
+   "Un reglamento del propio Tribunal exclusivamente",
+   "Una ley ordinaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 165 CE: una ley orgánica.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-693",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "166",
+  "enunciado": "¿Cómo se ejerce la iniciativa de reforma constitucional?",
+  "opciones": [
+   "En los términos de los apartados 1 y 2 del artículo 87",
+   "Solo por el Gobierno",
+   "Solo por las Cortes Generales",
+   "Mediante iniciativa popular exclusivamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 166 CE: remite a los apartados 1 y 2 del art. 87.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-694",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "167.1",
+  "enunciado": "¿Qué se intenta si no hay acuerdo entre ambas Cámaras en la reforma constitucional ordinaria?",
+  "opciones": [
+   "Crear una Comisión paritaria de Diputados y Senadores que presente un texto",
+   "Disolver las Cortes",
+   "Convocar referéndum inmediato",
+   "Que decida el Rey"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 167.1 CE: Comisión de composición paritaria de Diputados y Senadores.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-695",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "167.2",
+  "enunciado": "¿Qué se requiere para que el Congreso apruebe la reforma si no hay acuerdo entre las Cámaras?",
+  "opciones": [
+   "Mayoría de dos tercios del Congreso y voto favorable de la mayoría absoluta del Senado",
+   "Mayoría absoluta de ambas Cámaras",
+   "Tres quintos del Congreso y mayoría simple del Senado",
+   "Mayoría de dos tercios del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 167.2 CE: mayoría absoluta del Senado y dos tercios del Congreso.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-696",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "167.3",
+  "enunciado": "¿Quién puede solicitar el referéndum de ratificación de una reforma del artículo 167 y en qué plazo?",
+  "opciones": [
+   "Una décima parte de los miembros de cualquiera de las Cámaras, en quince días",
+   "Una cuarta parte del Congreso, en un mes",
+   "Cincuenta mil ciudadanos, en quince días",
+   "El Gobierno, en un mes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 167.3 CE: una décima parte de los miembros de cualquiera de las Cámaras, dentro de los quince días siguientes.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-697",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "168.1",
+  "enunciado": "¿Qué sucede tras la aprobación del principio de revisión total por dos tercios de cada Cámara?",
+  "opciones": [
+   "La disolución inmediata de las Cortes",
+   "La convocatoria inmediata de referéndum",
+   "La aprobación por el Rey",
+   "La creación de una Comisión paritaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 168.1 CE: aprobación del principio por dos tercios de cada Cámara y disolución inmediata de las Cortes.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-698",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "168.3",
+  "enunciado": "¿Qué trámite final es obligatorio en la reforma agravada del artículo 168?",
+  "opciones": [
+   "El referéndum de ratificación",
+   "La aprobación por el Tribunal Constitucional",
+   "El dictamen del Consejo de Estado",
+   "La sanción por las Comunidades Autónomas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 168.3 CE: será sometida a referéndum para su ratificación.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-699",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "168.1",
+  "enunciado": "¿Cuál de estos contenidos exige el procedimiento agravado de reforma del artículo 168?",
+  "opciones": [
+   "El Título II, De la Corona",
+   "El Título IV, Del Gobierno",
+   "El Título VIII, Organización Territorial",
+   "El Título IX, Del Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 168.1 CE: Título preliminar, Capítulo segundo Sección 1.ª del Título I, o Título II.",
+  "dificultad": 2
+ }
+]

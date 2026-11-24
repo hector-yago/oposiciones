@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "profile": {
+    "name": "Eva",
+    "gender": "chica"
+  },
+  "coins": 9,
+  "streak": {
+    "current": 2,
+    "best": 7,
+    "tens": 1,
+    "wrong": 1
+  },
+  "progress": {
+    "ce-001": {
+      "box": 2,
+      "ok": 2,
+      "ko": 0,
+      "last": 1700000000000,
+      "due": 1700259200000,
+      "failedSeq": 0
+    }
+  },
+  "stats": {
+    "answered": 20,
+    "correct": 15,
+    "earned": 31,
+    "byTitle": {
+      "Título I": {
+        "ok": 10,
+        "ko": 3
+      }
+    },
+    "byDay": {
+      "2026-11-24": {
+        "n": 20,
+        "ok": 15
+      }
+    },
+    "care": {
+      "cleaned": 2,
+      "calmed": 1,
+      "coins": 1
+    }
+  },
+  "inventory": [
+    {
+      "uid": 1,
+      "itemId": "gato",
+      "name": "Michi",
+      "xp": 33.5,
+      "boughtAt": 1700000000000,
+      "mood": "angry",
+      "mess": 1,
+      "joy": 0,
+      "coin": false
+    },
+    {
+      "uid": 2,
+      "itemId": "cuenco-agua",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 1700000000000,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false
+    },
+    {
+      "uid": 3,
+      "itemId": "bandera",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 1700000000000,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false
+    }
+  ],
+  "nextUid": 4,
+  "joker": {
+    "lastUsed": 1700000000000,
+    "uses": 2
+  },
+  "daily": {
+    "last": "2026-11-24",
+    "streak": 3,
+    "boxes": 1,
+    "opened": 0
+  },
+  "achievements": {
+    "answered_1": 1700000000000
+  },
+  "flags": {
+    "introSeen": true,
+    "shopSeen": true
+  },
+  "settings": {
+    "theme": "system"
+  },
+  "meta": {}
+}

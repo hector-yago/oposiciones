@@ -1,0 +1,1202 @@
+[
+ {
+  "id": "ce-500",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.1",
+  "enunciado": "¿Qué pueden delegar las Cortes Generales en el Gobierno según el artículo 82.1?",
+  "opciones": [
+   "La potestad de dictar normas con rango de ley sobre materias determinadas",
+   "La potestad de reformar la Constitución",
+   "La potestad de aprobar los Presupuestos Generales del Estado",
+   "La potestad de ratificar tratados internacionales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.1 CE: las Cortes pueden delegar en el Gobierno la potestad de dictar normas con rango de ley sobre materias determinadas no incluidas en el art. 81.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-501",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.2",
+  "enunciado": "¿Mediante qué tipo de ley se otorga la delegación legislativa cuando su objeto es la formación de textos articulados?",
+  "opciones": [
+   "Una ley de bases",
+   "Una ley orgánica",
+   "Una ley ordinaria de refundición",
+   "Un decreto-ley convalidado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.2 CE: ley de bases para textos articulados; ley ordinaria para refundir varios textos legales en uno solo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-502",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.3",
+  "enunciado": "¿Cuál de las siguientes características debe tener la delegación legislativa según el artículo 82.3?",
+  "opciones": [
+   "Ser expresa, para materia concreta y con plazo fijado para su ejercicio",
+   "Ser tácita cuando el Gobierno la necesite con urgencia",
+   "Tener duración indefinida mientras no se derogue",
+   "Permitir al Gobierno subdelegarla en los Ministros"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.3 CE: se otorga de forma expresa, para materia concreta y con fijación de plazo; no puede ser implícita ni por tiempo indeterminado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-503",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.4",
+  "enunciado": "¿Qué deben delimitar con precisión las leyes de bases según el artículo 82.4?",
+  "opciones": [
+   "El objeto y alcance de la delegación y los principios y criterios de su ejercicio",
+   "El órgano que controlará el decreto legislativo",
+   "El plazo de vigencia del decreto legislativo resultante",
+   "La competencia de los Tribunales en la materia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.4 CE: las leyes de bases delimitarán con precisión el objeto y alcance de la delegación y los principios y criterios que han de seguirse.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-504",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.5",
+  "enunciado": "La autorización para refundir textos legales debe especificar si se limita a formular un texto único o si incluye también:",
+  "opciones": [
+   "Regularizar, aclarar y armonizar los textos refundidos",
+   "Derogar los textos refundidos sin más trámite",
+   "Dictar normas con carácter retroactivo",
+   "Modificar la propia ley de delegación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.5 CE: determinará si se circunscribe a la mera formulación de un texto único o incluye regularizar, aclarar y armonizar los textos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-505",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.6",
+  "enunciado": "¿Qué señala el artículo 82.6 sobre el control de la legislación delegada?",
+  "opciones": [
+   "Sin perjuicio de la competencia de los Tribunales, las leyes de delegación pueden establecer fórmulas adicionales de control",
+   "Solo el Tribunal Constitucional puede controlarla",
+   "Queda excluida del control de los Tribunales",
+   "El control corresponde en exclusiva al Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.6 CE: sin perjuicio de la competencia propia de los Tribunales, las leyes de delegación podrán establecer fórmulas adicionales de control.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-506",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "83",
+  "enunciado": "¿Cuál de estas acciones tienen prohibida en todo caso las leyes de bases según el artículo 83?",
+  "opciones": [
+   "Autorizar la modificación de la propia ley de bases",
+   "Fijar un plazo para la delegación",
+   "Delimitar el objeto de la delegación",
+   "Establecer fórmulas adicionales de control"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 83 CE: no podrán autorizar la modificación de la propia ley de bases ni facultar para dictar normas con carácter retroactivo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-507",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "84",
+  "enunciado": "Si una proposición de ley o una enmienda es contraria a una delegación legislativa en vigor, ¿qué está facultado a hacer el Gobierno?",
+  "opciones": [
+   "Oponerse a su tramitación",
+   "Retirarla de oficio de la Cámara",
+   "Vetarla ante el Senado",
+   "Someterla a referéndum"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 84 CE: el Gobierno está facultado para oponerse a su tramitación.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-508",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "85",
+  "enunciado": "¿Qué título reciben las disposiciones del Gobierno que contengan legislación delegada?",
+  "opciones": [
+   "Decretos Legislativos",
+   "Decretos-leyes",
+   "Reales Decretos de desarrollo",
+   "Leyes delegadas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 85 CE: las disposiciones del Gobierno que contengan legislación delegada recibirán el título de Decretos Legislativos.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-509",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.1",
+  "enunciado": "¿Qué presupuesto habilita al Gobierno a dictar Decretos-leyes?",
+  "opciones": [
+   "Un caso de extraordinaria y urgente necesidad",
+   "Una delegación expresa de las Cortes Generales",
+   "La autorización previa del Senado",
+   "La petición de una Comunidad Autónoma"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.1 CE: en caso de extraordinaria y urgente necesidad, el Gobierno podrá dictar disposiciones legislativas provisionales con forma de Decretos-leyes.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-510",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.2",
+  "enunciado": "¿En qué plazo debe el Congreso pronunciarse sobre la convalidación o derogación de un Decreto-ley?",
+  "opciones": [
+   "Treinta días siguientes a su promulgación",
+   "Quince días desde su publicación",
+   "Un mes desde su convalidación por el Senado",
+   "Sesenta días desde su promulgación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.2 CE: debate y votación de totalidad en el Congreso en el plazo de los treinta días siguientes a su promulgación.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-511",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.3",
+  "enunciado": "Durante el plazo de convalidación, ¿cómo pueden las Cortes tramitar un Decreto-ley?",
+  "opciones": [
+   "Como proyecto de ley por el procedimiento de urgencia",
+   "Como ley orgánica",
+   "Como proposición de ley por lectura única obligatoria",
+   "No pueden tramitarlo hasta su convalidación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.3 CE: las Cortes podrán tramitarlos como proyectos de ley por el procedimiento de urgencia.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-512",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.1",
+  "enunciado": "¿A quién corresponde la iniciativa legislativa según el artículo 87.1?",
+  "opciones": [
+   "Al Gobierno, al Congreso y al Senado",
+   "Solo al Gobierno y al Congreso",
+   "Al Gobierno y al Consejo de Estado",
+   "Al Gobierno, al Congreso, al Senado y al Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.1 CE: la iniciativa legislativa corresponde al Gobierno, al Congreso y al Senado, de acuerdo con la Constitución y los Reglamentos.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-513",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.2",
+  "enunciado": "¿Qué pueden hacer las Asambleas de las Comunidades Autónomas respecto a la iniciativa legislativa?",
+  "opciones": [
+   "Solicitar al Gobierno un proyecto de ley o remitir una proposición de ley a la Mesa del Congreso",
+   "Presentar proyectos de ley directamente al Senado",
+   "Aprobar leyes estatales en su territorio",
+   "Solo solicitar un referéndum"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.2 CE: pueden solicitar del Gobierno la adopción de un proyecto de ley o remitir a la Mesa del Congreso una proposición de ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-514",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.3",
+  "enunciado": "¿Cuál es el número mínimo de firmas acreditadas para la iniciativa legislativa popular?",
+  "opciones": [
+   "500.000",
+   "250.000",
+   "100.000",
+   "750.000"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.3 CE: en todo caso se exigirán no menos de 500.000 firmas acreditadas.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-515",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "88",
+  "enunciado": "¿Quién aprueba los proyectos de ley antes de someterlos al Congreso?",
+  "opciones": [
+   "El Consejo de Ministros",
+   "El Presidente del Gobierno en solitario",
+   "El Consejo de Estado",
+   "La Mesa del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 88 CE: los proyectos de ley serán aprobados en Consejo de Ministros, que los someterá al Congreso.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-516",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "89.2",
+  "enunciado": "¿Qué ocurre con las proposiciones de ley que el Senado toma en consideración conforme al artículo 87?",
+  "opciones": [
+   "Se remiten al Congreso para su trámite como tal proposición",
+   "Se aprueban directamente en el Senado",
+   "Se devuelven al Gobierno",
+   "Se tramitan como decretos legislativos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 89.2 CE: se remitirán al Congreso para su trámite en éste como tal proposición de ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-517",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "89.1",
+  "enunciado": "¿Qué norma regula la tramitación de las proposiciones de ley?",
+  "opciones": [
+   "Los Reglamentos de las Cámaras",
+   "Una ley orgánica específica",
+   "Los decretos del Gobierno",
+   "La Ley de Referéndum"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 89.1 CE: la tramitación de las proposiciones de ley se regulará por los Reglamentos de las Cámaras.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-518",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.1",
+  "enunciado": "Aprobado un proyecto de ley por el Congreso, ¿a quién da inmediata cuenta su Presidente?",
+  "opciones": [
+   "Al Presidente del Senado",
+   "Al Presidente del Gobierno",
+   "Al Rey",
+   "Al Presidente del Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.1 CE: el Presidente del Congreso dará inmediata cuenta al Presidente del Senado, que lo someterá a deliberación.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-519",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.2",
+  "enunciado": "¿Qué mayoría se exige en el Senado para aprobar el veto?",
+  "opciones": [
+   "Mayoría absoluta",
+   "Mayoría simple",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.2 CE: el veto deberá ser aprobado por mayoría absoluta.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-520",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.3",
+  "enunciado": "¿A cuántos días naturales se reduce el plazo del Senado en proyectos declarados urgentes?",
+  "opciones": [
+   "Veinte días naturales",
+   "Quince días naturales",
+   "Treinta días naturales",
+   "Diez días hábiles"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.3 CE: el plazo de dos meses se reducirá al de veinte días naturales en los proyectos declarados urgentes.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-521",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "91",
+  "enunciado": "¿En qué plazo sanciona el Rey las leyes aprobadas por las Cortes Generales?",
+  "opciones": [
+   "Quince días",
+   "Treinta días",
+   "Ocho días",
+   "Un mes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 91 CE: el Rey sancionará en el plazo de quince días las leyes aprobadas por las Cortes Generales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-522",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "92.1",
+  "enunciado": "¿Qué tipo de referéndum prevé el artículo 92.1 para decisiones políticas de especial trascendencia?",
+  "opciones": [
+   "Consultivo",
+   "Vinculante",
+   "Abrogatorio",
+   "Ratificador de oficio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 92.1 CE: las decisiones políticas de especial trascendencia podrán ser sometidas a referéndum consultivo de todos los ciudadanos.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-523",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "92.2",
+  "enunciado": "¿Quién convoca el referéndum consultivo?",
+  "opciones": [
+   "El Rey, mediante propuesta del Presidente del Gobierno previamente autorizada por el Congreso",
+   "El Presidente del Gobierno, previa autorización del Senado",
+   "El Presidente del Congreso a propuesta del Gobierno",
+   "El Rey a propuesta del Consejo de Ministros sin más requisitos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 92.2 CE: convocado por el Rey, a propuesta del Presidente del Gobierno, previamente autorizada por el Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-524",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "93",
+  "enunciado": "¿Mediante qué tipo de norma se autoriza la celebración de tratados que atribuyen competencias constitucionales a una organización internacional?",
+  "opciones": [
+   "Ley orgánica",
+   "Ley ordinaria",
+   "Real decreto",
+   "Decreto legislativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 93 CE: mediante ley orgánica se podrá autorizar la celebración de tratados por los que se atribuya a una organización internacional el ejercicio de competencias derivadas de la Constitución.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-525",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "94.1",
+  "enunciado": "¿En cuál de estos casos se requiere la previa autorización de las Cortes Generales para obligarse por un tratado?",
+  "opciones": [
+   "Tratados de carácter político",
+   "Tratados de cooperación cultural sin carga financiera",
+   "Cualquier convenio administrativo técnico",
+   "Ninguno: basta con la decisión del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 94.1.a CE: requieren previa autorización de las Cortes los tratados de carácter político (entre otros).",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-526",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "94.2",
+  "enunciado": "¿Qué ocurre con los tratados no incluidos en el artículo 94.1?",
+  "opciones": [
+   "El Congreso y el Senado serán inmediatamente informados de su conclusión",
+   "Requieren autorización del Congreso únicamente",
+   "Deben ser ratificados por referéndum",
+   "No se comunican a las Cámaras"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 94.2 CE: el Congreso y el Senado serán inmediatamente informados de la conclusión de los restantes tratados.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-527",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "95.1",
+  "enunciado": "Si un tratado contiene estipulaciones contrarias a la Constitución, ¿qué exige su celebración?",
+  "opciones": [
+   "La previa revisión constitucional",
+   "La aprobación por ley orgánica",
+   "La autorización del Tribunal Constitucional",
+   "Una reserva expresa del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 95.1 CE: exigirá la previa revisión constitucional.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-528",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "95.2",
+  "enunciado": "¿Quién puede requerir al Tribunal Constitucional para que declare si un tratado contradice la Constitución?",
+  "opciones": [
+   "El Gobierno o cualquiera de las Cámaras",
+   "Solo el Rey",
+   "Cualquier ciudadano",
+   "Exclusivamente el Defensor del Pueblo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 95.2 CE: el Gobierno o cualquiera de las Cámaras puede requerir al Tribunal Constitucional.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-529",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "96.1",
+  "enunciado": "¿Cuándo forman parte del ordenamiento interno los tratados internacionales válidamente celebrados?",
+  "opciones": [
+   "Una vez publicados oficialmente en España",
+   "Desde su firma por el Gobierno",
+   "Desde su autorización por el Senado",
+   "Desde su aprobación por referéndum"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 96.1 CE: forman parte del ordenamiento interno una vez publicados oficialmente en España.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-530",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "96.2",
+  "enunciado": "¿Qué procedimiento se utiliza para denunciar los tratados y convenios internacionales?",
+  "opciones": [
+   "El mismo previsto para su aprobación en el artículo 94",
+   "El decreto del Presidente del Gobierno",
+   "La mayoría absoluta del Senado",
+   "Un referéndum consultivo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 96.2 CE: se utilizará el mismo procedimiento previsto para su aprobación en el art. 94.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-531",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "97",
+  "enunciado": "¿Qué potestades ejerce el Gobierno, además de dirigir la política y la Administración?",
+  "opciones": [
+   "La función ejecutiva y la potestad reglamentaria",
+   "La potestad legislativa ordinaria y la jurisdiccional",
+   "La función ejecutiva y la iniciativa de reforma de los Estatutos",
+   "La potestad reglamentaria exclusiva y la de indulto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 97 CE: ejerce la función ejecutiva y la potestad reglamentaria de acuerdo con la Constitución y las leyes.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-532",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "98.2",
+  "enunciado": "¿Qué hace el Presidente del Gobierno respecto a los demás miembros según el artículo 98.2?",
+  "opciones": [
+   "Dirige la acción del Gobierno y coordina las funciones de los demás miembros",
+   "Asume la responsabilidad directa de la gestión de los Ministros",
+   "Sustituye la competencia de cada Ministro",
+   "Dirige la Administración de Justicia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 98.2 CE: dirige la acción del Gobierno y coordina las funciones, sin perjuicio de la competencia y responsabilidad directa de éstos en su gestión.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-533",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "98.3",
+  "enunciado": "¿Qué actividad tienen prohibida los miembros del Gobierno?",
+  "opciones": [
+   "Cualquier actividad profesional o mercantil",
+   "Ejercer el mandato parlamentario",
+   "Dirigir su Departamento",
+   "Asistir a las sesiones de las Cámaras"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 98.3 CE: no podrán ejercer otras funciones representativas que las del mandato parlamentario, ni función pública ajena a su cargo, ni actividad profesional o mercantil.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-534",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "98.4",
+  "enunciado": "¿Qué regulará la ley respecto de los miembros del Gobierno?",
+  "opciones": [
+   "Su estatuto e incompatibilidades",
+   "Su nombramiento por el Congreso",
+   "Su responsabilidad civil exclusiva",
+   "Su retribución por el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 98.4 CE: la ley regulará el estatuto e incompatibilidades de los miembros del Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-535",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.2",
+  "enunciado": "El candidato propuesto para la Presidencia del Gobierno, ante el Congreso, debe:",
+  "opciones": [
+   "Exponer el programa político y solicitar la confianza de la Cámara",
+   "Presentar una moción de censura",
+   "Jurar el cargo ante el Rey antes de la votación",
+   "Pedir autorización al Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.2 CE: expondrá el programa político del Gobierno que pretenda formar y solicitará la confianza de la Cámara.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-536",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.3",
+  "enunciado": "¿Qué mayoría se exige en la primera votación de investidura?",
+  "opciones": [
+   "Mayoría absoluta del Congreso",
+   "Mayoría simple",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.3 CE: voto de la mayoría absoluta de los miembros del Congreso.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-537",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.5",
+  "enunciado": "Si pasados dos meses desde la primera votación de investidura ningún candidato obtiene la confianza, ¿qué ocurre?",
+  "opciones": [
+   "El Rey disuelve ambas Cámaras y convoca elecciones con el refrendo del Presidente del Congreso",
+   "El Rey nombra Presidente al candidato más votado",
+   "El Senado propone un candidato",
+   "Continúa el Gobierno anterior sin límite de tiempo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.5 CE: el Rey disolverá ambas Cámaras y convocará nuevas elecciones con el refrendo del Presidente del Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-538",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "100",
+  "enunciado": "¿Quién nombra y separa a los demás miembros del Gobierno?",
+  "opciones": [
+   "El Rey, a propuesta del Presidente del Gobierno",
+   "El Presidente del Gobierno directamente",
+   "El Congreso a propuesta del Rey",
+   "El Consejo de Ministros"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 100 CE: serán nombrados y separados por el Rey, a propuesta de su Presidente.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-539",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "101.1",
+  "enunciado": "¿En cuál de estos casos cesa el Gobierno según el artículo 101.1?",
+  "opciones": [
+   "Por dimisión o fallecimiento de su Presidente",
+   "Por dimisión de cualquier Ministro",
+   "Por la disolución del Senado",
+   "Por veto del Senado a un proyecto de ley"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 101.1 CE: cesa tras elecciones generales, pérdida de confianza parlamentaria o dimisión o fallecimiento de su Presidente.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-540",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "101.2",
+  "enunciado": "¿Hasta cuándo continúa el Gobierno cesante?",
+  "opciones": [
+   "Hasta la toma de posesión del nuevo Gobierno",
+   "Durante un máximo de dos meses",
+   "Hasta la votación de investidura",
+   "Hasta la disolución de las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 101.2 CE: el Gobierno cesante continuará en funciones hasta la toma de posesión del nuevo Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-541",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "102.1",
+  "enunciado": "¿Ante qué órgano es exigible la responsabilidad criminal del Presidente y los demás miembros del Gobierno?",
+  "opciones": [
+   "La Sala de lo Penal del Tribunal Supremo",
+   "El Tribunal Constitucional",
+   "La Audiencia Nacional",
+   "El Congreso de los Diputados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 102.1 CE: ante la Sala de lo Penal del Tribunal Supremo.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-542",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "102.2",
+  "enunciado": "¿Quién puede plantear la acusación por traición o delito contra la seguridad del Estado contra miembros del Gobierno?",
+  "opciones": [
+   "La cuarta parte de los miembros del Congreso, con aprobación de la mayoría absoluta del mismo",
+   "La décima parte de los Diputados, con mayoría simple",
+   "El Senado por mayoría absoluta",
+   "La Fiscalía General del Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 102.2 CE: iniciativa de la cuarta parte de los miembros del Congreso y aprobación de la mayoría absoluta del mismo.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-543",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "102.3",
+  "enunciado": "¿Es aplicable la prerrogativa real de gracia a los supuestos de responsabilidad criminal del artículo 102?",
+  "opciones": [
+   "No, no será aplicable a ninguno de ellos",
+   "Sí, a todos",
+   "Solo si lo propone el Gobierno",
+   "Solo en los delitos que no sean de traición"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 102.3 CE: la prerrogativa real de gracia no será aplicable a ninguno de los supuestos del artículo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-544",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "103.2",
+  "enunciado": "¿Cómo se crean, rigen y coordinan los órganos de la Administración del Estado?",
+  "opciones": [
+   "De acuerdo con la ley",
+   "Por decreto del Gobierno libremente",
+   "Por acuerdo del Consejo de Estado",
+   "Por resolución de cada Ministerio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 103.2 CE: son creados, regidos y coordinados de acuerdo con la ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-545",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "103.1",
+  "enunciado": "¿Con qué sometimiento actúa la Administración Pública según el artículo 103.1?",
+  "opciones": [
+   "Pleno a la ley y al Derecho",
+   "Relativo a la ley y a la jurisprudencia",
+   "Pleno a las instrucciones del Gobierno",
+   "Exclusivo a los reglamentos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 103.1 CE: actúa con sometimiento pleno a la ley y al Derecho.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-546",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "103.3",
+  "enunciado": "¿Qué NO figura entre los aspectos que la ley regulará respecto de los funcionarios públicos en el artículo 103.3?",
+  "opciones": [
+   "La carrera profesional por antigüedad automática",
+   "El sistema de incompatibilidades",
+   "Las peculiaridades de su derecho a sindicación",
+   "Las garantías de imparcialidad en el ejercicio de sus funciones"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 103.3 CE: estatuto, acceso por mérito y capacidad, sindicación, incompatibilidades y garantías de imparcialidad; no menciona la antigüedad automática.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-547",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "104.1",
+  "enunciado": "¿Cuál es la misión de las Fuerzas y Cuerpos de seguridad según el artículo 104.1?",
+  "opciones": [
+   "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana",
+   "Defender la integridad territorial",
+   "Administrar justicia en materia penal",
+   "Controlar la potestad reglamentaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 104.1 CE: bajo la dependencia del Gobierno, protegen el libre ejercicio de derechos y libertades y garantizan la seguridad ciudadana.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-548",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "104.2",
+  "enunciado": "¿Qué norma determina las funciones y principios de actuación de las Fuerzas y Cuerpos de seguridad?",
+  "opciones": [
+   "Una ley orgánica",
+   "Una ley ordinaria",
+   "Un real decreto",
+   "Un decreto legislativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 104.2 CE: una ley orgánica determinará las funciones, principios básicos de actuación y estatutos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-549",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "105",
+  "enunciado": "¿Qué regulará la ley según el artículo 105.b?",
+  "opciones": [
+   "El acceso de los ciudadanos a los archivos y registros administrativos, con excepciones",
+   "La publicidad de las sesiones del Consejo de Ministros",
+   "El control parlamentario de los reglamentos",
+   "La responsabilidad penal de los funcionarios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 105.b CE: acceso a archivos y registros administrativos, salvo seguridad y defensa del Estado, averiguación de delitos e intimidad de las personas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-550",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "106.1",
+  "enunciado": "¿Quién controla la potestad reglamentaria y la legalidad de la actuación administrativa?",
+  "opciones": [
+   "Los Tribunales",
+   "El Consejo de Estado",
+   "El Congreso de los Diputados",
+   "El Defensor del Pueblo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 106.1 CE: los Tribunales controlan la potestad reglamentaria y la legalidad de la actuación administrativa.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-551",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "106.2",
+  "enunciado": "¿Qué supuesto excluye el derecho a indemnización por lesiones derivadas del funcionamiento de los servicios públicos?",
+  "opciones": [
+   "La fuerza mayor",
+   "El caso fortuito",
+   "La negligencia del perjudicado en cualquier caso",
+   "La actuación de funcionarios interinos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 106.2 CE: derecho a ser indemnizados por toda lesión, salvo en los casos de fuerza mayor.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-552",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "107",
+  "enunciado": "¿Cuál es el supremo órgano consultivo del Gobierno?",
+  "opciones": [
+   "El Consejo de Estado",
+   "El Consejo General del Poder Judicial",
+   "El Tribunal de Cuentas",
+   "El Defensor del Pueblo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 107 CE: el Consejo de Estado es el supremo órgano consultivo del Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-553",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "108",
+  "enunciado": "¿Ante quién responde solidariamente el Gobierno en su gestión política?",
+  "opciones": [
+   "Ante el Congreso de los Diputados",
+   "Ante las Cortes Generales en pleno",
+   "Ante el Senado",
+   "Ante el Rey"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 108 CE: el Gobierno responde solidariamente en su gestión política ante el Congreso de los Diputados.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-554",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "109",
+  "enunciado": "¿A través de quién pueden las Cámaras recabar información y ayuda del Gobierno?",
+  "opciones": [
+   "De sus Presidentes",
+   "De la Mesa del Congreso únicamente",
+   "Del Defensor del Pueblo",
+   "Del Presidente del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 109 CE: las Cámaras y sus Comisiones recaban información a través de los Presidentes de aquéllas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-555",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "110.1",
+  "enunciado": "Según el artículo 110.1, las Cámaras y sus Comisiones pueden:",
+  "opciones": [
+   "Reclamar la presencia de los miembros del Gobierno",
+   "Cesar a los Ministros",
+   "Nombrar a los Secretarios de Estado",
+   "Disolver el Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 110.1 CE: las Cámaras y sus Comisiones pueden reclamar la presencia de los miembros del Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-556",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "110.2",
+  "enunciado": "Los miembros del Gobierno, ante las Cámaras, tienen:",
+  "opciones": [
+   "Acceso a las sesiones y facultad de hacerse oír, pudiendo pedir que informen funcionarios de sus Departamentos",
+   "Derecho de voto en las Comisiones",
+   "Obligación de abandonar la sesión tras su intervención",
+   "Solo acceso a las sesiones del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 110.2 CE: acceso a las sesiones y Comisiones y facultad de hacerse oír, pudiendo solicitar que informen funcionarios de sus Departamentos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-557",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "111.1",
+  "enunciado": "¿Qué establecen los Reglamentos para las interpelaciones y preguntas al Gobierno?",
+  "opciones": [
+   "Un tiempo mínimo semanal",
+   "Un tiempo máximo mensual",
+   "Un número máximo de preguntas al año",
+   "Un trámite previo de autorización del Presidente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 111.1 CE: para esta clase de debate los Reglamentos establecerán un tiempo mínimo semanal.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-558",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "111.2",
+  "enunciado": "¿A qué puede dar lugar toda interpelación?",
+  "opciones": [
+   "A una moción en la que la Cámara manifieste su posición",
+   "A una moción de censura",
+   "A una cuestión de confianza",
+   "A la dimisión automática del Ministro"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 111.2 CE: toda interpelación podrá dar lugar a una moción en la que la Cámara manifieste su posición.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-559",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "112",
+  "enunciado": "¿Quién puede plantear la cuestión de confianza ante el Congreso?",
+  "opciones": [
+   "El Presidente del Gobierno, previa deliberación del Consejo de Ministros",
+   "El Consejo de Ministros por mayoría",
+   "Un Ministro con autorización del Rey",
+   "El Presidente del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 112 CE: el Presidente del Gobierno, previa deliberación del Consejo de Ministros.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-560",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "113.1",
+  "enunciado": "¿Qué mayoría se requiere para adoptar la moción de censura?",
+  "opciones": [
+   "Mayoría absoluta",
+   "Mayoría simple",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 113.1 CE: el Congreso puede exigir la responsabilidad política del Gobierno mediante la adopción por mayoría absoluta de la moción de censura.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-561",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "113.2",
+  "enunciado": "¿Cuántos Diputados como mínimo deben proponer una moción de censura?",
+  "opciones": [
+   "La décima parte",
+   "La cuarta parte",
+   "La quinta parte",
+   "La mitad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 113.2 CE: debe ser propuesta al menos por la décima parte de los Diputados.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-562",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "113.3",
+  "enunciado": "¿Cuántos días deben transcurrir desde su presentación hasta que pueda votarse una moción de censura?",
+  "opciones": [
+   "Cinco días",
+   "Tres días",
+   "Diez días",
+   "Quince días"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 113.3 CE: no podrá ser votada hasta que transcurran cinco días desde su presentación.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-563",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "113.4",
+  "enunciado": "Si la moción de censura no es aprobada, ¿qué consecuencia tiene para sus signatarios?",
+  "opciones": [
+   "No podrán presentar otra durante el mismo período de sesiones",
+   "No podrán presentar otra durante la legislatura",
+   "No podrán presentar otra durante un año",
+   "Deben dimitir como Diputados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 113.4 CE: sus signatarios no podrán presentar otra durante el mismo período de sesiones.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-564",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "114.1",
+  "enunciado": "Si el Congreso niega su confianza al Gobierno, ¿qué debe hacer este?",
+  "opciones": [
+   "Presentar su dimisión al Rey",
+   "Disolver las Cortes",
+   "Plantear una nueva cuestión de confianza",
+   "Continuar en el cargo hasta la siguiente legislatura"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 114.1 CE: presentará su dimisión al Rey, procediéndose a la designación de Presidente según el art. 99.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-565",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "114.2",
+  "enunciado": "Si el Congreso adopta una moción de censura, el candidato incluido en ella:",
+  "opciones": [
+   "Se entiende investido de la confianza de la Cámara y es nombrado por el Rey",
+   "Debe someterse a una nueva votación de investidura",
+   "Es propuesto por el Rey tras consultar a los grupos",
+   "Asume el cargo tras refrendo del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 114.2 CE: el candidato se entenderá investido de la confianza de la Cámara y el Rey le nombrará Presidente del Gobierno.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-566",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "115.1",
+  "enunciado": "¿Quién decreta la disolución del Congreso, del Senado o de las Cortes Generales?",
+  "opciones": [
+   "El Rey, a propuesta del Presidente del Gobierno",
+   "El Presidente del Gobierno",
+   "El Presidente del Congreso",
+   "El Consejo de Ministros"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 115.1 CE: el Presidente propone la disolución, que será decretada por el Rey.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-567",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "115.2",
+  "enunciado": "¿Cuándo no puede presentarse la propuesta de disolución?",
+  "opciones": [
+   "Cuando esté en trámite una moción de censura",
+   "Cuando esté en trámite una cuestión de confianza",
+   "Durante el primer año de legislatura",
+   "Cuando haya un decreto-ley pendiente de convalidar"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 115.2 CE: no podrá presentarse cuando esté en trámite una moción de censura.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-568",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "115.3",
+  "enunciado": "¿Cuánto tiempo debe transcurrir desde la anterior disolución para que proceda otra, salvo el artículo 99.5?",
+  "opciones": [
+   "Un año",
+   "Seis meses",
+   "Dos años",
+   "Una legislatura completa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 115.3 CE: no procederá nueva disolución antes de que transcurra un año desde la anterior.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-569",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.1",
+  "enunciado": "¿Qué regula una ley orgánica en relación con el artículo 116?",
+  "opciones": [
+   "Los estados de alarma, de excepción y de sitio y sus competencias y limitaciones",
+   "Solo el estado de sitio",
+   "Los referendos autonómicos",
+   "La suspensión del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.1 CE: una ley orgánica regulará los estados de alarma, de excepción y de sitio, y las competencias y limitaciones correspondientes.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-570",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.3",
+  "enunciado": "¿Cuál es la duración máxima inicial del estado de excepción?",
+  "opciones": [
+   "Treinta días, prorrogables por otro plazo igual",
+   "Quince días, prorrogables",
+   "Sesenta días sin prórroga",
+   "Un mes, prorrogable indefinidamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.3 CE: duración que no podrá exceder de treinta días, prorrogables por otro plazo igual, con los mismos requisitos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-571",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.4",
+  "enunciado": "¿Quién declara el estado de sitio?",
+  "opciones": [
+   "La mayoría absoluta del Congreso, a propuesta exclusiva del Gobierno",
+   "El Gobierno mediante decreto",
+   "El Rey a propuesta del Presidente del Gobierno",
+   "El Congreso por mayoría simple"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.4 CE: será declarado por la mayoría absoluta del Congreso, a propuesta exclusiva del Gobierno.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-572",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.2",
+  "enunciado": "En el estado de alarma, ¿sin autorización de quién no puede prorrogarse el plazo?",
+  "opciones": [
+   "Del Congreso de los Diputados",
+   "Del Senado",
+   "Del Tribunal Constitucional",
+   "Del Rey"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.2 CE: se da cuenta al Congreso, sin cuya autorización no podrá ser prorrogado dicho plazo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-573",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.5",
+  "enunciado": "¿Qué no puede hacerse mientras estén declarados los estados de alarma, excepción o sitio?",
+  "opciones": [
+   "Disolver el Congreso",
+   "Convocar elecciones locales",
+   "Reunir a la Diputación Permanente",
+   "Tramitar proyectos de ley"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.5 CE: no podrá procederse a la disolución del Congreso mientras estén declarados alguno de estos estados.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-574",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.6",
+  "enunciado": "¿Qué efecto tiene la declaración de estos estados sobre la responsabilidad del Gobierno y sus agentes?",
+  "opciones": [
+   "No modifica el principio de responsabilidad reconocido en la Constitución y las leyes",
+   "Suspende su responsabilidad durante el estado",
+   "Limita la responsabilidad a la penal",
+   "Traslada la responsabilidad al Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.6 CE: la declaración no modifica el principio de responsabilidad del Gobierno y sus agentes.",
+  "dificultad": 3
+ }
+]

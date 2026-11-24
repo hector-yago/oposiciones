@@ -186,6 +186,161 @@ try {
     await click('[data-act=next]');
   }
 
+  // ===== Fase 2: tienda, mascotas, cuidados =====
+  const tap = (sel) => evaluate(`document.querySelector(${JSON.stringify(sel)}).dispatchEvent(new MouseEvent('click', { bubbles: true }))`);
+  const st = (expr) => evaluate(`(() => { const s = window.__store().state; return ${expr}; })()`);
+  const buyPet = async (id, name) => {
+    await click('nav.tabs [data-v=tienda]');
+    await click('[data-act=cat][data-c=vivos]');
+    await click(`[data-testid=item-${id}] [data-act=buy]`);
+    assert.equal(await evaluate('!!document.querySelector("#nameform")'), true, `no pide nombre para ${id}`);
+    await evaluate(`(() => { document.getElementById('pname').value = ${JSON.stringify(name)}; document.getElementById('nameform').requestSubmit(); })()`);
+    await sleep(300);
+  };
+  const buyThing = async (cat, id) => {
+    await click('nav.tabs [data-v=tienda]');
+    await click(`[data-act=cat][data-c=${cat}]`);
+    await click(`[data-testid=item-${id}] [data-act=buy]`);
+    await sleep(150);
+  };
+
+  await evaluate('window.__store().update((d) => { d.coins = 300; })');
+  await buyPet('cactus', 'Pin');
+  assert.match(await text(), /¡Hola, Pin!/);
+  assert.equal(await coins(), 299);
+  assert.equal(await evaluate('document.querySelectorAll("g.pet").length'), 1);
+  await buyThing('herramientas', 'regadera');
+  assert.equal(await st('s.inventory.some((i) => i.itemId === "regadera")'), true);
+  assert.equal(await evaluate('document.querySelector("[data-testid=item-regadera] button").disabled'), true, 'no se puede comprar dos veces');
+  await buyPet('gato', 'Michi');
+  await buyThing('herramientas', 'pecera');
+  await buyPet('pez', 'Nemo');
+  await buyThing('herramientas', 'cuenco-agua');
+  await buyThing('accesorios', 'sofa');
+  await buyThing('accesorios', 'tele');
+  await buyThing('accesorios', 'alfombra');
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('document.querySelectorAll("g.pet").length'), 3);
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=pet-row]").length'), 3);
+  await shot('10-casa-con-mascotas');
+  // comprar sin monedas: botón desactivado
+  await evaluate('window.__store().update((d) => { d.coins = 0; })');
+  await click('nav.tabs [data-v=tienda]');
+  await click('[data-act=cat][data-c=vivos]');
+  assert.equal(await evaluate('document.querySelector("[data-testid=item-perro] button").disabled'), true);
+  await shot('11-tienda-con-compras');
+
+  // ===== Fase 3: castigos (3 fallos seguidos) =====
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-act=quiz]');
+  await sleep(300);
+  await answerCurrent(false);
+  await click('[data-act=next]');
+  await answerCurrent(false);
+  assert.match(await text(), /Un fallo más y tus mascotas se enfadarán/);
+  await click('[data-act=next]');
+  await answerCurrent(false);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=mischief]")'), true, 'falta el aviso de castigo');
+  assert.equal(await st('s.inventory.filter((i) => i.mood === "angry").length'), 3);
+  await shot('12-castigo');
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('document.querySelectorAll("g.pet.angry").length'), 3);
+  assert.equal(await evaluate('document.querySelectorAll("[data-poop]").length'), 2, 'gato y pez ensucian; el cactus no');
+  assert.equal(await evaluate('document.querySelector("nav.tabs button.dot, nav.tabs button[aria-current]") !== null'), true);
+  await shot('13-mascotas-enfadadas');
+  // el personaje limpia y calma
+  await tap('[data-poop]');
+  await sleep(150);
+  await tap('[data-poop]');
+  await sleep(150);
+  assert.equal(await evaluate('document.querySelectorAll("[data-poop]").length'), 0);
+  assert.equal(await st('s.stats.care.cleaned'), 2);
+  for (const uid of await st('s.inventory.filter((i) => ["cactus","gato","pez"].includes(i.itemId)).map((i) => i.uid)')) {
+    await tap(`g.pet[data-pet="${uid}"]`);
+    await sleep(120);
+  }
+  assert.equal(await st('s.inventory.filter((i) => i.mood === "angry").length'), 0);
+  assert.equal(await st('s.stats.care.calmed'), 3);
+  assert.equal(await evaluate('document.querySelectorAll("g.pet.angry").length'), 0);
+
+  // ===== Mascota feliz → moneda =====
+  await evaluate(`window.__store().update((d) => { d.inventory.find((i) => i.itemId === 'cactus').joy = 11; })`);
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-act=quiz]');
+  await sleep(300);
+  await answerCurrent(true);
+  assert.equal(await st('s.inventory.find((i) => i.itemId === "cactus").coin'), true, 'el cactus debería haber encontrado una moneda');
+  assert.match(await text(), /ha encontrado una moneda/);
+  const before = await coins();
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('document.querySelectorAll("[data-petcoin]").length'), 1);
+  await shot('14-moneda-de-mascota');
+  await tap('[data-petcoin]');
+  await sleep(200);
+  assert.ok((await coins()) > before, 'no se cobró la moneda de la mascota');
+  assert.equal(await evaluate('document.querySelectorAll("[data-petcoin]").length'), 0);
+  assert.equal(await st('s.stats.care.coins'), 1);
+
+  // ===== Comodín 50 % =====
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-act=quiz]');
+  await sleep(300);
+  assert.equal(await evaluate('document.querySelector("[data-act=joker]").disabled'), false);
+  await click('[data-act=joker]');
+  await sleep(150);
+  assert.equal(await evaluate('document.querySelectorAll(".opt.gone").length'), 2);
+  assert.equal(await evaluate('document.querySelector("[data-act=joker]").disabled'), true);
+  assert.match(await evaluate('document.querySelector("[data-act=joker]").textContent'), /Comodín en/);
+  assert.equal(await st('s.joker.uses'), 1);
+  await shot('15-comodin');
+  await answerCurrent(true); // la correcta nunca se oculta
+
+  // ===== Entrada diaria y caja misteriosa =====
+  await evaluate(`window.__store().update((d) => {
+    const y = new Date(); y.setDate(y.getDate() - 1);
+    const k = y.getFullYear() + '-' + String(y.getMonth() + 1).padStart(2, '0') + '-' + String(y.getDate()).padStart(2, '0');
+    d.daily = { last: k, streak: 6, boxes: 0, opened: 0 };
+  })`);
+  const c0 = await coins();
+  await evaluate('window.__daily()');
+  await sleep(300);
+  assert.equal(await coins(), c0 + 1, 'bonus diario');
+  assert.equal(await st('s.daily.boxes'), 1);
+  assert.equal(await st('s.daily.streak'), 7);
+  await click('nav.tabs [data-v=casa]');
+  await shot('16-caja-misteriosa');
+  await click('[data-testid=open-box]');
+  await sleep(200);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=reveal]")'), true);
+  await shot('17-caja-abierta');
+  await click('[data-act=sheet-close-render]');
+  assert.equal(await st('s.inventory.filter((i) => ["guirnalda","bandera","mapa","globos","libro-ce"].includes(i.itemId)).length'), 1);
+  assert.equal(await st('s.daily.boxes'), 0);
+  await evaluate('window.__daily()');
+  assert.equal(await coins(), c0 + 1, 'solo un bonus por día');
+
+  // ===== Logros y estadísticas finales =====
+  await click('nav.tabs [data-v=logros]');
+  t = await text();
+  assert.match(t, /\d+ de \d+ logros/);
+  assert.equal(await evaluate('document.querySelector("[data-testid=ach-first_pet]").classList.contains("got")'), true);
+  assert.equal(await evaluate('document.querySelector("[data-testid=ach-has_perro]").classList.contains("locked")'), true);
+  assert.equal(await evaluate('document.querySelector("[data-testid=ach-clean_1]").classList.contains("got")'), true);
+  assert.equal(await evaluate('document.querySelector("[data-testid=ach-joker_first]").classList.contains("got")'), true);
+  await shot('18-logros');
+  await click('nav.tabs [data-v=stats]');
+  assert.match(await text(), /Últimos 7 días/);
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=week] .day").length'), 7);
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=art-row]").length > 0'), true);
+  await shot('19-estadisticas-final');
+  await click('nav.tabs [data-v=casa]');
+  await shot('20-casa-final-oscuro');
+
+  // Datos íntegros al recargar
+  await goto(base);
+  assert.equal(await st('s.inventory.filter((i) => ["cactus","gato","pez"].includes(i.itemId)).length'), 3);
+  assert.equal(await st('s.schemaVersion'), 2);
+
   assert.deepEqual(errors, [], `errores de JS: ${errors.join(' | ')}`);
   console.log('E2E correcto');
 } finally {

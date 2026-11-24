@@ -17,3 +17,7 @@ Mismo mecanismo que task-reminder. El progreso (monedas, mascotas, historial de 
 4. Anotarlo aquí y subir la versión de la app.
 
 Nota: el banco de preguntas (`data/*.json`) **no** forma parte del documento del usuario; el progreso se enlaza por `id` de pregunta, que por tanto es **estable e inmutable** (si una pregunta se corrige, conserva su id; si se retira, se marca `retirada: true`, no se borra).
+
+## Historial de esquemas
+- **1** (app 0.1.0): perfil, monedas, racha, progreso por pregunta, estadísticas por Título.
+- **2** (app 0.2.0): inventario con mascotas (nombre, XP, ánimo, suciedad, alegría, moneda), comodín, entrada diaria y cajas, logros, estadísticas por día y cuidados. Migración 1→2 en `js/migrations.js`; fixtures `tests/fixtures/v1.json` y `v2.json`.

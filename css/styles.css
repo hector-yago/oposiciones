@@ -298,3 +298,86 @@ nav.tabs button.hint svg { transform-origin: center; }
 .bar-row b { text-align: right; }
 .btn.file { display: inline-flex; align-items: center; cursor: pointer; }
 .empty { white-space: normal; }
+
+/* ===== Tienda, mascotas, logros, estadísticas, cuidados ===== */
+.thumb { width: 44px; height: 44px; display: block; }
+.thumb.big { width: 96px; height: 96px; }
+.thumb-wrap { flex: none; width: 52px; height: 52px; display: grid; place-items: center; background: var(--surface-2); border-radius: 12px; }
+.thumb-wrap .thumb { max-width: 44px; max-height: 44px; }
+.item .body { flex: 1; min-width: 0; }
+.row.item { gap: 10px; }
+.item .price { margin-left: auto; }
+.btn.small.primary { background: var(--primary); color: var(--primary-ink); border-color: var(--primary); }
+
+.pets h3, .daily h3 { margin-bottom: 10px; }
+.pet-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.pet-row:last-child { border-bottom: 0; }
+.pet-pic { flex: none; width: 56px; height: 56px; border: 0; border-radius: 14px; background: var(--surface-2); padding: 4px; }
+.pet-pic .thumb { width: 100%; height: 100%; }
+.pet-info { flex: 1; min-width: 0; display: grid; gap: 3px; }
+.pet-info .bar { height: 8px; }
+.tag.bad { background: color-mix(in srgb, var(--danger) 16%, var(--surface-2)); color: var(--danger); }
+.tag.ok { background: var(--ok-bg); color: var(--ok); }
+.tag.joy { color: #dc2626; }
+
+.daily .dots { display: flex; gap: 6px; margin-bottom: 8px; }
+.daily .dots i { flex: 1; height: 10px; border-radius: 999px; background: var(--surface-2); }
+.daily .dots i.on { background: var(--accent); }
+.daily .btn { margin-top: 8px; }
+nav.tabs button.dot { position: relative; }
+nav.tabs button.dot::after { content: ''; position: absolute; top: 8px; left: calc(50% + 8px); width: 10px; height: 10px; border-radius: 50%; background: var(--danger); border: 2px solid var(--surface); }
+
+/* Escena: estados y animaciones */
+.pet, .poop, .petcoin { cursor: pointer; }
+.pet-in { transform-box: fill-box; transform-origin: 50% 100%; }
+.pet.hop .pet-in { animation: hop 0.6s ease-out 2; }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px) scale(1.06); } }
+.pet.angry .pet-in { animation: shake 0.5s ease-in-out infinite; filter: saturate(0.75) brightness(0.95); }
+@keyframes shake { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-3deg); } 75% { transform: rotate(3deg); } }
+.poop-in { transform-box: fill-box; transform-origin: 50% 100%; animation: wobble 2.4s ease-in-out infinite; }
+@keyframes wobble { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1, 0.94); } }
+.coin-in { transform-box: fill-box; transform-origin: 50% 50%; animation: bob-coin 1.2s ease-in-out infinite; filter: drop-shadow(0 0 3px rgba(245, 179, 1, 0.8)); }
+@keyframes bob-coin { 0%, 100% { translate: 0 0; } 50% { translate: 0 -4px; } }
+.heart { animation: float-heart 2.4s ease-in-out infinite; transform-box: fill-box; }
+@keyframes float-heart { 0%, 100% { translate: 0 0; opacity: 0.9; } 50% { translate: 0 -5px; opacity: 1; } }
+.swim-0 { animation: swim 5s ease-in-out infinite alternate; }
+.swim-1 { animation: swim 6.5s ease-in-out infinite alternate-reverse; }
+.swim-2 { animation: swim 7.5s ease-in-out infinite alternate; }
+@keyframes swim { from { translate: -6px 0; } to { translate: 8px -3px; } }
+.balloon-sway { transform-box: fill-box; transform-origin: 50% 100%; animation: sway 4s ease-in-out infinite; }
+@keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+/* Cuestionario */
+.opt.gone { opacity: 0.25; border-style: dashed; }
+.opt.gone span:last-child { color: var(--muted); }
+.joker { margin-top: 12px; width: 100%; }
+.feedback .grown { color: var(--ok); font-weight: 600; }
+.feedback .mischief { color: var(--danger); font-weight: 700; }
+.feedback .mischief.warn { color: var(--warn); font-weight: 600; }
+
+/* Logros */
+.ach .medal { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); color: var(--muted); filter: grayscale(1); opacity: 0.6; }
+.ach .medal.done { background: linear-gradient(135deg, #fde68a, #f59e0b); color: #78350f; filter: none; opacity: 1; box-shadow: 0 0 0 3px color-mix(in srgb, #f59e0b 35%, transparent); }
+.medal-art { width: 38px; height: 38px; }
+.ach .body .bar { margin-top: 4px; height: 8px; }
+.row.ach.locked .title { color: var(--muted); }
+.row.ach { gap: 12px; }
+
+/* Estadísticas: semana */
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; align-items: end; text-align: center; }
+.week .col { display: flex; align-items: flex-end; height: 90px; background: var(--surface-2); border-radius: 8px; overflow: hidden; }
+.week .n { display: block; width: 100%; background: color-mix(in srgb, var(--accent) 40%, var(--surface-2)); position: relative; min-height: 0; }
+.week .ok { display: block; position: absolute; left: 0; right: 0; bottom: 0; background: var(--accent); }
+.week b { display: block; font-size: 0.85rem; margin-top: 4px; }
+.week small { color: var(--muted); }
+
+/* Caja misteriosa */
+.reveal { text-align: center; }
+.reveal-art { display: grid; place-items: center; margin: 8px 0; animation: pop 0.6s ease-out; }
+.reveal-art .coin { width: 80px; height: 80px; }
+.reveal .thumb { margin: 0 auto; }
+
+/* Ajustes de maquetación */
+.pet-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.pet-head .tag { margin-left: 0; }
+.toast { bottom: calc(var(--safe-b) + 84px); }
