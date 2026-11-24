@@ -24,4 +24,7 @@ PWA personal para estudiar oposiciones de forma gamificada: respondes preguntas 
 4. Publicar: `git push` a `main` (repo `hector-yago/oposiciones`, GitHub Pages). **Requiere autorización expresa del usuario.**
 
 ## Estado
-F0 (andamiaje) hecho. Siguiente: F1 (núcleo: onboarding, casa, preguntas, monedas, repetición espaciada, banco CE).
+- 0.1.0 (F1 jugable): onboarding, casa vacía con avatar y diálogo guiado, tienda (solo catálogo, sin compra), preguntas con monedas/rachas/repetición espaciada, estadísticas básicas, ajustes (tema, exportar/importar, reiniciar). 18 tests unitarios + e2e (`tests/e2e/e2e.mjs`) en verde.
+- Banco CE: **68 preguntas de muestra**, redactadas de memoria y **pendientes de revisión contra el BOE** (no afirmar que están verificadas). Objetivo ≥360.
+- Siguiente: ampliar y revisar el banco (F1b); F2 tienda con compra, mascotas y crecimiento; F3 comodín 50 %, logros.
+- Ganchos de prueba `window.__store`/`__quiz` solo en `localhost`.

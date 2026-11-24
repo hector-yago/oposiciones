@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "profile": { "name": "Ana", "gender": "chica" },
+  "coins": 12,
+  "streak": { "current": 2, "best": 5 },
+  "progress": {
+    "ce-001": { "box": 2, "ok": 2, "ko": 0, "last": 1700000000000, "due": 1700259200000, "failedSeq": 0 },
+    "ce-002": { "box": 0, "ok": 1, "ko": 1, "last": 1700000100000, "due": 1700000100000, "failedSeq": 4 }
+  },
+  "stats": { "answered": 4, "correct": 3, "byTitle": { "Título I": { "ok": 3, "ko": 1 } } },
+  "flags": { "introSeen": true },
+  "settings": { "theme": "dark" },
+  "meta": {}
+}

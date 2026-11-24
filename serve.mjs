@@ -10,13 +10,14 @@ const port = Number(process.argv.find((a) => /^\d+$/.test(a)) ?? 8097);
 const host = process.argv.includes('--lan') ? '0.0.0.0' : '127.0.0.1';
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.webmanifest': 'application/manifest+json; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png' };
 // Solo se publica lo necesario para la app (nada de tests, node_modules ni ficheros ocultos).
-const allowed = /^(index\.html|sw\.js|manifest\.webmanifest|(css|js|icons|data)\/[\w.-]+)$/;
+const allowed = /^(index\.html|sw\.js|manifest\.webmanifest|(css|js|icons|data)\/([\w-]+\/)*[\w-][\w.-]*)$/;
 
 createServer(async (req, res) => {
   try {
     const rel = decodeURIComponent(new URL(req.url, 'http://x').pathname).replace(/^\/+/, '') || 'index.html';
     const full = normalize(join(root, rel));
-    if (!full.startsWith(root) || !allowed.test(rel.split(sep).join('/'))) {
+    // La ruta ya normalizada (sin «..») es la que debe cumplir la lista de permitidos.
+    if (!full.startsWith(root) || !allowed.test(full.slice(root.length).split(sep).join('/'))) {
       res.writeHead(404).end('No encontrado');
       return;
     }
