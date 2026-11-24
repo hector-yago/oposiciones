@@ -814,7 +814,6 @@ function viewAjustes() {
     <section class="card"><h3>Accesibilidad y temporadas</h3><div class="field"><span class="lbl">Tamaño del texto</span><div class="seg" role="group" aria-label="Tamaño del texto">
       ${[['normal', 'Normal'], ['large', 'Grande'], ['xlarge', 'Muy grande']].map(([v, l]) => `<button data-act="font" data-v="${v}" aria-pressed="${d.settings.fontScale === v}">${l}</button>`).join('')}</div></div>
       <div class="actions"><button class="btn" data-act="calm" aria-pressed="${d.settings.calm}">Menos movimiento: ${d.settings.calm ? 'sí' : 'no'}</button><button class="btn" data-act="season" aria-pressed="${d.settings.season !== 'off'}">Decoración de temporada: ${d.settings.season === 'off' ? 'no' : 'sí'}</button><button class="btn" data-act="sound" data-testid="sound-toggle" aria-pressed="${d.settings.sound}">Sonidos: ${d.settings.sound ? 'sí' : 'no'}</button></div></section>
-      <section class="card"><h3>Modo prueba</h3><p class="muted">Temporal en esta versión, para probar toda la tienda. Se quitará después.</p><div class="actions"><button class="btn" data-act="gift" data-testid="gift-coins">+99 999 monedas</button></div></section>
     <section class="card"><h3>Copia de seguridad</h3><p>Tus datos solo viven en este dispositivo. Guarda una copia de vez en cuando. Para pasar tu progreso a otro móvil: «Copiar código» aquí, y «Pegar código» allí.</p>
       <p class="muted" data-testid="backup-info">${backupInfoText(d)}</p>
       <div class="actions"><button class="btn" data-act="copy-code" data-testid="copy-code">Copiar código</button><button class="btn" data-act="paste-code" data-testid="paste-code">Pegar código</button><button class="btn" data-act="list-backups" data-testid="list-backups">Copias automáticas</button><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
@@ -877,12 +876,6 @@ document.addEventListener('click', async (e) => {
       render();
     } else if (act === 'reload') {
       location.reload();
-    } else if (act === 'gift') {
-      await store.update((d) => {
-        d.coins += 99999;
-      });
-      toast('+99 999 monedas de prueba');
-      render();
     } else if (act === 'sound') {
       await store.update((d) => {
         d.settings.sound = !d.settings.sound;

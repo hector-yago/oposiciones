@@ -1,0 +1,1042 @@
+[
+ {
+  "id": "ce-800",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "1.1",
+  "enunciado": "¿Qué dos calificativos acompañan a la palabra «Estado» en la fórmula «Estado ... de Derecho» del artículo 1.1?",
+  "opciones": [
+   "Social y democrático",
+   "Federal y democrático",
+   "Social y unitario",
+   "Democrático y representativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 1.1 CE: España se constituye en un Estado social y democrático de Derecho.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-801",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "1.1",
+  "enunciado": "¿De qué tipo es el pluralismo que el artículo 1.1 enumera como valor superior del ordenamiento jurídico?",
+  "opciones": [
+   "Pluralismo político",
+   "Pluralismo social",
+   "Pluralismo cultural",
+   "Pluralismo territorial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 1.1 CE: entre los valores superiores figura el pluralismo político.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-802",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "1.1",
+  "enunciado": "¿Cuántos valores superiores del ordenamiento jurídico enumera el artículo 1.1?",
+  "opciones": [
+   "Cuatro",
+   "Tres",
+   "Cinco",
+   "Seis"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 1.1 CE: libertad, justicia, igualdad y pluralismo político, es decir, cuatro.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-803",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "1.3",
+  "enunciado": "¿En qué apartado del artículo 1 se establece la forma política del Estado español?",
+  "opciones": [
+   "En el apartado 3",
+   "En el apartado 1",
+   "En el apartado 2",
+   "No figura en el artículo 1"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 1.3 CE: la forma política del Estado español es la Monarquía parlamentaria.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-804",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "2",
+  "enunciado": "¿Cuál de las siguientes expresiones NO figura en el artículo 2 de la Constitución?",
+  "opciones": [
+   "Estado plurinacional",
+   "Patria común e indivisible",
+   "Indisoluble unidad de la Nación española",
+   "Solidaridad entre todas ellas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 2 CE: habla de indisoluble unidad, patria común e indivisible y solidaridad; no menciona un Estado plurinacional.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-805",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "2",
+  "enunciado": "¿Qué adjetivo emplea el artículo 2 para calificar la unidad de la Nación española?",
+  "opciones": [
+   "Indisoluble",
+   "Inalterable",
+   "Perpetua",
+   "Histórica"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 2 CE: la Constitución se fundamenta en la indisoluble unidad de la Nación española.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-806",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "2",
+  "enunciado": "¿Qué artículo de la Constitución reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones?",
+  "opciones": [
+   "El artículo 2",
+   "El artículo 1",
+   "El artículo 3",
+   "El artículo 4"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 2 CE: reconoce y garantiza el derecho a la autonomía de las nacionalidades y regiones que integran la Nación.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-807",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "3.1",
+  "enunciado": "¿Quiénes tienen el deber de conocer el castellano según el artículo 3.1?",
+  "opciones": [
+   "Todos los españoles",
+   "Solo los españoles residentes en Comunidades sin lengua propia",
+   "Solo los funcionarios públicos",
+   "Todos los residentes en España, sean o no españoles"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 3.1 CE: todos los españoles tienen el deber de conocerla y el derecho a usarla.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-808",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "3.2",
+  "enunciado": "¿Qué norma determina el régimen de oficialidad de las demás lenguas españolas en cada Comunidad Autónoma?",
+  "opciones": [
+   "Su Estatuto de Autonomía",
+   "Una ley orgánica estatal única",
+   "El reglamento de su Parlamento",
+   "Un decreto del Gobierno de la Nación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 3.2 CE: las demás lenguas serán oficiales en las respectivas Comunidades de acuerdo con sus Estatutos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-809",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "3.3",
+  "enunciado": "¿Qué trato dispensa el artículo 3.3 a las distintas modalidades lingüísticas de España, consideradas patrimonio cultural?",
+  "opciones": [
+   "Especial respeto y protección",
+   "Enseñanza obligatoria en todo el territorio",
+   "Cooficialidad en todo el Estado",
+   "Fomento exclusivo por el Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 3.3 CE: serán objeto de especial respeto y protección.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-810",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "4.1",
+  "enunciado": "¿De qué color son las franjas de los extremos de la bandera de España según el artículo 4.1?",
+  "opciones": [
+   "Rojo",
+   "Amarillo",
+   "Azul",
+   "Rojo y amarillo alternados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 4.1 CE: tres franjas horizontales, roja, amarilla y roja.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-811",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "4.1",
+  "enunciado": "¿Cuántas franjas rojas tiene la bandera de España según el artículo 4.1?",
+  "opciones": [
+   "Dos",
+   "Una",
+   "Tres",
+   "Cuatro"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 4.1 CE: la bandera es roja, amarilla y roja; hay dos franjas rojas.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-812",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "4.2",
+  "enunciado": "Según el artículo 4.2, ¿cómo se utilizan las banderas propias de las Comunidades Autónomas respecto de la bandera de España?",
+  "opciones": [
+   "Junto a ella, no en su lugar",
+   "En sustitución de ella en los edificios autonómicos",
+   "Solo en actos no oficiales",
+   "Sin la bandera nacional en los actos de la Comunidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 4.2 CE: las banderas autonómicas se utilizarán junto a la bandera de España en sus edificios públicos y actos oficiales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-813",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "5",
+  "enunciado": "¿Qué término emplea el artículo 5 para referirse a Madrid como capital del Estado?",
+  "opciones": [
+   "Villa",
+   "Ciudad",
+   "Sede de la Corte",
+   "Capital federal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 5 CE: la capital del Estado es la villa de Madrid.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-814",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "6",
+  "enunciado": "¿Qué expresan los partidos políticos según el artículo 6?",
+  "opciones": [
+   "El pluralismo político",
+   "La soberanía nacional",
+   "La unidad de la Nación",
+   "La voluntad del Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 6 CE: los partidos políticos expresan el pluralismo político.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-815",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "6",
+  "enunciado": "Según el artículo 6, ¿a qué concurren los partidos políticos?",
+  "opciones": [
+   "A la formación y manifestación de la voluntad popular",
+   "A la elaboración directa de las leyes",
+   "A la designación del Jefe del Estado",
+   "Al ejercicio de la función de gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 6 CE: concurren a la formación y manifestación de la voluntad popular.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-816",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "6",
+  "enunciado": "¿Qué exigencia comparten los artículos 6 y 7 respecto de partidos y de sindicatos y asociaciones empresariales?",
+  "opciones": [
+   "Estructura interna y funcionamiento democráticos",
+   "Inscripción judicial previa a su creación",
+   "Financiación exclusivamente pública",
+   "Ámbito de actuación estatal"
+  ],
+  "correcta": 0,
+  "explicacion": "Arts. 6 y 7 CE: tanto unos como otros han de tener estructura interna y funcionamiento democráticos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-817",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "7",
+  "enunciado": "¿Qué intereses contribuyen a defender y promover los sindicatos de trabajadores y las asociaciones empresariales según el artículo 7?",
+  "opciones": [
+   "Los económicos y sociales que les son propios",
+   "Los políticos y territoriales",
+   "Los profesionales y culturales",
+   "Los laborales exclusivamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 7 CE: contribuyen a la defensa y promoción de los intereses económicos y sociales que les son propios.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-818",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "7",
+  "enunciado": "El artículo 7 dispone que la creación de sindicatos y asociaciones empresariales y el ejercicio de su actividad son libres dentro del respeto a...",
+  "opciones": [
+   "La Constitución y la ley",
+   "La ley orgánica únicamente",
+   "Los convenios colectivos vigentes",
+   "La autorización administrativa previa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 7 CE: su creación y actividad son libres dentro del respeto a la Constitución y a la ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-819",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "8.1",
+  "enunciado": "¿Cómo se denomina la rama naval de las Fuerzas Armadas según el artículo 8.1?",
+  "opciones": [
+   "La Armada",
+   "La Marina de Guerra",
+   "El Ejército del Mar",
+   "La Armada Real"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 8.1 CE: las Fuerzas Armadas están constituidas por el Ejército de Tierra, la Armada y el Ejército del Aire.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-820",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "8.1",
+  "enunciado": "¿Cuál de las siguientes es una misión de las Fuerzas Armadas según el artículo 8.1?",
+  "opciones": [
+   "Defender el ordenamiento constitucional",
+   "Mantener la seguridad ciudadana",
+   "Dirigir la política de defensa",
+   "Garantizar el orden público interior"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 8.1 CE: garantizar la soberanía e independencia de España, defender su integridad territorial y el ordenamiento constitucional.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-821",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "8.2",
+  "enunciado": "¿Qué regulará una ley orgánica según el artículo 8.2?",
+  "opciones": [
+   "Las bases de la organización militar",
+   "La declaración de guerra",
+   "El mando supremo de las Fuerzas Armadas",
+   "El estado de sitio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 8.2 CE: una ley orgánica regulará las bases de la organización militar conforme a los principios de la Constitución.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-822",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "9.1",
+  "enunciado": "Según el artículo 9.1, ¿quiénes están sujetos a la Constitución y al resto del ordenamiento jurídico?",
+  "opciones": [
+   "Los ciudadanos y los poderes públicos",
+   "Solo los poderes públicos",
+   "Los ciudadanos y la Administración, pero no el legislador",
+   "Solo el Gobierno y las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 9.1 CE: los ciudadanos y los poderes públicos están sujetos a la Constitución y al resto del ordenamiento.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-823",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "9.2",
+  "enunciado": "¿En qué ámbitos deben los poderes públicos facilitar la participación de todos los ciudadanos según el artículo 9.2?",
+  "opciones": [
+   "Político, económico, cultural y social",
+   "Político, económico, laboral y territorial",
+   "Político, cultural y religioso",
+   "Solo político y social"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 9.2 CE: facilitar la participación en la vida política, económica, cultural y social.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-824",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "9.2",
+  "enunciado": "¿De quiénes debe promoverse que la libertad y la igualdad sean reales y efectivas según el artículo 9.2?",
+  "opciones": [
+   "Del individuo y de los grupos en que se integra",
+   "Solo del individuo",
+   "De los ciudadanos y de los extranjeros",
+   "De los pueblos de España"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 9.2 CE: la libertad y la igualdad del individuo y de los grupos en que se integra.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-825",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "9.3",
+  "enunciado": "¿Cuántos principios enumera el artículo 9.3 como garantizados por la Constitución?",
+  "opciones": [
+   "Siete",
+   "Cinco",
+   "Seis",
+   "Ocho"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 9.3 CE: legalidad, jerarquía normativa, publicidad, irretroactividad, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-826",
+  "tema": "ce",
+  "titulo": "Título Preliminar",
+  "articulo": "9.3",
+  "enunciado": "¿Qué principio del artículo 9.3 establece que unas normas prevalecen sobre otras según su rango?",
+  "opciones": [
+   "La jerarquía normativa",
+   "El principio de legalidad",
+   "La seguridad jurídica",
+   "La publicidad de las normas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 9.3 CE: garantiza, entre otros, la jerarquía normativa.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-827",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "10.1",
+  "enunciado": "¿Qué dos «respetos» se citan como fundamento del orden político y de la paz social en el artículo 10.1?",
+  "opciones": [
+   "Respeto a la ley y a los derechos de los demás",
+   "Respeto a la Corona y a las instituciones",
+   "Respeto al orden público y a la propiedad",
+   "Respeto a la Constitución y a los tratados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 10.1 CE: el respeto a la ley y a los derechos de los demás es fundamento del orden político y la paz social.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-828",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "10.2",
+  "enunciado": "¿Qué normas se interpretan conforme a la Declaración Universal de Derechos Humanos según el artículo 10.2?",
+  "opciones": [
+   "Las relativas a los derechos fundamentales y libertades reconocidos por la Constitución",
+   "Todas las normas del ordenamiento",
+   "Solo las leyes orgánicas",
+   "Las del Título III"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 10.2 CE: las normas relativas a derechos fundamentales y libertades se interpretarán de conformidad con la Declaración Universal y los tratados ratificados.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-829",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "10.2",
+  "enunciado": "Junto a la Declaración Universal de Derechos Humanos, ¿qué tratados sirven de criterio de interpretación según el artículo 10.2?",
+  "opciones": [
+   "Los ratificados por España sobre las mismas materias",
+   "Cualquier tratado firmado, aunque no ratificado",
+   "Solo los de la Unión Europea",
+   "Solo los convenios de la OIT"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 10.2 CE: tratados y acuerdos internacionales sobre las mismas materias ratificados por España.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-830",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "11.1",
+  "enunciado": "¿Qué tres vicisitudes de la nacionalidad española remite el artículo 11.1 a la ley?",
+  "opciones": [
+   "Adquisición, conservación y pérdida",
+   "Otorgamiento, renovación y revocación",
+   "Concesión, suspensión y recuperación",
+   "Adquisición, prueba y renuncia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 11.1 CE: se adquiere, se conserva y se pierde de acuerdo con la ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-831",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "11.3",
+  "enunciado": "¿Sobre qué materia puede concertar el Estado tratados con países iberoamericanos según el artículo 11.3?",
+  "opciones": [
+   "Doble nacionalidad",
+   "Extradición",
+   "Asilo",
+   "Libre circulación de trabajadores"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 11.3 CE: el Estado podrá concertar tratados de doble nacionalidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-832",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "11.3",
+  "enunciado": "¿Es necesario que el país iberoamericano reconozca reciprocidad a sus ciudadanos para que los españoles puedan naturalizarse allí sin perder su nacionalidad de origen?",
+  "opciones": [
+   "No, aunque no reconozcan un derecho recíproco",
+   "Sí, siempre",
+   "Solo si existe tratado de doble nacionalidad",
+   "Solo para españoles de origen"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 11.3 CE: en esos países, aun cuando no reconozcan un derecho recíproco, podrán naturalizarse los españoles sin perder su nacionalidad de origen.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-833",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "12",
+  "enunciado": "El artículo 12 fija la mayoría de edad de...",
+  "opciones": [
+   "Los españoles",
+   "Todos los residentes en España",
+   "Los ciudadanos de la Unión Europea",
+   "Los electores"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 12 CE: los españoles son mayores de edad a los dieciocho años.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-834",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "13.2",
+  "enunciado": "¿En qué elecciones puede extenderse a los extranjeros el sufragio activo y pasivo por criterios de reciprocidad según el artículo 13.2?",
+  "opciones": [
+   "Municipales",
+   "Autonómicas",
+   "Generales",
+   "Al Parlamento Europeo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 13.2 CE: salvo lo que por reciprocidad se establezca para el sufragio activo y pasivo en las elecciones municipales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-835",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "13.3",
+  "enunciado": "¿Qué actos no se consideran delitos políticos a efectos de la exclusión de la extradición (art. 13.3)?",
+  "opciones": [
+   "Los actos de terrorismo",
+   "Los de rebelión",
+   "Los de traición",
+   "Los de sedición"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 13.3 CE: quedan excluidos los delitos políticos, no considerándose como tales los actos de terrorismo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-836",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "13.4",
+  "enunciado": "¿A quiénes se refiere el artículo 13.4 al regular la ley el derecho de asilo?",
+  "opciones": [
+   "A los ciudadanos de otros países y a los apátridas",
+   "Solo a los refugiados",
+   "A los extranjeros residentes legales",
+   "Solo a los apátridas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 13.4 CE: la ley establecerá los términos en que los ciudadanos de otros países y los apátridas podrán gozar del asilo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-837",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "13.2",
+  "enunciado": "¿Por qué vía puede establecerse el sufragio de extranjeros en elecciones municipales según el artículo 13.2?",
+  "opciones": [
+   "Por tratado o ley",
+   "Solo por tratado",
+   "Por reglamento",
+   "Por los Estatutos de Autonomía"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 13.2 CE: por tratado o ley, atendiendo a criterios de reciprocidad.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-838",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "14",
+  "enunciado": "¿Con qué fórmula cierra el artículo 14 la enumeración de causas de discriminación?",
+  "opciones": [
+   "Cualquier otra condición o circunstancia personal o social",
+   "Cualquier otra causa prevista en la ley",
+   "Orientación sexual o situación económica",
+   "Cualquier otra causa de origen territorial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 14 CE: nacimiento, raza, sexo, religión, opinión o cualquier otra condición o circunstancia personal o social.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-839",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "14",
+  "enunciado": "¿De quiénes proclama el artículo 14 la igualdad ante la ley?",
+  "opciones": [
+   "De los españoles",
+   "De todas las personas",
+   "De los ciudadanos y extranjeros residentes",
+   "De los habitantes del territorio nacional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 14 CE: los españoles son iguales ante la ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-840",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "15",
+  "enunciado": "¿Qué dos dimensiones de la integridad protege el artículo 15?",
+  "opciones": [
+   "Física y moral",
+   "Física y patrimonial",
+   "Moral y psíquica",
+   "Física y familiar"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 15 CE: derecho a la vida y a la integridad física y moral.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-841",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "15",
+  "enunciado": "¿A quiénes reconoce el artículo 15 el derecho a la vida?",
+  "opciones": [
+   "A todos",
+   "A los españoles",
+   "A los ciudadanos mayores de edad",
+   "A las personas residentes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 15 CE: todos tienen derecho a la vida.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-842",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "16.1",
+  "enunciado": "¿A quiénes garantiza el artículo 16.1 la libertad ideológica, religiosa y de culto?",
+  "opciones": [
+   "A los individuos y a las comunidades",
+   "Solo a los individuos",
+   "A los individuos y a los partidos",
+   "Solo a las comunidades religiosas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 16.1 CE: se garantiza a los individuos y las comunidades.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-843",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "16.3",
+  "enunciado": "¿Qué deben tener en cuenta los poderes públicos según el artículo 16.3?",
+  "opciones": [
+   "Las creencias religiosas de la sociedad española",
+   "Las tradiciones históricas del país",
+   "La doctrina de la Iglesia Católica",
+   "La opinión de las confesiones mayoritarias"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 16.3 CE: los poderes públicos tendrán en cuenta las creencias religiosas de la sociedad española.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-844",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "16.1",
+  "enunciado": "¿Qué libertades garantiza el artículo 16.1?",
+  "opciones": [
+   "Ideológica, religiosa y de culto",
+   "Ideológica, de conciencia y de enseñanza",
+   "Religiosa y de asociación",
+   "De culto y de expresión"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 16.1 CE: libertad ideológica, religiosa y de culto.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-845",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "17.1",
+  "enunciado": "¿Qué dos derechos reconoce a toda persona el artículo 17.1?",
+  "opciones": [
+   "Libertad y seguridad",
+   "Libertad e igualdad",
+   "Seguridad y propiedad",
+   "Libertad y dignidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 17.1 CE: toda persona tiene derecho a la libertad y a la seguridad.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-846",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "17.2",
+  "enunciado": "Transcurrido el plazo máximo de detención preventiva, ¿ante quién debe ponerse al detenido si no se le libera (art. 17.2)?",
+  "opciones": [
+   "Ante la autoridad judicial",
+   "Ante el Ministerio Fiscal",
+   "Ante el Delegado del Gobierno",
+   "Ante el Defensor del Pueblo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 17.2 CE: en setenta y dos horas el detenido será puesto en libertad o a disposición de la autoridad judicial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-847",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "17.3",
+  "enunciado": "¿Qué no puede ser obligada a hacer la persona detenida según el artículo 17.3?",
+  "opciones": [
+   "Declarar",
+   "Identificarse",
+   "Firmar el atestado",
+   "Permanecer en dependencias policiales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 17.3 CE: la persona detenida no puede ser obligada a declarar.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-848",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "17.4",
+  "enunciado": "Según el artículo 17.4, ¿quién determina el plazo máximo de la prisión provisional?",
+  "opciones": [
+   "La ley",
+   "El juez en cada caso",
+   "El Tribunal Constitucional",
+   "El Gobierno por decreto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 17.4 CE: por ley se determinará el plazo máximo de duración de la prisión provisional.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-849",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "18.1",
+  "enunciado": "¿Qué derecho se garantiza en el artículo 18.1 junto al honor y a la intimidad personal y familiar?",
+  "opciones": [
+   "La propia imagen",
+   "La protección de datos",
+   "La inviolabilidad",
+   "La reputación profesional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 18.1 CE: derecho al honor, a la intimidad personal y familiar y a la propia imagen.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-850",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "18.3",
+  "enunciado": "¿Cómo garantiza el artículo 18.3 el secreto de las comunicaciones?",
+  "opciones": [
+   "En general y, en especial, de las postales, telegráficas y telefónicas",
+   "Solo respecto de las postales, telegráficas y telefónicas",
+   "Salvo autorización del Gobierno",
+   "Salvo las telefónicas, que requieren orden policial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 18.3 CE: se garantiza el secreto de las comunicaciones y, en especial, de las postales, telegráficas y telefónicas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-851",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "18.4",
+  "enunciado": "¿Qué se pretende garantizar, además del honor y la intimidad, al limitar el uso de la informática (art. 18.4)?",
+  "opciones": [
+   "El pleno ejercicio de los derechos de los ciudadanos",
+   "La seguridad nacional",
+   "La libre competencia",
+   "La propiedad intelectual"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 18.4 CE: la ley limitará la informática para garantizar el honor, la intimidad y el pleno ejercicio de sus derechos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-852",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "19",
+  "enunciado": "¿Por qué territorio tienen derecho los españoles a circular libremente según el artículo 19?",
+  "opciones": [
+   "Por el territorio nacional",
+   "Por el de la Unión Europea",
+   "Por el de su Comunidad Autónoma",
+   "Por España y Portugal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 19 CE: elegir libremente su residencia y circular por el territorio nacional.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-853",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "19",
+  "enunciado": "¿Qué regula la ley respecto del derecho a entrar y salir de España (art. 19)?",
+  "opciones": [
+   "Los términos de su ejercicio",
+   "Su concesión caso por caso",
+   "Su suspensión por motivos políticos",
+   "Su exclusión para algunos españoles"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 19 CE: derecho a entrar y salir libremente en los términos que la ley establezca, sin limitación por motivos políticos o ideológicos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-854",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "20.1",
+  "enunciado": "¿Qué derecho reconoce el artículo 20.1.c)?",
+  "opciones": [
+   "La libertad de cátedra",
+   "La libertad de enseñanza",
+   "La libertad de investigación",
+   "La autonomía universitaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 20.1.c) CE: se reconoce y protege la libertad de cátedra.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-855",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "20.3",
+  "enunciado": "¿Qué grupos tienen garantizado el acceso a los medios de comunicación públicos según el artículo 20.3?",
+  "opciones": [
+   "Los grupos sociales y políticos significativos",
+   "Todos los partidos con representación parlamentaria",
+   "Los sindicatos más representativos",
+   "Solo los partidos que apoyan al Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 20.3 CE: la ley garantizará el acceso de los grupos sociales y políticos significativos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-856",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "20.4",
+  "enunciado": "¿En qué se encuentra, con carácter general, el límite de las libertades del artículo 20 según el apartado 4?",
+  "opciones": [
+   "En los derechos del Título I y en las leyes que lo desarrollan",
+   "Solo en el Código Penal",
+   "En la autorización administrativa previa",
+   "En el interés del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 20.4 CE: las libertades tienen su límite en los derechos de este Título, en las leyes que lo desarrollan y, especialmente, en honor, intimidad, propia imagen y protección de juventud e infancia.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-857",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "20.1",
+  "enunciado": "¿Mediante qué medios reconoce el artículo 20.1.a) el derecho a expresar y difundir libremente pensamientos, ideas y opiniones?",
+  "opciones": [
+   "La palabra, el escrito o cualquier otro medio de reproducción",
+   "Solo la palabra y el escrito",
+   "Solo los medios de difusión públicos",
+   "Los medios que autorice la ley"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 20.1.a) CE: mediante la palabra, el escrito o cualquier otro medio de reproducción.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-858",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "21.2",
+  "enunciado": "Además de razones fundadas de alteración del orden público, ¿qué debe concurrir para que la autoridad prohíba una manifestación (art. 21.2)?",
+  "opciones": [
+   "Peligro para personas o bienes",
+   "Informe judicial previo",
+   "Falta de autorización",
+   "Riesgo para la imagen del Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 21.2 CE: razones fundadas de alteración del orden público con peligro para personas o bienes.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-859",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "21.2",
+  "enunciado": "¿Cuál de estas reuniones requiere comunicación previa a la autoridad según el artículo 21.2?",
+  "opciones": [
+   "Una manifestación",
+   "Una reunión en un local cerrado de propiedad privada",
+   "Una reunión familiar en un domicilio",
+   "Una asamblea de socios en su sede"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 21.2 CE: se comunicará previamente a la autoridad las reuniones en lugares de tránsito público y las manifestaciones.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-860",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "22.1",
+  "enunciado": "¿Qué artículo de la Constitución reconoce el derecho de asociación?",
+  "opciones": [
+   "El artículo 22",
+   "El artículo 21",
+   "El artículo 23",
+   "El artículo 7"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 22.1 CE: se reconoce el derecho de asociación.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-861",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "22.2",
+  "enunciado": "¿Qué carácter tienen las asociaciones que utilicen medios tipificados como delito según el artículo 22.2?",
+  "opciones": [
+   "Son ilegales",
+   "Quedan suspendidas de forma automática",
+   "Son inconstitucionales hasta que lo declare el Gobierno",
+   "Son disueltas de pleno derecho"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 22.2 CE: las asociaciones que persigan fines o utilicen medios tipificados como delito son ilegales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-862",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "22.3",
+  "enunciado": "¿Qué deben hacer las asociaciones constituidas al amparo del artículo 22 respecto de un registro?",
+  "opciones": [
+   "Inscribirse en él",
+   "Obtener autorización administrativa previa",
+   "Presentar sus cuentas ante el juez",
+   "Ser declaradas de utilidad pública"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 22.3 CE: deberán inscribirse en un registro a los solos efectos de publicidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-863",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "23.1",
+  "enunciado": "Según el artículo 23.1, ¿quiénes tienen el derecho a participar en los asuntos públicos?",
+  "opciones": [
+   "Los ciudadanos",
+   "Los electores inscritos",
+   "Todos los residentes",
+   "Solo los mayores de edad nacidos en España"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 23.1 CE: los ciudadanos tienen el derecho a participar en los asuntos públicos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-864",
+  "tema": "ce",
+  "titulo": "Título I",
+  "articulo": "23.2",
+  "enunciado": "¿Quién señala los requisitos para acceder a las funciones y cargos públicos según el artículo 23.2?",
+  "opciones": [
+   "Las leyes",
+   "Los reglamentos de cada Administración",
+   "Los Estatutos de Autonomía",
+   "Cada convocatoria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 23.2 CE: acceso en condiciones de igualdad con los requisitos que señalen las leyes.",
+  "dificultad": 2
+ }
+]

@@ -1,0 +1,962 @@
+[
+ {
+  "id": "ce-1050",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "81.2",
+  "enunciado": "¿Sobre qué debe recaer la votación de mayoría absoluta exigida para una ley orgánica?",
+  "opciones": [
+   "Una votación final sobre el conjunto del proyecto",
+   "Cada uno de los artículos por separado",
+   "Solo los artículos que afecten a derechos fundamentales",
+   "La exposición de motivos y el título del proyecto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 81.2 CE: la mayoría absoluta se exige en una votación final sobre el conjunto del proyecto.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1051",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "81.1",
+  "enunciado": "Según el artículo 81.1, ¿qué tipo de ley aprueba los Estatutos de Autonomía?",
+  "opciones": [
+   "Ley orgánica",
+   "Ley ordinaria",
+   "Ley de bases",
+   "Decreto legislativo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 81.1 CE: son leyes orgánicas las que aprueben los Estatutos de Autonomía.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1052",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.1",
+  "enunciado": "¿Qué materias quedan excluidas de la delegación legislativa en el Gobierno al remitir el artículo 82.1 al artículo 81?",
+  "opciones": [
+   "Las propias de ley orgánica",
+   "Las propias de ley ordinaria en general",
+   "Las de naturaleza tributaria",
+   "Las relativas a la organización de la Administración"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.1 CE: la delegación recae sobre materias no incluidas en el artículo 81, luego las de ley orgánica no son delegables.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1053",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.2",
+  "enunciado": "¿Mediante qué tipo de ley se delega en el Gobierno la refundición de varios textos legales en uno solo?",
+  "opciones": [
+   "Una ley ordinaria",
+   "Una ley de bases",
+   "Una ley orgánica",
+   "Un decreto-ley convalidado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.2 CE: para refundir varios textos en uno se usa ley ordinaria; la ley de bases es para textos articulados.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1054",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.3",
+  "enunciado": "¿Cómo se agota la delegación legislativa concedida al Gobierno?",
+  "opciones": [
+   "Por el uso que haga de ella mediante la publicación de la norma correspondiente",
+   "Al finalizar la legislatura en la que se concedió",
+   "Cuando el Congreso la revoque expresamente en el plazo de un mes",
+   "Cuando el Consejo de Estado emita dictamen sobre la norma"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.3 CE: la delegación se agota por el uso que de ella haga el Gobierno mediante la publicación de la norma.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1055",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.3",
+  "enunciado": "Respecto de la subdelegación de la potestad legislativa delegada, el artículo 82.3 establece que:",
+  "opciones": [
+   "No podrá permitirse a autoridades distintas del propio Gobierno",
+   "Podrá autorizarse a los Ministros mediante orden ministerial",
+   "Podrá autorizarse a las Comunidades Autónomas",
+   "Es libre salvo que la ley de delegación la prohíba"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.3 CE: la delegación tampoco podrá permitir la subdelegación a autoridades distintas del propio Gobierno.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1056",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.3",
+  "enunciado": "¿Puede entenderse concedida una delegación legislativa por tiempo indeterminado?",
+  "opciones": [
+   "No, debe fijarse plazo para su ejercicio y no cabe de modo implícito ni indeterminado",
+   "Sí, si se otorga mediante ley de bases",
+   "Sí, cuando se refiere a una materia concreta",
+   "Sí, si el Congreso lo aprueba por mayoría absoluta"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.3 CE: la delegación exige plazo y no puede entenderse concedida de modo implícito o por tiempo indeterminado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1057",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.5",
+  "enunciado": "La autorización para refundir textos legales debe especificar si se limita a formular un texto único o si incluye también:",
+  "opciones": [
+   "Regularizar, aclarar y armonizar los textos que se refunden",
+   "Derogar las leyes orgánicas conexas",
+   "Crear nuevas figuras tributarias",
+   "Modificar la propia ley de delegación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.5 CE: se especifica si incluye regularizar, aclarar y armonizar los textos legales que han de refundirse.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1058",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "82.6",
+  "enunciado": "Según el artículo 82.6, las leyes de delegación pueden establecer fórmulas adicionales de control, y ello se entiende:",
+  "opciones": [
+   "Sin perjuicio de la competencia propia de los Tribunales",
+   "En sustitución del control judicial",
+   "Solo si lo autoriza el Tribunal Constitucional",
+   "Únicamente para decretos legislativos de refundición"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 82.6 CE: las fórmulas adicionales de control lo son sin perjuicio de la competencia propia de los Tribunales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1059",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "83",
+  "enunciado": "¿Qué otra cosa tienen prohibida las leyes de bases en todo caso, además de autorizar su propia modificación?",
+  "opciones": [
+   "Facultar para dictar normas con carácter retroactivo",
+   "Delimitar el plazo de la delegación",
+   "Fijar principios y criterios de ejercicio",
+   "Referirse a materias concretas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 83.b CE: las leyes de bases no podrán facultar para dictar normas con carácter retroactivo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1060",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "84",
+  "enunciado": "Si el Gobierno se opone a la tramitación de una proposición de ley contraria a una delegación legislativa en vigor, ¿qué podrá presentarse?",
+  "opciones": [
+   "Una proposición de ley para derogar total o parcialmente la ley de delegación",
+   "Un recurso ante el Tribunal Constitucional por el Senado",
+   "Un decreto-ley que suspenda la delegación",
+   "Una moción de censura"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 84 CE: podrá presentarse una proposición de ley para la derogación total o parcial de la ley de delegación.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1061",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.1",
+  "enunciado": "¿Qué carácter tienen las disposiciones legislativas que el Gobierno dicta como Decretos-leyes?",
+  "opciones": [
+   "Provisional",
+   "Definitivo desde su publicación",
+   "Orgánico",
+   "Interpretativo de la Constitución"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.1 CE: son disposiciones legislativas provisionales que toman la forma de Decretos-leyes.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1062",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.1",
+  "enunciado": "¿Cuál de estas materias no pueden afectar los Decretos-leyes?",
+  "opciones": [
+   "El Derecho electoral general",
+   "La política exterior",
+   "La organización de los Ministerios",
+   "Los contratos del sector público"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.1 CE: no pueden afectar al Derecho electoral general, a las instituciones básicas, a los derechos del Título I ni al régimen de las Comunidades Autónomas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1063",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.1",
+  "enunciado": "Un Decreto-ley, según el artículo 86.1, no puede afectar a:",
+  "opciones": [
+   "Los derechos, deberes y libertades de los ciudadanos regulados en el Título I",
+   "La estructura de la Administración periférica",
+   "Los convenios con organizaciones privadas",
+   "La organización de los servicios de un Ministerio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.1 CE: no podrán afectar a los derechos, deberes y libertades regulados en el Título I.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1064",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.2",
+  "enunciado": "¿Desde cuándo se cuentan los treinta días para que el Congreso se pronuncie sobre un Decreto-ley?",
+  "opciones": [
+   "Desde su promulgación",
+   "Desde su convalidación por el Senado",
+   "Desde que lo informe el Consejo de Estado",
+   "Desde la apertura del siguiente periodo de sesiones"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.2 CE: el plazo de treinta días es el siguiente a su promulgación.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1065",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.2",
+  "enunciado": "¿Sobre qué debe pronunciarse expresamente el Congreso respecto de un Decreto-ley dentro del plazo de treinta días?",
+  "opciones": [
+   "Su convalidación o derogación",
+   "Su sanción por el Rey",
+   "Su transformación en ley orgánica",
+   "Su remisión al Senado para veto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.2 CE: el Congreso debe pronunciarse expresamente sobre la convalidación o derogación.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1066",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.2",
+  "enunciado": "¿Qué establecerá el Reglamento del Congreso para pronunciarse sobre un Decreto-ley?",
+  "opciones": [
+   "Un procedimiento especial y sumario",
+   "Un procedimiento ordinario con ponencia",
+   "Un procedimiento con doble lectura",
+   "Un procedimiento de lectura única en el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.2 CE: el Reglamento establecerá un procedimiento especial y sumario.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1067",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "86.2",
+  "enunciado": "¿A qué debate y votación se somete inmediatamente un Decreto-ley en el Congreso?",
+  "opciones": [
+   "Debate y votación de totalidad",
+   "Debate y votación por artículos",
+   "Votación secreta por mayoría absoluta",
+   "Debate de enmiendas parciales en Pleno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 86.2 CE: se someten a debate y votación de totalidad en el Congreso.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1068",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.2",
+  "enunciado": "¿Cuántos miembros como máximo puede delegar una Asamblea autonómica ante el Congreso para defender una proposición de ley?",
+  "opciones": [
+   "Tres",
+   "Dos",
+   "Cinco",
+   "Diez"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.2 CE: delegando ante dicha Cámara un máximo de tres miembros de la Asamblea.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1069",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.2",
+  "enunciado": "¿Ante qué órgano remiten las Asambleas autonómicas una proposición de ley?",
+  "opciones": [
+   "La Mesa del Congreso",
+   "La Mesa del Senado",
+   "El Consejo de Ministros",
+   "La Junta de Portavoces del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.2 CE: pueden remitir a la Mesa del Congreso una proposición de ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1070",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.3",
+  "enunciado": "¿Qué tipo de norma regula las formas de ejercicio y requisitos de la iniciativa popular?",
+  "opciones": [
+   "Una ley orgánica",
+   "Una ley ordinaria",
+   "Los Reglamentos de las Cámaras",
+   "Un real decreto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.3 CE: una ley orgánica regulará las formas de ejercicio y requisitos de la iniciativa popular.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1071",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.3",
+  "enunciado": "¿En cuál de estas materias no procede la iniciativa legislativa popular?",
+  "opciones": [
+   "Tributarias",
+   "Educación",
+   "Medio ambiente",
+   "Sanidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.3 CE: no procede en materias de ley orgánica, tributarias o internacionales, ni en la prerrogativa de gracia.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1072",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.3",
+  "enunciado": "¿Procede la iniciativa legislativa popular en materias propias de ley orgánica?",
+  "opciones": [
+   "No",
+   "Sí, siempre",
+   "Sí, con 1.000.000 de firmas",
+   "Sí, si lo autoriza el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.3 CE: no procede la iniciativa popular en materias propias de ley orgánica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1073",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "87.3",
+  "enunciado": "La iniciativa legislativa popular tampoco procede en lo relativo a:",
+  "opciones": [
+   "La prerrogativa de gracia",
+   "La organización territorial",
+   "El procedimiento administrativo",
+   "El régimen local"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 87.3 CE: no procede en lo relativo a la prerrogativa de gracia.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1074",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "88",
+  "enunciado": "¿Qué debe acompañar a los proyectos de ley que el Consejo de Ministros somete al Congreso?",
+  "opciones": [
+   "Una exposición de motivos y los antecedentes necesarios",
+   "Un dictamen vinculante del Tribunal Constitucional",
+   "El informe favorable del Senado",
+   "La firma de 500.000 ciudadanos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 88 CE: se acompañan de una exposición de motivos y de los antecedentes necesarios para pronunciarse.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1075",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "89.1",
+  "enunciado": "Según el artículo 89.1, la prioridad debida a los proyectos de ley:",
+  "opciones": [
+   "No impide el ejercicio de la iniciativa legislativa del artículo 87",
+   "Impide tramitar proposiciones de ley durante el periodo de sesiones",
+   "Se aplica solo a leyes orgánicas",
+   "Corresponde decidirla al Rey"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 89.1 CE: la prioridad de los proyectos no impide la iniciativa legislativa regulada en el artículo 87.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1076",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "89.2",
+  "enunciado": "Una proposición de ley tomada en consideración por el Senado se remite al Congreso para su trámite como:",
+  "opciones": [
+   "Proposición de ley",
+   "Proyecto de ley",
+   "Enmienda a la totalidad",
+   "Mensaje motivado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 89.2 CE: se remite al Congreso para su trámite en éste como tal proposición.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1077",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.2",
+  "enunciado": "¿Mediante qué instrumento puede el Senado oponer su veto o introducir enmiendas?",
+  "opciones": [
+   "Mensaje motivado",
+   "Dictamen de la Comisión General",
+   "Resolución del Presidente del Senado",
+   "Votación secreta sin motivación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.2 CE: el Senado actúa mediante mensaje motivado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1078",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.2",
+  "enunciado": "¿Desde cuándo se cuenta el plazo de dos meses del Senado para vetar o enmendar?",
+  "opciones": [
+   "Desde el día de la recepción del texto",
+   "Desde la aprobación definitiva por el Congreso",
+   "Desde la publicación en el Boletín Oficial",
+   "Desde la convocatoria del Pleno del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.2 CE: el plazo es de dos meses a partir del día de la recepción del texto.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1079",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.2",
+  "enunciado": "Si el Senado veta un proyecto, ¿qué mayoría necesita el Congreso para ratificar el texto inicial?",
+  "opciones": [
+   "Mayoría absoluta",
+   "Mayoría simple",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.2 CE: en caso de veto, el Congreso ratifica el texto inicial por mayoría absoluta.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1080",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.2",
+  "enunciado": "Tras el veto del Senado, ¿cuándo basta la mayoría simple del Congreso para levantarlo?",
+  "opciones": [
+   "Una vez transcurridos dos meses desde la interposición del veto",
+   "A los quince días de interponerse",
+   "Tras el dictamen del Consejo de Estado",
+   "Nunca basta la mayoría simple"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.2 CE: basta mayoría simple una vez transcurridos dos meses desde la interposición del veto.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1081",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "90.2",
+  "enunciado": "¿Qué mayoría necesita el Congreso para pronunciarse sobre las enmiendas del Senado, aceptándolas o no?",
+  "opciones": [
+   "Mayoría simple",
+   "Mayoría absoluta",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 90.2 CE: se pronuncia sobre las enmiendas, aceptándolas o no, por mayoría simple.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1082",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "91",
+  "enunciado": "¿Qué hace el Rey, además de sancionar, con las leyes aprobadas por las Cortes?",
+  "opciones": [
+   "Las promulga y ordena su inmediata publicación",
+   "Las somete a refrendo de las Comunidades Autónomas",
+   "Las remite al Consejo de Estado",
+   "Las convalida por Real Decreto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 91 CE: el Rey sanciona, promulga y ordena la inmediata publicación de las leyes.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1083",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "92.2",
+  "enunciado": "¿Qué requisito previo tiene la propuesta del Presidente del Gobierno para convocar un referéndum?",
+  "opciones": [
+   "Estar autorizada por el Congreso de los Diputados",
+   "Ser aprobada por el Senado",
+   "Tener el informe del Tribunal Constitucional",
+   "Ser respaldada por tres quintos de las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 92.2 CE: la propuesta debe estar previamente autorizada por el Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1084",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "92.3",
+  "enunciado": "¿Qué regula una ley orgánica en materia de referéndum?",
+  "opciones": [
+   "Las condiciones y el procedimiento de sus distintas modalidades",
+   "Solo los referéndums autonómicos",
+   "Únicamente la fecha de las convocatorias",
+   "La composición de la Junta Electoral"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 92.3 CE: regula las condiciones y el procedimiento de las distintas modalidades de referéndum.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1085",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "93",
+  "enunciado": "¿A quién corresponde la garantía del cumplimiento de los tratados que ceden competencias a organizaciones internacionales?",
+  "opciones": [
+   "A las Cortes Generales o al Gobierno, según los casos",
+   "Solo al Tribunal Constitucional",
+   "Al Rey",
+   "A las Comunidades Autónomas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 93 CE: la garantía corresponde a las Cortes Generales o al Gobierno, según los casos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1086",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "94.1",
+  "enunciado": "¿Cuál de estos tratados exige previa autorización de las Cortes Generales?",
+  "opciones": [
+   "Los que impliquen obligaciones financieras para la Hacienda Pública",
+   "Los de cooperación cultural sin coste",
+   "Los de carácter comercial menor",
+   "Los de ámbito exclusivamente consular"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 94.1.d CE: requieren autorización los que impliquen obligaciones financieras para la Hacienda Pública.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1087",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "94.1",
+  "enunciado": "¿Qué tratados que afecten a la integridad territorial o a derechos del Título I requieren autorización previa de las Cortes?",
+  "opciones": [
+   "Los que afecten a la integridad territorial del Estado o a los derechos y deberes fundamentales del Título I",
+   "Los que se refieran a la pesca",
+   "Los que regulen la cooperación técnica",
+   "Los de intercambio de información meteorológica"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 94.1.c CE: tratados que afecten a la integridad territorial o a los derechos y deberes del Título I.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1088",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "94.1",
+  "enunciado": "Los tratados que supongan modificación o derogación de alguna ley, ¿requieren autorización de las Cortes?",
+  "opciones": [
+   "Sí, igual que los que exijan medidas legislativas para su ejecución",
+   "No, solo informe posterior",
+   "Solo si afectan a leyes orgánicas",
+   "Solo si lo pide el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 94.1.e CE: requieren autorización los que modifiquen o deroguen una ley o exijan medidas legislativas para su ejecución.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1089",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "94.2",
+  "enunciado": "¿Qué sucede con los tratados no incluidos en los supuestos del artículo 94.1?",
+  "opciones": [
+   "Congreso y Senado son informados inmediatamente de su conclusión",
+   "Requieren aprobación por referéndum",
+   "Se someten al Tribunal Constitucional",
+   "No se comunican a las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 94.2 CE: el Congreso y el Senado serán inmediatamente informados de su conclusión.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1090",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "95.2",
+  "enunciado": "¿Quién puede requerir al Tribunal Constitucional para declarar si un tratado contradice la Constitución?",
+  "opciones": [
+   "El Gobierno o cualquiera de las Cámaras",
+   "Solo el Presidente del Gobierno",
+   "El Defensor del Pueblo",
+   "Cincuenta diputados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 95.2 CE: pueden requerirlo el Gobierno o cualquiera de las Cámaras.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1091",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "96.1",
+  "enunciado": "¿Cómo pueden ser derogadas, modificadas o suspendidas las disposiciones de un tratado internacional válidamente celebrado?",
+  "opciones": [
+   "En la forma prevista en los propios tratados o según las normas generales del Derecho internacional",
+   "Por ley ordinaria posterior",
+   "Por real decreto del Gobierno",
+   "Por acuerdo del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 96.1 CE: solo en la forma prevista en los tratados o según las normas generales del Derecho internacional.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1092",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "96.2",
+  "enunciado": "Para denunciar un tratado se usa el mismo procedimiento previsto para:",
+  "opciones": [
+   "Su aprobación en el artículo 94",
+   "Su reforma constitucional",
+   "La ratificación por el Rey en solitario",
+   "Su publicación oficial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 96.2 CE: la denuncia sigue el mismo procedimiento previsto para la aprobación en el artículo 94.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1093",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "97",
+  "enunciado": "¿Qué potestad ejerce el Gobierno, de acuerdo con la Constitución y las leyes, junto con la función ejecutiva?",
+  "opciones": [
+   "La potestad reglamentaria",
+   "La potestad legislativa plena",
+   "La potestad judicial",
+   "La potestad de reforma constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 97 CE: el Gobierno ejerce la función ejecutiva y la potestad reglamentaria.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1094",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "98.1",
+  "enunciado": "¿Quiénes componen el Gobierno según el artículo 98.1?",
+  "opciones": [
+   "Presidente, Vicepresidentes en su caso, Ministros y los demás miembros que establezca la ley",
+   "Solo el Presidente y los Ministros",
+   "Ministros y Secretarios de Estado",
+   "Ministros y Presidentes autonómicos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 98.1 CE: Presidente, Vicepresidentes en su caso, Ministros y demás miembros que establezca la ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1095",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "98.2",
+  "enunciado": "El Presidente dirige la acción del Gobierno, sin perjuicio de:",
+  "opciones": [
+   "La competencia y responsabilidad directa de los demás miembros en su gestión",
+   "La autorización previa del Congreso",
+   "La tutela del Consejo de Estado",
+   "La competencia de los Presidentes autonómicos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 98.2 CE: sin perjuicio de la competencia y responsabilidad directa de los demás miembros en su gestión.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1096",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "98.3",
+  "enunciado": "¿Qué función representativa pueden ejercer los miembros del Gobierno?",
+  "opciones": [
+   "Las propias del mandato parlamentario",
+   "Las de concejal",
+   "Las de miembro de una Asamblea autonómica",
+   "Ninguna, ni siquiera parlamentaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 98.3 CE: no pueden ejercer otras funciones representativas que las propias del mandato parlamentario.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1097",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.1",
+  "enunciado": "¿A través de quién propone el Rey un candidato a la Presidencia del Gobierno?",
+  "opciones": [
+   "Del Presidente del Congreso",
+   "Del Presidente del Senado",
+   "Del Presidente del Gobierno en funciones",
+   "Del Presidente del Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.1 CE: el Rey propone candidato a través del Presidente del Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1098",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.3",
+  "enunciado": "¿Cuánto debe pasar entre una primera votación de investidura sin mayoría absoluta y la nueva votación?",
+  "opciones": [
+   "Cuarenta y ocho horas",
+   "Veinticuatro horas",
+   "Una semana",
+   "Quince días"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.3 CE: nueva votación cuarenta y ocho horas después, bastando mayoría simple.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1099",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.4",
+  "enunciado": "Si no se otorga la confianza en las votaciones de investidura, ¿qué ocurre según el artículo 99.4?",
+  "opciones": [
+   "Se tramitan sucesivas propuestas en la forma prevista",
+   "Se disuelven las Cortes inmediatamente",
+   "El Rey nombra Presidente al líder de la lista más votada",
+   "El Senado designa al candidato"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.4 CE: se tramitarán sucesivas propuestas en la forma prevista en los apartados anteriores.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1100",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "99.5",
+  "enunciado": "¿Con el refrendo de quién disuelve el Rey las Cámaras si pasan dos meses sin investidura?",
+  "opciones": [
+   "El Presidente del Congreso",
+   "El Presidente del Gobierno en funciones",
+   "El Presidente del Senado",
+   "El Presidente del Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 99.5 CE: la disolución se hace con el refrendo del Presidente del Congreso.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1101",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "100",
+  "enunciado": "¿A propuesta de quién nombra y separa el Rey a los demás miembros del Gobierno?",
+  "opciones": [
+   "Del Presidente del Gobierno",
+   "Del Congreso de los Diputados",
+   "Del Consejo de Estado",
+   "Del Presidente del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 100 CE: son nombrados y separados por el Rey a propuesta de su Presidente.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1102",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "101.1",
+  "enunciado": "¿Cuál de estas es causa de cese del Gobierno?",
+  "opciones": [
+   "La dimisión o fallecimiento de su Presidente",
+   "La dimisión de un Ministro",
+   "La disolución del Senado",
+   "El cambio de un Vicepresidente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 101.1 CE: cesa por elecciones generales, pérdida de confianza parlamentaria o dimisión o fallecimiento de su Presidente.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1103",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "102.2",
+  "enunciado": "¿Qué iniciativa y mayoría del Congreso se exigen para plantear la acusación por traición contra un miembro del Gobierno?",
+  "opciones": [
+   "Iniciativa de la cuarta parte de sus miembros y aprobación por mayoría absoluta",
+   "Iniciativa de un tercio y mayoría simple",
+   "Iniciativa de la mitad y tres quintos",
+   "Iniciativa de una décima parte y dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 102.2 CE: iniciativa de la cuarta parte de los miembros del Congreso y aprobación de la mayoría absoluta.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1104",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "103.1",
+  "enunciado": "¿Cómo sirve la Administración Pública los intereses generales según el artículo 103.1?",
+  "opciones": [
+   "Con objetividad",
+   "Con discrecionalidad plena",
+   "Con arreglo a criterios de oportunidad política",
+   "Con subordinación al partido en el Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 103.1 CE: la Administración sirve con objetividad los intereses generales.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1105",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "104.1",
+  "enunciado": "¿De quién dependen las Fuerzas y Cuerpos de seguridad según el artículo 104.1?",
+  "opciones": [
+   "Del Gobierno",
+   "Del Rey",
+   "Del Congreso de los Diputados",
+   "Del Consejo General del Poder Judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 104.1 CE: actúan bajo la dependencia del Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1106",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "105",
+  "enunciado": "¿Qué regulará la ley respecto del procedimiento de elaboración de las disposiciones administrativas que afecten a los ciudadanos?",
+  "opciones": [
+   "La audiencia de los ciudadanos, directamente o a través de organizaciones y asociaciones reconocidas",
+   "La aprobación previa por el Senado",
+   "La publicación mediante referéndum",
+   "El dictamen obligatorio del Defensor del Pueblo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 105.a CE: la ley regula la audiencia de los ciudadanos en la elaboración de las disposiciones administrativas que les afecten.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1107",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "105",
+  "enunciado": "El acceso de los ciudadanos a archivos y registros administrativos tiene como excepción:",
+  "opciones": [
+   "La seguridad y defensa del Estado, la averiguación de los delitos y la intimidad de las personas",
+   "La seguridad vial y la sanidad",
+   "La hacienda local y el comercio",
+   "El interés económico del Estado y la propiedad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 105.b CE: salvo lo que afecte a seguridad y defensa del Estado, averiguación de los delitos e intimidad de las personas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1108",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "106.1",
+  "enunciado": "Además de la legalidad de la actuación administrativa, ¿qué controlan los Tribunales?",
+  "opciones": [
+   "La potestad reglamentaria y el sometimiento de la Administración a los fines que la justifican",
+   "Las decisiones del Consejo de Ministros en política exterior",
+   "El estatuto de los funcionarios",
+   "El presupuesto de las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 106.1 CE: controlan la potestad reglamentaria, la legalidad de la actuación administrativa y su sometimiento a los fines que la justifican.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1109",
+  "tema": "ce",
+  "titulo": "Título IV",
+  "articulo": "107",
+  "enunciado": "¿Qué regulará una ley orgánica respecto del Consejo de Estado?",
+  "opciones": [
+   "Su composición y competencia",
+   "Su presupuesto",
+   "El nombramiento de sus miembros por el Rey",
+   "Su relación con el Tribunal de Cuentas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 107 CE: una ley orgánica regulará su composición y competencia.",
+  "dificultad": 1
+ }
+]

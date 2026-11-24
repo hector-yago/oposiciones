@@ -1,0 +1,962 @@
+[
+ {
+  "id": "ce-990",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "56.1",
+  "enunciado": "Además de las funciones de arbitraje y representación, ¿qué otras ejerce el Rey según el texto constitucional?",
+  "opciones": [
+   "Las que le atribuyen expresamente la Constitución y las leyes",
+   "Todas las que no estén atribuidas al Gobierno",
+   "Las que determine libremente el Consejo de Ministros",
+   "Las que le reconozca la costumbre constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 56.1 CE: el Rey ejerce las funciones que le atribuyen expresamente la Constitución y las leyes.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-991",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "56.2",
+  "enunciado": "Además del título de Rey de España, el Rey puede utilizar...",
+  "opciones": [
+   "los demás títulos que correspondan a la Corona",
+   "los títulos que el Gobierno le conceda en cada caso",
+   "únicamente los títulos de la Casa de Borbón",
+   "ningún otro título, por ser el único previsto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 56.2 CE: su título es el de Rey de España y podrá utilizar los demás que correspondan a la Corona.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-992",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "56.3",
+  "enunciado": "Los actos del Rey deben ser refrendados en la forma establecida en el artículo...",
+  "opciones": [
+   "64",
+   "62",
+   "99",
+   "65.1"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 56.3 CE: sus actos estarán siempre refrendados en la forma establecida en el artículo 64.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-993",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "57.1",
+  "enunciado": "¿De quién son sucesores los titulares de la Corona de España, según el artículo 57.1?",
+  "opciones": [
+   "De S. M. Don Juan Carlos I de Borbón, legítimo heredero de la dinastía histórica",
+   "De S. M. Don Alfonso XIII, último Rey de la dinastía histórica",
+   "De S. M. Don Felipe VI, primer Rey de la democracia",
+   "De la dinastía que elijan las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 57.1 CE: la Corona es hereditaria en los sucesores de Don Juan Carlos I de Borbón, legítimo heredero de la dinastía histórica.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-994",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "57.1",
+  "enunciado": "Entre dos personas del mismo grado, de la misma línea y del mismo sexo, el orden de sucesión a la Corona prefiere a...",
+  "opciones": [
+   "la de más edad",
+   "la de menos edad",
+   "la que designe el Rey",
+   "la que elijan las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 57.1 CE: en el mismo sexo, la persona de más edad a la de menos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-995",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "57.1",
+  "enunciado": "Dentro de una misma línea, ¿qué grado prefiere el orden de sucesión a la Corona?",
+  "opciones": [
+   "El más próximo al más remoto",
+   "El más remoto al más próximo",
+   "El que determine el Rey en testamento",
+   "El que fije una ley orgánica en cada caso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 57.1 CE: en la misma línea, el grado más próximo al más remoto.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-996",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "57.2",
+  "enunciado": "Además de la dignidad de Príncipe de Asturias, el Príncipe heredero tiene...",
+  "opciones": [
+   "los demás títulos vinculados tradicionalmente al sucesor de la Corona de España",
+   "únicamente honores protocolarios sin título alguno",
+   "el título de Regente desde su nacimiento",
+   "el título de Infante de España con carácter exclusivo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 57.2 CE: tendrá la dignidad de Príncipe de Asturias y los demás títulos vinculados tradicionalmente al sucesor de la Corona.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-997",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "57.4",
+  "enunciado": "Quien contrae matrimonio contra la expresa prohibición del Rey y de las Cortes Generales queda excluido de la sucesión...",
+  "opciones": [
+   "por sí y sus descendientes",
+   "únicamente él, no sus descendientes",
+   "solo mientras dure el matrimonio",
+   "hasta que las Cortes Generales levanten la prohibición"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 57.4 CE: quedarán excluidos en la sucesión a la Corona por sí y sus descendientes.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-998",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "58",
+  "enunciado": "La Reina consorte o el consorte de la Reina no pueden asumir funciones constitucionales, salvo lo dispuesto para...",
+  "opciones": [
+   "la Regencia",
+   "la tutela del Rey menor",
+   "las relaciones internacionales",
+   "la sanción de las leyes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 58 CE: no podrán asumir funciones constitucionales, salvo lo dispuesto para la Regencia.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-999",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "59.1",
+  "enunciado": "Si el Rey es menor de edad y no hay padre ni madre que pueda ejercer la Regencia, la ejerce...",
+  "opciones": [
+   "el pariente mayor de edad más próximo a suceder en la Corona",
+   "el Presidente del Gobierno",
+   "el Presidente del Congreso de los Diputados",
+   "la persona que elijan las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 59.1 CE: el padre o la madre y, en su defecto, el pariente mayor de edad más próximo a suceder en la Corona.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1000",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "59.2",
+  "enunciado": "¿Quién debe reconocer la imposibilidad del Rey para ejercer su autoridad para que se abra la Regencia por inhabilitación?",
+  "opciones": [
+   "Las Cortes Generales",
+   "El Gobierno",
+   "El Tribunal Constitucional",
+   "El Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 59.2 CE: la imposibilidad ha de ser reconocida por las Cortes Generales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1001",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "59.2",
+  "enunciado": "Si el Rey se inhabilita y el Príncipe heredero es menor de edad, la Regencia se resuelve...",
+  "opciones": [
+   "conforme al apartado 1: padre o madre y, en su defecto, el pariente mayor de edad más próximo, hasta que el Príncipe sea mayor",
+   "nombrando siempre una Regencia de tres personas",
+   "atribuyéndola al Presidente del Congreso hasta la mayoría de edad del Príncipe",
+   "dejando vacante la Jefatura del Estado hasta que decidan las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 59.2 CE: si el Príncipe heredero no es mayor de edad se procede como en el apartado 1 hasta que alcance la mayoría de edad.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1002",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "60.1",
+  "enunciado": "Si el Rey difunto no nombró tutor en su testamento, el tutor del Rey menor es...",
+  "opciones": [
+   "el padre o la madre mientras permanezcan viudos",
+   "el pariente mayor más próximo a suceder en la Corona",
+   "el Presidente del Gobierno",
+   "el Presidente de las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 60.1 CE: si no lo hubiese nombrado, será tutor el padre o la madre mientras permanezcan viudos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1003",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "60.1",
+  "enunciado": "Los cargos de Regente y de tutor del Rey solo pueden acumularse en...",
+  "opciones": [
+   "el padre, la madre o los ascendientes directos del Rey",
+   "el pariente mayor de edad más próximo a suceder en la Corona",
+   "cualquier persona que elijan las Cortes Generales",
+   "el Príncipe heredero mayor de edad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 60.1 CE: no podrán acumularse los cargos de Regente y de tutor sino en el padre, madre o ascendientes directos del Rey.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1004",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "60.1",
+  "enunciado": "Si no hay tutor nombrado en testamento ni padre o madre viudos, ¿quién nombra al tutor del Rey menor?",
+  "opciones": [
+   "Las Cortes Generales",
+   "El Gobierno",
+   "El Consejo de Estado",
+   "El Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 60.1 CE: en su defecto, lo nombrarán las Cortes Generales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1005",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "61.1",
+  "enunciado": "Entre los compromisos del juramento del Rey figura...",
+  "opciones": [
+   "guardar y hacer guardar la Constitución y las leyes",
+   "defender la unidad de los pueblos de España ante las Fuerzas Armadas",
+   "acatar las decisiones del Gobierno en todo caso",
+   "respetar la forma de Estado vigente en cada momento"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 61.1 CE: prestará juramento de desempeñar fielmente sus funciones, guardar y hacer guardar la Constitución y las leyes y respetar los derechos de los ciudadanos y de las Comunidades Autónomas.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1006",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "61.2",
+  "enunciado": "¿Cuándo presta juramento el Príncipe heredero?",
+  "opciones": [
+   "Al alcanzar la mayoría de edad",
+   "Desde su nacimiento",
+   "Al ser proclamado el Rey",
+   "Cuando asuma la Regencia, y solo entonces"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 61.2 CE: el Príncipe heredero, al alcanzar la mayoría de edad, presta el mismo juramento y el de fidelidad al Rey.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1007",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "62",
+  "enunciado": "Corresponde al Rey convocar a referéndum...",
+  "opciones": [
+   "en los casos previstos en la Constitución",
+   "cuando lo estime oportuno, por iniciativa propia",
+   "cuando lo pida cualquiera de las Cámaras",
+   "en cualquier caso a propuesta de las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 62.c CE: convocar a referéndum en los casos previstos en la Constitución.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1008",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "62",
+  "enunciado": "¿Qué corresponde al Rey en relación con las Cortes Generales?",
+  "opciones": [
+   "Convocarlas y disolverlas, y convocar elecciones en los términos previstos en la Constitución",
+   "Elegir a sus Presidentes",
+   "Fijar su orden del día",
+   "Aprobar sus Reglamentos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 62.b CE: convocar y disolver las Cortes Generales y convocar elecciones en los términos previstos en la Constitución.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1009",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "62",
+  "enunciado": "Respecto a la Presidencia del Gobierno, el Rey puede...",
+  "opciones": [
+   "proponer el candidato y, en su caso, nombrarlo, así como poner fin a sus funciones en los términos constitucionales",
+   "designarlo libremente sin intervención de las Cortes",
+   "nombrarlo solo a propuesta del Presidente del Senado",
+   "cesarlo cuando lo estime oportuno y sin condiciones"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 62.d CE: proponer el candidato a Presidente del Gobierno y, en su caso, nombrarlo, así como poner fin a sus funciones en los términos previstos en la Constitución.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1010",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "62",
+  "enunciado": "¿Qué actos expide el Rey según el artículo 62.f?",
+  "opciones": [
+   "Los decretos acordados en el Consejo de Ministros",
+   "Las leyes aprobadas por las Cortes Generales",
+   "Los reglamentos de las Cámaras",
+   "Las sentencias del Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 62.f CE: expedir los decretos acordados en el Consejo de Ministros, conferir los empleos civiles y militares y conceder honores y distinciones con arreglo a las leyes.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1011",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "62",
+  "enunciado": "El Rey puede presidir el Consejo de Ministros, a efectos de ser informado de los asuntos de Estado, cuando...",
+  "opciones": [
+   "lo estime oportuno, a petición del Presidente del Gobierno",
+   "lo decida el Presidente del Congreso",
+   "lo pida la mayoría de los Ministros",
+   "lo autoricen las Cortes Generales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 62.g CE: ser informado de los asuntos de Estado y presidir las sesiones del Consejo de Ministros, cuando lo estime oportuno, a petición del Presidente del Gobierno.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1012",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "63.1",
+  "enunciado": "¿Qué corresponde al Rey respecto a los embajadores y otros representantes diplomáticos de España?",
+  "opciones": [
+   "Acreditarlos",
+   "Proponerlos al Congreso",
+   "Destituirlos libremente sin refrendo",
+   "Ratificarlos tras el control del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 63.1 CE: el Rey acredita a los embajadores y otros representantes diplomáticos.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1013",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "63.2",
+  "enunciado": "El consentimiento del Estado para obligarse por tratados lo manifiesta el Rey...",
+  "opciones": [
+   "de conformidad con la Constitución y las leyes",
+   "a su libre criterio",
+   "previa aprobación del Tribunal Constitucional en todos los casos",
+   "solo con autorización expresa del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 63.2 CE: manifestar el consentimiento del Estado para obligarse internacionalmente por tratados, de conformidad con la Constitución y las leyes.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1014",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "64.1",
+  "enunciado": "¿Quién refrenda la disolución de las Cortes prevista en el artículo 99?",
+  "opciones": [
+   "El Presidente del Congreso",
+   "El Presidente del Gobierno",
+   "El Presidente del Senado",
+   "El Ministro de Justicia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 64.1 CE: la propuesta y nombramiento del Presidente del Gobierno y la disolución del artículo 99 serán refrendados por el Presidente del Congreso.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1015",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "64.1",
+  "enunciado": "Además del Presidente del Gobierno, los actos del Rey son refrendados, en su caso, por...",
+  "opciones": [
+   "los Ministros competentes",
+   "los Presidentes de las Cámaras",
+   "el Consejo de Estado",
+   "los Presidentes de las Comunidades Autónomas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 64.1 CE: los actos del Rey serán refrendados por el Presidente del Gobierno y, en su caso, por los Ministros competentes.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1016",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "65.1",
+  "enunciado": "El Rey distribuye la cantidad global de los Presupuestos del Estado para su Familia y Casa...",
+  "opciones": [
+   "libremente",
+   "con arreglo a la ley de Presupuestos",
+   "previa autorización de las Cortes Generales",
+   "bajo control previo del Tribunal de Cuentas en cada gasto"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 65.1 CE: el Rey recibe una cantidad global para el sostenimiento de su Familia y Casa, y la distribuye libremente.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1017",
+  "tema": "ce",
+  "titulo": "Título II",
+  "articulo": "65.2",
+  "enunciado": "El Rey puede relevar libremente a...",
+  "opciones": [
+   "los miembros civiles y militares de su Casa",
+   "los miembros del Gobierno",
+   "los Presidentes de las Cámaras",
+   "los Magistrados del Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 65.2 CE: el Rey nombra y releva libremente a los miembros civiles y militares de su Casa.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1018",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "66.1",
+  "enunciado": "¿A quién representan las Cortes Generales?",
+  "opciones": [
+   "Al pueblo español",
+   "A las Comunidades Autónomas",
+   "A las provincias y municipios",
+   "Al Gobierno de la Nación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 66.1 CE: las Cortes Generales representan al pueblo español.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1019",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "66.2",
+  "enunciado": "¿Qué función ejercen las Cortes Generales respecto a la acción del Gobierno?",
+  "opciones": [
+   "La controlan",
+   "La dirigen",
+   "Nombran y cesan a sus Ministros",
+   "Aprueban sus decretos antes de su firma"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 66.2 CE: las Cortes Generales controlan la acción del Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1020",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "67.1",
+  "enunciado": "El artículo 67.1 prohíbe acumular el acta de Diputado al Congreso con...",
+  "opciones": [
+   "el acta de una Asamblea de Comunidad Autónoma",
+   "el cargo de Concejal",
+   "el cargo de miembro de una Diputación Permanente",
+   "el de portavoz de un grupo parlamentario"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 67.1 CE: nadie podrá acumular el acta de una Asamblea de Comunidad Autónoma con la de Diputado al Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1021",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "68.1",
+  "enunciado": "El Congreso de los Diputados se elige por sufragio...",
+  "opciones": [
+   "universal, libre, igual, directo y secreto",
+   "universal, libre, igual, indirecto y secreto",
+   "censitario, libre, igual y directo",
+   "universal, obligatorio, igual y público"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 68.1 CE: elegidos por sufragio universal, libre, igual, directo y secreto.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1022",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "68.2",
+  "enunciado": "¿Qué criterio fija la Constitución para repartir los Diputados entre las circunscripciones?",
+  "opciones": [
+   "Una representación mínima inicial por circunscripción y el resto en proporción a la población",
+   "Un número idéntico de Diputados por provincia",
+   "El reparto íntegro en proporción a la población",
+   "El reparto que decida el Gobierno cada legislatura"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 68.2 CE: la ley asignará una representación mínima inicial a cada circunscripción y distribuirá los demás en proporción a la población.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1023",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "68.5",
+  "enunciado": "¿Qué debe hacer el Estado respecto al sufragio de los españoles que se encuentran fuera de España?",
+  "opciones": [
+   "Facilitar su ejercicio, conforme a lo que reconozca la ley",
+   "Negarles el derecho de sufragio pasivo",
+   "Exigir su regreso para votar",
+   "Nada, pues la Constitución no lo menciona"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 68.5 CE: la ley reconocerá y el Estado facilitará el ejercicio del derecho de sufragio a los españoles fuera del territorio de España.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1024",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "69.3",
+  "enunciado": "¿Cuál de estas islas elige un solo Senador?",
+  "opciones": [
+   "Menorca",
+   "Mallorca",
+   "Tenerife",
+   "Gran Canaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 69.3 CE: tres Senadores a cada isla mayor (Gran Canaria, Mallorca y Tenerife) y uno a Menorca, entre otras.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1025",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "69.3",
+  "enunciado": "¿Qué condición debe cumplir una isla de una provincia insular para constituir circunscripción en la elección de Senadores?",
+  "opciones": [
+   "Tener Cabildo o Consejo Insular",
+   "Tener más de cien mil habitantes",
+   "Ser capital de provincia",
+   "Contar con un Estatuto propio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 69.3 CE: cada isla con Cabildo o Consejo Insular constituirá una circunscripción.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1026",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "69.3",
+  "enunciado": "¿Cuántos Senadores corresponden a Formentera?",
+  "opciones": [
+   "Uno",
+   "Dos",
+   "Tres",
+   "Cuatro"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 69.3 CE: uno a cada una de las siguientes islas: Ibiza, Formentera, Menorca, Fuerteventura, La Gomera, El Hierro, Lanzarote y La Palma.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1027",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "69.5",
+  "enunciado": "Los Estatutos de Autonomía, al regular la designación de Senadores autonómicos, deben asegurar en todo caso...",
+  "opciones": [
+   "la adecuada representación proporcional",
+   "la designación por sorteo",
+   "la paridad entre partidos",
+   "la elección directa por los ciudadanos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 69.5 CE: los Estatutos asegurarán, en todo caso, la adecuada representación proporcional.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1028",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "69.5",
+  "enunciado": "Si la Comunidad Autónoma no tiene Asamblea legislativa, ¿quién designa a sus Senadores?",
+  "opciones": [
+   "El órgano colegiado superior de la Comunidad",
+   "El Gobierno de la Nación",
+   "El Presidente de la Comunidad por sí solo",
+   "El Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 69.5 CE: la designación corresponde a la Asamblea legislativa o, en su defecto, al órgano colegiado superior de la Comunidad Autónoma.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1029",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "70.1",
+  "enunciado": "Entre los altos cargos de la Administración del Estado que la ley declara inelegibles e incompatibles, ¿quiénes quedan exceptuados?",
+  "opciones": [
+   "Los miembros del Gobierno",
+   "Los Secretarios de Estado",
+   "Los Directores Generales",
+   "Los Subsecretarios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 70.1.b CE: altos cargos que determine la ley, con la excepción de los miembros del Gobierno.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1030",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "70.1",
+  "enunciado": "¿Qué titular de una institución es inelegible e incompatible en todo caso según el artículo 70.1.c?",
+  "opciones": [
+   "El Defensor del Pueblo",
+   "El Presidente del Gobierno",
+   "El Presidente del Congreso",
+   "El Fiscal General del Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 70.1.c CE: el Defensor del Pueblo.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1031",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "70.1",
+  "enunciado": "¿Quiénes más son inelegibles e incompatibles en todo caso según el artículo 70.1?",
+  "opciones": [
+   "Los miembros de las Juntas Electorales",
+   "Los miembros de las Diputaciones Provinciales",
+   "Los Alcaldes",
+   "Los funcionarios en excedencia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 70.1.f CE: los miembros de las Juntas Electorales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1032",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "71.2",
+  "enunciado": "La inmunidad de Diputados y Senadores rige...",
+  "opciones": [
+   "durante el período de su mandato",
+   "durante toda su vida política",
+   "solo durante las sesiones plenarias",
+   "durante la legislatura y un año más"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 71.2 CE: durante el período de su mandato gozarán de inmunidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1033",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "72.1",
+  "enunciado": "¿Quién aprueba los presupuestos de cada Cámara?",
+  "opciones": [
+   "Cada Cámara autónomamente",
+   "El Gobierno",
+   "El Tribunal de Cuentas",
+   "Las Cortes Generales en sesión conjunta"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 72.1 CE: las Cámaras aprueban autónomamente sus presupuestos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1034",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "72.1",
+  "enunciado": "El Estatuto del Personal de las Cortes Generales lo regulan las Cámaras...",
+  "opciones": [
+   "de común acuerdo",
+   "por ley aprobada por el Gobierno",
+   "cada una el de su personal por separado",
+   "previa aprobación del Rey"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 72.1 CE: de común acuerdo regulan el Estatuto del Personal de las Cortes Generales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1035",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "72.2",
+  "enunciado": "El Reglamento de las Cortes Generales que rige las sesiones conjuntas se aprueba por...",
+  "opciones": [
+   "mayoría absoluta de cada Cámara",
+   "mayoría simple del Congreso",
+   "dos tercios de cada Cámara",
+   "mayoría absoluta del Congreso, sin el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 72.2 CE: se regirán por un Reglamento de las Cortes Generales aprobado por mayoría absoluta de cada Cámara.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1036",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "73.1",
+  "enunciado": "El segundo período ordinario de sesiones comprende de...",
+  "opciones": [
+   "febrero a junio",
+   "enero a mayo",
+   "marzo a julio",
+   "febrero a julio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 73.1 CE: el primero, de septiembre a diciembre, y el segundo, de febrero a junio.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1037",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "73.2",
+  "enunciado": "Las sesiones extraordinarias de las Cámaras se clausuran...",
+  "opciones": [
+   "una vez agotado el orden del día",
+   "a los quince días de su convocatoria",
+   "cuando lo decida el Gobierno",
+   "al comenzar el siguiente período ordinario"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 73.2 CE: serán clausuradas una vez que el orden del día haya sido agotado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1038",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "74.2",
+  "enunciado": "En las decisiones del artículo 94.1, ¿qué Cámara inicia el procedimiento?",
+  "opciones": [
+   "El Congreso",
+   "El Senado",
+   "Una Comisión Mixta",
+   "Las Cortes en sesión conjunta"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 74.2 CE: en el primer caso (art. 94.1) el procedimiento se iniciará por el Congreso.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1039",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "74.2",
+  "enunciado": "En las decisiones de los artículos 145.2 y 158.2, ¿qué Cámara inicia el procedimiento?",
+  "opciones": [
+   "El Senado",
+   "El Congreso",
+   "La Diputación Permanente",
+   "El Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 74.2 CE: en los otros dos casos, por el Senado.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1040",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "74.2",
+  "enunciado": "La Comisión Mixta que intenta lograr acuerdo entre Congreso y Senado se compone de...",
+  "opciones": [
+   "igual número de Diputados y Senadores",
+   "más Diputados que Senadores",
+   "los Presidentes de ambas Cámaras",
+   "Diputados y miembros del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 74.2 CE: Comisión Mixta compuesta de igual número de Diputados y Senadores.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1041",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "74.2",
+  "enunciado": "Si el texto de la Comisión Mixta no es aprobado por ambas Cámaras, decide...",
+  "opciones": [
+   "el Congreso por mayoría absoluta",
+   "el Senado por mayoría simple",
+   "el Rey",
+   "el Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 74.2 CE: si no se aprueba en la forma establecida, decidirá el Congreso por mayoría absoluta.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1042",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "76.1",
+  "enunciado": "¿Quién puede nombrar Comisiones de investigación según el artículo 76.1?",
+  "opciones": [
+   "El Congreso, el Senado o ambas Cámaras conjuntamente",
+   "Solo el Congreso",
+   "Solo el Gobierno",
+   "Solo las Cortes en sesión conjunta"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 76.1 CE: el Congreso y el Senado, y, en su caso, ambas Cámaras conjuntamente, podrán nombrar Comisiones de investigación.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1043",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "76.2",
+  "enunciado": "¿Qué regula la ley respecto a la obligación de comparecer a requerimiento de las Cámaras?",
+  "opciones": [
+   "Las sanciones por su incumplimiento",
+   "Las dietas por comparecer",
+   "El orden de las comparecencias",
+   "La exención para altos cargos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 76.2 CE: la ley regulará las sanciones que puedan imponerse por incumplimiento de esta obligación.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1044",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "77.1",
+  "enunciado": "¿Qué queda prohibido en la presentación de peticiones a las Cámaras?",
+  "opciones": [
+   "La presentación directa por manifestaciones ciudadanas",
+   "La presentación por escrito",
+   "Las peticiones colectivas",
+   "Las peticiones individuales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 77.1 CE: siempre por escrito, quedando prohibida la presentación directa por manifestaciones ciudadanas.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1045",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "78.1",
+  "enunciado": "Los miembros de la Diputación Permanente representan a...",
+  "opciones": [
+   "los grupos parlamentarios, en proporción a su importancia numérica",
+   "las Comunidades Autónomas",
+   "los partidos con más de diez escaños, por igual",
+   "el Gobierno y la oposición, a partes iguales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 78.1 CE: representarán a los grupos parlamentarios en proporción a su importancia numérica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1046",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "78.2",
+  "enunciado": "Entre las funciones de la Diputación Permanente figura...",
+  "opciones": [
+   "velar por los poderes de las Cámaras cuando no estén reunidas",
+   "aprobar los Presupuestos Generales",
+   "elegir al Presidente del Gobierno",
+   "nombrar a los Magistrados del Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 78.2 CE: la de velar por los poderes de las Cámaras cuando éstas no estén reunidas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1047",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "78.4",
+  "enunciado": "Reunida la Cámara correspondiente, la Diputación Permanente debe...",
+  "opciones": [
+   "dar cuenta de los asuntos tratados y de sus decisiones",
+   "someter a ratificación sus actos en un plazo de treinta días",
+   "disolverse automáticamente",
+   "convocar elecciones"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 78.4 CE: dará cuenta de los asuntos tratados y de sus decisiones.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1048",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "79.2",
+  "enunciado": "Los acuerdos de las Cámaras exigen mayorías especiales cuando lo establezcan...",
+  "opciones": [
+   "la Constitución o las leyes orgánicas",
+   "los decretos del Gobierno",
+   "los tratados internacionales",
+   "los Estatutos de Autonomía exclusivamente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 79.2 CE: sin perjuicio de las mayorías especiales que establezcan la Constitución o las leyes orgánicas y las que para elección de personas establezcan los Reglamentos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1049",
+  "tema": "ce",
+  "titulo": "Título III",
+  "articulo": "80",
+  "enunciado": "Las sesiones plenarias de las Cámaras son...",
+  "opciones": [
+   "públicas, salvo acuerdo en contrario",
+   "secretas, salvo acuerdo en contrario",
+   "públicas en todo caso",
+   "públicas solo las del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 80 CE: las sesiones plenarias serán públicas, salvo acuerdo en contrario de cada Cámara.",
+  "dificultad": 1
+ }
+]

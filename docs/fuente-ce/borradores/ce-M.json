@@ -1,0 +1,962 @@
+[
+ {
+  "id": "ce-1110",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "109",
+  "enunciado": "¿Frente a qué autoridades pueden las Cámaras y sus Comisiones recabar información y ayuda, además del Gobierno y sus Departamentos?",
+  "opciones": [
+   "Cualesquiera autoridades del Estado y de las Comunidades Autónomas",
+   "Solo las autoridades del Estado",
+   "Solo los órganos del poder judicial",
+   "Únicamente las autoridades locales y provinciales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 109 CE: pueden recabar información y ayuda de cualesquiera autoridades del Estado y de las Comunidades Autónomas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1111",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "110.2",
+  "enunciado": "¿Qué pueden solicitar los miembros del Gobierno respecto a los funcionarios de sus Departamentos en las sesiones de las Cámaras?",
+  "opciones": [
+   "Que informen ante las mismas",
+   "Que voten en su lugar",
+   "Que dirijan el debate",
+   "Que sean nombrados miembros de la Mesa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 110.2 CE: los miembros del Gobierno podrán solicitar que informen ante las Cámaras funcionarios de sus Departamentos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1112",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "112",
+  "enunciado": "¿Qué requisito previo debe cumplirse para que el Presidente del Gobierno plantee la cuestión de confianza ante el Congreso?",
+  "opciones": [
+   "La previa deliberación del Consejo de Ministros",
+   "La autorización del Rey",
+   "El informe favorable del Senado",
+   "La propuesta de una décima parte de los Diputados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 112 CE: el Presidente la plantea previa deliberación del Consejo de Ministros.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1113",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "112",
+  "enunciado": "¿Qué mayoría de Diputados basta para que se entienda otorgada la confianza en la cuestión de confianza?",
+  "opciones": [
+   "La mayoría simple",
+   "La mayoría absoluta",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 112 CE: la confianza se entiende otorgada cuando vota a favor la mayoría simple de los Diputados.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1114",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "112",
+  "enunciado": "¿Sobre qué puede el Presidente del Gobierno plantear la cuestión de confianza?",
+  "opciones": [
+   "Sobre su programa o sobre una declaración de política general",
+   "Sobre un proyecto de ley orgánica concreto",
+   "Únicamente sobre los Presupuestos Generales del Estado",
+   "Sobre la composición del Consejo de Ministros"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 112 CE: puede plantearla sobre su programa o sobre una declaración de política general.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1115",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "113.2",
+  "enunciado": "¿Qué debe incluir obligatoriamente una moción de censura?",
+  "opciones": [
+   "Un candidato a la Presidencia del Gobierno",
+   "Un programa legislativo detallado",
+   "La lista completa de nuevos Ministros",
+   "La fecha de disolución del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 113.2 CE: la moción habrá de incluir un candidato a la Presidencia del Gobierno.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1116",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "113.3",
+  "enunciado": "¿Durante qué parte del plazo de cinco días desde la presentación de una moción de censura pueden presentarse mociones alternativas?",
+  "opciones": [
+   "Durante los dos primeros días",
+   "Durante los tres últimos días",
+   "Durante todo el plazo de cinco días",
+   "Solo el mismo día de la presentación"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 113.3 CE: en los dos primeros días del plazo podrán presentarse mociones alternativas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1117",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "114.1",
+  "enunciado": "Si el Congreso niega su confianza al Gobierno, ¿ante quién presenta este su dimisión?",
+  "opciones": [
+   "Ante el Rey",
+   "Ante el Presidente del Congreso",
+   "Ante el Presidente del Senado",
+   "Ante el Tribunal Constitucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 114.1 CE: el Gobierno presentará su dimisión al Rey.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1118",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "114.2",
+  "enunciado": "Aprobada una moción de censura, ¿quién nombra Presidente del Gobierno al candidato incluido en ella?",
+  "opciones": [
+   "El Rey",
+   "El Presidente del Congreso",
+   "El Gobierno dimisionario",
+   "El Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 114.2 CE: el candidato se entiende investido de confianza y el Rey le nombrará Presidente del Gobierno.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1119",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "115.1",
+  "enunciado": "¿Bajo qué responsabilidad propone el Presidente del Gobierno la disolución de las Cámaras?",
+  "opciones": [
+   "Bajo su exclusiva responsabilidad",
+   "Bajo la responsabilidad solidaria del Gobierno",
+   "Bajo la responsabilidad del Rey",
+   "Bajo la responsabilidad del Presidente del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 115.1 CE: la propuesta se hace previa deliberación del Consejo de Ministros y bajo su exclusiva responsabilidad.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1120",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "115.1",
+  "enunciado": "¿Qué debe fijar el decreto de disolución?",
+  "opciones": [
+   "La fecha de las elecciones",
+   "El programa del nuevo Gobierno",
+   "El candidato a la Presidencia del Gobierno",
+   "La duración de la Diputación Permanente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 115.1 CE: el decreto de disolución fijará la fecha de las elecciones.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1121",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.2",
+  "enunciado": "¿Qué debe determinar el decreto que declara el estado de alarma?",
+  "opciones": [
+   "El ámbito territorial a que se extienden sus efectos",
+   "La lista de derechos que quedan suspendidos",
+   "La fecha de las siguientes elecciones",
+   "Los miembros de la Diputación Permanente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.2 CE: el decreto determinará el ámbito territorial a que se extienden los efectos de la declaración.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1122",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.3",
+  "enunciado": "¿Por cuánto tiempo puede prorrogarse el estado de excepción?",
+  "opciones": [
+   "Por otro plazo igual al inicial de treinta días, con los mismos requisitos",
+   "Por un máximo de quince días",
+   "Por sesenta días sin nuevos requisitos",
+   "Indefinidamente mientras dure la causa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.3 CE: dura hasta treinta días, prorrogables por otro plazo igual, con los mismos requisitos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1123",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.3",
+  "enunciado": "¿Qué se requiere para que el Gobierno declare el estado de excepción?",
+  "opciones": [
+   "Previa autorización del Congreso de los Diputados",
+   "Autorización del Senado",
+   "Mayoría absoluta del Congreso a propuesta del Gobierno",
+   "Dar cuenta al Congreso después de declararlo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.3 CE: decreto del Consejo de Ministros previa autorización del Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1124",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.4",
+  "enunciado": "¿Qué mayoría del Congreso de los Diputados declara el estado de sitio?",
+  "opciones": [
+   "Mayoría absoluta",
+   "Mayoría simple",
+   "Tres quintos",
+   "Dos tercios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.4 CE: el estado de sitio lo declara la mayoría absoluta del Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1125",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.4",
+  "enunciado": "¿A propuesta de quién puede el Congreso declarar el estado de sitio?",
+  "opciones": [
+   "A propuesta exclusiva del Gobierno",
+   "A propuesta de una décima parte de los Diputados",
+   "A propuesta del Rey",
+   "A propuesta conjunta del Gobierno y del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.4 CE: el estado de sitio se declara a propuesta exclusiva del Gobierno.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1126",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.5",
+  "enunciado": "¿Qué ocurre con las Cámaras si no están en período de sesiones cuando se declara alguno de los estados de alarma, excepción o sitio?",
+  "opciones": [
+   "Quedan automáticamente convocadas",
+   "Deben ser convocadas por el Rey en el plazo de un mes",
+   "Quedan disueltas",
+   "Se reúnen solo si lo pide el Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.5 CE: las Cámaras quedan automáticamente convocadas si no estuvieren en período de sesiones.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1127",
+  "tema": "ce",
+  "titulo": "Título V",
+  "articulo": "116.5",
+  "enunciado": "Si el Congreso está disuelto o ha expirado su mandato y se produce una situación que da lugar a alguno de estos estados, ¿quién asume sus competencias?",
+  "opciones": [
+   "Su Diputación Permanente",
+   "El Senado",
+   "El Gobierno",
+   "El Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 116.5 CE: las competencias del Congreso serán asumidas por su Diputación Permanente.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1128",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.1",
+  "enunciado": "Según la Constitución, ¿de dónde emana la justicia?",
+  "opciones": [
+   "Del pueblo",
+   "Del Rey",
+   "De las Cortes Generales",
+   "Del Consejo General del Poder Judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.1 CE: la justicia emana del pueblo y se administra en nombre del Rey.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1129",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.1",
+  "enunciado": "¿A qué están sometidos únicamente los Jueces y Magistrados integrantes del poder judicial?",
+  "opciones": [
+   "Al imperio de la ley",
+   "A las instrucciones del Consejo General del Poder Judicial",
+   "A las órdenes del Tribunal Supremo",
+   "A la voluntad del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.1 CE: están sometidos únicamente al imperio de la ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1130",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "117.4",
+  "enunciado": "Además de juzgar y hacer ejecutar lo juzgado, ¿qué otras funciones pueden ejercer los Juzgados y Tribunales?",
+  "opciones": [
+   "Las que expresamente les atribuya la ley en garantía de cualquier derecho",
+   "Las que les encomiende el Gobierno",
+   "Las funciones de asesoramiento a las Cortes",
+   "Ninguna otra en ningún caso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 117.4 CE: solo las del apartado 3 y las que expresamente les atribuya la ley en garantía de cualquier derecho.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1131",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "119",
+  "enunciado": "¿Respecto de quiénes es gratuita la justicia en todo caso?",
+  "opciones": [
+   "Quienes acrediten insuficiencia de recursos para litigar",
+   "Los funcionarios públicos",
+   "Los menores de edad",
+   "Quienes litiguen contra el Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 119 CE: gratuita, en todo caso, para quienes acrediten insuficiencia de recursos para litigar.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1132",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "120.3",
+  "enunciado": "¿Dónde deben pronunciarse las sentencias según la Constitución?",
+  "opciones": [
+   "En audiencia pública",
+   "En sesión secreta del tribunal",
+   "Por escrito sin audiencia",
+   "En la sede del Consejo General del Poder Judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 120.3 CE: las sentencias serán siempre motivadas y se pronunciarán en audiencia pública.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1133",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.1",
+  "enunciado": "¿Cómo se organizan los Jueces y Magistrados de carrera según el artículo 122.1?",
+  "opciones": [
+   "Forman un Cuerpo único",
+   "Forman tres Cuerpos según su jurisdicción",
+   "Se agrupan en Cuerpos territoriales autonómicos",
+   "No forman cuerpo alguno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.1 CE: los Jueces y Magistrados de carrera formarán un Cuerpo único.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1134",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.1",
+  "enunciado": "Además de la constitución y gobierno de Juzgados y Tribunales, ¿qué más determina la ley orgánica del poder judicial?",
+  "opciones": [
+   "El estatuto del personal al servicio de la Administración de Justicia",
+   "El estatuto del Ministerio Fiscal",
+   "El régimen de la jurisdicción constitucional",
+   "El procedimiento del Jurado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.1 CE: determina también el estatuto jurídico de los Jueces y Magistrados de carrera y del personal al servicio de la Administración de Justicia.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1135",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.2",
+  "enunciado": "¿Qué funciones del Consejo General del Poder Judicial destaca el artículo 122.2?",
+  "opciones": [
+   "Nombramientos, ascensos, inspección y régimen disciplinario",
+   "Legislar y controlar al Gobierno",
+   "Dictar sentencias en última instancia",
+   "Dirigir la policía judicial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.2 CE: en particular, en materia de nombramientos, ascensos, inspección y régimen disciplinario.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1136",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.2",
+  "enunciado": "¿Qué norma establece el estatuto del Consejo General del Poder Judicial y el régimen de incompatibilidades de sus miembros?",
+  "opciones": [
+   "Una ley orgánica",
+   "Un real decreto del Gobierno",
+   "Un reglamento del propio Consejo",
+   "Una ley ordinaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.2 CE: la ley orgánica establecerá su estatuto y el régimen de incompatibilidades de sus miembros.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1137",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.3",
+  "enunciado": "¿Quién preside el Consejo General del Poder Judicial?",
+  "opciones": [
+   "El Presidente del Tribunal Supremo",
+   "El Fiscal General del Estado",
+   "El Presidente del Congreso",
+   "El Ministro de Justicia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.3 CE: lo integra el Presidente del Tribunal Supremo, que lo presidirá, y veinte miembros.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1138",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "122.3",
+  "enunciado": "¿Cuántos miembros del Consejo General del Poder Judicial propone cada una de las Cámaras (Congreso y Senado)?",
+  "opciones": [
+   "Cuatro cada una",
+   "Seis cada una",
+   "Doce entre ambas por mitades",
+   "Dos cada una"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 122.3 CE: cuatro a propuesta del Congreso y cuatro a propuesta del Senado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1139",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "123.1",
+  "enunciado": "¿Cuál es el ámbito de jurisdicción del Tribunal Supremo?",
+  "opciones": [
+   "Toda España",
+   "Solo la capital del Estado",
+   "Cada Comunidad Autónoma por separado",
+   "Únicamente asuntos civiles y penales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 123.1 CE: el Tribunal Supremo tiene jurisdicción en toda España.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1140",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "124.1",
+  "enunciado": "Entre las misiones del Ministerio Fiscal, ¿qué debe velar respecto de los Tribunales?",
+  "opciones": [
+   "Por su independencia",
+   "Por su presupuesto",
+   "Por su composición",
+   "Por sus nombramientos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 124.1 CE: debe velar por la independencia de los Tribunales y procurar ante éstos la satisfacción del interés social.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1141",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "124.3",
+  "enunciado": "¿Qué regulará la ley respecto al Ministerio Fiscal según el artículo 124.3?",
+  "opciones": [
+   "Su estatuto orgánico",
+   "Su dependencia del Gobierno",
+   "Su elección popular",
+   "Su régimen de arbitraje"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 124.3 CE: la ley regulará el estatuto orgánico del Ministerio Fiscal.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1142",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "124.4",
+  "enunciado": "¿Qué órgano debe ser oído antes del nombramiento del Fiscal General del Estado?",
+  "opciones": [
+   "El Consejo General del Poder Judicial",
+   "El Tribunal Supremo en pleno",
+   "El Consejo de Estado",
+   "El Congreso de los Diputados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 124.4 CE: nombrado por el Rey, a propuesta del Gobierno, oído el Consejo General del Poder Judicial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1143",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "125",
+  "enunciado": "¿Qué pueden ejercer los ciudadanos según el artículo 125, además de participar mediante el Jurado?",
+  "opciones": [
+   "La acción popular",
+   "El derecho de veto judicial",
+   "La iniciativa de nombramiento de Jueces",
+   "La potestad jurisdiccional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 125 CE: podrán ejercer la acción popular y participar en la Administración de Justicia mediante el Jurado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1144",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "125",
+  "enunciado": "Además del Jurado, ¿en qué Tribunales pueden participar los ciudadanos en la Administración de Justicia?",
+  "opciones": [
+   "En los Tribunales consuetudinarios y tradicionales",
+   "En los Tribunales de Cuentas",
+   "En los Tribunales militares",
+   "En los Tribunales de excepción"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 125 CE: también en los Tribunales consuetudinarios y tradicionales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1145",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "127.1",
+  "enunciado": "¿Qué establecerá la ley respecto a Jueces, Magistrados y Fiscales en el artículo 127.1?",
+  "opciones": [
+   "El sistema y modalidades de asociación profesional",
+   "El derecho a afiliarse a partidos políticos",
+   "El derecho de huelga",
+   "El sistema de sindicación obligatoria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 127.1 CE: la ley establecerá el sistema y modalidades de asociación profesional.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1146",
+  "tema": "ce",
+  "titulo": "Título VI",
+  "articulo": "127.2",
+  "enunciado": "¿Qué debe asegurar el régimen de incompatibilidades de los miembros del poder judicial?",
+  "opciones": [
+   "Su total independencia",
+   "Su dedicación exclusiva a la docencia",
+   "Su rotación periódica",
+   "Su sometimiento al Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 127.2 CE: el régimen de incompatibilidades deberá asegurar la total independencia de los miembros del poder judicial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1147",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "128.2",
+  "enunciado": "¿Qué puede reservarse al sector público mediante ley?",
+  "opciones": [
+   "Recursos o servicios esenciales, especialmente en caso de monopolio",
+   "Cualquier actividad económica sin límite",
+   "Solo la banca y los seguros",
+   "La propiedad de todas las empresas privadas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 128.2 CE: mediante ley se podrá reservar al sector público recursos o servicios esenciales, especialmente en caso de monopolio.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1148",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "128.2",
+  "enunciado": "¿Cuándo puede acordarse mediante ley la intervención de empresas?",
+  "opciones": [
+   "Cuando lo exigiere el interés general",
+   "Cuando lo pida la mayoría de los trabajadores",
+   "Cuando lo decida el Rey",
+   "Cuando lo solicite una Comunidad Autónoma"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 128.2 CE: se podrá acordar la intervención de empresas cuando así lo exigiere el interés general.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1149",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "129.1",
+  "enunciado": "¿En qué ámbito establece la ley formas de participación de los interesados, según el artículo 129.1?",
+  "opciones": [
+   "En la Seguridad Social y en organismos públicos que afecten a la calidad de vida o al bienestar general",
+   "En los partidos políticos",
+   "En la Administración de Justicia",
+   "En las empresas privadas de más de cien empleados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 129.1 CE: participación en la Seguridad Social y en organismos públicos cuya función afecte a la calidad de la vida o al bienestar general.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1150",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "129.2",
+  "enunciado": "¿Qué deben facilitar los poderes públicos a los trabajadores según el artículo 129.2?",
+  "opciones": [
+   "El acceso a la propiedad de los medios de producción",
+   "El acceso a la gestión de la Seguridad Social",
+   "La participación en el Consejo de Ministros",
+   "La adquisición de viviendas públicas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 129.2 CE: establecerán los medios que faciliten el acceso de los trabajadores a la propiedad de los medios de producción.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1151",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "130.2",
+  "enunciado": "¿A qué zonas se dispensa un tratamiento especial según el artículo 130.2?",
+  "opciones": [
+   "A las zonas de montaña",
+   "A las zonas costeras",
+   "A las zonas urbanas",
+   "A las zonas fronterizas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 130.2 CE: se dispensará un tratamiento especial a las zonas de montaña.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1152",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "131.2",
+  "enunciado": "¿Qué órgano se constituirá para colaborar en los proyectos de planificación económica?",
+  "opciones": [
+   "Un Consejo, cuya composición y funciones se desarrollarán por ley",
+   "El Tribunal de Cuentas",
+   "Una Comisión del Senado",
+   "La Diputación Permanente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 131.2 CE: se constituirá un Consejo cuya composición y funciones se desarrollarán por ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1153",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "131.2",
+  "enunciado": "¿Quién elabora los proyectos de planificación de la actividad económica?",
+  "opciones": [
+   "El Gobierno",
+   "Las Cortes Generales",
+   "Las Comunidades Autónomas",
+   "El Tribunal de Cuentas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 131.2 CE: el Gobierno elaborará los proyectos de planificación, con previsiones de las Comunidades Autónomas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1154",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "132.1",
+  "enunciado": "Además de la inalienabilidad, imprescriptibilidad e inembargabilidad, ¿qué aspecto regula la ley sobre los bienes de dominio público y comunales?",
+  "opciones": [
+   "Su desafectación",
+   "Su privatización obligatoria",
+   "Su subasta periódica",
+   "Su cesión a particulares"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 132.1 CE: la ley regulará su régimen inspirándose en esos principios, así como su desafectación.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1155",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "132.3",
+  "enunciado": "¿Qué se regula por ley respecto al Patrimonio del Estado y al Patrimonio Nacional según el artículo 132.3?",
+  "opciones": [
+   "Su administración, defensa y conservación",
+   "Su venta obligatoria",
+   "Su reparto entre Comunidades Autónomas",
+   "Su fiscalización por el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 132.3 CE: por ley se regularán su administración, defensa y conservación.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1156",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "133.2",
+  "enunciado": "¿Quiénes pueden establecer y exigir tributos además del Estado, de acuerdo con la Constitución y las leyes?",
+  "opciones": [
+   "Las Comunidades Autónomas y las Corporaciones locales",
+   "Solo las Comunidades Autónomas",
+   "Solo las Corporaciones locales",
+   "Ninguna otra entidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 133.2 CE: las Comunidades Autónomas y las Corporaciones locales podrán establecer y exigir tributos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1157",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "133.3",
+  "enunciado": "¿Cómo debe establecerse todo beneficio fiscal que afecte a los tributos del Estado?",
+  "opciones": [
+   "En virtud de ley",
+   "Mediante real decreto",
+   "Por acuerdo del Consejo de Ministros",
+   "Por resolución del Ministerio de Hacienda"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 133.3 CE: todo beneficio fiscal que afecte a los tributos del Estado deberá establecerse en virtud de ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1158",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.2",
+  "enunciado": "¿Qué carácter tienen los Presupuestos Generales del Estado en cuanto a su duración?",
+  "opciones": [
+   "Carácter anual",
+   "Carácter bienal",
+   "Carácter plurianual",
+   "Carácter trienal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.2 CE: los Presupuestos tendrán carácter anual.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1159",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "134.5",
+  "enunciado": "Aprobados los Presupuestos, ¿qué puede presentar el Gobierno respecto al mismo ejercicio?",
+  "opciones": [
+   "Proyectos de ley que impliquen aumento del gasto o disminución de ingresos",
+   "Solo proyectos que reduzcan el gasto",
+   "Nuevos Presupuestos completos",
+   "Ninguna modificación hasta el año siguiente"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 134.5 CE: el Gobierno podrá presentar proyectos de ley que impliquen aumento del gasto público o disminución de los ingresos del mismo ejercicio.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1160",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.1",
+  "enunciado": "¿A qué principio deben adecuar sus actuaciones todas las Administraciones Públicas según el artículo 135.1?",
+  "opciones": [
+   "Al de estabilidad presupuestaria",
+   "Al de gasto creciente",
+   "Al de descentralización fiscal",
+   "Al de equilibrio territorial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.1 CE: todas las Administraciones Públicas adecuarán sus actuaciones al principio de estabilidad presupuestaria.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1161",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.2",
+  "enunciado": "¿Qué deben presentar las Entidades Locales según el artículo 135.2?",
+  "opciones": [
+   "Equilibrio presupuestario",
+   "Déficit estructural limitado por ley orgánica",
+   "Superávit anual",
+   "Autorización del Congreso para sus presupuestos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.2 CE: las Entidades Locales deberán presentar equilibrio presupuestario.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1162",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.3",
+  "enunciado": "¿Qué prioridad tiene el pago de los créditos para intereses y capital de la deuda pública?",
+  "opciones": [
+   "Prioridad absoluta",
+   "Prioridad relativa tras los gastos sociales",
+   "La misma que cualquier otro gasto",
+   "Prioridad solo si lo decide el Gobierno cada año"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.3 CE: su pago gozará de prioridad absoluta.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1163",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.4",
+  "enunciado": "¿Quién aprecia las situaciones excepcionales que permiten superar los límites de déficit estructural y deuda pública?",
+  "opciones": [
+   "La mayoría absoluta de los miembros del Congreso de los Diputados",
+   "El Gobierno por decreto",
+   "La mayoría simple del Senado",
+   "El Tribunal de Cuentas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.4 CE: apreciadas por la mayoría absoluta de los miembros del Congreso.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1164",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.5",
+  "enunciado": "¿Qué debe regular en todo caso la ley orgánica de desarrollo del artículo 135?",
+  "opciones": [
+   "La metodología y el procedimiento para el cálculo del déficit estructural",
+   "La composición del Tribunal de Cuentas",
+   "El régimen de los estados excepcionales",
+   "La emisión de moneda"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.5 CE: en todo caso regulará, entre otros aspectos, la metodología y el procedimiento para el cálculo del déficit estructural.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1165",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.6",
+  "enunciado": "¿Qué deben adoptar las Comunidades Autónomas para aplicar el principio de estabilidad, de acuerdo con sus Estatutos?",
+  "opciones": [
+   "Las disposiciones procedentes en sus normas y decisiones presupuestarias",
+   "Un acuerdo previo con el Senado",
+   "Un convenio con cada municipio",
+   "Un Presupuesto idéntico al del Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.6 CE: adoptarán las disposiciones que procedan en sus normas y decisiones presupuestarias.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1166",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "135.3",
+  "enunciado": "¿Con qué valor se compara el volumen de deuda pública del conjunto de las Administraciones en relación con el PIB?",
+  "opciones": [
+   "Con el valor de referencia del Tratado de Funcionamiento de la Unión Europea",
+   "Con el fijado cada año por el Gobierno",
+   "Con el establecido por el Tribunal de Cuentas",
+   "Con el fijado por las Comunidades Autónomas"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 135.3 CE: no podrá superar el valor de referencia establecido en el Tratado de Funcionamiento de la UE.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1167",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "136.2",
+  "enunciado": "¿Qué remite el Tribunal de Cuentas a las Cortes Generales, sin perjuicio de su propia jurisdicción?",
+  "opciones": [
+   "Un informe anual",
+   "Un informe cada legislatura",
+   "Una propuesta de Presupuestos",
+   "Un dictamen vinculante sobre cada ley"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 136.2 CE: remitirá un informe anual comunicando, cuando proceda, infracciones o responsabilidades.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1168",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "136.3",
+  "enunciado": "¿Con qué otros miembros se equiparan los del Tribunal de Cuentas en independencia, inamovilidad e incompatibilidades?",
+  "opciones": [
+   "Con los Jueces",
+   "Con los Diputados",
+   "Con los Fiscales",
+   "Con los miembros del Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 136.3 CE: gozan de la misma independencia e inamovilidad y están sometidos a las mismas incompatibilidades que los Jueces.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1169",
+  "tema": "ce",
+  "titulo": "Título VII",
+  "articulo": "136.4",
+  "enunciado": "¿Qué norma regula la composición, organización y funciones del Tribunal de Cuentas?",
+  "opciones": [
+   "Una ley orgánica",
+   "Un reglamento de las Cortes",
+   "Un real decreto-ley",
+   "Una ley ordinaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 136.4 CE: una ley orgánica regulará la composición, organización y funciones del Tribunal de Cuentas.",
+  "dificultad": 1
+ }
+]

@@ -1,0 +1,962 @@
+[
+ {
+  "id": "ce-1170",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "137",
+  "enunciado": "¿Para qué gozan de autonomía los municipios, las provincias y las Comunidades Autónomas?",
+  "opciones": [
+   "Para la gestión de sus respectivos intereses",
+   "Para la defensa de sus fronteras",
+   "Para la aprobación de sus propios Presupuestos Generales",
+   "Para la representación exterior de España"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 137 CE: todas estas entidades gozan de autonomía para la gestión de sus respectivos intereses.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1171",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "138.1",
+  "enunciado": "¿Qué principio, consagrado en el artículo 2, garantiza el Estado velando por un equilibrio económico adecuado y justo entre las partes del territorio?",
+  "opciones": [
+   "El de solidaridad",
+   "El de subsidiariedad",
+   "El de jerarquía normativa",
+   "El de lealtad institucional"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 138.1 CE: el Estado garantiza la realización efectiva del principio de solidaridad consagrado en el artículo 2.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1172",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "138.1",
+  "enunciado": "Al velar por el equilibrio económico entre las partes del territorio, ¿a qué circunstancia atiende el Estado en particular según el artículo 138.1?",
+  "opciones": [
+   "Al hecho insular",
+   "Al hecho fronterizo",
+   "A la densidad de población",
+   "A la antigüedad histórica de cada territorio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 138.1 CE: se atiende en particular a las circunstancias del hecho insular.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1173",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "139.1",
+  "enunciado": "Según el artículo 139.1, ¿cómo son los derechos y obligaciones de los españoles en cualquier parte del territorio del Estado?",
+  "opciones": [
+   "Los mismos para todos",
+   "Los que fije cada Estatuto de autonomía",
+   "Los que determine cada Ayuntamiento",
+   "Iguales solo en materia fiscal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 139.1 CE: todos los españoles tienen los mismos derechos y obligaciones en cualquier parte del territorio del Estado.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1174",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "140",
+  "enunciado": "¿Quién elige a los Alcaldes según el artículo 140?",
+  "opciones": [
+   "Los Concejales o los vecinos",
+   "Exclusivamente los Concejales",
+   "El Delegado del Gobierno",
+   "La Diputación provincial"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 140 CE: los Alcaldes serán elegidos por los Concejales o por los vecinos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1175",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "140",
+  "enunciado": "¿Qué tipo de personalidad jurídica reconoce la Constitución a los municipios?",
+  "opciones": [
+   "Plena",
+   "Limitada a su patrimonio",
+   "Delegada por la provincia",
+   "Subordinada a la Comunidad Autónoma"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 140 CE: los municipios gozarán de personalidad jurídica plena.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1176",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "140",
+  "enunciado": "¿Con qué sufragio son elegidos los Concejales por los vecinos del municipio?",
+  "opciones": [
+   "Universal, igual, libre, directo y secreto",
+   "Universal, igual, libre, indirecto y secreto",
+   "Censitario, igual, libre, directo y secreto",
+   "Universal, desigual, libre, directo y público"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 140 CE: sufragio universal, igual, libre, directo y secreto, en la forma establecida por la ley.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1177",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "141.1",
+  "enunciado": "Según el artículo 141.1, ¿qué es la provincia?",
+  "opciones": [
+   "Una entidad local con personalidad jurídica propia, determinada por la agrupación de municipios",
+   "Una Comunidad Autónoma de ámbito reducido",
+   "Un órgano del Estado sin personalidad jurídica",
+   "Una agrupación de Comunidades Autónomas limítrofes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 141.1 CE: la provincia es una entidad local con personalidad jurídica propia, determinada por la agrupación de municipios y división territorial para el cumplimiento de las actividades del Estado.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1178",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "141.3",
+  "enunciado": "¿Qué prevé el artículo 141.3 respecto a las agrupaciones de municipios?",
+  "opciones": [
+   "Que se podrán crear agrupaciones de municipios diferentes de la provincia",
+   "Que están prohibidas fuera de la provincia",
+   "Que solo pueden crearse por ley orgánica",
+   "Que requieren referéndum de todos los vecinos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 141.3 CE: se podrán crear agrupaciones de municipios diferentes de la provincia.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1179",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "142",
+  "enunciado": "¿De qué deben disponer las Haciendas locales para el desempeño de las funciones que la ley atribuye a las Corporaciones respectivas?",
+  "opciones": [
+   "De los medios suficientes",
+   "De un tope fijo de gasto anual",
+   "De una tutela económica de la Comunidad Autónoma",
+   "De transferencias exclusivamente estatales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 142 CE: las Haciendas locales deberán disponer de los medios suficientes para el desempeño de las funciones que la ley atribuye a las Corporaciones.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1180",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "143.1",
+  "enunciado": "¿Cuál de estos territorios puede, según el artículo 143.1, acceder al autogobierno y constituirse en Comunidad Autónoma?",
+  "opciones": [
+   "Los territorios insulares",
+   "Cualquier municipio con más de 100.000 habitantes",
+   "Las ciudades con puerto comercial",
+   "Las comarcas con lengua propia"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 143.1 CE: pueden acceder al autogobierno las provincias limítrofes con características comunes, los territorios insulares y las provincias con entidad regional histórica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1181",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "143.3",
+  "enunciado": "Si la iniciativa del proceso autonómico no prospera, ¿cuándo podrá reiterarse?",
+  "opciones": [
+   "Pasados cinco años",
+   "Pasados dos años",
+   "Pasados seis meses",
+   "Pasados diez años"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 143.3 CE: la iniciativa, en caso de no prosperar, solo podrá reiterarse pasados cinco años.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1182",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "144",
+  "enunciado": "Según el artículo 144, ¿qué pueden hacer las Cortes Generales, por motivos de interés nacional, respecto a territorios no integrados en la organización provincial?",
+  "opciones": [
+   "Autorizar o acordar un Estatuto de autonomía",
+   "Declararlos territorio de soberanía compartida",
+   "Integrarlos obligatoriamente en una provincia",
+   "Convocar un referéndum en ellos sin ley"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 144.b CE: las Cortes, mediante ley orgánica, pueden autorizar o acordar un Estatuto de autonomía para territorios no integrados en la organización provincial.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1183",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "144",
+  "enunciado": "Según el artículo 144, ¿qué pueden sustituir las Cortes Generales mediante ley orgánica por motivos de interés nacional?",
+  "opciones": [
+   "La iniciativa de las Corporaciones locales del artículo 143.2",
+   "La iniciativa legislativa popular",
+   "El referéndum de ratificación del Estatuto",
+   "La propuesta de reforma del Estatuto por la Asamblea"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 144.c CE: pueden sustituir la iniciativa de las Corporaciones locales a que se refiere el artículo 143.2.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1184",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "145.2",
+  "enunciado": "Cuando las Comunidades Autónomas celebran los convenios entre sí que prevean sus Estatutos, ¿quién fija el carácter y efectos de la comunicación a las Cortes Generales?",
+  "opciones": [
+   "Los propios Estatutos",
+   "El Gobierno mediante real decreto",
+   "El Tribunal Constitucional",
+   "El Senado en su Reglamento"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 145.2 CE: los Estatutos podrán prever los supuestos, requisitos y términos de los convenios, así como el carácter y efectos de la comunicación a las Cortes Generales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1185",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "146",
+  "enunciado": "¿Por quién está compuesta la asamblea que elabora el proyecto de Estatuto según el artículo 146?",
+  "opciones": [
+   "Por los miembros de la Diputación u órgano interinsular de las provincias afectadas y los Diputados y Senadores elegidos en ellas",
+   "Por los Alcaldes de todos los municipios afectados",
+   "Por el Gobierno y el Consejo de Estado",
+   "Por una comisión mixta del Congreso y del Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 146 CE: la asamblea se compone de los miembros de la Diputación u órgano interinsular y de los Diputados y Senadores elegidos en las provincias afectadas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1186",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "147.2",
+  "enunciado": "¿Qué denominación debe recoger el Estatuto para la Comunidad según el artículo 147.2.a?",
+  "opciones": [
+   "La que mejor corresponda a su identidad histórica",
+   "La que decida el Gobierno de la Nación",
+   "La del nombre de su capital",
+   "La que fije una ley ordinaria de las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 147.2.a CE: los Estatutos deben contener la denominación de la Comunidad que mejor corresponda a su identidad histórica.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1187",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "147.2",
+  "enunciado": "Además de las competencias asumidas, ¿qué debe contener el Estatuto de autonomía sobre los servicios correspondientes a ellas?",
+  "opciones": [
+   "Las bases para el traspaso de dichos servicios",
+   "El calendario de su privatización",
+   "El régimen de su financiación europea",
+   "La lista de funcionarios afectados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 147.2.d CE: las competencias asumidas y las bases para el traspaso de los servicios correspondientes.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1188",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "148.1",
+  "enunciado": "¿Cuál de estas materias pueden asumir las Comunidades Autónomas conforme al artículo 148.1?",
+  "opciones": [
+   "Ordenación del territorio, urbanismo y vivienda",
+   "Legislación mercantil",
+   "Defensa y Fuerzas Armadas",
+   "Régimen aduanero y arancelario"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 148.1.3.ª CE: ordenación del territorio, urbanismo y vivienda. Las otras son competencia exclusiva del Estado (art. 149.1).",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1189",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "148.1",
+  "enunciado": "Según el artículo 148.1.22.ª, ¿mediante qué norma se establecen los términos de coordinación y facultades de las Comunidades sobre las policías locales?",
+  "opciones": [
+   "Una ley orgánica",
+   "Un real decreto del Gobierno",
+   "Un decreto legislativo",
+   "La ley de presupuestos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 148.1.22.ª CE: la coordinación y demás facultades sobre las policías locales, en los términos que establezca una ley orgánica.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1190",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "¿Qué competencia exclusiva atribuye el artículo 149.1.12.ª al Estado, junto a la legislación sobre pesas y medidas?",
+  "opciones": [
+   "La determinación de la hora oficial",
+   "La promoción del turismo",
+   "El fomento de la artesanía",
+   "La gestión de ferias interiores"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.12.ª CE: legislación sobre pesas y medidas, determinación de la hora oficial.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1191",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "¿Qué autorización es competencia exclusiva del Estado según el artículo 149.1.32.ª?",
+  "opciones": [
+   "La convocatoria de consultas populares por vía de referéndum",
+   "La apertura de puertos deportivos",
+   "La creación de museos autonómicos",
+   "La constitución de Haciendas locales"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.32.ª CE: autorización para la convocatoria de consultas populares por vía de referéndum.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1192",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "¿Para qué fines es competencia exclusiva del Estado la estadística según el artículo 149.1.31.ª?",
+  "opciones": [
+   "Para fines estatales",
+   "Para fines locales",
+   "Para fines electorales",
+   "Para fines tributarios autonómicos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.31.ª CE: estadística para fines estatales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1193",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.2",
+  "enunciado": "Según el artículo 149.2, ¿cómo considerará el Estado el servicio de la cultura?",
+  "opciones": [
+   "Como deber y atribución esencial",
+   "Como competencia exclusiva de las Comunidades",
+   "Como actividad de fomento voluntario",
+   "Como materia reservada a los municipios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.2 CE: el Estado considerará el servicio de la cultura como deber y atribución esencial y facilitará la comunicación cultural entre las Comunidades Autónomas.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1194",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "Respecto a la seguridad pública, ¿qué posibilidad admite el artículo 149.1.29.ª?",
+  "opciones": [
+   "La creación de policías por las Comunidades Autónomas según sus Estatutos y una ley orgánica",
+   "La asunción íntegra por las Comunidades Autónomas",
+   "Su traspaso a los municipios por ley ordinaria",
+   "Su prohibición absoluta a cualquier otra policía"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.29.ª CE: seguridad pública, sin perjuicio de la creación de policías por las Comunidades Autónomas en la forma de sus Estatutos y en el marco de una ley orgánica.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1195",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "149.1",
+  "enunciado": "En materia de legislación civil, ¿qué admite el artículo 149.1.8.ª sin perjuicio de la competencia exclusiva del Estado?",
+  "opciones": [
+   "La conservación, modificación y desarrollo de los derechos civiles forales o especiales por las Comunidades allí donde existan",
+   "Que cada Comunidad regule libremente el matrimonio",
+   "Que las Comunidades fijen las reglas de aplicación y eficacia de las normas jurídicas",
+   "Que las Comunidades regulen los registros e instrumentos públicos"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 149.1.8.ª CE: legislación civil, sin perjuicio de los derechos civiles forales o especiales; en todo caso el Estado regula las formas de matrimonio, registros, aplicación y eficacia de las normas, etc.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1196",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "150.1",
+  "enunciado": "Según el artículo 150.1, ¿qué se establece en cada ley marco respecto a las normas legislativas de las Comunidades Autónomas?",
+  "opciones": [
+   "La modalidad del control de las Cortes Generales sobre ellas",
+   "La suspensión automática de su vigencia",
+   "La necesidad de ratificación por referéndum",
+   "El control exclusivo del Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 150.1 CE: en cada ley marco se establecerá la modalidad del control de las Cortes Generales, sin perjuicio de la competencia de los Tribunales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1197",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "150.2",
+  "enunciado": "Cuando el Estado transfiere o delega facultades en las Comunidades por ley orgánica, ¿qué debe prever la ley en cada caso?",
+  "opciones": [
+   "La transferencia de medios financieros y las formas de control que se reserve el Estado",
+   "La reforma automática del Estatuto",
+   "El cese definitivo de la competencia estatal",
+   "La aprobación previa del Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 150.2 CE: la ley preverá la correspondiente transferencia de medios financieros y las formas de control que se reserve el Estado.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1198",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "150.3",
+  "enunciado": "¿Cuándo puede el Estado dictar leyes de armonización aun en materias de competencia de las Comunidades Autónomas?",
+  "opciones": [
+   "Cuando así lo exija el interés general",
+   "Cuando lo solicite una sola Comunidad",
+   "Cuando lo decida el Tribunal Constitucional",
+   "Cuando haya estado de alarma"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 150.3 CE: leyes que armonicen las disposiciones de las Comunidades cuando así lo exija el interés general.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1199",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.1",
+  "enunciado": "En el procedimiento del artículo 151.1, ¿qué proporción de municipios de cada provincia afectada, que representen al menos la mayoría del censo electoral, debe acordar la iniciativa?",
+  "opciones": [
+   "Las tres cuartas partes",
+   "Las dos terceras partes",
+   "La mayoría simple",
+   "Las tres quintas partes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.1 CE: las tres cuartas partes de los municipios de cada provincia (frente a las dos terceras partes del art. 143.2).",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1200",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.1",
+  "enunciado": "¿Cómo debe ser ratificada la iniciativa autonómica del artículo 151.1 mediante referéndum?",
+  "opciones": [
+   "Por el voto afirmativo de la mayoría absoluta de los electores de cada provincia",
+   "Por mayoría simple de los votos emitidos en la Comunidad",
+   "Por dos tercios de los votos válidos",
+   "Por la mayoría de los municipios afectados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.1 CE: ratificación mediante referéndum por el voto afirmativo de la mayoría absoluta de los electores de cada provincia.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1201",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.2",
+  "enunciado": "Tras el acuerdo en la Comisión Constitucional del Congreso, ¿qué ocurre con el texto del Estatuto según el artículo 151.2.3.º?",
+  "opciones": [
+   "Se somete a referéndum del cuerpo electoral de las provincias comprendidas",
+   "Se remite directamente al Rey para su sanción",
+   "Se aprueba por el Pleno del Senado sin más trámite",
+   "Se somete a dictamen del Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.2.3.º CE: si se alcanza el acuerdo, el texto es sometido a referéndum del cuerpo electoral de las provincias.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1202",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.2",
+  "enunciado": "Aprobado el Estatuto por las Cortes en el procedimiento del artículo 151.2.4.º, ¿quién lo sanciona y promulga como ley?",
+  "opciones": [
+   "El Rey",
+   "El Presidente del Gobierno",
+   "El Presidente del Congreso",
+   "El Presidente de la Asamblea de Parlamentarios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.2.4.º CE: aprobado el Estatuto, el Rey lo sancionará y lo promulgará como ley.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1203",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "151.3",
+  "enunciado": "Si una o varias provincias no aprueban el proyecto de Estatuto en los supuestos del artículo 151.2.4.º y 5.º, ¿qué ocurre según el artículo 151.3?",
+  "opciones": [
+   "No impide la constitución de la Comunidad entre las restantes",
+   "Se paraliza todo el proceso autonómico",
+   "Se anula el Estatuto en su totalidad",
+   "Se somete de nuevo a referéndum en toda España"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 151.3 CE: la no aprobación por una o varias provincias no impedirá la constitución entre las restantes de la Comunidad proyectada.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1204",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "152.1",
+  "enunciado": "¿Con qué sistema de representación se elige la Asamblea Legislativa en las Comunidades del artículo 151?",
+  "opciones": [
+   "Representación proporcional que asegure la representación de las diversas zonas del territorio",
+   "Sistema mayoritario a una vuelta",
+   "Designación por los Ayuntamientos",
+   "Sorteo entre los censados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 152.1 CE: sufragio universal con representación proporcional que asegure, además, la representación de las diversas zonas del territorio.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1205",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "152.1",
+  "enunciado": "¿Ante quién son políticamente responsables el Presidente y los miembros del Consejo de Gobierno en estas Comunidades?",
+  "opciones": [
+   "Ante la Asamblea",
+   "Ante el Delegado del Gobierno",
+   "Ante el Tribunal Superior de Justicia",
+   "Ante el Senado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 152.1 CE: son políticamente responsables ante la Asamblea.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1206",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "152.2",
+  "enunciado": "¿Qué se exige, además de seguir los procedimientos estatutarios, para modificar los Estatutos del artículo 151 una vez promulgados?",
+  "opciones": [
+   "Referéndum entre los electores inscritos en los censos correspondientes",
+   "Informe favorable del Senado",
+   "Dictamen del Tribunal Constitucional",
+   "Aprobación por mayoría de tres quintos del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 152.2 CE: solo podrán ser modificados mediante los procedimientos establecidos en ellos y con referéndum entre los electores inscritos.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1207",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "152.3",
+  "enunciado": "¿Qué pueden establecer los Estatutos mediante la agrupación de municipios limítrofes según el artículo 152.3?",
+  "opciones": [
+   "Circunscripciones territoriales propias con plena personalidad jurídica",
+   "Nuevas provincias",
+   "Nuevas Comunidades Autónomas",
+   "Mancomunidades sin personalidad jurídica"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 152.3 CE: circunscripciones territoriales propias, que gozarán de plena personalidad jurídica.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1208",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "153",
+  "enunciado": "¿Quién controla el ejercicio de funciones delegadas del artículo 150.2 por las Comunidades Autónomas, y con qué requisito?",
+  "opciones": [
+   "El Gobierno, previo dictamen del Consejo de Estado",
+   "El Tribunal Constitucional, previo informe del Gobierno",
+   "Las Cortes Generales, previa autorización del Senado",
+   "El Tribunal de Cuentas, previo dictamen del Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 153.b CE: el Gobierno, previo dictamen del Consejo de Estado.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1209",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "153",
+  "enunciado": "¿Qué jurisdicción controla la administración autónoma y sus normas reglamentarias?",
+  "opciones": [
+   "La contencioso-administrativa",
+   "La civil",
+   "La constitucional",
+   "La militar"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 153.c CE: por la jurisdicción contencioso-administrativa, el control de la administración autónoma y sus normas reglamentarias.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1210",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "155.2",
+  "enunciado": "Para ejecutar las medidas del artículo 155.1, ¿qué puede hacer el Gobierno según el artículo 155.2?",
+  "opciones": [
+   "Dar instrucciones a todas las autoridades de las Comunidades Autónomas",
+   "Disolver la Asamblea Legislativa por real decreto",
+   "Suspender el Estatuto de autonomía",
+   "Nombrar al Presidente de la Comunidad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 155.2 CE: el Gobierno podrá dar instrucciones a todas las autoridades de las Comunidades Autónomas.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1211",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "156.2",
+  "enunciado": "¿Cómo podrán actuar las Comunidades Autónomas respecto a los recursos tributarios del Estado según el artículo 156.2?",
+  "opciones": [
+   "Como delegados o colaboradores del Estado para su recaudación, gestión y liquidación",
+   "Como titulares exclusivos de su regulación",
+   "Como órganos de control del Tribunal de Cuentas",
+   "Como sustitutos de la Hacienda estatal en todo caso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 156.2 CE: podrán actuar como delegados o colaboradores del Estado para la recaudación, la gestión y la liquidación.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1212",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "157.3",
+  "enunciado": "¿Mediante qué tipo de norma puede regularse el ejercicio de las competencias financieras de las Comunidades y la colaboración financiera con el Estado?",
+  "opciones": [
+   "Ley orgánica",
+   "Ley ordinaria",
+   "Decreto-ley",
+   "Reglamento del Gobierno"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 157.3 CE: mediante ley orgánica podrá regularse el ejercicio de las competencias financieras, las normas para resolver conflictos y las formas de colaboración.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1213",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "158.1",
+  "enunciado": "¿En función de qué se puede establecer en los Presupuestos Generales del Estado una asignación a las Comunidades Autónomas según el artículo 158.1?",
+  "opciones": [
+   "Del volumen de los servicios y actividades estatales asumidos y de la garantía de un nivel mínimo de servicios públicos fundamentales",
+   "Del número de municipios de cada Comunidad",
+   "De la recaudación propia de cada Comunidad",
+   "De la superficie del territorio"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 158.1 CE: en función del volumen de servicios y actividades estatales asumidos y de la garantía de un nivel mínimo en servicios públicos fundamentales.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1214",
+  "tema": "ce",
+  "titulo": "Título VIII",
+  "articulo": "158.2",
+  "enunciado": "¿Quién distribuye los recursos del Fondo de Compensación entre las Comunidades Autónomas y provincias, en su caso?",
+  "opciones": [
+   "Las Cortes Generales",
+   "El Gobierno",
+   "El Tribunal de Cuentas",
+   "El Consejo de Política Fiscal"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 158.2 CE: sus recursos serán distribuidos por las Cortes Generales.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1215",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.1",
+  "enunciado": "¿Cuántos miembros del Tribunal Constitucional se nombran a propuesta del Senado y con qué mayoría?",
+  "opciones": [
+   "Cuatro, por tres quintos",
+   "Cuatro, por mayoría simple",
+   "Dos, por tres quintos",
+   "Seis, por mayoría absoluta"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.1 CE: cuatro a propuesta del Senado, con idéntica mayoría (tres quintos) a la del Congreso.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1216",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.1",
+  "enunciado": "¿Cuántos miembros del Tribunal Constitucional se proponen por el Consejo General del Poder Judicial?",
+  "opciones": [
+   "Dos",
+   "Cuatro",
+   "Uno",
+   "Tres"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.1 CE: dos a propuesta del Consejo General del Poder Judicial.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1217",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.1",
+  "enunciado": "¿Quién nombra formalmente a los miembros del Tribunal Constitucional?",
+  "opciones": [
+   "El Rey",
+   "El Presidente del Gobierno",
+   "El Presidente del Tribunal Supremo",
+   "El Presidente del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.1 CE: el Tribunal se compone de 12 miembros nombrados por el Rey.",
+  "dificultad": 1
+ },
+ {
+  "id": "ce-1218",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.4",
+  "enunciado": "¿Con qué es incompatible la condición de miembro del Tribunal Constitucional en relación con los partidos y sindicatos?",
+  "opciones": [
+   "Con el desempeño de funciones directivas en un partido político o sindicato y con el empleo a su servicio",
+   "Con la mera afiliación a un sindicato",
+   "Con cualquier colaboración en actos de un partido",
+   "Solo con ser candidato en elecciones"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.4 CE: incompatible con funciones directivas en un partido o sindicato y con el empleo a su servicio.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1219",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "159.5",
+  "enunciado": "¿Cómo son los miembros del Tribunal Constitucional en el ejercicio de su mandato?",
+  "opciones": [
+   "Independientes e inamovibles",
+   "Independientes y revocables por el Rey",
+   "Inamovibles pero dependientes del Consejo General del Poder Judicial",
+   "Revocables por mayoría del Congreso"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 159.5 CE: serán independientes e inamovibles en el ejercicio de su mandato.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1220",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "160",
+  "enunciado": "¿A propuesta de quién nombra el Rey al Presidente del Tribunal Constitucional?",
+  "opciones": [
+   "Del Tribunal en pleno",
+   "Del Gobierno",
+   "Del Consejo General del Poder Judicial",
+   "Del Congreso de los Diputados"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 160 CE: nombrado entre sus miembros por el Rey, a propuesta del mismo Tribunal en pleno.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1221",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "161.1",
+  "enunciado": "¿De qué conflictos conoce el Tribunal Constitucional según el artículo 161.1.c?",
+  "opciones": [
+   "De los de competencia entre el Estado y las Comunidades Autónomas o de estas entre sí",
+   "De los surgidos entre el Congreso y el Senado",
+   "De los laborales entre funcionarios y Administraciones",
+   "De los de jurisdicción entre tribunales ordinarios"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 161.1.c CE: conflictos de competencia entre el Estado y las Comunidades Autónomas o de estas entre sí.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1222",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "161.1",
+  "enunciado": "¿Por violación de qué derechos y libertades cabe el recurso de amparo ante el Tribunal Constitucional?",
+  "opciones": [
+   "Los referidos en el artículo 53.2",
+   "Todos los derechos del Título I",
+   "Solo los del Capítulo tercero del Título I",
+   "Los reconocidos en los Estatutos de autonomía"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 161.1.b CE: recurso de amparo por violación de los derechos y libertades referidos en el artículo 53.2.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1223",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "161.1",
+  "enunciado": "Si el Tribunal declara la inconstitucionalidad de una norma con rango de ley interpretada por la jurisprudencia, ¿qué ocurre con las sentencias ya recaídas?",
+  "opciones": [
+   "No pierden el valor de cosa juzgada",
+   "Quedan anuladas automáticamente",
+   "Deben revisarse todas de oficio",
+   "Pierden su ejecutividad"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 161.1.a CE: la declaración afectará a la jurisprudencia, si bien las sentencias recaídas no perderán el valor de cosa juzgada.",
+  "dificultad": 3
+ },
+ {
+  "id": "ce-1224",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "162.1",
+  "enunciado": "¿Cuál de estos sujetos está legitimado para interponer el recurso de inconstitucionalidad?",
+  "opciones": [
+   "El Defensor del Pueblo",
+   "El Ministerio Fiscal",
+   "Cualquier persona con interés legítimo",
+   "El Presidente del Tribunal Supremo"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 162.1.a CE: Presidente del Gobierno, Defensor del Pueblo, 50 Diputados, 50 Senadores, órganos ejecutivos y Asambleas de las Comunidades.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1225",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "162.1",
+  "enunciado": "¿Quién está legitimado para el recurso de amparo, además de toda persona natural o jurídica con interés legítimo y el Defensor del Pueblo?",
+  "opciones": [
+   "El Ministerio Fiscal",
+   "El Presidente del Gobierno",
+   "50 Senadores",
+   "El Consejo de Estado"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 162.1.b CE: toda persona con interés legítimo, el Defensor del Pueblo y el Ministerio Fiscal.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1226",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "164.1",
+  "enunciado": "¿Dónde se publican las sentencias del Tribunal Constitucional y junto a qué?",
+  "opciones": [
+   "En el boletín oficial del Estado, con los votos particulares si los hubiere",
+   "En el Diario de Sesiones de las Cortes, con el informe del ponente",
+   "En el boletín de cada Comunidad Autónoma, sin votos particulares",
+   "Solo se notifican a las partes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 164.1 CE: se publicarán en el boletín oficial del Estado con los votos particulares, si los hubiere.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1227",
+  "tema": "ce",
+  "titulo": "Título IX",
+  "articulo": "164.1",
+  "enunciado": "¿Qué efectos tienen las sentencias del Tribunal Constitucional que declaren la inconstitucionalidad de una ley?",
+  "opciones": [
+   "Plenos efectos frente a todos",
+   "Efectos solo entre las partes",
+   "Efectos solo para quien recurrió",
+   "Efectos suspendidos hasta su ratificación por las Cortes"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 164.1 CE: las que declaren la inconstitucionalidad de una ley o norma con fuerza de ley tienen plenos efectos frente a todos.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1228",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "166",
+  "enunciado": "¿Cómo se ejerce la iniciativa de reforma constitucional según el artículo 166?",
+  "opciones": [
+   "En los términos de los apartados 1 y 2 del artículo 87",
+   "En los términos del artículo 92",
+   "Exclusivamente por el Gobierno",
+   "Mediante iniciativa popular directa"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 166 CE: remite a los apartados 1 y 2 del artículo 87.",
+  "dificultad": 2
+ },
+ {
+  "id": "ce-1229",
+  "tema": "ce",
+  "titulo": "Título X",
+  "articulo": "168.2",
+  "enunciado": "En la reforma agravada del artículo 168, ¿qué deben hacer las Cámaras elegidas tras la disolución de las Cortes?",
+  "opciones": [
+   "Ratificar la decisión y estudiar el nuevo texto, que se aprueba por dos tercios de ambas Cámaras",
+   "Aprobar el nuevo texto por mayoría simple",
+   "Someter directamente el texto a referéndum sin estudiarlo",
+   "Elegir una Comisión paritaria"
+  ],
+  "correcta": 0,
+  "explicacion": "Art. 168.2 CE: deberán ratificar la decisión y estudiar el nuevo texto, que deberá ser aprobado por mayoría de dos tercios de ambas Cámaras.",
+  "dificultad": 3
+ }
+]
