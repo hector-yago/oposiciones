@@ -2,7 +2,7 @@
 import { updateProgress } from './scheduler.js';
 import { MAX_EXAMS } from './migrations.js';
 import { recordDay } from './stats.js';
-import { trackAnswer, trackEvent } from './missions.js';
+import { ensureMissions, trackAnswer, trackEvent } from './missions.js';
 
 export const EXAM_SIZES = [10, 20, 40, 100];
 export const SECS_PER_QUESTION = 50;
@@ -33,6 +33,7 @@ export const timeLimit = (n) => n * SECS_PER_QUESTION;
 
 /** Cuenta una respuesta del examen: progreso y estadísticas, pero sin monedas, racha ni efectos en mascotas. */
 export function applyExamAnswer(doc, question, correct, nowMs) {
+  ensureMissions(doc, nowMs);
   doc.stats.answered += 1;
   const t = (doc.stats.byTitle[question.titulo] ??= { ok: 0, ko: 0 });
   doc.progress[question.id] = updateProgress(doc.progress[question.id], correct, nowMs, doc.stats.answered);
@@ -46,6 +47,8 @@ export function applyExamAnswer(doc, question, correct, nowMs) {
 
 /** Guarda el resultado y entrega la recompensa. Devuelve { score, coins, passed }. */
 export function recordExam(doc, { n, ok, ko, blank, secs }, nowMs) {
+  // Un examen entregado entero en blanco no cuenta (ni nota, ni misión, ni logros).
+  if (ok + ko === 0) return { score: 0, coins: 0, passed: false, recorded: false };
   const score = scoreOf({ ok, ko, n });
   const coins = examCoins(score);
   doc.exams.push({ at: nowMs, n, ok, ko, blank, score, secs: Math.max(0, Math.round(secs)) });
@@ -53,7 +56,7 @@ export function recordExam(doc, { n, ok, ko, blank, secs }, nowMs) {
   doc.coins += coins;
   doc.stats.earned += coins;
   trackEvent(doc, 'exam');
-  return { score, coins, passed: score >= PASS_MARK };
+  return { score, coins, passed: score >= PASS_MARK, recorded: true };
 }
 
 export function formatSecs(secs) {

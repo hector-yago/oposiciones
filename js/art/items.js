@@ -159,6 +159,58 @@ export const ITEM_ART = {
     w: 44, h: 50,
     svg: `<ellipse cx="22" cy="44" rx="21" ry="6" fill="#9ca3af"/><path d="M2 40q20 12 40 0v-6H2z" fill="#a8a29e"/><ellipse cx="22" cy="34" rx="20" ry="5" fill="#60a5fa"/><rect x="19" y="14" width="6" height="22" fill="#a8a29e"/><ellipse cx="22" cy="16" rx="12" ry="3.6" fill="#a8a29e"/><ellipse cx="22" cy="15" rx="9" ry="2.4" fill="#93c5fd"/><path d="M22 4v10M16 6q6 -4 12 0" stroke="#93c5fd" stroke-width="2" fill="none" stroke-linecap="round"/>`,
   },
+  // ----- Estudio -----
+  estudio: {
+    w: 48, h: 48,
+    svg: `<rect x="4" y="22" width="40" height="5" rx="2" fill="#8b5a2b"/><rect x="8" y="27" width="5" height="17" fill="#6b4423"/><rect x="35" y="27" width="5" height="17" fill="#6b4423"/><rect x="10" y="10" width="20" height="12" rx="2" fill="#38bdf8"/><rect x="12" y="12" width="16" height="8" fill="#bae6fd"/><rect x="30" y="16" width="10" height="6" rx="1" fill="#ef4444"/><rect x="31" y="12" width="9" height="4" rx="1" fill="#3b82f6"/>`,
+  },
+  queso: {
+    w: 22, h: 16,
+    svg: `<path d="M1 14L21 14 21 6 3 2z" fill="#fbbf24"/><path d="M3 2l18 4v2L3 4z" fill="#fde047"/><circle cx="8" cy="10" r="1.8" fill="#d97706"/><circle cx="15" cy="9" r="1.4" fill="#d97706"/><circle cx="17" cy="12" r="1" fill="#d97706"/>`,
+  },
+  posadero: {
+    w: 26, h: 100,
+    svg: `<rect x="11" y="18" width="4" height="78" fill="#8b5a2b"/><ellipse cx="13" cy="97" rx="12" ry="3" fill="#6b4423"/><rect x="0" y="14" width="26" height="5" rx="2.5" fill="#a9703a"/><path d="M13 30q8 6 0 12" fill="none" stroke="#6b4423" stroke-width="1.6"/>`,
+  },
+  libros: {
+    w: 34, h: 26,
+    svg: `<rect x="2" y="16" width="30" height="8" rx="1.5" fill="#2563eb"/><rect x="4" y="9" width="26" height="7" rx="1.5" fill="#dc2626"/><rect x="6" y="3" width="22" height="6" rx="1.5" fill="#16a34a"/><path d="M5 20h24M7 12.5h20M9 6h16" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/>`,
+  },
+  'lampara-mesa': {
+    w: 24, h: 40,
+    svg: `<ellipse cx="12" cy="37" rx="9" ry="3" fill="#374151"/><path d="M12 36L8 18l10-8" fill="none" stroke="#6b7280" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 4l8 8-8 4-6-8z" fill="#f59e0b"/><path d="M14 4l8 8" stroke="#fbbf24" stroke-width="1.4"/>`,
+  },
+  silla: {
+    w: 38, h: 60,
+    svg: `<rect x="5" y="2" width="6" height="30" rx="2" fill="#6b4423"/><rect x="5" y="4" width="28" height="14" rx="3" fill="#a9703a"/><rect x="3" y="30" width="32" height="7" rx="3" fill="#c8924f"/><rect x="5" y="37" width="5" height="21" fill="#6b4423"/><rect x="28" y="37" width="5" height="21" fill="#6b4423"/>`,
+  },
+  diploma: {
+    w: 38, h: 46,
+    svg: `<rect width="38" height="46" rx="2.5" fill="#8b5a2b"/><rect x="3" y="3" width="32" height="40" fill="#fff7e6"/><path d="M8 11h22M10 17h18" stroke="#9ca3af" stroke-width="1.4" stroke-linecap="round"/><path d="M9 24h20M9 28h20M9 32h14" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round"/><circle cx="29" cy="35" r="5" fill="#dc2626"/><path d="M26 39l-2 6 5-3 5 3-2-6z" fill="#b91c1c"/>`,
+  },
+  'globo-terraqueo': {
+    w: 32, h: 48,
+    svg: `<rect x="14" y="28" width="4" height="16" fill="#6b4423"/><ellipse cx="16" cy="45" rx="10" ry="3" fill="#6b4423"/><circle cx="16" cy="16" r="14" fill="#38bdf8"/><path d="M8 8q6-4 10 2t-2 8-8 0zM20 18q5 0 6 6t-6 4z" fill="#4ade80"/><path d="M4 22q12 12 24 0" fill="none" stroke="#1d4ed8" stroke-width="1" opacity=".5"/><path d="M3 12a15 15 0 0 1 4-5" stroke="#fff" stroke-opacity=".7" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M2 16A16 16 0 0 0 30 16" fill="none" stroke="#9ca3af" stroke-width="1.4"/>`,
+  },
+  escritorio: {
+    w: 130, h: 70,
+    svg: `<rect x="0" y="10" width="130" height="8" rx="3" fill="#8b5a2b"/><rect x="6" y="18" width="8" height="52" fill="#6b4423"/><rect x="116" y="18" width="8" height="52" fill="#6b4423"/><rect x="76" y="18" width="40" height="40" fill="#a9703a"/><rect x="80" y="22" width="32" height="14" rx="2" fill="#c8924f"/><rect x="80" y="40" width="32" height="14" rx="2" fill="#c8924f"/><circle cx="96" cy="29" r="2" fill="#374151"/><circle cx="96" cy="47" r="2" fill="#374151"/>`,
+  },
+  'estanteria-grande': {
+    w: 84, h: 150,
+    svg: `<rect width="84" height="150" rx="3" fill="#6b4423"/><rect x="4" y="4" width="76" height="142" fill="#8b5a2b"/>
+      <g><rect x="8" y="12" width="9" height="30" fill="#ef4444"/><rect x="18" y="8" width="8" height="34" fill="#3b82f6"/><rect x="27" y="14" width="10" height="28" fill="#22c55e"/><rect x="38" y="10" width="8" height="32" fill="#eab308"/><rect x="47" y="16" width="11" height="26" fill="#a855f7"/><rect x="59" y="9" width="9" height="33" fill="#14b8a6"/><rect x="69" y="14" width="7" height="28" fill="#f97316"/></g>
+      <rect x="4" y="44" width="76" height="4" fill="#6b4423"/>
+      <g><rect x="8" y="54" width="10" height="26" fill="#6366f1"/><rect x="19" y="58" width="8" height="22" fill="#ec4899"/><rect x="28" y="52" width="9" height="28" fill="#84cc16"/><circle cx="55" cy="68" r="9" fill="#e5e7eb"/><path d="M46 68h18M55 59v18" stroke="#9ca3af"/><rect x="66" y="56" width="10" height="24" fill="#0ea5e9"/></g>
+      <rect x="4" y="82" width="76" height="4" fill="#6b4423"/>
+      <g><rect x="8" y="92" width="12" height="28" fill="#dc2626"/><rect x="21" y="96" width="9" height="24" fill="#2563eb"/><rect x="31" y="90" width="9" height="30" fill="#16a34a"/><rect x="42" y="94" width="13" height="26" fill="#f59e0b"/><rect x="56" y="90" width="9" height="30" fill="#7c3aed"/><rect x="66" y="96" width="10" height="24" fill="#0d9488"/></g>
+      <rect x="4" y="122" width="76" height="4" fill="#6b4423"/>
+      <g><rect x="8" y="130" width="14" height="14" fill="#fde68a" stroke="#d6a74c"/><rect x="26" y="128" width="20" height="16" rx="2" fill="#bfe9ff" stroke="#93c5fd"/><rect x="52" y="132" width="24" height="12" fill="#fecaca" stroke="#ef4444"/></g>`,
+  },
+  ordenador: {
+    w: 54, h: 44,
+    svg: `<rect x="4" y="0" width="46" height="31" rx="3" fill="#1f2937"/><rect x="7" y="3" width="40" height="25" rx="1.5" fill="#bae6fd"/><path d="M10 8h22M10 13h28M10 18h18" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round"/><rect x="24" y="31" width="6" height="6" fill="#374151"/><rect x="16" y="36" width="22" height="3" rx="1.5" fill="#374151"/><rect x="6" y="40" width="42" height="4" rx="1.5" fill="#9ca3af"/>`,
+  },
   // ----- Exclusivos (caja misteriosa) -----
   guirnalda: {
     w: 348, h: 26,

@@ -3,7 +3,12 @@
 //  - Cada migración es pura e idempotente y NO elimina datos del usuario.
 //  - Antes de migrar, el almacén guarda una copia del documento original (store.js).
 //  - Cada versión publicada deja un fixture en tests/fixtures/ y un test que lo migra a la actual.
-export const CURRENT_SCHEMA = 3;
+import { BY_ID } from './catalog.js';
+
+export const CURRENT_SCHEMA = 4;
+// Topes de tamaño al sanear (protegen de ficheros importados enormes o mal formados)
+export const LIMITS = { inventory: 500, progress: 5000, byTitle: 200, achievements: 500, flags: 200, breed: 100, key: 80 };
+export const MAX_FLAGGED = 500; // preguntas dudosas que se conservan
 export const APP_ID = 'oposiciones';
 export const MAX_DAYS = 120; // días de historial que se conservan
 export const MAX_EXAMS = 30; // exámenes que se conservan
@@ -19,6 +24,7 @@ export const DEFAULT_SETTINGS = Object.freeze({
   fontScale: 'normal', // 'normal' | 'large' | 'xlarge'
   calm: false, // reduce animaciones
   season: 'auto', // 'auto' (decoración de temporada) | 'off'
+  sound: true, // efectos de sonido
 });
 
 export function emptyDoc() {
@@ -40,6 +46,7 @@ export function emptyDoc() {
     goal: { examDate: '', daily: 20, bonusDay: '' }, // fecha de examen, preguntas al día y último día con bonus
     minigames: { day: '', plays: 0 }, // partidas con premio hoy
     breed: {}, // [especie]: último momento de cría
+    flagged: {}, // [questionId]: momento en que la marcaste como dudosa (para revisarla)
     flags: {}, // introSeen, shopSeen…
     settings: { ...DEFAULT_SETTINGS },
     meta: {},
@@ -72,6 +79,8 @@ const steps = {
     minigames: doc.minigames ?? {},
     breed: doc.breed ?? {},
   }),
+  // 3 → 4: preguntas dudosas, primer uso (recordatorio de copia) y ajuste de sonido (con valores por defecto).
+  3: (doc) => ({ ...doc, schemaVersion: 4, flagged: doc.flagged ?? {} }),
 };
 
 export function migrate(input) {
@@ -92,8 +101,15 @@ export function migrate(input) {
 const nat = (n) => (Number.isInteger(n) && n >= 0 ? n : 0);
 const time = (n) => (Number.isFinite(n) && n >= 0 ? n : 0);
 const num = (n) => (Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : 0);
-const isDay = (k) => typeof k === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(k);
+const isDay = (k) => {
+  if (typeof k !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(k)) return false;
+  const [y, m, d] = k.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d));
+  return t.getUTCFullYear() === y && t.getUTCMonth() === m - 1 && t.getUTCDate() === d; // fechas reales (no 2026-13-45)
+};
 const obj = (o) => (o && typeof o === 'object' && !Array.isArray(o) ? o : {});
+/** Entradas de un objeto usado como mapa: sin `__proto__` y con claves de longitud razonable, hasta `max`. */
+const entries = (o, max) => Object.entries(obj(o)).filter(([k]) => k && k !== '__proto__' && k.length <= LIMITS.key).slice(0, max);
 const str = (s, max) => String(s ?? '').slice(0, max);
 
 function sanitizeMissions(list) {
@@ -120,22 +136,22 @@ export function sanitize(doc) {
   const profile = name && gender ? { name, gender } : null;
 
   const progress = {};
-  for (const [id, p] of Object.entries(obj(doc.progress))) {
+  for (const [id, p] of entries(doc.progress, LIMITS.progress)) {
     if (!id || !p || typeof p !== 'object') continue;
     progress[id] = { box: Math.min(5, nat(p.box)), ok: nat(p.ok), ko: nat(p.ko), last: time(p.last), due: time(p.due), failedSeq: nat(p.failedSeq) };
   }
 
   const byTitle = {};
-  for (const [t, v] of Object.entries(obj(doc.stats?.byTitle))) byTitle[t] = { ok: nat(v?.ok), ko: nat(v?.ko) };
+  for (const [t, v] of entries(doc.stats?.byTitle, LIMITS.byTitle)) byTitle[t] = { ok: nat(v?.ok), ko: nat(v?.ko) };
   const byDay = {};
-  for (const [k, v] of Object.entries(obj(doc.stats?.byDay))) if (isDay(k)) byDay[k] = { n: nat(v?.n), ok: Math.min(nat(v?.ok), nat(v?.n)) };
+  for (const [k, v] of entries(doc.stats?.byDay, MAX_DAYS * 3)) if (isDay(k)) byDay[k] = { n: nat(v?.n), ok: Math.min(nat(v?.ok), nat(v?.n)) };
   for (const k of Object.keys(byDay).sort().slice(0, -MAX_DAYS)) delete byDay[k];
 
   const seen = new Set();
   const inventory = [];
   let maxUid = 0;
-  for (const it of Array.isArray(doc.inventory) ? doc.inventory : []) {
-    if (!it || typeof it.itemId !== 'string' || !Number.isInteger(it.uid) || it.uid < 1 || seen.has(it.uid)) continue;
+  for (const it of (Array.isArray(doc.inventory) ? doc.inventory : []).slice(0, LIMITS.inventory)) {
+    if (!it || typeof it.itemId !== 'string' || !Object.hasOwn(BY_ID, it.itemId) || !Number.isInteger(it.uid) || it.uid < 1 || seen.has(it.uid)) continue;
     seen.add(it.uid);
     maxUid = Math.max(maxUid, it.uid);
     inventory.push({
@@ -153,9 +169,9 @@ export function sanitize(doc) {
   }
 
   const flags = {};
-  for (const [k, v] of Object.entries(obj(doc.flags))) flags[k] = Boolean(v);
+  for (const [k, v] of entries(doc.flags, LIMITS.flags)) flags[k] = Boolean(v);
   const achievements = {};
-  for (const [k, v] of Object.entries(obj(doc.achievements))) if (Number.isFinite(v)) achievements[k] = v;
+  for (const [k, v] of entries(doc.achievements, LIMITS.achievements)) if (Number.isFinite(v)) achievements[k] = v;
 
   const exams = [];
   for (const e of Array.isArray(doc.exams) ? doc.exams : []) {
@@ -176,12 +192,16 @@ export function sanitize(doc) {
   if (!['auto', 'day', 'night'].includes(settings.sceneMode)) settings.sceneMode = 'auto';
   if (!['normal', 'large', 'xlarge'].includes(settings.fontScale)) settings.fontScale = 'normal';
   settings.calm = Boolean(settings.calm);
+  settings.sound = settings.sound !== false;
   if (!['auto', 'off'].includes(settings.season)) settings.season = 'auto';
   const meta = {};
-  for (const k of ['lastExport', 'lastAutoBackup']) if (Number.isFinite(doc.meta?.[k])) meta[k] = doc.meta[k];
+  for (const k of ['lastExport', 'lastAutoBackup', 'firstUse']) if (Number.isFinite(doc.meta?.[k])) meta[k] = doc.meta[k];
 
+  const flagged = {};
+  for (const [k, v] of entries(doc.flagged, MAX_FLAGGED * 2)) if (k.length <= 40 && Number.isFinite(v) && v > 0) flagged[k] = v;
+  for (const k of Object.keys(flagged).sort((a, b) => flagged[a] - flagged[b]).slice(0, -MAX_FLAGGED)) delete flagged[k];
   const breed = {};
-  for (const [k, v] of Object.entries(obj(doc.breed))) if (Number.isFinite(v) && v >= 0) breed[k] = v;
+  for (const [k, v] of entries(doc.breed, LIMITS.breed)) if (Number.isFinite(v) && v >= 0) breed[k] = v;
 
   const current = nat(doc.streak?.current);
   const coins = nat(doc.coins);
@@ -221,11 +241,12 @@ export function sanitize(doc) {
     outfit,
     goal: {
       examDate: isDay(doc.goal?.examDate) ? doc.goal.examDate : '',
-      daily: Math.min(500, Math.max(1, nat(doc.goal?.daily) || 20)),
+      daily: Math.min(500, Math.max(1, nat(Math.round(Number(doc.goal?.daily))) || 20)),
       bonusDay: isDay(doc.goal?.bonusDay) ? doc.goal.bonusDay : '',
     },
     minigames: { day: isDay(doc.minigames?.day) ? doc.minigames.day : '', plays: nat(doc.minigames?.plays) },
     breed,
+    flagged,
     flags,
     settings,
     meta,

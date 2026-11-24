@@ -96,10 +96,24 @@ test('ajuste de escena: valores no válidos vuelven a automático', () => {
   assert.equal(migrate({ schemaVersion: 2, settings: { sceneMode: 'night' } }).doc.settings.sceneMode, 'night');
 });
 
-test('el fixture v3 (0.4.0) se carga sin cambios (formato actual estable)', () => {
+test('el fixture v3 (0.4.0) se carga sin perder nada y recibe lo nuevo por defecto', () => {
   const raw = fixture('v3.json');
   const { doc, from, to } = migrate(raw);
   assert.equal(from, 3);
+  assert.equal(to, CURRENT_SCHEMA);
+  const { flagged, settings, schemaVersion, ...rest } = doc;
+  const { settings: s0, schemaVersion: v0, ...rest0 } = raw;
+  assert.equal(v0, 3);
+  assert.deepEqual(rest, rest0);
+  assert.deepEqual(flagged, {});
+  assert.equal(settings.sound, true);
+  assert.deepEqual({ ...settings, sound: undefined }, { ...s0, sound: undefined });
+});
+
+test('el fixture v4 (0.5.0) se carga sin cambios (formato actual estable)', () => {
+  const raw = fixture('v4.json');
+  const { doc, from, to } = migrate(raw);
+  assert.equal(from, 4);
   assert.equal(to, CURRENT_SCHEMA);
   assert.deepEqual(doc, raw);
 });

@@ -9,9 +9,15 @@ import { WEEK, claimDaily, dayOfWeek, openBox } from './daily.js';
 import { WRONG_LIMIT } from './economy.js';
 import { COOLDOWN_MS, formatRemaining, isAvailable, pickHidden, remainingMs, useJoker } from './joker.js';
 import { ACHIEVEMENTS, newlyUnlocked, progressOf, unlock } from './achievements.js';
-import { byArticle, lastDays } from './stats.js';
+import { byArticle, lastDays, masteryByGroup, weeklyAccuracy } from './stats.js';
 import { isNightHour, sceneSvg } from './art/scene.js';
 import { gardenSvg } from './art/garden.js';
+import { studySvg } from './art/study.js';
+import { buildNotices } from './notifications.js';
+import { backupDue, daysSinceBackup, ensureFirstUse, markBackup, reasonLabel } from './backup.js';
+import { clearFlags, flaggedReport, toggleFlag } from './review.js';
+import { play, setEnabled } from './sound.js';
+import { soundLine } from './phrases.js';
 import { petThumb } from './art/pets.js';
 import * as study from './study.js';
 import { ensureMissions } from './missions.js';
@@ -39,6 +45,7 @@ let houseMsg = null; // frase puntual del personaje (compra, caricias…)
 let jokerTimer = null;
 let nightTimer = null;
 let lastNight = false;
+let activeTema = 'ce'; // tema que usan los modos de estudio
 let room = 'casa'; // habitación que se ve en Casa: 'casa' (salón) o 'jardin'
 
 /** Hora local (en localhost se puede forzar con ?hora=22 para probar). */
@@ -70,6 +77,7 @@ function currentSeason() {
 }
 
 const ICONS = {
+  bell: '<path d="M6 17h12l-1.5-2.2V10a4.5 4.5 0 00-9 0v4.8L6 17zM10 20a2 2 0 004 0"/>',
   casa: '<path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/>',
   tienda: '<path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 016 0v2"/>',
   preguntas: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1.2-1.5 2.3M12 17.2v.1"/>',
@@ -137,6 +145,7 @@ async function boot() {
     allQuestions,
     afterChange,
     getTema: (id) => temas.find((t) => t.id === id),
+    activeTema: () => activeTema,
   });
   applyTheme();
   render();
@@ -161,6 +170,7 @@ function applyTheme() {
   else delete document.documentElement.dataset.theme;
   document.documentElement.style.fontSize = { normal: '16px', large: '18px', xlarge: '20px' }[doc().settings.fontScale] ?? '16px';
   document.documentElement.classList.toggle('calm', Boolean(doc().settings.calm));
+  setEnabled(doc().settings.sound);
   try {
     t === 'system' ? localStorage.removeItem('op-theme') : localStorage.setItem('op-theme', t);
   } catch {
@@ -186,6 +196,7 @@ async function afterChange() {
   if (!ids.length) return [];
   await store.update((d) => unlock(d, ids, Date.now()));
   const names = ids.map((id) => ACHIEVEMENTS.find((a) => a.id === id).name);
+  play('ach');
   toast(names.length === 1 ? `Logro desbloqueado: ${names[0]}` : `${names.length} logros desbloqueados: ${names.join(', ')}`, 5000);
   return names;
 }
@@ -221,6 +232,16 @@ function hintTab() {
 
 /* ---------- Pantallas ---------- */
 function render() {
+  try {
+    renderInner();
+  } catch (e) {
+    console.error(e);
+    $app.innerHTML = `<main class="fatal" data-testid="crash"><h1>No se ha podido mostrar la pantalla</h1><p>Tus datos siguen guardados. Prueba a recargar; si vuelve a pasar, restaura una copia automática.</p>
+      <div class="actions"><button class="btn primary" data-act="reload">Recargar</button><button class="btn" data-act="list-backups">Copias automáticas</button></div></main>`;
+  }
+}
+
+function renderInner() {
   clearInterval(jokerTimer);
   clearInterval(nightTimer);
   if (view === 'casa') {
@@ -231,10 +252,11 @@ function render() {
   }
   const d = doc();
   if (!d.profile) return renderOnboarding();
-  const titles = { casa: 'Mi casa', tienda: 'Tienda', preguntas: 'Preguntas', quiz: quiz ? quiz.tema.nombre : 'Preguntas', logros: 'Logros', stats: 'Estadísticas', ajustes: 'Ajustes', examen: 'Examen', tarjetas: 'Tarjetas', juegos: 'Minijuegos', armario: 'Armario' };
-  const body = { casa: viewCasa, tienda: viewTienda, preguntas: viewPreguntas, quiz: viewQuiz, logros: viewLogros, stats: viewStats, ajustes: viewAjustes, examen: study.viewExamen, tarjetas: study.viewTarjetas, juegos: study.viewJuegos, armario: study.viewArmario }[view]();
+  const titles = { casa: 'Mi casa', tienda: 'Tienda', preguntas: 'Preguntas', quiz: quiz ? quiz.tema.nombre : 'Preguntas', logros: 'Logros', stats: 'Estadísticas', ajustes: 'Ajustes', examen: 'Examen', tarjetas: 'Tarjetas', juegos: 'Minijuegos', armario: 'Armario', avisos: 'Avisos' };
+  const body = { casa: viewCasa, tienda: viewTienda, preguntas: viewPreguntas, quiz: viewQuiz, logros: viewLogros, stats: viewStats, ajustes: viewAjustes, examen: study.viewExamen, tarjetas: study.viewTarjetas, juegos: study.viewJuegos, armario: study.viewArmario, avisos: viewAvisos }[view]();
   const active = { quiz: 'preguntas', examen: 'preguntas', tarjetas: 'preguntas', juegos: 'preguntas', armario: 'casa' }[view] ?? view;
   const hint = hintTab();
+  const notices = buildNotices(d, Date.now());
   const att = attention(d);
   const careNeeded = att.angry + att.mess + att.coins + att.boxes > 0;
   const tab = (id, label) => `<button data-act="go" data-v="${id}" ${active === id ? 'aria-current="page"' : ''} class="${[hint === id && active !== id ? 'hint' : '', id === 'casa' && active !== 'casa' && careNeeded ? 'dot' : ''].filter(Boolean).join(' ')}">${icon(id)}<span>${label}</span></button>`;
@@ -242,6 +264,7 @@ function render() {
     <header class="top">
       <div class="titles"><h1>${titles[view]}</h1><div class="sub">${esc(d.profile.name)}</div></div>
       <span class="coins" aria-label="${plural(d.coins, 'moneda', 'monedas')}" data-testid="coins">${coinIcon()}<b>${d.coins}</b></span>
+      <button class="icon-btn bell" data-act="go" data-v="avisos" data-testid="bell" aria-label="Avisos${notices.length ? ` (${notices.length})` : ''}">${icon('bell')}${notices.length ? `<span class="badge" data-testid="badge">${notices.length}</span>` : ''}</button>
       <button class="icon-btn" data-act="go" data-v="ajustes" aria-label="Ajustes">${icon('gear')}</button>
     </header>
     <main>${body}</main>
@@ -271,27 +294,6 @@ function bubble(text) {
   return `<div class="bubble" data-testid="bubble"><p>${esc(text)}</p></div>`;
 }
 
-const SOUNDS = {
-  cactus: (n) => `Le echo un vistazo a ${n}… ¡con cuidado, que pincha!`,
-  pez: (n) => `${n} nada feliz de un lado a otro.`,
-  canario: (n) => `${n} canta una melodía solo para ti.`,
-  gato: (n) => `${n} ronronea mientras lo acaricias.`,
-  perro: (n) => `¡${n} mueve la cola como loco!`,
-  margarita: (n) => `${n} se mece con la brisa y presume de pétalos.`,
-  hamster: (n) => `${n} corre y corre sin parar.`,
-  tortuga: (n) => `${n} asoma la cabeza muy despacito.`,
-  bonsai: (n) => `Le das un toque de tijera a ${n}: ¡qué elegante!`,
-  conejo: (n) => `${n} mueve la nariz y da un salto de alegría.`,
-  loro: (n) => `${n} repite una frase que acaba de oír… ¡«artículo catorce»!`,
-  pollito: (n) => `${n} hace «pío, pío» y te sigue a todas partes.`,
-  patito: (n) => `${n} hace «cua, cua» y chapotea contento.`,
-  erizo: (n) => `${n} se hace una bolita… y luego se asoma curioso.`,
-  cerdito: (n) => `${n} gruñe feliz y se revuelca en el barro.`,
-  ovejita: (n) => `${n} bala suavemente: ¡beee!`,
-  zorro: (n) => `${n} te mira con ojos astutos y mueve la cola.`,
-  panda: (n) => `${n} mordisquea bambú con cara de felicidad.`,
-};
-
 function houseLine() {
   const d = doc();
   if (houseMsg) return houseMsg;
@@ -317,7 +319,7 @@ function houseLine() {
   if (needy && Math.random() < 0.6) return `${needy.name} crecería más deprisa con ${BY_ID[missingTool(d, needy.itemId)].name.toLowerCase()}.`;
   if (pets.length && Math.random() < 0.6) {
     const p = pick(pets);
-    return stageOf(p.itemId, p.xp) === 2 ? `¡Mira qué grande está ${p.name}!` : SOUNDS[p.itemId](p.name);
+    return stageOf(p.itemId, p.xp) === 2 ? `¡Mira qué grande está ${p.name}!` : soundLine(p.itemId, p.name);
   }
   return d.coins ? `Tengo ${plural(d.coins, 'moneda', 'monedas')}. ¡Cada acierto cuenta!` : '¡Cada acierto cuenta!';
 }
@@ -350,13 +352,16 @@ function breedButtons() {
   return `<div class="breed"><p class="muted">Tienes mascotas adultas, felices y limpias: pueden tener una cría (a veces con un color especial).</p>${ready.map((sp) => `<button class="btn small" data-act="breed" data-sp="${sp}" data-testid="breed-${sp}">Criar: ${esc(BY_ID[sp].name)}</button>`).join(' ')}</div>`;
 }
 
-/** Aviso dentro de la app (no es una notificación push): preguntas listas para repasar. */
-function reviewBanner() {
-  const d = doc();
-  const now = Date.now();
-  const due = Object.values(d.progress).filter((p) => p.box > 0 && p.due <= now).length;
-  if (due < 5 || d.stats.answered === 0) return '';
-  return `<div class="banner" data-testid="review-banner"><span>Tienes <b>${due}</b> preguntas listas para repasar.</span><button class="btn small" data-act="go" data-v="preguntas">Repasar</button></div>`;
+/** Aviso destacado en Casa: el primer aviso importante (mascotas, examen cercano, copia de seguridad). */
+function noticeBanner() {
+  const n = buildNotices(doc(), Date.now()).find((x) => x.level === 'warn');
+  if (!n) return '';
+  return `<div class="banner" data-testid="notice-banner"><span>${esc(n.text)}</span><button class="btn small" data-act="go" data-v="${n.view}">${esc(n.label)}</button></div>`;
+}
+
+/** SVG de la habitación actual. */
+function roomSvg(opts) {
+  return room === 'jardin' ? gardenSvg(opts) : room === 'estudio' ? studySvg(opts) : sceneSvg(opts);
 }
 
 function petRows() {
@@ -383,13 +388,12 @@ function viewCasa() {
   const d = doc();
   const guide =
     hintTab() === 'tienda' ? (d.inventory.length || !d.flags.introSeen ? 'Toca «Tienda» en el menú de abajo.' : 'Ya tienes monedas: toca «Tienda» para comprar algo.') : hintTab() === 'preguntas' ? 'Toca «Preguntas» para ganar tus primeras monedas.' : '';
-  const hasGarden = ownedIds(d).has('jardin');
-  if (!hasGarden) room = 'casa';
+  const rooms = ROOMS.filter((r) => !r.req || ownedIds(d).has(r.req));
+  if (!rooms.some((r) => r.id === room)) room = 'casa';
   const opts = { gender: d.profile.gender, inventory: d.inventory, hopUid, night: isNight(), lampOff: Boolean(d.flags.lampOff), outfit: d.outfit, season: currentSeason() };
-  const svg = room === 'jardin' ? gardenSvg(opts) : sceneSvg(opts);
-  const tabs = hasGarden ? `<div class="seg full room-tabs" role="group" aria-label="Habitación">${ROOMS.map((r) => `<button data-act="room" data-r="${r.id}" aria-pressed="${room === r.id}">${r.name}</button>`).join('')}</div>` : '';
+  const tabs = rooms.length > 1 ? `<div class="seg full room-tabs" role="group" aria-label="Habitación">${rooms.map((r) => `<button data-act="room" data-r="${r.id}" aria-pressed="${room === r.id}">${r.name}</button>`).join('')}</div>` : '';
   const tools = '<div class="actions casa-actions"><button class="btn small" data-act="go" data-v="armario" data-testid="open-wardrobe">Armario</button><button class="btn small" data-act="share" data-testid="share">Compartir mi casa</button></div>';
-  return `${reviewBanner()}${bubble(houseLine())}${tabs}<div class="scene-wrap">${svg}</div>${tools}${guide ? `<p class="guide">${guide}</p>` : ''}${study.goalCard(Date.now())}${study.missionsCard()}${petRows()}${dailyCard()}`;
+  return `${noticeBanner()}${bubble(houseLine())}${tabs}<div class="scene-wrap">${roomSvg(opts)}</div>${tools}${guide ? `<p class="guide">${guide}</p>` : ''}${study.goalCard(Date.now())}${study.missionsCard()}${petRows()}${dailyCard()}`;
 }
 
 function thumbFor(id) {
@@ -403,7 +407,7 @@ function viewTienda() {
     .map((i) => {
       const chk = canBuy(d, i.id);
       const pet = isPet(i.id);
-      const count = pet ? ` · Tienes ${countOf(d, i.id)}/${SPECIES[i.id].max}` : '';
+      const count = pet ? ` · Tienes ${countOf(d, i.id)}${countOf(d, i.id) <= SPECIES[i.id].max ? `/${SPECIES[i.id].max}` : ''}` : '';
       const label = chk.ok ? 'Comprar' : chk.code === 'owned' ? 'Ya lo tienes' : chk.code === 'max' ? 'Máximo' : chk.reason;
       return `<li class="row item" data-testid="item-${i.id}">
         <span class="thumb-wrap">${thumbFor(i.id)}</span>
@@ -431,7 +435,7 @@ function askName(mode, ref) {
   if (!item) return;
   const el = document.createElement('div');
   el.className = 'overlay';
-  el.innerHTML = `<form class="sheet" id="nameform" data-mode="${mode}" data-ref="${ref}" autocomplete="off">
+  el.innerHTML = `<form class="sheet" id="nameform" data-mode="${mode}" data-ref="${esc(ref)}" autocomplete="off">
     <h2>${mode === 'breed' ? `Ponle nombre a la cría de ${item.name.toLowerCase()}` : isBuy ? `Ponle nombre a tu ${item.name.toLowerCase()}` : `Nuevo nombre para ${esc(pet.name)}`}</h2>
     <div class="field"><label for="pname">Nombre</label><input id="pname" type="text" maxlength="20" required value="${isBuy ? '' : esc(pet.name)}" /></div>
     ${mode === 'buy' ? `<p class="muted">Cuesta ${plural(item.price, 'moneda', 'monedas')}.</p>` : mode === 'breed' ? '<p class="muted">Es gratis, ¡y puede salir con un color especial!</p>' : ''}
@@ -450,15 +454,16 @@ async function buyItem(itemId, name) {
     return;
   }
   document.querySelector('.overlay')?.remove();
+  play('buy');
   const logros = await afterChange();
   if (isPet(itemId)) {
-    houseMsg = `¡Hola, ${name.trim()}! Bienvenid${item.id === 'cactus' ? 'o' : 'o'} a casa.`;
+    houseMsg = `¡Hola, ${name.trim()}! Bienvenid${MOOD_TEXT[item.id]?.f ? 'a' : 'o'} a casa.`;
     hopUid = res.uid;
     room = roomOf(itemId);
     await go('casa');
     setTimeout(() => (hopUid = null), 1200);
   } else {
-    toast(item.cat === 'ropa' ? `Has comprado: ${item.name}. Póntela en el Armario (en Casa).` : item.id === 'jardin' ? '¡Jardín desbloqueado! Míralo en Casa.' : `Has comprado: ${item.name}`);
+    toast(item.cat === 'ropa' ? `Has comprado: ${item.name}. Póntela en el Armario (en Casa).` : item.id === 'jardin' ? '¡Jardín desbloqueado! Míralo en Casa.' : item.id === 'estudio' ? '¡Estudio desbloqueado! Míralo en Casa.' : `Has comprado: ${item.name}`);
     void logros;
     render();
   }
@@ -476,7 +481,7 @@ async function interact(uid) {
     houseMsg = isPlant(p.itemId) ? `Cuidas a ${p.name} con mimo: ¡se le ha levantado el ánimo!` : `Acaricias a ${p.name} y le hablas con cariño… ¡ya está contento otra vez!`;
     if (now.mess > 0) houseMsg += ' Aún queda algo por limpiar.';
   } else if (p.mess > 0) houseMsg = `${p.name} ${MOOD_TEXT[p.itemId].mess}. ¡Toca la suciedad para limpiarla!`;
-  else houseMsg = SOUNDS[p.itemId](p.name);
+  else houseMsg = soundLine(p.itemId, p.name);
   view = 'casa';
   render();
   setTimeout(() => (hopUid = null), 1200);
@@ -502,6 +507,7 @@ async function takeCoin(uid) {
   room = roomOf(p.itemId);
   const v = await store.update((d) => collectCoin(d, uid));
   if (!v) return;
+  play('coin');
   houseMsg = `¡Has cogido ${plural(v, 'moneda', 'monedas')} que ${p.name} te ha traído!`;
   view = 'casa';
   render();
@@ -517,6 +523,7 @@ async function openMysteryBox() {
     toast(e.message);
     return;
   }
+  play('box');
   const item = res.itemId ? BY_ID[res.itemId] : null;
   document.querySelector('.overlay')?.remove();
   const el = document.createElement('div');
@@ -533,7 +540,9 @@ async function openMysteryBox() {
 /** Bonus diario: 1 moneda por entrar cada día y una caja misteriosa al 7.º día seguido. */
 async function checkDaily() {
   if (!store || !doc().profile) return;
-  const fresh = await store.update((d) => ensureMissions(d, Date.now()));
+  const titles = temas.flatMap((t) => (t.grupos ?? []).map((g) => g.id));
+  await store.update((d) => ensureFirstUse(d, Date.now()));
+  const fresh = await store.update((d) => ensureMissions(d, Date.now(), titles.length ? titles : undefined));
   const r = await store.update((d) => claimDaily(d, Date.now()));
   if (!r) {
     if (fresh) render();
@@ -554,7 +563,7 @@ function viewPreguntas() {
       const mastered = bank ? bank.filter((q) => statusOf(d.progress[q.id]) === 'mastered').length : 0;
       const seen = bank ? bank.filter((q) => statusOf(d.progress[q.id]) !== 'new').length : 0;
       const info = bank ? `${seen} de ${total} vistas · ${mastered} dominadas` : 'Pulsa para empezar';
-      return `<button class="card topic" data-act="quiz" data-t="${t.id}"><span class="t-name">${esc(t.nombre)}</span><span class="muted">${esc(t.descripcion)}</span><span class="t-info">${info}</span></button>`;
+      return `<button class="card topic" data-act="quiz" data-t="${esc(t.id)}"><span class="t-name">${esc(t.nombre)}</span><span class="muted">${esc(t.descripcion)}</span><span class="t-info">${info}</span></button>`;
     })
     .join('');
   return `<p class="muted lead">Elige un tema. Cada acierto te da una moneda; con 3 seguidas ganas 1 extra y con 10 seguidas, 2 extra. Además hace crecer a tus mascotas.</p>${cards || '<p class="empty"><b>Sin temas</b>No se han podido cargar los temas.</p>'}${studyModes()}`;
@@ -562,11 +571,15 @@ function viewPreguntas() {
 
 function studyModes() {
   const d = doc();
-  const failed = allQuestions().filter((q) => (d.progress[q.id]?.ko ?? 0) > 0 && (d.progress[q.id]?.box ?? 0) <= 2).length;
+  const tema = temas.find((t) => t.id === activeTema) ?? temas[0];
+  const qs = allQuestions().filter((q) => q.tema === tema?.id);
+  const failed = qs.filter((q) => (d.progress[q.id]?.ko ?? 0) > 0 && (d.progress[q.id]?.box ?? 0) <= 2).length;
   const last = d.exams.at(-1);
-  return `<h2 class="section-title">Modos de estudio</h2>
+  const grupos = tema?.grupos ?? TITLE_INFO;
+  const selector = temas.length > 1 ? `<div class="seg full" role="group" aria-label="Tema de estudio">${temas.map((t) => `<button data-act="tema" data-id="${esc(t.id)}" aria-pressed="${t.id === tema.id}">${esc(t.nombre)}</button>`).join('')}</div>` : '';
+  return `<h2 class="section-title">Modos de estudio${temas.length > 1 ? ` · ${esc(tema.nombre)}` : ''}</h2>${selector}
     <button class="card topic" data-act="quiz-failed" data-testid="mode-failed"><span class="t-name">Repasar falladas</span><span class="muted">Solo las preguntas que más se te resisten.</span><span class="t-info">${failed} para repasar</span></button>
-    <section class="card"><h3>Estudiar un Título</h3><div class="field"><select id="titulo-select" aria-label="Título">${TITLE_INFO.map((t) => `<option value="${esc(t.id)}">${esc(t.short)} · ${esc(t.desc)}</option>`).join('')}</select></div><button class="btn block" data-act="quiz-titulo" data-testid="mode-titulo">Empezar</button></section>
+    <section class="card"><h3>Estudiar un grupo</h3><div class="field"><select id="titulo-select" aria-label="Grupo">${grupos.map((t) => `<option value="${esc(t.id)}">${esc(t.short)} · ${esc(t.desc)}</option>`).join('')}</select></div><button class="btn block" data-act="quiz-titulo" data-testid="mode-titulo">Empezar</button></section>
     <button class="card topic" data-act="go" data-v="examen" data-testid="mode-exam"><span class="t-name">Modo examen</span><span class="muted">Con tiempo, sin pistas y con nota sobre 10.</span><span class="t-info">${last ? `Último: ${String(last.score).replace('.', ',')} sobre 10` : 'Aún no has hecho ninguno'}</span></button>
     <button class="card topic" data-act="cards-start" data-testid="mode-cards"><span class="t-name">Tarjetas de artículos</span><span class="muted">Lee el texto oficial de los artículos donde más fallas.</span><span class="t-info">Mazo de 10</span></button>
     <button class="card topic" data-act="go" data-v="juegos" data-testid="mode-games"><span class="t-name">Minijuegos</span><span class="muted">Emparejar y verdadero o falso, para descansar.</span><span class="t-info">Con premio hasta 3 veces al día</span></button>`;
@@ -655,7 +668,7 @@ function viewQuiz() {
       : pets && !result.correct && result.wrong % WRONG_LIMIT === WRONG_LIMIT - 1
         ? '<p class="mischief warn">Un fallo más y tus mascotas se enfadarán…</p>'
         : '';
-    feedback = `<div class="feedback ${result.correct ? 'ok' : 'ko'}" role="status"><p class="verdict">${result.correct ? '¡Correcto!' : 'Incorrecta'} ${coins}</p><p>${esc(q.explicacion)}</p>${grown}${found}${bad}${result.goalBonus ? `<p class="grown" data-testid="goal-bonus">¡Objetivo del día cumplido! +${plural(result.goalBonus, 'moneda', 'monedas')}</p>` : ''}<div class="actions"><button class="btn grow" data-act="article" data-t="${esc(q.tema)}" data-n="${esc(q.articulo.split('.')[0])}" data-testid="see-article">Ver artículo</button><button class="btn primary grow" data-act="next">Siguiente</button></div></div>`;
+    feedback = `<div class="feedback ${result.correct ? 'ok' : 'ko'}" role="status"><p class="verdict">${result.correct ? '¡Correcto!' : 'Incorrecta'} ${coins}</p><p>${esc(q.explicacion)}</p>${grown}${found}${bad}${result.goalBonus ? `<p class="grown" data-testid="goal-bonus">¡Objetivo del día cumplido! +${plural(result.goalBonus, 'moneda', 'monedas')}</p>` : ''}<div class="actions"><button class="btn small" data-act="flag" data-id="${esc(q.id)}" data-testid="flag" aria-pressed="${Boolean(d.flagged[q.id])}">${d.flagged[q.id] ? '★ Dudosa' : '☆ Dudosa'}</button><button class="btn grow" data-act="article" data-t="${esc(q.tema)}" data-n="${esc(q.articulo.split('.')[0])}" data-testid="see-article">Ver artículo</button><button class="btn primary grow" data-act="next">Siguiente</button></div></div>`;
   }
   const jokerOff = picked !== null || hidden.size > 0 || !isAvailable(d, Date.now());
   return `
@@ -670,10 +683,19 @@ function viewQuiz() {
 
 async function answer(pos) {
   if (!quiz || quiz.picked !== null) return;
+  const current = quiz;
   const orig = quiz.order[pos];
   const correct = orig === quiz.q.correcta;
   quiz.picked = orig;
-  quiz.result = await store.update((dd) => applyAnswer(dd, quiz.q, correct, Date.now()));
+  const result = await store.update((dd) => applyAnswer(dd, current.q, correct, Date.now()));
+  if (quiz !== current) {
+    await afterChange(); // saliste del test mientras se guardaba: el acierto ya está guardado
+    return;
+  }
+  quiz.result = result;
+  play(correct ? 'right' : 'wrong');
+  if (quiz.result.grown.length) setTimeout(() => play('grow'), 400);
+  if (quiz.result.found.length) setTimeout(() => play('coin'), 400);
   quiz.session.total += 1;
   if (correct) quiz.session.ok += 1;
   render();
@@ -750,10 +772,13 @@ function viewStats() {
       <div class="week" data-testid="week">${days.map((x) => `<div class="day"><span class="col"><i class="n" style="height:${(x.n / max) * 100}%"><i class="ok" style="height:${x.n ? (x.ok / x.n) * 100 : 0}%"></i></i></span><b>${x.n}</b><small>${WEEKDAY[new Date(`${x.key}T12:00:00`).getDay()]}</small></div>`).join('')}</div>
       <p class="muted">Respondidas por día (la parte oscura son los aciertos).</p></section>
     ${d.exams.length ? `<section class="card" data-testid="exam-stats"><h3>Exámenes</h3><div class="kpis"><div><b>${d.exams.length}</b><span>hechos</span></div><div><b>${String(Math.round((d.exams.reduce((a, e) => a + e.score, 0) / d.exams.length) * 100) / 100).replace('.', ',')}</b><span>nota media</span></div><div><b>${String(Math.max(...d.exams.map((e) => e.score))).replace('.', ',')}</b><span>mejor nota</span></div></div></section>` : ''}
+    ${examChart(d.exams)}
+    ${weeklyChart(weeklyAccuracy(d, Date.now(), 8))}
+    <section class="card" data-testid="mastery"><h3>Dominio por Título</h3>${masteryByGroup(d, questions).map((g) => `<div class="bar-row"><span>${esc(g.titulo)} <small>(${g.mastered}/${g.total})</small></span><span class="bar"><i style="width:${g.pct}%"></i></span><b>${g.pct}%</b></div>`).join('')}<p class="muted">Dominada = 5 aciertos seguidos en esa pregunta.</p></section>
     <section class="card"><h3>Dónde fallas más (por Título)</h3>
       ${titles.map((x) => `<div class="bar-row"><span>${esc(x.t)} <small>(${x.n})</small></span><span class="bar"><i style="width:${x.pct}%"></i></span><b>${x.pct}%</b></div>`).join('')}
       <p class="muted">Ordenado de menos a más aciertos.</p></section>
-    ${arts.length ? `<section class="card"><h3>Artículos con más fallos</h3>${arts.map((a) => `<button class="line link" data-testid="art-row" data-act="article" data-t="ce" data-n="${a.articulo}"><span><b>Art. ${a.articulo}</b> <small>${esc(a.titulo)}</small></span><span><b>${a.pct}%</b> <small class="muted">${a.ok} ✓ · ${a.ko} ✗</small></span></button>`).join('')}</section>` : ''}
+    ${arts.length ? `<section class="card"><h3>Artículos con más fallos</h3>${arts.map((a) => `<button class="line link" data-testid="art-row" data-act="article" data-t="${esc(a.tema)}" data-n="${esc(a.articulo)}"><span><b>Art. ${esc(a.articulo)}</b> <small>${esc(a.titulo)}</small></span><span><b>${a.pct}%</b> <small class="muted">${a.ok} ✓ · ${a.ko} ✗</small></span></button>`).join('')}</section>` : ''}
     ${worst.length ? `<section class="card"><h3>Preguntas más falladas</h3>${worst.map(([id, p]) => `<div class="line"><span><small>${esc(byId[id].titulo)} · Art. ${esc(byId[id].articulo)}</small><br>${esc(byId[id].enunciado)}</span><b>${p.ko}×</b></div>`).join('')}</section>` : ''}
     <section class="card"><h3>Tu avance</h3><div class="kpis four">
       <div><b>${counts.new}</b><span>nuevas</span></div><div><b>${counts.failed}</b><span>falladas</span></div><div><b>${counts.learning}</b><span>aprendiendo</span></div><div><b>${counts.mastered}</b><span>dominadas</span></div></div></section>`;
@@ -774,9 +799,13 @@ function viewAjustes() {
       <button class="btn" data-act="save-goal">Guardar objetivo</button></section>
     <section class="card"><h3>Accesibilidad y temporadas</h3><div class="field"><span class="lbl">Tamaño del texto</span><div class="seg" role="group" aria-label="Tamaño del texto">
       ${[['normal', 'Normal'], ['large', 'Grande'], ['xlarge', 'Muy grande']].map(([v, l]) => `<button data-act="font" data-v="${v}" aria-pressed="${d.settings.fontScale === v}">${l}</button>`).join('')}</div></div>
-      <div class="actions"><button class="btn" data-act="calm" aria-pressed="${d.settings.calm}">Menos movimiento: ${d.settings.calm ? 'sí' : 'no'}</button><button class="btn" data-act="season" aria-pressed="${d.settings.season !== 'off'}">Decoración de temporada: ${d.settings.season === 'off' ? 'no' : 'sí'}</button></div></section>
+      <div class="actions"><button class="btn" data-act="calm" aria-pressed="${d.settings.calm}">Menos movimiento: ${d.settings.calm ? 'sí' : 'no'}</button><button class="btn" data-act="season" aria-pressed="${d.settings.season !== 'off'}">Decoración de temporada: ${d.settings.season === 'off' ? 'no' : 'sí'}</button><button class="btn" data-act="sound" data-testid="sound-toggle" aria-pressed="${d.settings.sound}">Sonidos: ${d.settings.sound ? 'sí' : 'no'}</button></div></section>
     <section class="card"><h3>Copia de seguridad</h3><p>Tus datos solo viven en este dispositivo. Guarda una copia de vez en cuando. Para pasar tu progreso a otro móvil: «Copiar código» aquí, y «Pegar código» allí.</p>
-      <div class="actions"><button class="btn" data-act="copy-code" data-testid="copy-code">Copiar código</button><button class="btn" data-act="paste-code" data-testid="paste-code">Pegar código</button><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
+      <p class="muted" data-testid="backup-info">${backupInfoText(d)}</p>
+      <div class="actions"><button class="btn" data-act="copy-code" data-testid="copy-code">Copiar código</button><button class="btn" data-act="paste-code" data-testid="paste-code">Pegar código</button><button class="btn" data-act="list-backups" data-testid="list-backups">Copias automáticas</button><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
+    <section class="card" data-testid="flag-settings"><h3>Preguntas dudosas</h3>
+      <p>Tienes <b data-testid="flag-count">${Object.keys(d.flagged).length}</b> marcadas. Márcalas con «☆ Dudosa» al responder y envíame el informe para revisarlas contra el texto oficial.</p>
+      <div class="actions"><button class="btn" data-act="flag-copy" data-testid="flag-copy">Copiar informe</button><button class="btn" data-act="flag-download">Descargar</button><button class="btn danger" data-act="flag-clear">Vaciar</button></div></section>
     <section class="card"><h3>Reiniciar</h3><p>Borra monedas, progreso, mascotas y perfil de este dispositivo. Se guarda antes una copia automática.</p>
       <button class="btn danger" data-act="reset">Empezar de cero</button></section>
     <p class="muted center">Oposiciones v${VERSION} · comodín cada ${COOLDOWN_MS / 3600000} h · bonus ×${1 + BOOST_MAIN} con herramienta (+${BOOST_EXTRA * 100} % por extra)</p>`;
@@ -814,7 +843,7 @@ document.addEventListener('click', async (e) => {
   try {
     if (act === 'cards-start') {
       await go('tarjetas');
-      await study.startCards('ce');
+      await study.startCards(activeTema);
       return;
     }
     if (await study.onAct(act, el)) return;
@@ -823,12 +852,34 @@ document.addEventListener('click', async (e) => {
       room = el.dataset.r;
       render();
     } else if (act === 'share') await shareHouse();
+    else if (act === 'tema') {
+      activeTema = el.dataset.id;
+      render();
+    } else if (act === 'reload') {
+      location.reload();
+    } else if (act === 'sound') {
+      await store.update((d) => {
+        d.settings.sound = !d.settings.sound;
+      });
+      applyTheme();
+      play('coin');
+      render();
+    } else if (act === 'flag') await flagQuestion(el.dataset.id);
+    else if (act === 'flag-copy') await copyFlags();
+    else if (act === 'flag-download') downloadFlags();
+    else if (act === 'flag-clear') {
+      await store.update((d) => clearFlags(d));
+      toast('Marcas borradas.');
+      render();
+    } else if (act === 'list-backups') await showBackups();
+    else if (act === 'restore-ask') askRestore(el.dataset.key);
+    else if (act === 'restore-do') await doRestore(el.dataset.key);
     else if (act === 'breed') askName('breed', el.dataset.sp);
-    else if (act === 'quiz-failed') await startQuiz('ce', { type: 'failed' });
-    else if (act === 'quiz-titulo') await startQuiz('ce', { type: 'titulo', titulo: document.getElementById('titulo-select').value });
+    else if (act === 'quiz-failed') await startQuiz(activeTema, { type: 'failed' });
+    else if (act === 'quiz-titulo') await startQuiz(activeTema, { type: 'titulo', titulo: document.getElementById('titulo-select').value });
     else if (act === 'save-goal') {
       const date = document.getElementById('exam-date').value;
-      const daily = Math.min(500, Math.max(1, Number(document.getElementById('daily-goal').value) || 20));
+      const daily = Math.min(500, Math.max(1, Math.round(Number(document.getElementById('daily-goal').value)) || 20));
       await store.update((d) => {
         d.goal.examDate = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : '';
         d.goal.daily = daily;
@@ -884,7 +935,7 @@ document.addEventListener('click', async (e) => {
     } else if (act === 'gender') {
       document.querySelectorAll('[data-act="gender"]').forEach((b) => b.setAttribute('aria-pressed', String(b === el)));
       validateOnboarding();
-    } else if (act === 'export') exportData();
+    } else if (act === 'export') await exportData();
     else if (act === 'reset') await resetAll();
   } catch (err) {
     toast(`Algo ha fallado: ${err.message}`);
@@ -899,11 +950,16 @@ document.addEventListener('change', async (e) => {
   if (e.target.dataset?.act !== 'import') return;
   const file = e.target.files?.[0];
   if (!file) return;
+  if (file.size > 5_000_000) {
+    toast('El fichero es demasiado grande para ser una copia de Oposiciones.');
+    return;
+  }
   try {
     await store.importJson(await file.text());
     applyTheme();
     view = 'casa';
     render();
+    await checkDaily();
     toast('Copia importada.');
   } catch (err) {
     toast(err.message);
@@ -920,11 +976,14 @@ document.addEventListener('submit', async (e) => {
       d.profile = { name, gender };
     });
     await store.update((d) => claimDaily(d, Date.now()));
+    await store.update((d) => ensureFirstUse(d, Date.now()));
     view = 'casa';
     render();
   } else if (e.target.id === 'nameform') {
     e.preventDefault();
     const f = e.target;
+    if (f.dataset.busy) return; // evita el doble envío (doble toque / doble Enter)
+    f.dataset.busy = '1';
     const name = document.getElementById('pname').value;
     if (f.dataset.mode === 'buy') await buyItem(f.dataset.ref, name);
     else if (f.dataset.mode === 'breed') {
@@ -957,7 +1016,7 @@ function validateOnboarding() {
   document.getElementById('start').disabled = !ok;
 }
 
-function exportData() {
+async function exportData() {
   const blob = new Blob([store.exportJson()], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -966,6 +1025,9 @@ function exportData() {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  await store.update((d) => markBackup(d, Date.now()));
+  toast('Copia guardada.');
+  render();
 }
 
 async function resetAll() {
@@ -985,7 +1047,7 @@ document.addEventListener('visibilitychange', () => {
 async function buildHouseBlob() {
   const d = doc();
   const opts = { gender: d.profile.gender, inventory: d.inventory, night: isNight(), lampOff: Boolean(d.flags.lampOff), outfit: d.outfit, season: currentSeason() };
-  const svg = room === 'jardin' && ownedIds(d).has('jardin') ? gardenSvg(opts) : sceneSvg(opts);
+  const svg = roomSvg(opts);
   const cs = getComputedStyle(document.documentElement);
   const vars = Object.fromEntries(SHARE_VARS.map((n) => [n, cs.getPropertyValue(`--${n}`).trim()]));
   const img = new Image();
@@ -1036,6 +1098,7 @@ async function shareHouse() {
 
 async function copyCode() {
   const code = encodeCode(store.exportJson());
+  await store.update((d) => markBackup(d, Date.now()));
   try {
     await navigator.clipboard.writeText(code);
     toast('Código copiado. Pégalo en el otro dispositivo (Ajustes → Pegar código).');
@@ -1062,10 +1125,143 @@ async function doPaste() {
     applyTheme();
     view = 'casa';
     render();
+    await checkDaily();
     toast('Datos importados desde el código.');
   } catch (e) {
     toast(e.message);
   }
 }
+
+/* ---------- Avisos dentro de la app ---------- */
+function viewAvisos() {
+  const list = buildNotices(doc(), Date.now());
+  if (!list.length) return '<p class="empty" data-testid="no-notices"><b>Todo al día</b>No tienes nada pendiente. ¡Buen trabajo!</p>';
+  return `<ul class="notices" data-testid="notices">${list.map((n) => `<li class="notice ${n.level}" data-testid="notice-${n.id}"><span>${esc(n.text)}</span><button class="btn small ${n.level === 'warn' ? 'primary' : ''}" data-act="go" data-v="${n.view}">${esc(n.label)}</button></li>`).join('')}</ul>
+    <p class="muted center">Los avisos se calculan al abrir la app; no se envían notificaciones del sistema.</p>`;
+}
+
+/* ---------- Gráficos de estadísticas ---------- */
+function examChart(exams) {
+  if (exams.length < 2) return '';
+  const pts = exams.slice(-10);
+  const W = 300;
+  const H = 110;
+  const pad = 10;
+  const x = (i) => pad + (i * (W - 2 * pad)) / (pts.length - 1);
+  const y = (score) => H - pad - (score / 10) * (H - 2 * pad);
+  const line = pts.map((e, i) => `${x(i).toFixed(1)},${y(e.score).toFixed(1)}`).join(' ');
+  const dots = pts.map((e, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(e.score).toFixed(1)}" r="3.6" class="dot ${e.score >= 5 ? 'pass' : 'fail'}"><title>${String(e.score).replace('.', ',')}</title></circle>`).join('');
+  return `<section class="card" data-testid="exam-chart"><h3>Evolución de tus exámenes</h3><svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Notas de tus últimos exámenes"><line x1="${pad}" x2="${W - pad}" y1="${y(5)}" y2="${y(5)}" class="pass-line"/><polyline points="${line}" class="chart-line"/>${dots}</svg>
+    <p class="muted">La línea discontinua es el aprobado (5). Últimos ${pts.length} exámenes.</p></section>`;
+}
+
+function weeklyChart(weeks) {
+  if (!weeks.some((w) => w.n)) return '';
+  return `<section class="card" data-testid="weekly-chart"><h3>Precisión por semana</h3><div class="weekbars">${weeks
+    .map((w) => `<div class="wk"><span class="col"><i style="height:${w.pct ?? 0}%"></i></span><b>${w.pct === null ? '–' : `${w.pct}%`}</b><small>${w.start.slice(8)}/${w.start.slice(5, 7)}</small></div>`)
+    .join('')}</div><p class="muted">Porcentaje de aciertos de cada semana (se indica el lunes en que empieza).</p></section>`;
+}
+
+/* ---------- Copias de seguridad ---------- */
+function backupInfoText(d) {
+  const days = daysSinceBackup(d, Date.now());
+  if (days === null) return 'Aún no has guardado ninguna copia.';
+  const base = d.meta.lastExport ? `Última copia guardada hace ${plural(days, 'día', 'días')}.` : `Llevas ${plural(days, 'día', 'días')} sin guardar una copia.`;
+  return backupDue(d, Date.now()) ? `${base} ¡Toca guardar una!` : base;
+}
+
+async function showBackups() {
+  const list = await store.listBackups();
+  document.querySelector('.overlay')?.remove();
+  const el = document.createElement('div');
+  el.className = 'overlay';
+  el.innerHTML = `<div class="sheet" data-testid="backups"><h2>Copias automáticas</h2>
+    <p class="muted">Se guardan en este dispositivo (las últimas 7). Restaurar sustituye tus datos actuales; antes se guarda otra copia por si te arrepientes.</p>
+    ${list.length ? `<ul class="backups">${list.map((b) => `<li class="line" data-testid="backup-row"><span>${esc(new Date(b.createdAt).toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }))}<br><small class="muted">${esc(reasonLabel(b.reason))} · ${plural(b.coins, 'moneda', 'monedas')}</small></span><button class="btn small" data-act="restore-ask" data-key="${esc(b.key)}">Restaurar</button></li>`).join('')}</ul>` : '<p class="empty">Todavía no hay copias automáticas.</p>'}
+    <button class="btn block" data-act="sheet-close">Cerrar</button></div>`;
+  document.body.append(el);
+}
+
+function askRestore(key) {
+  document.querySelector('.overlay')?.remove();
+  const el = document.createElement('div');
+  el.className = 'overlay';
+  el.innerHTML = `<div class="sheet" data-testid="restore-confirm"><h2>¿Restaurar esta copia?</h2><p>Tus datos actuales se sustituirán por los de esa copia. Antes se guarda otra copia de lo actual.</p>
+    <div class="actions"><button class="btn grow" data-act="sheet-close">Cancelar</button><button class="btn danger grow" data-act="restore-do" data-key="${esc(key)}" data-testid="restore-do">Sí, restaurar</button></div></div>`;
+  document.body.append(el);
+}
+
+async function doRestore(key) {
+  try {
+    await store.restoreBackup(key);
+  } catch (e) {
+    toast(e.message);
+    return;
+  }
+  document.querySelector('.overlay')?.remove();
+  applyTheme();
+  view = 'casa';
+  render();
+  await checkDaily();
+  toast('Copia restaurada.');
+}
+
+/* ---------- Preguntas dudosas ---------- */
+async function flagQuestion(id) {
+  let on = false;
+  await store.update((d) => {
+    on = toggleFlag(d, id, Date.now());
+  });
+  toast(on ? 'Pregunta marcada como dudosa.' : 'Marca quitada.');
+  render();
+}
+
+async function copyFlags() {
+  const text = flaggedReport(doc(), allQuestions());
+  try {
+    await navigator.clipboard.writeText(text);
+    toast('Informe copiado. Pégalo donde quieras enviármelo.');
+  } catch {
+    document.querySelector('.overlay')?.remove();
+    const el = document.createElement('div');
+    el.className = 'overlay';
+    el.innerHTML = `<div class="sheet"><h2>Informe de preguntas dudosas</h2><p class="muted">Selecciona todo y cópialo.</p><textarea id="code-text" rows="10" spellcheck="false" aria-label="Informe">${esc(text)}</textarea><button class="btn block" data-act="sheet-close">Cerrar</button></div>`;
+    document.body.append(el);
+    el.querySelector('textarea').focus();
+  }
+}
+
+function downloadFlags() {
+  const blob = new Blob([flaggedReport(doc(), allQuestions())], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'preguntas-dudosas.txt';
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+/* ---------- Diálogos accesibles: rol, Escape y devolución del foco ---------- */
+let lastFocus = null;
+new MutationObserver((mutations) => {
+  for (const m of mutations) {
+    for (const node of m.addedNodes) {
+      if (node.nodeType !== 1 || !node.classList?.contains('overlay')) continue;
+      lastFocus = document.activeElement;
+      const sheet = node.querySelector('.sheet') ?? node;
+      sheet.setAttribute('role', 'dialog');
+      sheet.setAttribute('aria-modal', 'true');
+      const title = sheet.querySelector('h2');
+      if (title) sheet.setAttribute('aria-label', title.textContent);
+    }
+    for (const node of m.removedNodes) {
+      if (node.nodeType === 1 && node.classList?.contains('overlay') && !document.querySelector('.overlay') && lastFocus?.isConnected) lastFocus.focus?.();
+    }
+  }
+}).observe(document.body, { childList: true });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelector('.overlay')?.remove();
+});
 
 boot();

@@ -1,5 +1,5 @@
 // Service worker: la app funciona sin conexión. Red primero (siempre la última versión si hay conexión) y caché de respaldo.
-const VERSION = '0.4.0'; // sincronizado por tools/sync-version.mjs
+const VERSION = '0.5.0'; // sincronizado por tools/sync-version.mjs
 const CACHE = `oposiciones-${VERSION}`;
 const SHELL = [
   './',
@@ -12,6 +12,13 @@ const SHELL = [
   'js/economy.js',
   'js/scheduler.js',
   'js/catalog.js',
+  'js/theme-boot.js',
+  'js/phrases.js',
+  'js/art/study.js',
+  'js/sound.js',
+  'js/review.js',
+  'js/notifications.js',
+  'js/backup.js',
   'data/ce-articulos.json',
   'js/art/seasons.js',
   'js/art/clothes.js',
@@ -67,6 +74,6 @@ self.addEventListener('fetch', (e) => {
         }
         return res;
       })
-      .catch(() => caches.match(req, { ignoreSearch: true }).then((hit) => hit || caches.match('index.html'))),
+      .catch(() => caches.match(req, { ignoreSearch: true }).then((hit) => hit || (req.mode === 'navigate' ? caches.match('index.html') : Response.error()))),
   );
 });

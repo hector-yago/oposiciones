@@ -2,7 +2,7 @@
 import { updateProgress } from './scheduler.js';
 import { awardXp, mischief } from './shop.js';
 import { recordDay } from './stats.js';
-import { trackAnswer } from './missions.js';
+import { ensureMissions, trackAnswer } from './missions.js';
 import { claimGoalBonus } from './goal.js';
 
 export const STREAK_BONUS = [
@@ -22,6 +22,7 @@ export function rewardFor(streak) {
  * @returns {{correct:boolean, coins:number, bonus:number, streak:number, grown:object[], found:object[], mischief:object[]}}
  */
 export function applyAnswer(doc, question, correct, nowMs) {
+  ensureMissions(doc, nowMs); // las misiones de ayer no cuentan: si cambió el día, se renuevan antes de contar
   doc.stats.answered += 1;
   const t = (doc.stats.byTitle[question.titulo] ??= { ok: 0, ko: 0 });
   doc.progress[question.id] = updateProgress(doc.progress[question.id], correct, nowMs, doc.stats.answered);

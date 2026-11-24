@@ -4,6 +4,63 @@
     "nombre": "Constitución Española",
     "descripcion": "Título Preliminar, derechos y deberes, la Corona, las Cortes, el Gobierno, el Poder Judicial, la organización territorial y la reforma.",
     "archivo": "data/ce.json",
-    "articulos": "data/ce-articulos.json"
+    "articulos": "data/ce-articulos.json",
+    "grupos": [
+      {
+        "id": "Título Preliminar",
+        "short": "Preliminar",
+        "desc": "Principios generales (arts. 1-9)"
+      },
+      {
+        "id": "Título I",
+        "short": "Título I",
+        "desc": "Derechos y deberes fundamentales (arts. 10-55)"
+      },
+      {
+        "id": "Título II",
+        "short": "Título II",
+        "desc": "La Corona (arts. 56-65)"
+      },
+      {
+        "id": "Título III",
+        "short": "Título III",
+        "desc": "Las Cortes Generales (arts. 66-96)"
+      },
+      {
+        "id": "Título IV",
+        "short": "Título IV",
+        "desc": "Gobierno y Administración (arts. 97-107)"
+      },
+      {
+        "id": "Título V",
+        "short": "Título V",
+        "desc": "Relaciones Gobierno-Cortes (arts. 108-116)"
+      },
+      {
+        "id": "Título VI",
+        "short": "Título VI",
+        "desc": "Poder Judicial (arts. 117-127)"
+      },
+      {
+        "id": "Título VII",
+        "short": "Título VII",
+        "desc": "Economía y Hacienda (arts. 128-136)"
+      },
+      {
+        "id": "Título VIII",
+        "short": "Título VIII",
+        "desc": "Organización territorial (arts. 137-158)"
+      },
+      {
+        "id": "Título IX",
+        "short": "Título IX",
+        "desc": "Tribunal Constitucional (arts. 159-165)"
+      },
+      {
+        "id": "Título X",
+        "short": "Título X",
+        "desc": "Reforma constitucional (arts. 166-169)"
+      }
+    ]
   }
 ]

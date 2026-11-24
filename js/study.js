@@ -10,6 +10,7 @@ import { OUTFIT_SLOTS } from './migrations.js';
 import { avatarSvg } from './art/scene.js';
 import { itemThumb } from './art/items.js';
 import { byArticle } from './stats.js';
+import { play } from './sound.js';
 
 let ctx;
 let exam = null;
@@ -121,7 +122,10 @@ export function goalCard(now) {
 
 export async function claim(list, id) {
   const v = await ctx.store.update((d) => claimMission(d, list, id));
-  if (v) ctx.toast(`¡Misión cumplida! +${ctx.plural(v, 'moneda', 'monedas')}`);
+  if (v) {
+    play('coin');
+    ctx.toast(`¡Misión cumplida! +${ctx.plural(v, 'moneda', 'monedas')}`);
+  }
   ctx.rerender();
   await ctx.afterChange();
 }
@@ -183,7 +187,7 @@ export function viewExamen() {
     <div class="kpis"><div><b>${exam.ok}</b><span>aciertos</span></div><div><b>${exam.ko}</b><span>fallos</span></div><div><b>${exam.blank}</b><span>en blanco</span></div></div>
     <p class="muted center">Tiempo: ${mins}${r.coins ? ` · <b class="gain">+${ctx.plural(r.coins, 'moneda', 'monedas')}</b>` : ''}${r.goal ? ` · +${r.goal} por el objetivo del día` : ''}</p>
     <button class="btn primary block" data-act="exam-again">Otro examen</button></section>
-    ${wrong.length ? `<section class="card"><h3>Para repasar</h3>${wrong.map((x) => `<div class="line"><span><small>${ctx.esc(x.q.titulo)} · Art. ${ctx.esc(x.q.articulo)}</small><br>${ctx.esc(x.q.enunciado)}<br><small class="muted">Correcta: ${ctx.esc(x.q.opciones[x.q.correcta])}</small></span><button class="btn small" data-act="article" data-t="${ctx.esc(x.q.tema)}" data-n="${ctx.esc(x.q.articulo.split('.')[0])}">Artículo</button></div>`).join('')}</section>` : ''}`;
+    ${wrong.length ? `<section class="card"><h3>Para repasar</h3>${wrong.map((x) => `<div class="line"><span><small>${ctx.esc(x.q.titulo)} · Art. ${ctx.esc(x.q.articulo)}</small><br>${ctx.esc(x.q.enunciado)}<br><small class="muted">Correcta: ${ctx.esc(x.q.opciones[x.q.correcta])}</small></span><span class="row-actions"><button class="btn small" data-act="flag" data-id="${ctx.esc(x.q.id)}">${d.flagged[x.q.id] ? '★ Dudosa' : '☆ Dudosa'}</button><button class="btn small" data-act="article" data-t="${ctx.esc(x.q.tema)}" data-n="${ctx.esc(x.q.articulo.split('.')[0])}">Artículo</button></span></div>`).join('')}</section>` : ''}`;
 }
 
 async function startExam(temaId) {
@@ -215,7 +219,8 @@ function advance(pick) {
 }
 
 export async function finishExam() {
-  if (exam?.phase !== 'run') return;
+  if (exam?.phase !== 'run' || exam.finishing) return;
+  exam.finishing = true; // evita registrar el examen dos veces (doble toque, temporizador a la vez)
   clearInterval(exam.timer);
   const now = Date.now();
   const review = exam.qs.map((q, i) => {
@@ -234,6 +239,7 @@ export async function finishExam() {
     return r;
   });
   Object.assign(exam, { phase: 'done', result, review, ok, ko, blank, elapsed });
+  play(result.passed ? 'pass' : 'fail');
   ctx.rerender();
   await ctx.afterChange();
 }
@@ -282,7 +288,7 @@ export function viewJuegos() {
 }
 
 function startPairs() {
-  const r = pairsRound(Math.random, 6);
+  const r = pairsRound(Math.random, 6, ctx.getTema(ctx.activeTema())?.grupos);
   pairs = { ...r, selL: null, matched: [], mistakes: 0, done: false, coins: 0, flash: null };
   gameMode = 'pairs';
   ctx.rerender();
@@ -323,6 +329,7 @@ async function pairClick(side, id) {
     p.done = true;
     const ratio = p.pairs.length / (p.pairs.length + p.mistakes);
     p.coins = await ctx.store.update((d) => awardGame(d, Date.now(), ratio));
+    if (p.coins) play('coin');
     ctx.rerender();
     await ctx.afterChange();
     return;
@@ -331,7 +338,7 @@ async function pairClick(side, id) {
 }
 
 function startVf() {
-  const qs = ctx.allQuestions();
+  const qs = ctx.allQuestions().filter((q) => q.tema === ctx.activeTema());
   if (!qs.length) {
     ctx.toast('No se han cargado las preguntas.');
     return;
@@ -364,10 +371,11 @@ async function vfAnswer(v) {
 }
 
 async function vfNext() {
-  if (!vf || vf.answered === null) return;
+  if (!vf || vf.done || vf.answered === null) return;
   if (vf.i + 1 >= vf.rounds.length) {
     vf.done = true;
     vf.coins = await ctx.store.update((d) => awardGame(d, Date.now(), vf.ok / vf.rounds.length));
+    if (vf.coins) play('coin');
     ctx.rerender();
     await ctx.afterChange();
     return;
@@ -386,7 +394,7 @@ export async function onAct(act, el) {
       ctx.rerender();
       return true;
     case 'exam-start':
-      await startExam('ce');
+      await startExam(ctx.activeTema());
       return true;
     case 'exam-answer':
       advance(Number(el.dataset.p));

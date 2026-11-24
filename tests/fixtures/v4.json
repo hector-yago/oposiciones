@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 4,
+  "profile": {
+    "name": "Eva",
+    "gender": "chica"
+  },
+  "coins": 77,
+  "streak": {
+    "current": 2,
+    "best": 8,
+    "tens": 1,
+    "wrong": 0
+  },
+  "progress": {},
+  "stats": {
+    "answered": 200,
+    "correct": 150,
+    "earned": 500,
+    "byTitle": {
+      "Título I": {
+        "ok": 60,
+        "ko": 12
+      }
+    },
+    "byDay": {
+      "2026-11-24": {
+        "n": 25,
+        "ok": 20
+      }
+    },
+    "care": {
+      "cleaned": 5,
+      "calmed": 3,
+      "coins": 2
+    },
+    "games": 6,
+    "missions": 9
+  },
+  "inventory": [
+    {
+      "uid": 1,
+      "itemId": "estudio",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 1,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    },
+    {
+      "uid": 2,
+      "itemId": "buho",
+      "name": "Sabio",
+      "xp": 60,
+      "boughtAt": 2,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 3,
+      "coin": false,
+      "variant": "azul"
+    },
+    {
+      "uid": 3,
+      "itemId": "lampara-mesa",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 3,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    },
+    {
+      "uid": 4,
+      "itemId": "posadero",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 4,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    },
+    {
+      "uid": 5,
+      "itemId": "gorra",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 5,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    }
+  ],
+  "nextUid": 6,
+  "joker": {
+    "lastUsed": 0,
+    "uses": 0
+  },
+  "daily": {
+    "last": "",
+    "streak": 0,
+    "boxes": 0,
+    "opened": 0
+  },
+  "achievements": {},
+  "exams": [
+    {
+      "at": 1700000000000,
+      "n": 40,
+      "ok": 30,
+      "ko": 6,
+      "blank": 4,
+      "score": 7,
+      "secs": 1500
+    }
+  ],
+  "missions": {
+    "day": "",
+    "daily": [],
+    "week": "",
+    "weekly": []
+  },
+  "outfit": {
+    "hat": "gorra",
+    "face": "",
+    "neck": "",
+    "top": ""
+  },
+  "goal": {
+    "examDate": "2027-02-01",
+    "daily": 30,
+    "bonusDay": "2026-11-24"
+  },
+  "minigames": {
+    "day": "",
+    "plays": 0
+  },
+  "breed": {},
+  "flagged": {
+    "ce-100": 1700000000000,
+    "ce-200": 1700000100000
+  },
+  "flags": {
+    "introSeen": true,
+    "shopSeen": true
+  },
+  "settings": {
+    "theme": "dark",
+    "sceneMode": "auto",
+    "fontScale": "xlarge",
+    "calm": false,
+    "season": "auto",
+    "sound": false
+  },
+  "meta": {
+    "firstUse": 1690000000000,
+    "lastExport": 1700000200000,
+    "lastAutoBackup": 1700000300000
+  }
+}

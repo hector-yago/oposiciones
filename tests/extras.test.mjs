@@ -95,14 +95,14 @@ test('días y racha de estudio', () => {
 test('artículos con más fallos', () => {
   const d = base();
   const qs = [
-    { id: 'a', articulo: '15.1', titulo: 'Título I' },
-    { id: 'b', articulo: '15.2', titulo: 'Título I' },
-    { id: 'c', articulo: '20', titulo: 'Título I' },
+    { id: 'a', tema: 'ce', articulo: '15.1', titulo: 'Título I' },
+    { id: 'b', tema: 'ce', articulo: '15.2', titulo: 'Título I' },
+    { id: 'c', tema: 'ce', articulo: '20', titulo: 'Título I' },
   ];
   d.progress = { a: { ok: 1, ko: 3 }, b: { ok: 0, ko: 1 }, c: { ok: 5, ko: 0 } };
   const r = byArticle(d, qs);
   assert.equal(r.length, 1);
-  assert.deepEqual(r[0], { articulo: '15', titulo: 'Título I', ok: 1, ko: 4, pct: 20 });
+  assert.deepEqual(r[0], { tema: 'ce', articulo: '15', titulo: 'Título I', ok: 1, ko: 4, pct: 20 });
 });
 
 test('logros: se desbloquean una vez y por sus condiciones', () => {

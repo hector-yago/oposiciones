@@ -1,7 +1,7 @@
 // Comodín 50 %: deja 2 de las 4 opciones (la correcta y una incorrecta). 1 uso cada 4 horas.
 export const COOLDOWN_MS = 4 * 3600 * 1000;
 
-export const remainingMs = (doc, nowMs) => Math.max(0, doc.joker.lastUsed + COOLDOWN_MS - nowMs);
+export const remainingMs = (doc, nowMs) => Math.min(COOLDOWN_MS, Math.max(0, doc.joker.lastUsed + COOLDOWN_MS - nowMs)); // tope: un reloj adelantado no lo bloquea más de 4 h
 export const isAvailable = (doc, nowMs) => remainingMs(doc, nowMs) === 0;
 
 /** Texto del tiempo que falta: «2 h 13 min», «45 min», «menos de 1 min». */

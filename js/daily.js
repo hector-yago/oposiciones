@@ -23,7 +23,7 @@ export const dayOfWeek = (streak) => (streak > 0 ? ((streak - 1) % WEEK) + 1 : 0
 export function claimDaily(doc, nowMs) {
   const today = dayKey(nowMs);
   const d = doc.daily;
-  if (!doc.profile || d.last === today) return null;
+  if (!doc.profile || d.last >= today) return null; // si el reloj va atrasado, no se vuelve a cobrar
   if (!d.last) {
     d.last = today;
     d.streak = 1;

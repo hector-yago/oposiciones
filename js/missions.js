@@ -48,13 +48,13 @@ export function weekKey(ms) {
   return `${y}-W${String(week).padStart(2, '0')}`;
 }
 
-function pickMissions(pool, key, n) {
+function pickMissions(pool, key, n, titles = TITLES) {
   const rng = seeded(key);
   const bag = [...pool];
   const out = [];
   while (out.length < n && bag.length) {
     const m = bag.splice(Math.floor(rng() * bag.length), 1)[0];
-    const titulo = m.type === 'titulo' ? TITLES[Math.floor(rng() * TITLES.length)] : '';
+    const titulo = m.type === 'titulo' ? titles[Math.floor(rng() * titles.length)] : '';
     out.push({ id: `${m.type}-${m.target}${titulo ? `-${titulo}` : ''}`, type: m.type, target: m.target, titulo, progress: 0, reward: m.reward, claimed: false });
   }
   return out;
@@ -73,18 +73,18 @@ export function studyDaysThisWeek(doc, nowMs) {
 }
 
 /** Crea las misiones de hoy y de esta semana si hace falta (muta el borrador). Devuelve true si cambió algo. */
-export function ensureMissions(doc, nowMs) {
+export function ensureMissions(doc, nowMs, titles = TITLES) {
   const day = dayKey(nowMs);
   const week = weekKey(nowMs);
   let changed = false;
   if (doc.missions.day !== day) {
     doc.missions.day = day;
-    doc.missions.daily = pickMissions(DAILY_POOL, `d:${day}`, 3);
+    doc.missions.daily = pickMissions(DAILY_POOL, `d:${day}`, 3, titles);
     changed = true;
   }
   if (doc.missions.week !== week) {
     doc.missions.week = week;
-    doc.missions.weekly = pickMissions(WEEKLY_POOL, `w:${week}`, 3);
+    doc.missions.weekly = pickMissions(WEEKLY_POOL, `w:${week}`, 3, titles);
     changed = true;
   }
   return changed;

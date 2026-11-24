@@ -41,3 +41,13 @@
 7. Cría: con 2 adultos felices de una especie aparece el botón «Criar».
 8. Compartir mi casa (iPhone: hoja de compartir; PC: descarga PNG). Copiar código en un dispositivo y Pegar código en otro.
 9. Texto grande y «Menos movimiento» en Ajustes; temporadas (Navidad del 15/12 al 6/1, etc.).
+
+## 0.5.0 — qué probar a mano
+1. Campana de la cabecera: número de avisos y lista; cada aviso lleva a su pantalla.
+2. Ajustes → Copia de seguridad: texto con los días desde la última copia; «Copias automáticas» → restaurar (pide confirmación).
+3. Tras 14 días sin exportar (o simulando con la fecha del móvil) aparece el aviso de copia.
+4. Al responder, «☆ Dudosa» marca la pregunta; Ajustes → «Copiar informe».
+5. Tienda → Estudio: comprar el estudio, muebles, flexo y animales; de noche el flexo ilumina y se apaga tocándolo.
+6. Estadísticas: gráfico de exámenes, precisión semanal y dominio por Título.
+7. Ajustes → «Sonidos»: suenan acierto/fallo, moneda, crecimiento, cajas y logros (en iPhone no suenan con el interruptor de silencio activado).
+8. Icono nuevo (casa con moneda) al instalar la app.

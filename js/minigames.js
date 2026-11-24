@@ -29,8 +29,8 @@ const shuffled = (list, rng) => {
 };
 
 /** «Emparejar»: une cada Título con lo que regula. Devuelve las columnas ya mezcladas. */
-export function pairsRound(rng = Math.random, n = 6) {
-  const chosen = shuffled(TITLE_INFO, rng).slice(0, n);
+export function pairsRound(rng = Math.random, n = 6, grupos = TITLE_INFO) {
+  const chosen = shuffled(grupos, rng).slice(0, Math.min(n, grupos.length));
   return { pairs: chosen, left: shuffled(chosen, rng).map((p) => ({ id: p.id, label: p.short })), right: shuffled(chosen, rng).map((p) => ({ id: p.id, label: p.desc })) };
 }
 

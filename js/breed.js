@@ -18,7 +18,7 @@ export function canBreed(doc, species, nowMs) {
   const adults = petsOf(doc).filter((p) => p.itemId === species && stageOf(species, p.xp) === 2 && !isUpset(p));
   if (adults.length < 2) return { ok: false, reason: 'Hacen falta 2 adultos felices y limpios.' };
   if (countOf(doc, species) >= cfg.max * BREED_CAP_FACTOR) return { ok: false, reason: `Ya tienes todos los que caben (${cfg.max * BREED_CAP_FACTOR}).` };
-  const left = (doc.breed[species] ?? 0) + BREED_COOLDOWN_MS - nowMs;
+  const left = Math.min(BREED_COOLDOWN_MS, (doc.breed[species] ?? 0) + BREED_COOLDOWN_MS - nowMs);
   if (left > 0) return { ok: false, reason: `Podrán volver a criar en ${Math.ceil(left / 86400000)} día(s).`, left };
   return { ok: true };
 }

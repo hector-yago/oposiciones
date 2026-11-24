@@ -1,5 +1,5 @@
-// Genera el logo (SVG) y los iconos PNG de la PWA sin dependencias: una casa blanca con una moneda dentro
-// sobre degradado violeta→turquesa. Uso: node tools/make-icons.mjs
+// Genera el logo (SVG) y los iconos PNG de la PWA sin dependencias: una casa blanca con una moneda dorada
+// en la esquina, sobre degradado violeta→turquesa. Uso: node tools/make-icons.mjs
 import { deflateSync } from 'node:zlib';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
@@ -9,11 +9,15 @@ mkdirSync(outDir, { recursive: true });
 const C1 = [0x6d, 0x28, 0xd9];
 const C2 = [0x0e, 0x9f, 0x9a];
 const WHITE = [255, 255, 255];
+const GOLD = [0xfb, 0xbf, 0x24];
+const GOLD_LIGHT = [0xfd, 0xd9, 0x6a];
+const GOLD_DARK = [0xb4, 0x6a, 0x0c];
 
 // Geometría en coordenadas unitarias (0..1).
-const ROOF = [[0.5, 0.17], [0.85, 0.5], [0.15, 0.5]];
-const BODY = { x0: 0.25, x1: 0.75, y0: 0.47, y1: 0.82 };
-const COIN = { cx: 0.5, cy: 0.64, r: 0.15, ring: 0.03 };
+const ROOF = [[0.4, 0.13], [0.72, 0.44], [0.08, 0.44]];
+const BODY = { x0: 0.16, x1: 0.64, y0: 0.42, y1: 0.8 };
+const DOOR = { x0: 0.34, x1: 0.46, y0: 0.58, y1: 0.8 };
+const COIN = { cx: 0.7, cy: 0.69, r: 0.2, gap: 0.03, rim: 0.028, ring: 0.065 };
 
 function inPoly(x, y, poly) {
   let inside = false;
@@ -24,13 +28,8 @@ function inPoly(x, y, poly) {
   }
   return inside;
 }
-const inHouse = (x, y) => inPoly(x, y, ROOF) || (x >= BODY.x0 && x <= BODY.x1 && y >= BODY.y0 && y <= BODY.y1);
-function isWhite(x, y) {
-  const d = Math.hypot(x - COIN.cx, y - COIN.cy);
-  if (d <= COIN.r - COIN.ring) return true; // moneda (blanca) dentro del hueco
-  if (d <= COIN.r) return false; // hueco entre casa y moneda
-  return inHouse(x, y);
-}
+const inBox = (x, y, b) => x >= b.x0 && x <= b.x1 && y >= b.y0 && y <= b.y1;
+const inHouse = (x, y) => (inPoly(x, y, ROOF) || inBox(x, y, BODY)) && !inBox(x, y, DOOR);
 
 function inRoundRect(x, y, r) {
   if (r <= 0) return true;
@@ -42,6 +41,19 @@ const bg = (u, v) => {
   const t = (u + v) / 2;
   return C1.map((c, i) => c + (C2[i] - c) * t);
 };
+
+/** Color de un punto del logo (x, y en el espacio del dibujo; u, v en el del icono, para el degradado). */
+function pixel(x, y, u, v) {
+  const d = Math.hypot(x - COIN.cx, y - COIN.cy);
+  if (d <= COIN.r) {
+    if (d > COIN.r - COIN.rim) return GOLD_DARK;
+    if (d > COIN.r - COIN.ring) return GOLD_LIGHT;
+    if (Math.abs(x - COIN.cx) < 0.02 && Math.abs(y - COIN.cy) < 0.085) return GOLD_DARK; // barra central de la moneda
+    return GOLD;
+  }
+  if (d <= COIN.r + COIN.gap) return bg(u, v); // hueco que separa la moneda de la casa
+  return inHouse(x, y) ? WHITE : bg(u, v);
+}
 
 const crcTable = Array.from({ length: 256 }, (_, n) => {
   let c = n;
@@ -76,7 +88,7 @@ function png(size, { radius, scale }) {
           if (!inRoundRect(u, v, radius)) continue;
           const bu = (u - 0.5) / scale + 0.5;
           const bv = (v - 0.5) / scale + 0.5;
-          const col = isWhite(bu, bv) ? WHITE : bg(u, v);
+          const col = pixel(bu, bv, u, v);
           r += col[0]; g += col[1]; b += col[2]; a += 255;
         }
       }
@@ -108,14 +120,17 @@ for (const [name, buf] of Object.entries(files)) writeFileSync(new URL(name, out
 const S = 512;
 const f = (n) => (n * S).toFixed(1);
 const pts = (poly) => poly.map(([x, y]) => `${f(x)},${f(y)}`).join(' ');
-// SVG: casa (tejado + cuerpo) con hueco circular y moneda blanca encima (misma geometría que los PNG).
+// SVG con la misma geometría que los PNG.
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${S} ${S}">
 <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset="1" stop-color="#0e9f9a"/></linearGradient></defs>
 <rect width="${S}" height="${S}" rx="${0.2 * S}" fill="url(#g)"/>
 <polygon points="${pts(ROOF)}" fill="#fff"/>
-<rect x="${f(BODY.x0)}" y="${f(BODY.y0)}" width="${f(BODY.x1 - BODY.x0)}" height="${f(BODY.y1 - BODY.y0)}" fill="#fff"/>
-<circle cx="${f(COIN.cx)}" cy="${f(COIN.cy)}" r="${f(COIN.r)}" fill="url(#g)"/>
-<circle cx="${f(COIN.cx)}" cy="${f(COIN.cy)}" r="${f(COIN.r - COIN.ring)}" fill="#fff"/>
+<path fill="#fff" fill-rule="evenodd" d="M${f(BODY.x0)} ${f(BODY.y0)}H${f(BODY.x1)}V${f(BODY.y1)}H${f(BODY.x0)}Z M${f(DOOR.x0)} ${f(DOOR.y0)}V${f(DOOR.y1)}H${f(DOOR.x1)}V${f(DOOR.y0)}Z"/>
+<circle cx="${f(COIN.cx)}" cy="${f(COIN.cy)}" r="${f(COIN.r + COIN.gap)}" fill="url(#g)"/>
+<circle cx="${f(COIN.cx)}" cy="${f(COIN.cy)}" r="${f(COIN.r)}" fill="#b46a0c"/>
+<circle cx="${f(COIN.cx)}" cy="${f(COIN.cy)}" r="${f(COIN.r - COIN.rim)}" fill="#fdd96a"/>
+<circle cx="${f(COIN.cx)}" cy="${f(COIN.cy)}" r="${f(COIN.r - COIN.ring)}" fill="#fbbf24"/>
+<rect x="${f(COIN.cx - 0.02)}" y="${f(COIN.cy - 0.085)}" width="${f(0.04)}" height="${f(0.17)}" fill="#b46a0c"/>
 </svg>
 `;
 writeFileSync(new URL('icon.svg', outDir), svg);

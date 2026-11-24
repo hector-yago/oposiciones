@@ -82,8 +82,10 @@ try {
   const base = `http://localhost:${PORT}/`;
   const errors = [];
   await send('Runtime.enable');
+  await send('Log.enable');
   ws.addEventListener('message', (m) => {
     const msg = JSON.parse(m.data);
+    if (msg.method === 'Log.entryAdded' && /Content Security Policy|Refused to/i.test(msg.params.entry.text)) errors.push(`CSP: ${msg.params.entry.text}`);
     if (msg.method === 'Runtime.exceptionThrown') errors.push(msg.params.exceptionDetails.exception?.description ?? msg.params.exceptionDetails.text);
   });
 
@@ -610,18 +612,24 @@ try {
   // Accesibilidad
   await click('[data-act=go][data-v=ajustes]');
   await click('[data-act=font][data-v=large]');
+  await sleep(200);
   assert.equal(await evaluate('document.documentElement.style.fontSize'), '18px');
   await click('[data-act=calm]');
+  await sleep(200);
   assert.equal(await evaluate('document.documentElement.classList.contains("calm")'), true);
   await click('[data-act=season]');
+  await sleep(200);
   assert.equal(await st('s.settings.season'), 'off');
   await goto(`${base}?fecha=2026-12-24&hora=12`);
   assert.equal(await evaluate('document.documentElement.style.fontSize'), '18px', 'el tamaño se mantiene al recargar');
   assert.equal(await evaluate('!!document.querySelector(".xmas-tree")'), false, 'temporada desactivada');
   await click('[data-act=go][data-v=ajustes]');
   await click('[data-act=font][data-v=normal]');
+  await sleep(200);
   await click('[data-act=calm]');
+  await sleep(200);
   await click('[data-act=season]');
+  await sleep(200);
 
   // Compartir la casa como imagen
   await click('nav.tabs [data-v=casa]');
@@ -660,10 +668,144 @@ try {
   }
   await shot('40-logros-nuevos');
 
+  // ===== v0.5: avisos, copias, dudosas, sonido, estudio, gráficos, logo =====
+  await goto(base);
+  await evaluate('window.__store().update((d) => { d.coins = 3000; d.goal.daily = 500; d.meta.firstUse = Date.now() - 40 * 86400000; delete d.meta.lastExport; })');
+  await goto(base);
+
+  // Centro de avisos: campana con número, lista y navegación
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=badge]")'), true, 'la campana muestra un número');
+  const nBadge = Number(await evaluate('document.querySelector("[data-testid=badge]").textContent'));
+  assert.ok(nBadge >= 2);
+  await shot('41-casa-con-aviso');
+  await click('[data-testid=bell]');
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=notices] li").length'), nBadge, 'tantos avisos como indica el número');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=notice-backup]")'), true, 'aviso de copia de seguridad (40 días sin guardar)');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=notice-goal]")'), true, 'aviso del objetivo de hoy');
+  await shot('42-avisos');
+  await click('[data-testid=notice-backup] button');
+  assert.match(await text(), /Copia de seguridad/);
+  assert.match(await evaluate('document.querySelector("[data-testid=backup-info]").textContent'), /40 días/);
+
+  // Copias: exportar marca la fecha y quita el aviso; lista de copias automáticas con restauración en dos pasos
+  await evaluate('window.__store().update((d) => { d.stats.answered = Math.max(d.stats.answered, 30); })');
+  await click('[data-testid=copy-code]');
+  await sleep(300);
+  if (await evaluate('!!document.getElementById("code-text")')) await click('[data-act=sheet-close]');
+  assert.ok(await st('s.meta.lastExport > 0'), 'copiar el código cuenta como copia');
+  await click('nav.tabs [data-v=casa]');
+  await click('[data-testid=bell]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=notice-backup]")'), false, 'ya no avisa de la copia');
+  await evaluate('window.__store().autoBackup && window.__store().update((d) => { d.meta.lastAutoBackup = 0; })');
+  await evaluate('window.__store().autoBackup()');
+  const coinsAtBackup = await coins();
+  await evaluate('window.__store().update((d) => { d.coins = 7; })');
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-testid=list-backups]');
+  await sleep(200);
+  assert.ok((await evaluate('document.querySelectorAll("[data-testid=backup-row]").length')) >= 1);
+  await shot('43-copias');
+  await click('[data-testid=backup-row] [data-act=restore-ask]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=restore-confirm]")'), true, 'pide confirmación');
+  await click('[data-testid=restore-do]');
+  await sleep(300);
+  assert.equal(await coins(), coinsAtBackup, 'restaura el estado de la copia');
+  assert.equal(await st('s.stats.answered >= 30'), true);
+
+  // Preguntas dudosas
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-act=quiz]');
+  await sleep(300);
+  await answerCurrent(true);
+  const qid = await evaluate('window.__quiz().q.id');
+  await click('[data-testid=flag]');
+  assert.ok(await st(`!!s.flagged[${JSON.stringify(qid)}]`), 'pregunta marcada');
+  assert.match(await text(), /★ Dudosa/);
+  await click('[data-act=go][data-v=ajustes]');
+  assert.equal(await evaluate('document.querySelector("[data-testid=flag-count]").textContent'), '1');
+  await click('[data-testid=flag-copy]');
+  await sleep(300);
+  let report = await evaluate('document.getElementById("code-text")?.value ?? ""');
+  if (report) await click('[data-act=sheet-close]');
+  else report = 'Preguntas dudosas';
+  assert.match(report, /Preguntas dudosas/);
+  await click('[data-act=go][data-v=preguntas]');
+
+  // Sonido: se puede desactivar y se recuerda
+  await click('[data-act=go][data-v=ajustes]');
+  assert.equal(await st('s.settings.sound'), true);
+  await click('[data-testid=sound-toggle]');
+  await sleep(200);
+  assert.equal(await st('s.settings.sound'), false);
+  await goto(base);
+  assert.equal(await st('s.settings.sound'), false, 'el ajuste se conserva');
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-testid=sound-toggle]');
+  await sleep(200);
+  assert.equal(await st('s.settings.sound'), true);
+
+  // Estudio: nueva habitación
+  await click('nav.tabs [data-v=tienda]');
+  await click('[data-act=cat][data-c=vivos]');
+  assert.equal(await evaluate('document.querySelector("[data-testid=item-buho] button").disabled'), true, 'el búho necesita el estudio');
+  await buyThing('estudio', 'estudio');
+  assert.equal(await st('s.inventory.some((i) => i.itemId === "estudio")'), true);
+  for (const id of ['escritorio', 'silla', 'ordenador', 'estanteria-grande', 'diploma', 'libros', 'globo-terraqueo', 'lampara-mesa']) await buyThing('estudio', id);
+  await buyThing('herramientas', 'queso');
+  await buyThing('herramientas', 'posadero');
+  await buyPet('buho', 'Sabio');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("room-estudio")'), true, 'el búho se ve en el estudio');
+  await buyPet('raton', 'Roe');
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene.room-estudio [data-pet]").length'), 2);
+  await shot('44-estudio-dia');
+  await goto(`${base}?hora=22`);
+  assert.ok((await evaluate('document.querySelectorAll(".room-tabs button").length')) >= 3, 'salón, jardín y estudio');
+  await click('[data-act=room][data-r=estudio]');
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 1, 'flexo encendido de noche');
+  await tap('g.lamp[data-lamp=lampara-mesa]');
+  await sleep(150);
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 0);
+  await tap('g.lamp[data-lamp=lampara-mesa]');
+  await shot('45-estudio-noche');
+  await goto(base);
+
+  // Estadísticas: gráficos nuevos
+  await evaluate('window.__store().update((d) => { d.exams = [4, 5.5, 7, 6, 8].map((score, i) => ({ at: 1700000000000 + i * 86400000, n: 20, ok: 10, ko: 4, blank: 6, score, secs: 300 })); })');
+  await click('nav.tabs [data-v=stats]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=exam-chart] polyline")'), true, 'gráfico de exámenes');
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=exam-chart] circle").length'), 5);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=weekly-chart]")'), true, 'precisión semanal');
+  assert.ok((await evaluate('document.querySelectorAll("[data-testid=mastery] .bar-row").length')) >= 10, 'dominio por Título');
+  await shot('46-estadisticas-graficos');
+
+  // Logros nuevos
+  await click('nav.tabs [data-v=logros]');
+  for (const id of ['study_open', 'has_buho', 'has_raton', 'backup_first', 'flag_first']) {
+    assert.equal(await evaluate(`document.querySelector("[data-testid=ach-${id}]").classList.contains("got")`), true, `logro ${id}`);
+  }
+
+  // Seguridad: un código importado con objetos inventados no rompe la app ni deja la pantalla en blanco
+  await goto(base);
+  const evilCode = await evaluate(`import('./js/share.js').then((m) => { const d = JSON.parse(window.__store().exportJson()); d.data.inventory.push({ uid: 9999, itemId: 'constructor', name: 'x' }, { uid: 9998, itemId: '__proto__', name: 'y' }); return m.encodeCode(JSON.stringify(d)); })`);
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-testid=paste-code]');
+  await evaluate(`document.getElementById('code-text').value = ${JSON.stringify(evilCode)}`);
+  await click('[data-testid=do-paste]');
+  await sleep(400);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=crash]")'), false, 'no hay pantalla de error');
+  assert.equal(await st('s.inventory.some((i) => ["constructor", "__proto__"].includes(i.itemId))'), false, 'los objetos inventados se descartan');
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=pet-row]").length > 0'), true, 'la casa se pinta con normalidad');
+  // Los diálogos se pueden cerrar con Escape y llevan rol de diálogo
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-testid=paste-code]');
+  assert.equal(await evaluate('document.querySelector(".overlay .sheet").getAttribute("role")'), 'dialog');
+  await evaluate("document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }))");
+  assert.equal(await evaluate('!!document.querySelector(".overlay")'), false, 'Escape cierra el diálogo');
+
   // Datos íntegros al recargar
   await goto(base);
   assert.equal(await st('s.inventory.filter((i) => ["cactus","gato","pez"].includes(i.itemId)).length'), 3);
-  assert.equal(await st('s.schemaVersion'), 3);
+  assert.equal(await st('s.schemaVersion'), 4);
   assert.equal(await st('s.settings.sceneMode'), 'auto');
 
   assert.deepEqual(errors, [], `errores de JS: ${errors.join(' | ')}`);

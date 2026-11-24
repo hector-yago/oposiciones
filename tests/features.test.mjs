@@ -1,7 +1,7 @@
 // Misiones, examen, minijuegos, objetivo, cría, ropa y requisitos de la tienda.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { emptyDoc, migrate } from '../js/migrations.js';
+import { CURRENT_SCHEMA, emptyDoc, migrate } from '../js/migrations.js';
 import { applyAnswer } from '../js/economy.js';
 import { ensureMissions, claimMission, isDone, seeded, studyDaysThisWeek, trackEvent, weekKey, missionText } from '../js/missions.js';
 import { EXAM_SIZES, PASS_MARK, applyExamAnswer, examCoins, formatSecs, pickExam, recordExam, scoreOf, timeLimit } from '../js/exam.js';
@@ -257,7 +257,7 @@ test('cría: crea la mascota, guarda el enfriamiento y reparte variantes raras',
 test('migración 2→3: conserva datos y añade lo nuevo con valores por defecto', () => {
   const { doc, from, to } = migrate({ schemaVersion: 2, profile: { name: 'Ana', gender: 'chica' }, coins: 5, inventory: [{ uid: 1, itemId: 'gato', name: 'Michi', xp: 3 }] });
   assert.equal(from, 2);
-  assert.equal(to, 3);
+  assert.equal(to, CURRENT_SCHEMA);
   assert.equal(doc.coins, 5);
   assert.equal(doc.inventory[0].variant, '');
   assert.deepEqual(doc.exams, []);

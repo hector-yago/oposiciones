@@ -126,6 +126,14 @@ export const ACHIEVEMENTS = [
   A('dressed', 'Casa', 'Con estilo', 'Lleva una prenda en cada sitio (sombrero, cara, cuello y camiseta).', (c) => Object.values(c.doc.outfit).filter(Boolean).length, 4, { item: 'gorra' }),
   A('wardrobe_all', 'Casa', 'Vestidor completo', 'Compra toda la ropa.', (c) => CLOTHES.filter((i) => has(c, i.id)).length, CLOTHES.length, { item: 'corona' }),
 
+  // --- Estudio ---
+  A('study_open', 'Casa', 'Con despacho', 'Desbloquea el estudio.', (c) => bool(has(c, 'estudio')), 1, { item: 'estudio' }),
+  A('has_raton', 'Mascotas', 'Ratón de biblioteca', 'Consigue un ratón de biblioteca.', (c) => speciesCount(c, 'raton'), 1, { pet: 'raton' }),
+  A('has_buho', 'Mascotas', 'El sabio', 'Consigue un búho.', (c) => speciesCount(c, 'buho'), 1, { pet: 'buho' }),
+  A('office_full', 'Casa', 'Despacho completo', 'Ten escritorio, silla, ordenador y librería grande en el estudio.', (c) => ['escritorio', 'silla', 'ordenador', 'estanteria-grande'].filter((id) => has(c, id)).length, 4, { item: 'escritorio' }),
+  A('backup_first', 'Constancia', 'Prevenido', 'Guarda tu primera copia de seguridad.', (c) => (c.doc.meta.lastExport ? 1 : 0), 1, { txt: '💾' }),
+  A('flag_first', 'Constancia', 'Ojo crítico', 'Marca una pregunta como dudosa.', (c) => Object.keys(c.doc.flagged).length, 1, { txt: '?' }),
+
   // --- Casa ---
   A('first_tool', 'Casa', 'Manos a la obra', 'Compra tu primera herramienta.', (c) => CATALOG.filter((i) => i.cat === 'herramientas' && has(c, i.id)).length, 1, { item: 'regadera' }),
   A('aquarium', 'Casa', 'Decora tu pecera', 'Ten una pecera con un pez dentro.', (c) => bool(has(c, 'pecera') && speciesCount(c, 'pez') > 0), 1, { item: 'pecera' }),

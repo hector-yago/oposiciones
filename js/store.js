@@ -96,7 +96,7 @@ export function createStore(adapter, { now = () => Date.now() } = {}) {
       const next = result && typeof result === 'object' && !('then' in result) && 'schemaVersion' in result ? result : draft;
       doc = migrate({ ...next, schemaVersion: CURRENT_SCHEMA }).doc;
       listeners.forEach((l) => l(doc));
-      saving = saving.then(() => adapter.put(DOC_KEY, doc));
+      saving = saving.catch(() => {}).then(() => adapter.put(DOC_KEY, doc)); // un fallo no bloquea los guardados siguientes
       await saving;
       return result;
     },

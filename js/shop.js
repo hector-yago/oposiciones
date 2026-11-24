@@ -66,6 +66,8 @@ export const MOOD_TEXT = {
   ovejita: { angry: 'está enfadada', mess: 'ha ensuciado el corral', f: true },
   zorro: { angry: 'está enfadado', mess: 'ha hecho caca' },
   panda: { angry: 'está enfadado', mess: 'ha ensuciado el bambú' },
+  raton: { angry: 'está enfadado', mess: 'ha dejado migas y bolitas' },
+  buho: { angry: 'está enfadado', mess: 'ha ensuciado el posadero' },
 };
 
 /** Resumen de lo que hay que atender en casa. */

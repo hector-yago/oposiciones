@@ -16,6 +16,7 @@ export function inlineSceneStyles(svg, vars) {
 }
 
 const CODE_PREFIX = 'OPO1:';
+export const MAX_CODE_CHARS = 6_000_000; // ≈ 4,5 MB de datos
 
 /** Texto JSON → código copiable (base64 de UTF-8 con prefijo). */
 export function encodeCode(jsonText) {
@@ -28,6 +29,7 @@ export function encodeCode(jsonText) {
 /** Código → texto JSON. Lanza un error legible si no es un código válido. */
 export function decodeCode(code) {
   const text = String(code ?? '').trim().replace(/\s+/g, '');
+  if (text.length > MAX_CODE_CHARS) throw new Error('El código es demasiado grande para ser de Oposiciones.');
   if (!text.startsWith(CODE_PREFIX)) throw new Error('Ese texto no es un código de Oposiciones (debe empezar por OPO1:).');
   try {
     const bin = atob(text.slice(CODE_PREFIX.length));

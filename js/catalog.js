@@ -5,6 +5,7 @@ export const CATEGORIES = [
   { id: 'accesorios', name: 'Accesorios' },
   { id: 'ropa', name: 'Ropa' },
   { id: 'jardin', name: 'Jardín' },
+  { id: 'estudio', name: 'Estudio' },
 ];
 
 // Mascotas: etapas por XP acumulada (cría → joven → adulto), herramienta principal (+50 % de crecimiento)
@@ -15,6 +16,7 @@ export const SPECIES = {
   margarita: { tool: 'regadera', extras: ['abono'], stages: [0, 8, 25], max: 3, size: 1 },
   pez: { tool: 'pecera', extras: [], stages: [0, 15, 45], max: 3, size: 1 },
   pollito: { tool: 'nido', extras: ['comedero'], stages: [0, 12, 35], max: 4, size: 0.6, room: 'jardin' },
+  raton: { tool: 'queso', extras: ['comedero'], stages: [0, 12, 35], max: 3, size: 0.6, room: 'estudio' },
   hamster: { tool: 'rueda', extras: ['comedero'], stages: [0, 18, 55], max: 2, size: 0.7 },
   canario: { tool: 'jaula', extras: [], stages: [0, 20, 60], max: 2, size: 1 },
   patito: { tool: 'estanque', extras: ['comedero'], stages: [0, 18, 50], max: 3, size: 0.75, room: 'jardin' },
@@ -25,6 +27,7 @@ export const SPECIES = {
   cerdito: { tool: 'corral', extras: ['comedero', 'cepillo'], stages: [0, 35, 100], max: 2, size: 0.95, room: 'jardin' },
   conejo: { tool: 'conejera', extras: ['cepillo', 'comedero'], stages: [0, 35, 100], max: 2, size: 0.9 },
   ovejita: { tool: 'corral', extras: ['comedero', 'cepillo'], stages: [0, 40, 115], max: 3, size: 0.95, room: 'jardin' },
+  buho: { tool: 'posadero', extras: ['comedero'], stages: [0, 45, 130], max: 2, size: 0.95, room: 'estudio' },
   loro: { tool: 'percha', extras: ['comedero'], stages: [0, 45, 130], max: 2, size: 0.9 },
   zorro: { tool: 'madriguera', extras: ['comedero', 'cepillo'], stages: [0, 50, 140], max: 2, size: 0.9, room: 'jardin' },
   perro: { tool: 'cuenco-agua', extras: ['cama', 'juguete', 'cepillo', 'comedero'], stages: [0, 40, 120], max: 2, size: 1 },
@@ -37,9 +40,11 @@ export const STAGE_NAMES = ['Cría', 'Joven', 'Adulto'];
 export const ROOMS = [
   { id: 'casa', name: 'Salón' },
   { id: 'jardin', name: 'Jardín', req: 'jardin' },
+  { id: 'estudio', name: 'Estudio', req: 'estudio' },
 ];
 
 const J = 'jardin'; // los objetos del jardín necesitan haberlo comprado
+const E = 'estudio'; // y los del estudio, el estudio
 
 export const CATALOG = [
   // --- Seres vivos (de más barato a más caro) ---
@@ -48,6 +53,7 @@ export const CATALOG = [
   { id: 'pez', cat: 'vivos', name: 'Pez', price: 5, desc: 'Nada tranquilo. Crece más deprisa con una pecera.' },
   { id: 'pollito', cat: 'vivos', name: 'Pollito', price: 6, desc: 'Pío, pío. Vive en el jardín y necesita su nido.', req: J },
   { id: 'hamster', cat: 'vivos', name: 'Hámster', price: 8, desc: 'Pequeño y activo. Crece más deprisa con una rueda.' },
+  { id: 'raton', cat: 'vivos', name: 'Ratón de biblioteca', price: 9, desc: 'Pequeño y leído. Vive en el estudio y adora el queso.', req: E },
   { id: 'canario', cat: 'vivos', name: 'Canario', price: 10, desc: 'Canta cuando estudias. Crece más deprisa con una jaula.' },
   { id: 'patito', cat: 'vivos', name: 'Patito', price: 12, desc: 'Cua, cua. Vive en el jardín y adora su estanque.', req: J },
   { id: 'tortuga', cat: 'vivos', name: 'Tortuga', price: 14, desc: 'Lenta pero constante, como tú. Le gusta su terrario.' },
@@ -57,6 +63,7 @@ export const CATALOG = [
   { id: 'cerdito', cat: 'vivos', name: 'Cerdito', price: 28, desc: 'Rosado y revolcón. Vive en el jardín y necesita un corral.', req: J },
   { id: 'conejo', cat: 'vivos', name: 'Conejo', price: 30, desc: 'Suave y juguetón. Necesita su conejera.' },
   { id: 'ovejita', cat: 'vivos', name: 'Ovejita', price: 35, desc: 'Lanuda y tranquila. Vive en el jardín y necesita un corral.', req: J },
+  { id: 'buho', cat: 'vivos', name: 'Búho', price: 38, desc: 'El sabio del estudio. Necesita su posadero.', req: E },
   { id: 'loro', cat: 'vivos', name: 'Loro', price: 40, desc: 'Charlatán y colorido. Necesita su percha.' },
   { id: 'zorro', cat: 'vivos', name: 'Zorro', price: 45, desc: 'Listo y astuto. Vive en el jardín y necesita su madriguera.', req: J },
   { id: 'perro', cat: 'vivos', name: 'Perro', price: 50, desc: 'El mejor compañero de estudio. Le gustan el cuenco, la cama, la pelota y el cepillo.' },
@@ -81,6 +88,8 @@ export const CATALOG = [
   { id: 'percha', cat: 'herramientas', name: 'Percha', price: 18, desc: 'Un buen sitio para tu loro.' },
   { id: 'corral', cat: 'herramientas', name: 'Corral', price: 20, desc: 'Para cerditos y ovejitas.', req: J },
   { id: 'madriguera', cat: 'herramientas', name: 'Madriguera', price: 24, desc: 'El refugio de tu zorro.', req: J },
+  { id: 'queso', cat: 'herramientas', name: 'Queso', price: 5, desc: 'El manjar favorito de tu ratón.', req: E },
+  { id: 'posadero', cat: 'herramientas', name: 'Posadero', price: 22, desc: 'Un buen sitio para que tu búho vigile.', req: E },
   { id: 'bambu', cat: 'herramientas', name: 'Bambú', price: 28, desc: 'La comida favorita de tu panda.', req: J },
 
   // --- Accesorios del salón ---
@@ -114,6 +123,17 @@ export const CATALOG = [
   { id: 'traje', cat: 'ropa', slot: 'top', name: 'Traje', price: 25, desc: 'Para el día del examen.' },
   { id: 'corona', cat: 'ropa', slot: 'hat', name: 'Corona', price: 40, desc: 'Reina o rey de las oposiciones.' },
 
+  // --- Estudio (nueva habitación) ---
+  { id: 'estudio', cat: 'estudio', name: 'Estudio', price: 50, desc: 'Desbloquea un despacho para opositar con sus muebles y animales de biblioteca.' },
+  { id: 'libros', cat: 'estudio', name: 'Pila de libros', price: 8, desc: 'Temarios por todas partes.', req: E },
+  { id: 'silla', cat: 'estudio', name: 'Silla', price: 10, desc: 'Para aguantar horas de estudio.', req: E },
+  { id: 'lampara-mesa', cat: 'estudio', name: 'Flexo', price: 12, desc: 'Luz para estudiar de noche. Se enciende y apaga tocándolo.', req: E },
+  { id: 'diploma', cat: 'estudio', name: 'Diploma', price: 15, desc: 'Un adelanto de lo que vendrá.', req: E },
+  { id: 'globo-terraqueo', cat: 'estudio', name: 'Globo terráqueo', price: 18, desc: 'Para soñar con otros mundos.', req: E },
+  { id: 'escritorio', cat: 'estudio', name: 'Escritorio', price: 20, desc: 'El centro de operaciones.', req: E },
+  { id: 'estanteria-grande', cat: 'estudio', name: 'Librería grande', price: 24, desc: 'Cinco baldas de conocimiento.', req: E },
+  { id: 'ordenador', cat: 'estudio', name: 'Ordenador', price: 28, desc: 'Para buscar la ley y hacer esquemas.', req: E },
+
   // --- Jardín (nueva habitación) ---
   { id: 'jardin', cat: 'jardin', name: 'Jardín', price: 40, desc: 'Desbloquea una nueva habitación al aire libre con sitio para animales de granja y más.' },
   { id: 'farola', cat: 'jardin', name: 'Farola', price: 12, desc: 'Ilumina el jardín de noche. Se enciende y apaga tocándola.', req: J },
@@ -133,13 +153,16 @@ export const EXCLUSIVES = [
 ];
 
 /** Objetos que dan luz de noche (se encienden y apagan tocándolos). */
-export const LAMPS = ['lampara', 'lampara-pie', 'farola'];
+export const LAMPS = ['lampara', 'lampara-pie', 'farola', 'lampara-mesa'];
 /** Objetos de cada habitación (los que no figuran aquí son del salón). */
 export const GARDEN_ITEMS = ['farola', 'banco', 'huerto', 'columpio', 'fuente', 'nido', 'estanque', 'corral', 'madriguera', 'bambu'];
+export const STUDY_ITEMS = ['lampara-mesa', 'libros', 'silla', 'diploma', 'globo-terraqueo', 'escritorio', 'estanteria-grande', 'ordenador', 'queso', 'posadero'];
 export const CLOTHES = CATALOG.filter((i) => i.cat === 'ropa');
 
-export const BY_ID = Object.fromEntries([...CATALOG, ...EXCLUSIVES].map((i) => [i.id, i]));
-export const isPet = (itemId) => itemId in SPECIES;
+// Objetos sin prototipo: un id como «constructor» o «__proto__» (p. ej. en un fichero importado) no cuenta como artículo.
+export const BY_ID = Object.assign(Object.create(null), Object.fromEntries([...CATALOG, ...EXCLUSIVES].map((i) => [i.id, i])));
+Object.setPrototypeOf(SPECIES, null);
+export const isPet = (itemId) => Object.hasOwn(SPECIES, itemId);
 export const isPlant = (itemId) => PLANTS.includes(itemId);
 /** Habitación donde se ve un objeto o mascota: 'casa' o 'jardin'. */
-export const roomOf = (itemId) => (isPet(itemId) ? SPECIES[itemId].room ?? 'casa' : GARDEN_ITEMS.includes(itemId) ? 'jardin' : 'casa');
+export const roomOf = (itemId) => (isPet(itemId) ? SPECIES[itemId].room ?? 'casa' : GARDEN_ITEMS.includes(itemId) ? 'jardin' : STUDY_ITEMS.includes(itemId) ? 'estudio' : 'casa');
