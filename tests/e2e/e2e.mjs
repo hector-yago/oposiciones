@@ -336,10 +336,78 @@ try {
   await click('nav.tabs [data-v=casa]');
   await shot('20-casa-final-oscuro');
 
+  // ===== Más tienda, modo noche y lámparas (la hora se fuerza con ?hora= solo en localhost) =====
+  await evaluate('window.__store().update((d) => { d.coins = 800; })');
+  await buyThing('accesorios', 'lampara');
+  await buyThing('accesorios', 'lampara-pie');
+  await buyThing('accesorios', 'pizarra');
+  await buyThing('accesorios', 'monstera');
+  await buyPet('margarita', 'Daisy');
+  await buyPet('hamster', 'Bolita');
+  await buyThing('herramientas', 'rueda');
+  await buyPet('tortuga', 'Lenta');
+  await buyThing('herramientas', 'terrario');
+  await buyPet('conejo', 'Saltarín');
+  await buyThing('herramientas', 'conejera');
+  await buyPet('loro', 'Paco');
+  await buyThing('herramientas', 'percha');
+  await buyPet('bonsai', 'Zen');
+  assert.equal(await st('["margarita","hamster","tortuga","conejo","loro","bonsai"].every((sp) => s.inventory.some((i) => i.itemId === sp))'), true, 'especies nuevas compradas');
+
+  await goto(`${base}?hora=12`);
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("day")'), true, 'a las 12 es de día');
+  assert.equal(await evaluate('document.querySelectorAll(".star").length'), 0);
+  await shot('21-dia-con-mas-cosas');
+
+  await goto(`${base}?hora=22`);
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("night")'), true, 'a las 22 es de noche');
+  assert.ok((await evaluate('document.querySelectorAll(".star").length')) >= 8, 'faltan estrellas');
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 2, 'dos lámparas encendidas');
+  await shot('22-noche-lamparas-encendidas');
+  await tap('g.lamp[data-lamp]');
+  await sleep(150);
+  assert.equal(await st('s.flags.lampOff'), true);
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 0, 'lámparas apagadas');
+  await shot('23-noche-lamparas-apagadas');
+  await tap('g.lamp[data-lamp]');
+  await sleep(150);
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 2);
+
+  await goto(`${base}?hora=5`);
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("night")'), true, 'a las 5 aún es de noche');
+  await goto(`${base}?hora=6`);
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("day")'), true, 'a las 6 ya es de día');
+  await goto(`${base}?hora=18`);
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("night")'), true, 'a las 18 ya es de noche');
+
+  // Ajuste manual: forzar día aunque sea de noche
+  await click('nav.tabs [data-v=casa]');
+  await evaluate('document.querySelector("[data-act=go][data-v=ajustes]").click()');
+  await click('[data-act=scene][data-v=day]');
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("day")'), true, 'forzado a día');
+  await evaluate('document.querySelector("[data-act=go][data-v=ajustes]").click()');
+  await click('[data-act=scene][data-v=auto]');
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("night")'), true, 'automático a las 18 = noche');
+
+  // Tienda ampliada
+  await click('nav.tabs [data-v=tienda]');
+  await click('[data-act=cat][data-c=vivos]');
+  assert.ok((await evaluate('document.querySelectorAll("li.item").length')) >= 11);
+  await click('[data-act=cat][data-c=herramientas]');
+  assert.ok((await evaluate('document.querySelectorAll("li.item").length')) >= 14);
+  await click('[data-act=cat][data-c=accesorios]');
+  assert.ok((await evaluate('document.querySelectorAll("li.item").length')) >= 17);
+  await shot('24-tienda-accesorios');
+  await click('nav.tabs [data-v=casa]');
+  await shot('25-casa-noche-completa');
+
   // Datos íntegros al recargar
   await goto(base);
   assert.equal(await st('s.inventory.filter((i) => ["cactus","gato","pez"].includes(i.itemId)).length'), 3);
   assert.equal(await st('s.schemaVersion'), 2);
+  assert.equal(await st('s.settings.sceneMode'), 'auto');
 
   assert.deepEqual(errors, [], `errores de JS: ${errors.join(' | ')}`);
   console.log('E2E correcto');

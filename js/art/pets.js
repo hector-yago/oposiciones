@@ -1,5 +1,7 @@
 // Mascotas en SVG propio. Cada dibujo ocupa una caja local de 60×60 con los pies en (30, 58).
 // La etapa (0 cría, 1 joven, 2 adulto) se aplica con una escala desde los pies; el cactus añade brazos y flor.
+import { isPlant } from '../catalog.js';
+
 export const PET_BOX = { w: 60, h: 60 };
 export const STAGE_SCALE = [0.62, 0.84, 1.0];
 
@@ -62,15 +64,96 @@ const perro = () => `
 
 const ANGER_MARK = '<path d="M43 5c3 0 4 3 4 5M51 5c-3 0-4 3-4 5M43 17c3 0 4-3 4-5M51 17c-3 0-4-3-4-5" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>';
 const BROWS = {
+  hamster: '<path d="M19 22l8 3M41 22l-8 3" stroke="#7c4a21" stroke-width="2.2" stroke-linecap="round"/>',
+  tortuga: '<path d="M49 38l9 3" stroke="#33691e" stroke-width="2.2" stroke-linecap="round"/>',
+  conejo: '<path d="M20 20l8 3M38 20l-8 3" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>',
+  loro: '<path d="M24 12l10 3" stroke="#7f1d1d" stroke-width="2.4" stroke-linecap="round"/>',
   pez: '<path d="M17 30l7 3" stroke="#7c2d12" stroke-width="2" stroke-linecap="round"/>',
   canario: '<path d="M36 17l8 3" stroke="#7c2d12" stroke-width="2" stroke-linecap="round"/>',
   gato: '<path d="M19 18l8 3M39 18l-8 3" stroke="#7c2d12" stroke-width="2.2" stroke-linecap="round"/>',
   perro: '<path d="M19 16l8 3M39 16l-8 3" stroke="#3b2a20" stroke-width="2.2" stroke-linecap="round"/>',
 };
 /** Cejas y símbolo de enfado encima del dibujo base (el cactus lo expresa con la variante mustia). */
-const angryOverlay = (species) => (species === 'cactus' ? '' : `${BROWS[species]}${ANGER_MARK}`);
+const angryOverlay = (species) => (isPlant(species) ? '' : `${BROWS[species]}${ANGER_MARK}`);
 
-const DRAW = { cactus, pez, canario, gato, perro };
+const margarita = (stage, mood = 'ok') => {
+  const wilted = mood === 'angry';
+  const n = wilted ? 3 : stage === 0 ? 5 : stage === 1 ? 8 : 11;
+  const cx = wilted ? 40 : 30;
+  const cy = wilted ? 27 : 18;
+  const petals = Array.from({ length: n }, (_, i) => {
+    const a = (i * 2 * Math.PI) / n;
+    const px = (cx + 7.5 * Math.cos(a)).toFixed(1);
+    const py = (cy + 7.5 * Math.sin(a)).toFixed(1);
+    return `<ellipse cx="${px}" cy="${py}" rx="4.4" ry="2.3" transform="rotate(${((a * 180) / Math.PI).toFixed(0)} ${px} ${py})" fill="${wilted ? '#e5e7eb' : '#ffffff'}" stroke="#d1d5db" stroke-width=".6"/>`;
+  }).join('');
+  return `
+  <path d="M20 44h20l-3 14H23z" fill="#c8693f"/><rect x="18" y="41" width="24" height="6" rx="2.5" fill="#dd7d4d"/>
+  <path d="M30 44C30 36 ${wilted ? '38 33 40 29' : '30 28 30 24'}" fill="none" stroke="${wilted ? '#8da04a' : '#3f9b54'}" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M30 38c-8-1-11-7-10-11 6 0 10 4 10 11z" fill="${wilted ? '#9aa34d' : '#46a85f'}"/><path d="M30 34c7 0 10-5 9-9-6 0-9 4-9 9z" fill="${wilted ? '#9aa34d' : '#46a85f'}"/>
+  ${petals}<circle cx="${cx}" cy="${cy}" r="4.2" fill="${wilted ? '#d6b84a' : '#fbbf24'}"/>
+  ${wilted ? '<ellipse cx="22" cy="57" rx="3.4" ry="1.6" fill="#f3f4f6" stroke="#d1d5db" stroke-width=".5" transform="rotate(-12 22 57)"/><ellipse cx="37" cy="58" rx="3.4" ry="1.6" fill="#f3f4f6" stroke="#d1d5db" stroke-width=".5" transform="rotate(15 37 58)"/>' : ''}`;
+};
+
+const hamster = () => `
+  <ellipse cx="30" cy="44" rx="17" ry="14" fill="#e8b878"/>
+  <ellipse cx="30" cy="48" rx="10" ry="8" fill="#fbe6c4"/>
+  <circle cx="19" cy="21" r="5.5" fill="#e8b878"/><circle cx="19" cy="21" r="3" fill="#f4b6b0"/>
+  <circle cx="41" cy="21" r="5.5" fill="#e8b878"/><circle cx="41" cy="21" r="3" fill="#f4b6b0"/>
+  <circle cx="30" cy="29" r="13" fill="#e8b878"/>
+  <ellipse cx="21" cy="33" rx="5" ry="4" fill="#f7d9a8"/><ellipse cx="39" cy="33" rx="5" ry="4" fill="#f7d9a8"/>
+  <circle cx="25" cy="27" r="2" fill="#1f2937"/><circle cx="35" cy="27" r="2" fill="#1f2937"/><circle cx="25.6" cy="26.4" r=".7" fill="#fff"/><circle cx="35.6" cy="26.4" r=".7" fill="#fff"/>
+  <ellipse cx="30" cy="31.5" rx="2" ry="1.4" fill="#e57373"/>
+  <path d="M30 33v1.5M27.5 35.5q2.5 1.5 5 0" fill="none" stroke="#7a3b2e" stroke-width="1.1" stroke-linecap="round"/>
+  <ellipse cx="22" cy="57" rx="4.5" ry="2.5" fill="#f4b6b0"/><ellipse cx="38" cy="57" rx="4.5" ry="2.5" fill="#f4b6b0"/>`;
+
+const tortuga = () => `
+  <path d="M7 52l-5 3 7 1z" fill="#7cb342"/>
+  <ellipse cx="15" cy="55" rx="6" ry="3.5" fill="#7cb342"/><ellipse cx="40" cy="55" rx="6" ry="3.5" fill="#7cb342"/>
+  <path d="M46 48c0-9 12-11 14-3 1 5-2 9-8 9z" fill="#8bc34a"/>
+  <circle cx="54" cy="43" r="2" fill="#fff"/><circle cx="54.6" cy="43" r="1" fill="#1f2937"/>
+  <path d="M53 48q3 2 6 0" fill="none" stroke="#33691e" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M8 52C8 30 44 30 44 52z" fill="#5d8a3a"/>
+  <path d="M8 52C8 30 44 30 44 52" fill="none" stroke="#3f6b27" stroke-width="1.6"/>
+  <path d="M26 33v19M17 40l9 4 9-4M12 48l14 4 14-4" fill="none" stroke="#3f6b27" stroke-width="1.4"/>
+  <path d="M14 42q4-8 12-9" stroke="#fff" stroke-opacity=".35" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
+
+const bonsai = (stage, mood = 'ok') => {
+  const wilted = mood === 'angry';
+  const leaf = wilted ? '#a8a548' : '#2f8f4e';
+  const dark = wilted ? '#8d8a3a' : '#257a40';
+  const clouds = [[22, 18, 8], [38, 20, 7], [30, 10, 8], [14, 26, 6], [43, 29, 6]].slice(0, wilted ? Math.max(2, stage + 1) : stage + 2);
+  return `
+  <path d="M16 48h28l-3 10H19z" fill="#475569"/><rect x="14" y="45" width="32" height="5" rx="2" fill="#64748b"/>
+  <path d="M30 46C28 38 34 34 30 28 28 24 24 22 22 20" fill="none" stroke="#7c4a21" stroke-width="4" stroke-linecap="round"/>
+  <path d="M31 36C36 34 40 30 42 26" fill="none" stroke="#7c4a21" stroke-width="3" stroke-linecap="round"/>
+  ${clouds.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${leaf}"/><circle cx="${x - 2}" cy="${y - 2}" r="${r * 0.55}" fill="${dark}" opacity=".5"/>`).join('')}
+  ${wilted ? '<path d="M44 40l3 3-3 1z" fill="#a8a548"/><path d="M12 48l3 2-3 2z" fill="#a8a548"/>' : ''}`;
+};
+
+const conejo = () => `
+  <circle cx="46" cy="52" r="4.5" fill="#fff" stroke="#e2e8f0"/>
+  <ellipse cx="29" cy="46" rx="14" ry="13" fill="#e2e8f0"/>
+  <ellipse cx="22" cy="57" rx="6.5" ry="3" fill="#cbd5e1"/><ellipse cx="36" cy="57" rx="6.5" ry="3" fill="#cbd5e1"/>
+  <ellipse cx="29" cy="49" rx="8" ry="8" fill="#f8fafc"/>
+  <ellipse cx="22" cy="10" rx="4.5" ry="12" fill="#e2e8f0" transform="rotate(-10 22 10)"/><ellipse cx="22" cy="11" rx="2.2" ry="9" fill="#f9a8b8" transform="rotate(-10 22 11)"/>
+  <ellipse cx="36" cy="10" rx="4.5" ry="12" fill="#e2e8f0" transform="rotate(10 36 10)"/><ellipse cx="36" cy="11" rx="2.2" ry="9" fill="#f9a8b8" transform="rotate(10 36 11)"/>
+  <circle cx="29" cy="26" r="11" fill="#f1f5f9"/>
+  <circle cx="25" cy="25" r="2" fill="#1f2937"/><circle cx="33" cy="25" r="2" fill="#1f2937"/><circle cx="25.6" cy="24.4" r=".7" fill="#fff"/><circle cx="33.6" cy="24.4" r=".7" fill="#fff"/>
+  <path d="M27.5 29h3l-1.5 2z" fill="#f472b6"/><path d="M29 31q-2 2-4 1M29 31q2 2 4 1" fill="none" stroke="#7a3b2e" stroke-width="1.1" stroke-linecap="round"/>
+  <g stroke="#94a3b8" stroke-width=".9" stroke-linecap="round"><path d="M21 30l-7-1M21 32l-7 2M37 30l7-1M37 32l7 2"/></g>`;
+
+const loro = () => `
+  <path d="M34 50l10 8-4-11z" fill="#3b82f6"/><path d="M30 52l5 7-1-9z" fill="#ef4444"/>
+  <ellipse cx="28" cy="38" rx="12" ry="17" fill="#22c55e"/>
+  <ellipse cx="26" cy="42" rx="7" ry="11" fill="#86efac"/>
+  <ellipse cx="36" cy="40" rx="6" ry="12" fill="#16a34a"/><path d="M33 48q4 6 7 0" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="28" cy="20" r="10" fill="#ef4444"/>
+  <path d="M33 21q9 0 8 8-6-2-8-4z" fill="#fbbf24" stroke="#d97706" stroke-width=".8"/>
+  <circle cx="30" cy="18" r="2.6" fill="#fff"/><circle cx="30.4" cy="18" r="1.3" fill="#1f2937"/>
+  <path d="M23 57h4M31 57h4" stroke="#f97316" stroke-width="2.2" stroke-linecap="round"/>`;
+
+const DRAW = { cactus, margarita, pez, hamster, canario, tortuga, gato, bonsai, conejo, loro, perro };
 
 /** Dibujo local (caja 60×60) de una mascota en la etapa dada. */
 export const petSvg = (species, stage = 2, mood = 'ok') => DRAW[species](stage, mood) + (mood === 'angry' ? angryOverlay(species) : '');

@@ -3,14 +3,14 @@ import { VERSION } from './version.js';
 import { createStore, indexedDbAdapter, memoryAdapter } from './store.js';
 import { applyAnswer } from './economy.js';
 import { pickNext, statusOf } from './scheduler.js';
-import { BY_ID, CATALOG, CATEGORIES, SPECIES, STAGE_NAMES, isPet } from './catalog.js';
+import { BY_ID, CATALOG, CATEGORIES, LAMPS, SPECIES, STAGE_NAMES, isPet, isPlant } from './catalog.js';
 import { BOOST_EXTRA, BOOST_MAIN, JOY_TARGET, MOOD_TEXT, attention, boostFor, buy, calmPet, canBuy, cleanMess, coinValue, collectCoin, countOf, growthInfo, isUpset, missingTool, ownedIds, petsOf, renamePet, stageOf } from './shop.js';
 import { WEEK, claimDaily, dayOfWeek, openBox } from './daily.js';
 import { WRONG_LIMIT } from './economy.js';
 import { COOLDOWN_MS, formatRemaining, isAvailable, pickHidden, remainingMs, useJoker } from './joker.js';
 import { ACHIEVEMENTS, newlyUnlocked, progressOf, unlock } from './achievements.js';
 import { byArticle, lastDays } from './stats.js';
-import { sceneSvg } from './art/scene.js';
+import { isNightHour, sceneSvg } from './art/scene.js';
 import { petThumb } from './art/pets.js';
 import { itemThumb } from './art/items.js';
 
@@ -30,6 +30,23 @@ let toastTimer = null;
 let hopUid = null;
 let houseMsg = null; // frase puntual del personaje (compra, caricias…)
 let jokerTimer = null;
+let nightTimer = null;
+let lastNight = false;
+
+/** Hora local (en localhost se puede forzar con ?hora=22 para probar). */
+function currentHour() {
+  if (location.hostname === 'localhost') {
+    const h = new URLSearchParams(location.search).get('hora');
+    if (h !== null && /^\d{1,2}$/.test(h)) return Number(h) % 24;
+  }
+  return new Date().getHours();
+}
+
+/** Escena de noche: automático (18:00-06:00) o forzado desde Ajustes. */
+function isNight() {
+  const mode = doc().settings.sceneMode;
+  return mode === 'night' ? true : mode === 'day' ? false : isNightHour(currentHour());
+}
 
 const ICONS = {
   casa: '<path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/>',
@@ -165,6 +182,13 @@ function hintTab() {
 /* ---------- Pantallas ---------- */
 function render() {
   clearInterval(jokerTimer);
+  clearInterval(nightTimer);
+  if (view === 'casa') {
+    lastNight = isNight();
+    nightTimer = setInterval(() => {
+      if (isNight() !== lastNight && !document.querySelector('.overlay')) render();
+    }, 30000);
+  }
   const d = doc();
   if (!d.profile) return renderOnboarding();
   const titles = { casa: 'Mi casa', tienda: 'Tienda', preguntas: 'Preguntas', quiz: quiz ? quiz.tema.nombre : 'Preguntas', logros: 'Logros', stats: 'Estadísticas', ajustes: 'Ajustes' };
@@ -213,6 +237,12 @@ const SOUNDS = {
   canario: (n) => `${n} canta una melodía solo para ti.`,
   gato: (n) => `${n} ronronea mientras lo acaricias.`,
   perro: (n) => `¡${n} mueve la cola como loco!`,
+  margarita: (n) => `${n} se mece con la brisa y presume de pétalos.`,
+  hamster: (n) => `${n} corre y corre sin parar.`,
+  tortuga: (n) => `${n} asoma la cabeza muy despacito.`,
+  bonsai: (n) => `Le das un toque de tijera a ${n}: ¡qué elegante!`,
+  conejo: (n) => `${n} mueve la nariz y da un salto de alegría.`,
+  loro: (n) => `${n} repite una frase que acaba de oír… ¡«artículo catorce»!`,
 };
 
 function houseLine() {
@@ -221,13 +251,19 @@ function houseLine() {
   const upset = petsOf(d).find((p) => isUpset(p));
   if (upset) {
     const t = MOOD_TEXT[upset.itemId];
-    return upset.mood === 'angry' ? `¡${upset.name} ${t.angry}! Tócalo para ${upset.itemId === 'cactus' ? 'cuidarlo' : 'calmarlo'}.` : `${upset.name} ${t.mess}. ¡Toca para limpiar!`;
+    const lo = t.f ? 'la' : 'lo';
+    return upset.mood === 'angry' ? `¡${upset.name} ${t.angry}! Tóca${lo} para ${isPlant(upset.itemId) ? 'cuidar' : 'calmar'}${lo}.` : `${upset.name} ${t.mess}. ¡Toca para limpiar!`;
   }
   const rich = petsOf(d).find((p) => p.coin);
   if (rich) return `¡${rich.name} ha encontrado una moneda! Tócala para cogerla.`;
   if (d.daily.boxes > 0) return '¡Tienes una caja misteriosa! Ábrela aquí abajo.';
   if (!d.flags.introSeen) return '¡Qué vacío está esto! Voy a ir de compras…';
   if (d.stats.answered === 0) return 'Sigo sin nada en casa… ¡Necesito monedas!';
+  if (isNight() && Math.random() < 0.5) {
+    if (!LAMPS.some((id) => ownedIds(d).has(id))) return 'Está oscuro… me vendría bien una lámpara.';
+    if (d.flags.lampOff) return 'Qué oscuro está. Toca la lámpara para encenderla.';
+    return 'Qué a gusto se estudia con esta luz.';
+  }
   const pets = petsOf(d);
   if (!d.inventory.length) return d.coins >= 1 ? `Tengo ${plural(d.coins, 'moneda', 'monedas')}. ¿Nos vamos de compras?` : 'Ya no me quedan monedas. ¡Otra ronda de preguntas!';
   const needy = pets.find((p) => missingTool(d, p.itemId));
@@ -281,7 +317,7 @@ function viewCasa() {
   const d = doc();
   const guide =
     hintTab() === 'tienda' ? (d.inventory.length || !d.flags.introSeen ? 'Toca «Tienda» en el menú de abajo.' : 'Ya tienes monedas: toca «Tienda» para comprar algo.') : hintTab() === 'preguntas' ? 'Toca «Preguntas» para ganar tus primeras monedas.' : '';
-  return `${bubble(houseLine())}<div class="scene-wrap">${sceneSvg({ gender: d.profile.gender, inventory: d.inventory, hopUid })}</div>${guide ? `<p class="guide">${guide}</p>` : ''}${petRows()}${dailyCard()}`;
+  return `${bubble(houseLine())}<div class="scene-wrap">${sceneSvg({ gender: d.profile.gender, inventory: d.inventory, hopUid, night: isNight(), lampOff: Boolean(d.flags.lampOff) })}</div>${guide ? `<p class="guide">${guide}</p>` : ''}${petRows()}${dailyCard()}`;
 }
 
 function thumbFor(id) {
@@ -362,7 +398,7 @@ async function interact(uid) {
   if (p.mood === 'angry') {
     await store.update((d) => calmPet(d, uid));
     const now = doc().inventory.find((i) => i.uid === uid);
-    houseMsg = p.itemId === 'cactus' ? `Cuidas a ${p.name} con mimo: ¡se le ha levantado el ánimo!` : `Acaricias a ${p.name} y le hablas con cariño… ¡ya está contento otra vez!`;
+    houseMsg = isPlant(p.itemId) ? `Cuidas a ${p.name} con mimo: ¡se le ha levantado el ánimo!` : `Acaricias a ${p.name} y le hablas con cariño… ¡ya está contento otra vez!`;
     if (now.mess > 0) houseMsg += ' Aún queda algo por limpiar.';
   } else if (p.mess > 0) houseMsg = `${p.name} ${MOOD_TEXT[p.itemId].mess}. ¡Toca la suciedad para limpiarla!`;
   else houseMsg = SOUNDS[p.itemId](p.name);
@@ -618,6 +654,9 @@ function viewAjustes() {
   return `
     <section class="card"><h3>Aspecto</h3><div class="seg" role="group" aria-label="Tema">
       ${[['system', 'Sistema'], ['light', 'Claro'], ['dark', 'Oscuro']].map(([v, l]) => `<button data-act="theme" data-v="${v}" aria-pressed="${th === v}">${l}</button>`).join('')}</div></section>
+    <section class="card"><h3>Escena de la casa</h3><div class="seg" role="group" aria-label="Escena">
+      ${[['auto', 'Automática'], ['day', 'Día'], ['night', 'Noche']].map(([v, l]) => `<button data-act="scene" data-v="${v}" aria-pressed="${(d.settings.sceneMode ?? 'auto') === v}">${l}</button>`).join('')}</div>
+      <p class="muted">Automática: de 6:00 a 18:00 es de día y el resto, de noche (con luna y estrellas). De noche puedes encender las lámparas tocándolas.</p></section>
     <section class="card"><h3>Copia de seguridad</h3><p>Tus datos solo viven en este dispositivo. Guarda una copia de vez en cuando.</p>
       <div class="actions"><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
     <section class="card"><h3>Reiniciar</h3><p>Borra monedas, progreso, mascotas y perfil de este dispositivo. Se guarda antes una copia automática.</p>
@@ -627,6 +666,15 @@ function viewAjustes() {
 
 /* ---------- Eventos ---------- */
 document.addEventListener('click', async (e) => {
+  const lampEl = e.target.closest('[data-lamp]');
+  if (lampEl) {
+    await store.update((d) => {
+      d.flags.lampOff = !d.flags.lampOff;
+    });
+    houseMsg = doc().flags.lampOff ? 'Apagas la luz.' : '¡Qué luz tan acogedora!';
+    render();
+    return;
+  }
   const poopEl = e.target.closest('[data-poop]');
   if (poopEl) {
     await cleanUp(Number(poopEl.dataset.poop));
@@ -672,6 +720,11 @@ document.addEventListener('click', async (e) => {
         d.settings.theme = el.dataset.v;
       });
       applyTheme();
+      render();
+    } else if (act === 'scene') {
+      await store.update((d) => {
+        d.settings.sceneMode = el.dataset.v;
+      });
       render();
     } else if (act === 'gender') {
       document.querySelectorAll('[data-act="gender"]').forEach((b) => b.setAttribute('aria-pressed', String(b === el)));

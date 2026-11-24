@@ -67,10 +67,16 @@ test('exportar e importar conserva los datos y deja copia previa', async () => {
   await assert.rejects(() => b.importJson('no json'), /JSON válido/);
 });
 
-test('el fixture v2 se carga sin cambios (formato actual estable)', () => {
+test('el fixture v2 (0.2.0) se carga sin perder nada y recibe los ajustes nuevos por defecto', () => {
   const raw = fixture('v2.json');
   const { doc, from, to } = migrate(raw);
   assert.equal(from, 2);
   assert.equal(to, CURRENT_SCHEMA);
-  assert.deepEqual(doc, raw);
+  assert.equal(doc.settings.sceneMode, 'auto');
+  assert.deepEqual({ ...doc, settings: { theme: doc.settings.theme } }, raw);
+});
+
+test('ajuste de escena: valores no válidos vuelven a automático', () => {
+  assert.equal(migrate({ schemaVersion: 2, settings: { sceneMode: 'tarde' } }).doc.settings.sceneMode, 'auto');
+  assert.equal(migrate({ schemaVersion: 2, settings: { sceneMode: 'night' } }).doc.settings.sceneMode, 'night');
 });

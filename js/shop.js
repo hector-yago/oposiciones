@@ -1,5 +1,5 @@
 // Tienda, mascotas y cuidados. Lógica pura sobre el documento de datos (se llama sobre un borrador y lo muta).
-import { BY_ID, SPECIES, isPet } from './catalog.js';
+import { BY_ID, SPECIES, isPet, isPlant } from './catalog.js';
 import { MAX_MESS, NAME_MAX } from './migrations.js';
 
 export const BOOST_MAIN = 0.5;
@@ -42,14 +42,21 @@ export const missingTool = (doc, species) => (ownedIds(doc).has(SPECIES[species]
 export const isUpset = (pet) => pet.mood === 'angry' || pet.mess > 0;
 /** Feliz = sin problemas; solo entonces acumula alegría para encontrar monedas. */
 export const isHappy = (pet) => !isUpset(pet);
-/** Cuántas veces puede ensuciar cada especie (el cactus solo se marchita). */
-export const canMess = (species) => species !== 'cactus';
+/** Las plantas no ensucian: solo se marchitan. */
+export const canMess = (species) => !isPlant(species);
 
+// `angry` = cómo se le ve cuando está mal; `mess` = qué ha hecho; `f` = género femenino (para «tócala»).
 export const MOOD_TEXT = {
   cactus: { angry: 'está mustio', mess: '' },
+  margarita: { angry: 'está mustia, ha perdido pétalos', mess: '', f: true },
+  bonsai: { angry: 'está mustio', mess: '' },
   pez: { angry: 'está triste', mess: 'el agua está sucia' },
+  hamster: { angry: 'está enfadado', mess: 'ha ensuciado la rueda' },
   canario: { angry: 'está enfadado', mess: 'ha ensuciado la jaula' },
+  tortuga: { angry: 'está enfadada', mess: 'ha ensuciado el terrario', f: true },
   gato: { angry: 'está enfadado', mess: 'ha hecho caca' },
+  conejo: { angry: 'está enfadado', mess: 'ha hecho caca' },
+  loro: { angry: 'está enfadado', mess: 'ha ensuciado la percha' },
   perro: { angry: 'está enfadado', mess: 'ha hecho caca' },
 };
 

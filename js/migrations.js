@@ -9,7 +9,7 @@ export const MAX_DAYS = 120; // días de historial que se conservan
 export const NAME_MAX = 20;
 export const MAX_MESS = 3; // cacas/suciedad máxima acumulada por mascota
 
-export const DEFAULT_SETTINGS = Object.freeze({ theme: 'system' }); // 'system' | 'light' | 'dark'
+export const DEFAULT_SETTINGS = Object.freeze({ theme: 'system', sceneMode: 'auto' }); // theme: 'system' | 'light' | 'dark'; sceneMode: 'auto' | 'day' | 'night'
 
 export function emptyDoc() {
   return {
@@ -113,6 +113,7 @@ export function sanitize(doc) {
 
   const settings = { ...DEFAULT_SETTINGS, ...obj(doc.settings) };
   if (!['system', 'light', 'dark'].includes(settings.theme)) settings.theme = 'system';
+  if (!['auto', 'day', 'night'].includes(settings.sceneMode)) settings.sceneMode = 'auto';
   const meta = {};
   for (const k of ['lastExport', 'lastAutoBackup']) if (Number.isFinite(doc.meta?.[k])) meta[k] = doc.meta[k];
 

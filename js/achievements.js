@@ -1,6 +1,6 @@
 // Logros (lógica pura). Cada logro tiene un valor actual `val(ctx)` y un objetivo `target`; está hecho si val >= target.
 // ctx = { doc, questions (banco completo), now }
-import { CATALOG, EXCLUSIVES, SPECIES } from './catalog.js';
+import { CATALOG, EXCLUSIVES, LAMPS, SPECIES } from './catalog.js';
 import { ownedIds, petsOf, stageOf } from './shop.js';
 import { studyStreak } from './stats.js';
 import { statusOf } from './scheduler.js';
@@ -83,7 +83,14 @@ export const ACHIEVEMENTS = [
   A('has_canario', 'Mascotas', 'Música en casa', 'Consigue un canario.', (c) => speciesCount(c, 'canario'), 1, { pet: 'canario' }),
   A('has_gato', 'Mascotas', 'Amigo felino', 'Consigue un gato.', (c) => speciesCount(c, 'gato'), 1, { pet: 'gato' }),
   A('has_perro', 'Mascotas', '¡Consigue un perrito!', 'Consigue un perro.', (c) => speciesCount(c, 'perro'), 1, { pet: 'perro' }),
-  A('zoo', 'Mascotas', 'Zoológico', 'Ten las 5 especies a la vez.', (c) => new Set(petsOf(c.doc).map((p) => p.itemId)).size, Object.keys(SPECIES).length, { pet: 'gato' }),
+  A('has_margarita', 'Mascotas', 'Flor de estudio', 'Consigue una margarita.', (c) => speciesCount(c, 'margarita'), 1, { pet: 'margarita' }),
+  A('has_hamster', 'Mascotas', 'Rueda sin fin', 'Consigue un hámster.', (c) => speciesCount(c, 'hamster'), 1, { pet: 'hamster' }),
+  A('has_tortuga', 'Mascotas', 'Despacito y buena letra', 'Consigue una tortuga.', (c) => speciesCount(c, 'tortuga'), 1, { pet: 'tortuga' }),
+  A('has_bonsai', 'Mascotas', 'Paciencia oriental', 'Consigue un bonsái.', (c) => speciesCount(c, 'bonsai'), 1, { pet: 'bonsai' }),
+  A('has_conejo', 'Mascotas', 'Salto de calidad', 'Consigue un conejo.', (c) => speciesCount(c, 'conejo'), 1, { pet: 'conejo' }),
+  A('has_loro', 'Mascotas', 'Loro parlanchín', 'Consigue un loro.', (c) => speciesCount(c, 'loro'), 1, { pet: 'loro' }),
+  A('zoo', 'Mascotas', 'Zoológico', 'Ten 5 especies distintas a la vez.', (c) => new Set(petsOf(c.doc).map((p) => p.itemId)).size, 5, { pet: 'gato' }),
+  A('zoo_all', 'Mascotas', 'Arca de Noé', 'Ten todas las especies a la vez.', (c) => new Set(petsOf(c.doc).map((p) => p.itemId)).size, Object.keys(SPECIES).length, { pet: 'loro' }),
   A('pets_6', 'Mascotas', 'Casa llena de vida', 'Ten 6 mascotas a la vez.', (c) => petsOf(c.doc).length, 6, { pet: 'perro' }),
   A('pet_young', 'Mascotas', 'Va creciendo', 'Haz que una mascota llegue a la etapa joven.', (c) => petsOf(c.doc).filter((p) => stageOf(p.itemId, p.xp) >= 1).length, 1, { pet: 'canario' }),
   A('pet_adult', 'Mascotas', 'Ya es adulto', 'Haz que una mascota llegue a la etapa adulta.', adults, 1, { pet: 'perro' }),
@@ -107,6 +114,7 @@ export const ACHIEVEMENTS = [
   A('cat_kit', 'Casa', 'Paraíso gatuno', 'Ten un gato con cuenco, cama y rascador.', (c) => bool(has(c, 'cuenco-agua', 'cama', 'rascador') && speciesCount(c, 'gato') > 0), 1, { item: 'rascador' }),
   A('decor_5', 'Casa', 'Decorador', 'Compra 5 accesorios de decoración.', (c) => ACCESSORIES.filter((id) => has(c, id)).length, 5, { item: 'cuadro' }),
   A('decor_all', 'Casa', 'Casa de revista', 'Compra todos los accesorios.', (c) => ACCESSORIES.filter((id) => has(c, id)).length, ACCESSORIES.length, { item: 'trofeo' }),
+  A('lights', 'Casa', 'Luz en la noche', 'Compra una lámpara para iluminar la casa de noche.', (c) => LAMPS.filter((id) => has(c, id)).length, 1, { item: 'lampara-pie' }),
   A('exclusive_1', 'Casa', 'Pieza única', 'Consigue un objeto exclusivo de la caja misteriosa.', (c) => EXCLUSIVES.filter((e) => has(c, e.id)).length, 1, { item: 'bandera' }),
   A('exclusive_all', 'Casa', 'Coleccionista', 'Consigue todos los objetos exclusivos.', (c) => EXCLUSIVES.filter((e) => has(c, e.id)).length, EXCLUSIVES.length, { item: 'mapa' }),
 ];

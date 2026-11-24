@@ -52,6 +52,66 @@ export const ITEM_ART = {
     w: 24, h: 32,
     svg: `<path d="M5 2h14v10a7 7 0 0 1-14 0z" fill="#fbbf24"/><path d="M5 5H1v3a5 5 0 0 0 5 5M19 5h4v3a5 5 0 0 1-5 5" fill="none" stroke="#f59e0b" stroke-width="2"/><rect x="10" y="18" width="4" height="7" fill="#f59e0b"/><rect x="5" y="25" width="14" height="5" rx="1.5" fill="#92400e"/><path d="M8 5v6" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>`,
   },
+  // ----- Herramientas nuevas -----
+  rueda: {
+    w: 34, h: 34,
+    svg: `<rect x="3" y="30" width="28" height="4" rx="2" fill="#64748b"/><circle cx="17" cy="16" r="14" fill="none" stroke="#94a3b8" stroke-width="3"/><circle cx="17" cy="16" r="2.4" fill="#64748b"/><path d="M17 3v26M4 16h26M8 7l18 18M26 7L8 25" stroke="#cbd5e1" stroke-width="1.2"/>`,
+  },
+  terrario: {
+    w: 58, h: 28,
+    svg: `<rect x="1" y="2" width="56" height="24" rx="4" fill="#bfe9ff" fill-opacity=".35" stroke="#93c5fd" stroke-width="2"/><rect x="3" y="16" width="52" height="9" fill="#d6b58a"/><ellipse cx="18" cy="21" rx="12" ry="3.5" fill="#60a5fa"/><path d="M42 22c0-6 7-8 6-14-5 3-8 8-6 14z" fill="#3f9b54"/><circle cx="50" cy="21" r="2.2" fill="#9ca3af"/>`,
+  },
+  comedero: {
+    w: 26, h: 12,
+    svg: `<path d="M1 3h24l-4 8H5z" fill="#b45309"/><ellipse cx="13" cy="3" rx="12" ry="3" fill="#d97706"/><g fill="#92400e"><circle cx="8" cy="2" r="1.6"/><circle cx="13" cy="1.4" r="1.6"/><circle cx="18" cy="2.2" r="1.6"/></g>`,
+  },
+  abono: {
+    w: 16, h: 24,
+    svg: `<path d="M2 6h12l1 17H1z" fill="#84cc16"/><path d="M3 2h10l1 4H2z" fill="#65a30d"/><text x="8" y="17" text-anchor="middle" font-size="6.5" font-weight="800" fill="#365314">NPK</text>`,
+  },
+  cepillo: {
+    w: 26, h: 10,
+    svg: `<rect x="1" y="3" width="16" height="5" rx="2.5" fill="#a16207"/><rect x="15" y="1" width="10" height="8" rx="2" fill="#f59e0b"/><g stroke="#fff" stroke-width="1"><path d="M17 3v4M19.5 3v4M22 3v4"/></g>`,
+  },
+  conejera: {
+    w: 56, h: 44,
+    svg: `<path d="M2 14L28 2l26 12z" fill="#7c4f28"/><rect x="5" y="14" width="46" height="28" fill="#c8924f"/><rect x="9" y="20" width="22" height="22" fill="#6b4423"/><rect x="34" y="20" width="14" height="18" fill="#e9d8a6" stroke="#8b5a2b"/><path d="M34 26h14M34 32h14M41 20v18" stroke="#8b5a2b" stroke-width=".8"/><rect x="3" y="42" width="50" height="2" fill="#6b4423"/>`,
+  },
+  percha: {
+    w: 32, h: 84,
+    svg: `<rect x="14" y="20" width="4" height="60" fill="#8b5a2b"/><ellipse cx="16" cy="82" rx="13" ry="3" fill="#6b4423"/><rect x="0" y="16" width="32" height="5" rx="2.5" fill="#a9703a"/><circle cx="27" cy="36" r="3" fill="#ef4444"/><path d="M27 21v12" stroke="#9ca3af"/>`,
+  },
+  // ----- Accesorios nuevos -----
+  'lampara-pie': {
+    w: 24, h: 96,
+    svg: `<ellipse cx="12" cy="93" rx="10" ry="3" fill="#374151"/><rect x="10.7" y="26" width="2.6" height="66" fill="#6b7280"/><path d="M4 4h16l4 24H0z" fill="#f59e0b"/><path d="M4 4h16l1 5H3z" fill="#fbbf24"/>`,
+  },
+  espejo: {
+    w: 30, h: 38,
+    svg: `<ellipse cx="15" cy="19" rx="14" ry="18" fill="#8b5a2b"/><ellipse cx="15" cy="19" rx="11.5" ry="15.5" fill="#cfe8f5"/><path d="M8 10q4-5 9-5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/>`,
+  },
+  cojines: {
+    w: 44, h: 20,
+    svg: `<rect x="1" y="3" width="20" height="16" rx="6" fill="#fb923c" transform="rotate(-8 11 11)"/><rect x="22" y="2" width="20" height="16" rx="6" fill="#f472b6" transform="rotate(7 32 10)"/><path d="M6 8l10 6M26 8l12 4" stroke="#fff" stroke-opacity=".5"/>`,
+  },
+  monstera: {
+    w: 36, h: 74,
+    svg: `<path d="M10 56h16l-3 17H13z" fill="#a8704a"/><rect x="8" y="52" width="20" height="6" rx="2.5" fill="#c58859"/><path d="M18 52V16M18 44C10 40 4 34 4 26M18 36c8-3 13-9 14-16M18 28C12 24 8 16 10 8" fill="none" stroke="#2f7d46" stroke-width="2"/>
+      <ellipse cx="8" cy="26" rx="8" ry="11" fill="#2f9e5b" transform="rotate(-25 8 26)"/><ellipse cx="29" cy="22" rx="7.5" ry="11" fill="#38a965" transform="rotate(25 29 22)"/><ellipse cx="11" cy="11" rx="7" ry="9" fill="#2f9e5b" transform="rotate(-10 11 11)"/><ellipse cx="19" cy="9" rx="7" ry="10" fill="#38a965"/>
+      <path d="M3 24l5 2M5 30l5-1M31 18l-5 3M30 25l-5-1M8 9l4 2M17 6l2 5" stroke="#1e6f3a" stroke-width="1.4" stroke-linecap="round"/>`,
+  },
+  radio: {
+    w: 30, h: 22,
+    svg: `<rect x="1" y="4" width="28" height="17" rx="3" fill="#b45309"/><circle cx="9" cy="13" r="4.5" fill="#fde68a" stroke="#78350f"/><rect x="16" y="8" width="11" height="3" fill="#78350f"/><circle cx="21" cy="16" r="1.6" fill="#78350f"/><circle cx="25" cy="16" r="1.6" fill="#78350f"/><path d="M6 4L22 0" stroke="#374151" stroke-width="1.2"/>`,
+  },
+  pizarra: {
+    w: 48, h: 38,
+    svg: `<rect width="48" height="38" rx="3" fill="#9ca3af"/><rect x="2.5" y="2.5" width="43" height="30" fill="#f8fafc"/><text x="8" y="13" font-size="7" font-weight="700" fill="#2563eb" font-family="Georgia,serif">Art. 14</text><path d="M8 19h32M8 24h24M8 29h28" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/><rect x="6" y="33.5" width="10" height="3" fill="#ef4444"/>`,
+  },
+  disco: {
+    w: 26, h: 46,
+    svg: `<path d="M13 0v14" stroke="#9ca3af"/><circle cx="13" cy="28" r="13" fill="#9ca3af"/><g stroke="#e5e7eb" stroke-width=".8"><path d="M0 28h26M13 15v26M3 20h20M3 36h20M7 17v22M19 17v22"/></g><circle cx="9" cy="23" r="3" fill="#fff" opacity=".6"/><circle cx="18" cy="33" r="2" fill="#7dd3fc" opacity=".8"/>`,
+  },
   // ----- Exclusivos (caja misteriosa) -----
   guirnalda: {
     w: 348, h: 26,

@@ -25,7 +25,8 @@ PWA personal para estudiar oposiciones de forma gamificada: respondes preguntas 
 4. Publicar: `git push` a `main` (repo `hector-yago/oposiciones`; Pages: `https://hector-yago.github.io/oposiciones/`). **Requiere autorización expresa del usuario.**
 
 ## Estado
-- **0.2.0**: F1 + F2 + F3 completas (tienda con compra y nombre de mascota, crecimiento por etapas, herramientas con bonus, decoración, castigos y cuidados, entrada diaria y caja semanal, comodín 50 % cada 4 h, ~60 logros en 5 categorías, estadísticas por Título/artículo/semana). Esquema de datos 2.
+- **0.3.0** (local): tienda ampliada (11 seres vivos, 14 herramientas, 17 accesorios + 5 exclusivos), modo día/noche en la casa (06:00-18:00 día; de noche luna y estrellas) y lámparas encendibles. **0.2.0** (publicada): tienda con compra, crecimiento, castigos y cuidados, entrada diaria y caja semanal, comodín, ~65 logros y estadísticas. Esquema de datos 2.
 - Banco CE: **512 preguntas** redactadas con texto propio a partir del **texto consolidado del BOE** (`docs/fuente-ce/ce-consolidada.xml`, reformas de 1992/2011/2024 incluidas; regenerar con `node tools/extract-ce.mjs`). Revisadas por agentes `reviewer` contra `ce.txt` (2 pasadas en los tramos dudosos) y validadas por test (esquema, artículo/título existentes, ids únicos). Revisión humana pendiente antes de estudiar con fiabilidad total. Fusión de borradores: `node tools/merge-bank.mjs`.
 - Pendiente: prueba en móvil real (`docs/pruebas.md`); más temas (añadir `data/<tema>.json` y su entrada en `data/temas.json`).
+- Escena día/noche: `isNightHour` en `js/art/scene.js`; ajuste `settings.sceneMode` (auto/día/noche); en localhost se fuerza la hora con `?hora=22`. Lámparas (`LAMPS` en `js/catalog.js`) se encienden/apagan tocándolas (`flags.lampOff`).
 - Ganchos de prueba `window.__store`/`__quiz`/`__daily` solo en `localhost`.

@@ -381,3 +381,13 @@ nav.tabs button.dot::after { content: ''; position: absolute; top: 8px; left: ca
 .pet-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .pet-head .tag { margin-left: 0; }
 .toast { bottom: calc(var(--safe-b) + 84px); }
+
+/* Noche */
+.lamp { cursor: pointer; }
+.lamp.lit { filter: drop-shadow(0 0 4px rgba(255, 200, 100, 0.9)); }
+.star { animation: twinkle 3s ease-in-out infinite; }
+.star.s2 { animation-duration: 4s; animation-delay: -1s; }
+.star.s3 { animation-duration: 2.4s; animation-delay: -2s; }
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+.glow { animation: glow-pulse 4s ease-in-out infinite; }
+@keyframes glow-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }

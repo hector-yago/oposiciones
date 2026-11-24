@@ -24,3 +24,9 @@
 5. Entrada diaria: al día siguiente +1 moneda; al 7.º día seguido, caja misteriosa en Casa.
 6. Logros y Estadísticas (semana, artículos con más fallos).
 7. Actualización desde la 0.1.0 con datos reales: abrir y comprobar que monedas y progreso siguen ahí.
+
+## 0.3.0 — qué probar a mano
+1. A partir de las 18:00 (o forzando «Noche» en Ajustes): cielo oscuro con luna y estrellas en la ventana y casa a oscuras.
+2. Comprar una lámpara: de noche ilumina la casa; tocarla la apaga y la enciende.
+3. Comprar una mascota nueva (margarita, hámster, tortuga, bonsái, conejo, loro) y su herramienta: viven en su casa dentro de la escena.
+4. Fallar 3 seguidas con una margarita: se marchita (pierde pétalos) y se cuida tocándola.
