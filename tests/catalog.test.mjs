@@ -1,7 +1,10 @@
 // Coherencia del catálogo ampliado y de la escena día/noche.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { BY_ID, CATALOG, EXCLUSIVES, LAMPS, PLANTS, SPECIES } from '../js/catalog.js';
+import { BY_ID, CATALOG, CLOTHES, EXCLUSIVES, LAMPS, PLANTS, SPECIES, roomOf } from '../js/catalog.js';
+import { gardenSvg } from '../js/art/garden.js';
+import { outfitSvg } from '../js/art/clothes.js';
+import { seasonOf } from '../js/seasons.js';
 import { ITEM_ART } from '../js/art/items.js';
 import { petSvg } from '../js/art/pets.js';
 import { isNightHour, sceneSvg } from '../js/art/scene.js';
@@ -19,8 +22,9 @@ test('catálogo: ids únicos, precios positivos y 3 categorías con contenido', 
   const all = [...CATALOG, ...EXCLUSIVES];
   assert.equal(new Set(all.map((i) => i.id)).size, all.length);
   for (const i of CATALOG) assert.ok(i.price >= 1 && i.name && i.desc, i.id);
-  for (const cat of ['vivos', 'herramientas', 'accesorios']) assert.ok(CATALOG.filter((i) => i.cat === cat).length >= 10, cat);
-  assert.ok(CATALOG.filter((i) => i.cat === 'vivos').length >= 11);
+  for (const cat of ['vivos', 'herramientas', 'accesorios', 'ropa', 'jardin']) assert.ok(CATALOG.filter((i) => i.cat === cat).length >= 5, cat);
+  assert.ok(CATALOG.filter((i) => i.cat === 'vivos').length >= 18);
+  for (const i of CATALOG.filter((x) => x.req)) assert.ok(BY_ID[i.req], `${i.id} necesita ${i.req}`);
 });
 
 test('catálogo: los seres vivos están ordenados de más barato a más caro', () => {
@@ -55,7 +59,7 @@ test('día y noche: 18:00-06:00 es de noche', () => {
 
 test('escena de día: sol y sin luna ni estrellas ni sombra nocturna', () => {
   const svg = sceneSvg({ gender: 'chica', inventory: [], night: false });
-  assert.match(svg, /class="scene day"/);
+  assert.match(svg, /class="scene day /);
   assert.ok(svg.includes('fill="#ffd34d"'));
   assert.ok(!svg.includes('class="star'));
   assert.ok(!svg.includes('night-shade'));
@@ -63,7 +67,7 @@ test('escena de día: sol y sin luna ni estrellas ni sombra nocturna', () => {
 
 test('escena de noche: cielo oscuro con luna y estrellas, y la casa se oscurece', () => {
   const svg = sceneSvg({ gender: 'chico', inventory: [], night: true });
-  assert.match(svg, /class="scene night"/);
+  assert.match(svg, /class="scene night /);
   assert.ok(svg.includes('url(#sky-night)'));
   assert.ok((svg.match(/class="star /g) ?? []).length >= 8);
   assert.ok(svg.includes('#f5f3d7')); // luna
@@ -72,8 +76,8 @@ test('escena de noche: cielo oscuro con luna y estrellas, y la casa se oscurece'
   assert.ok(!svg.includes('class="glow"'));
 });
 
-test('lámparas: de noche iluminan si están encendidas; apagadas o de día no', () => {
-  for (const lamp of LAMPS) {
+test('lámparas del salón: de noche iluminan si están encendidas; apagadas o de día no', () => {
+  for (const lamp of LAMPS.filter((l) => roomOf(l) === 'casa')) {
     const on = sceneSvg({ gender: 'chica', inventory: inv([lamp]), night: true, lampOff: false });
     assert.ok(on.includes('class="glow"'), `${lamp}: brillo`);
     assert.match(on, /class="night-shade"[^>]*opacity="0\.2"/);
@@ -94,7 +98,7 @@ test('escena con todo comprado: se genera en día y noche y no repite ids de mas
     assert.ok(svg.length > 20000);
     const pets = [...svg.matchAll(/data-pet="(\d+)"/g)].map((m) => m[1]);
     assert.equal(new Set(pets).size, pets.length, 'una mascota dibujada dos veces');
-    assert.equal(pets.length, Object.keys(SPECIES).length, 'todas las especies visibles (hay hueco para cada una)');
+    assert.equal(pets.length, Object.keys(SPECIES).filter((sp) => roomOf(sp) === 'casa').length, 'todas las especies del salón visibles');
   }
 });
 
@@ -104,4 +108,58 @@ test('los animales con casa viven en ella y, sin ella, van al suelo', () => {
   for (const svg of [withHome, noHome]) assert.equal((svg.match(/data-pet="/g) ?? []).length, 4);
   assert.ok(withHome.includes('obj-rueda') && withHome.includes('obj-percha'));
   assert.ok(!noHome.includes('obj-rueda'));
+});
+
+const garden = (ids, pets = [], extra = {}) => gardenSvg({ gender: 'chico', inventory: inv(ids, pets), ...extra });
+
+test('jardín: los animales de granja viven allí y no en el salón', () => {
+  const gardenPets = Object.keys(SPECIES).filter((sp) => roomOf(sp) === 'jardin');
+  assert.ok(gardenPets.length >= 7);
+  const g = garden(['jardin'], gardenPets);
+  const s = sceneSvg({ gender: 'chico', inventory: inv(['jardin'], gardenPets) });
+  assert.equal((g.match(/data-pet="/g) ?? []).length, gardenPets.length);
+  assert.equal((s.match(/data-pet="/g) ?? []).length, 0);
+});
+
+test('jardín: casas de los animales y objetos aparecen cuando se tienen', () => {
+  const g = garden(['nido', 'estanque', 'corral', 'madriguera', 'bambu', 'banco', 'huerto', 'columpio', 'fuente'], ['pollito', 'patito', 'cerdito', 'zorro', 'panda']);
+  for (const id of ['nido', 'estanque', 'corral', 'madriguera', 'bambu', 'banco', 'huerto', 'columpio', 'fuente']) assert.ok(g.includes(`obj-${id}`), id);
+  assert.equal((g.match(/data-pet="/g) ?? []).length, 5);
+});
+
+test('jardín de noche: farola encendida ilumina; apagada no', () => {
+  const on = garden(['farola'], [], { night: true, lampOff: false });
+  assert.ok(on.includes('class="glow"') && on.includes('data-lamp="farola"'));
+  assert.ok(!garden(['farola'], [], { night: true, lampOff: true }).includes('class="glow"'));
+  assert.match(garden([], [], { night: true }), /class="scene night room-jardin"/);
+});
+
+test('ropa: cada prenda tiene su sitio, se dibuja puesta y cambia la escena', () => {
+  for (const c of CLOTHES) assert.ok(['hat', 'face', 'neck', 'top'].includes(c.slot), c.id);
+  const slots = { hat: 'gorra', face: 'gafas', neck: 'pajarita', top: 'traje' };
+  for (const gender of ['chico', 'chica']) {
+    assert.equal(outfitSvg({}, gender), '');
+    for (const [slot, id] of Object.entries(slots)) assert.ok(outfitSvg({ [slot]: id }, gender).length > 20, id);
+  }
+  const base = sceneSvg({ gender: 'chica', inventory: [] });
+  assert.notEqual(base, sceneSvg({ gender: 'chica', inventory: [], outfit: { hat: 'corona' } }));
+});
+
+test('variantes raras de mascotas se marcan con su clase', () => {
+  const svg = sceneSvg({ gender: 'chica', inventory: [{ uid: 1, itemId: 'gato', name: 'Michi', xp: 5, mood: 'ok', mess: 0, joy: 0, coin: false, variant: 'dorado' }] });
+  assert.ok(svg.includes('v-dorado'));
+});
+
+test('temporadas: fechas clave y decoración en la escena', () => {
+  assert.equal(seasonOf(new Date(2026, 11, 24)), 'navidad');
+  assert.equal(seasonOf(new Date(2027, 0, 6)), 'navidad');
+  assert.equal(seasonOf(new Date(2027, 0, 7)), null);
+  assert.equal(seasonOf(new Date(2026, 9, 31)), 'halloween');
+  assert.equal(seasonOf(new Date(2026, 6, 15)), 'verano');
+  assert.equal(seasonOf(new Date(2026, 3, 10)), 'primavera');
+  assert.equal(seasonOf(new Date(2026, 10, 10)), null);
+  assert.ok(sceneSvg({ gender: 'chico', inventory: [], season: 'navidad' }).includes('xmas-tree'));
+  assert.ok(sceneSvg({ gender: 'chico', inventory: [], season: 'halloween' }).includes('class="bat '));
+  assert.ok(!sceneSvg({ gender: 'chico', inventory: [], season: null }).includes('xmas-tree'));
+  for (const season of ['navidad', 'halloween', 'verano', 'primavera']) assert.ok(gardenSvg({ gender: 'chico', inventory: [], season }).length > 1000, season);
 });

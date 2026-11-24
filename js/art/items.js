@@ -3,6 +3,8 @@
 const B = (id) => `<defs><clipPath id="${id}"/></defs>`;
 void B;
 
+import { CLOTHES_THUMB } from './clothes.js';
+
 export const ITEM_ART = {
   // ----- Accesorios -----
   cuadro: {
@@ -112,6 +114,51 @@ export const ITEM_ART = {
     w: 26, h: 46,
     svg: `<path d="M13 0v14" stroke="#9ca3af"/><circle cx="13" cy="28" r="13" fill="#9ca3af"/><g stroke="#e5e7eb" stroke-width=".8"><path d="M0 28h26M13 15v26M3 20h20M3 36h20M7 17v22M19 17v22"/></g><circle cx="9" cy="23" r="3" fill="#fff" opacity=".6"/><circle cx="18" cy="33" r="2" fill="#7dd3fc" opacity=".8"/>`,
   },
+  // ----- Jardín: herramientas y accesorios -----
+  jardin: {
+    w: 48, h: 48,
+    svg: `<circle cx="14" cy="14" r="10" fill="#4ade80"/><circle cx="24" cy="10" r="9" fill="#22c55e"/><circle cx="33" cy="16" r="8" fill="#4ade80"/><rect x="21" y="16" width="5" height="18" fill="#8b5a2b"/><g fill="#c8924f"><rect x="2" y="30" width="5" height="16"/><rect x="11" y="30" width="5" height="16"/><rect x="20" y="30" width="5" height="16"/><rect x="29" y="30" width="5" height="16"/><rect x="38" y="30" width="5" height="16"/></g><rect x="0" y="34" width="48" height="4" fill="#a9703a"/><rect x="0" y="42" width="48" height="4" fill="#a9703a"/>`,
+  },
+  nido: {
+    w: 30, h: 16,
+    svg: `<ellipse cx="15" cy="10" rx="14" ry="6" fill="#b45309"/><path d="M3 9q12 7 24 0M5 12q10 4 20 0" stroke="#f59e0b" stroke-width="1.6" fill="none" stroke-linecap="round"/><ellipse cx="15" cy="7" rx="11" ry="3.4" fill="#d97706"/>`,
+  },
+  estanque: {
+    w: 90, h: 34,
+    svg: `<ellipse cx="45" cy="19" rx="44" ry="14" fill="#78716c"/><ellipse cx="45" cy="18" rx="40" ry="11" fill="#60a5fa"/><ellipse cx="45" cy="16" rx="30" ry="6" fill="#93c5fd" opacity=".55"/><ellipse cx="14" cy="22" rx="6" ry="2.6" fill="#22c55e"/><ellipse cx="72" cy="14" rx="5" ry="2.2" fill="#22c55e"/><circle cx="72" cy="12.6" r="1.6" fill="#f9a8d4"/><path d="M30 22q6 3 12 0" stroke="#fff" stroke-opacity=".6" fill="none"/>`,
+  },
+  corral: {
+    w: 88, h: 44,
+    svg: `<g fill="#a9703a"><rect x="2" y="4" width="5" height="40"/><rect x="30" y="4" width="5" height="40"/><rect x="56" y="4" width="5" height="40"/><rect x="81" y="4" width="5" height="40"/></g><rect x="0" y="14" width="88" height="4" fill="#c8924f"/><rect x="0" y="28" width="88" height="4" fill="#c8924f"/><path d="M62 44l9-11 9 11z" fill="#fbbf24"/>`,
+  },
+  madriguera: {
+    w: 46, h: 30,
+    svg: `<path d="M0 30C2 8 44 8 46 30z" fill="#8b6b3e"/><ellipse cx="23" cy="26" rx="11" ry="9" fill="#2b1d0e"/><path d="M4 22l2-5M40 22l-2-5M14 14l1-4" stroke="#65a30d" stroke-width="2" stroke-linecap="round"/>`,
+  },
+  bambu: {
+    w: 26, h: 52,
+    svg: `<g fill="#65a30d"><rect x="2" y="10" width="5" height="42" rx="1"/><rect x="10" y="0" width="5" height="52" rx="1"/><rect x="19" y="14" width="5" height="38" rx="1"/></g><g stroke="#3f6212" stroke-width="1.4"><path d="M2 22h5M2 36h5M10 12h5M10 26h5M10 40h5M19 28h5M19 42h5"/></g><path d="M7 12q8-6 14-2M15 8q6-6 10-4M7 30q-6-3-7-8" fill="none" stroke="#4d7c0f" stroke-width="2" stroke-linecap="round"/>`,
+  },
+  farola: {
+    w: 24, h: 96,
+    svg: `<rect x="10.5" y="24" width="3" height="68" fill="#374151"/><ellipse cx="12" cy="93" rx="9" ry="3" fill="#374151"/><path d="M2 5h20l-10-5z" fill="#374151"/><rect x="4" y="5" width="16" height="20" rx="3" fill="#fde68a" stroke="#374151" stroke-width="1.6"/><path d="M12 5v20" stroke="#374151" stroke-width="1"/>`,
+  },
+  banco: {
+    w: 60, h: 36,
+    svg: `<rect x="3" y="2" width="54" height="5" rx="2" fill="#a9703a"/><rect x="3" y="10" width="54" height="5" rx="2" fill="#a9703a"/><rect x="0" y="18" width="60" height="6" rx="2" fill="#c8924f"/><rect x="6" y="24" width="5" height="12" fill="#6b4423"/><rect x="49" y="24" width="5" height="12" fill="#6b4423"/><rect x="4" y="2" width="4" height="22" fill="#8b5a2b"/><rect x="52" y="2" width="4" height="22" fill="#8b5a2b"/>`,
+  },
+  huerto: {
+    w: 72, h: 34,
+    svg: `<path d="M2 28C4 8 68 8 70 28z" fill="#6b4423"/><path d="M10 24q26-8 52 0" stroke="#4b2f17" stroke-width="2" fill="none"/><g fill="#22c55e"><ellipse cx="16" cy="18" rx="6" ry="5"/><ellipse cx="30" cy="15" rx="6" ry="5"/><ellipse cx="44" cy="15" rx="6" ry="5"/><ellipse cx="57" cy="18" rx="6" ry="5"/></g><g fill="#f97316"><path d="M30 20l-2 8 4 0z"/><path d="M44 20l-2 8 4 0z"/></g><circle cx="16" cy="16" r="2.4" fill="#ef4444"/>`,
+  },
+  columpio: {
+    w: 64, h: 84,
+    svg: `<path d="M4 82L32 6l28 76" fill="none" stroke="#8b5a2b" stroke-width="4" stroke-linecap="round"/><rect x="0" y="2" width="64" height="6" rx="3" fill="#6b4423"/><path d="M23 8v50M41 8v50" stroke="#9ca3af" stroke-width="1.6"/><rect x="17" y="58" width="30" height="6" rx="3" fill="#ef4444"/>`,
+  },
+  fuente: {
+    w: 44, h: 50,
+    svg: `<ellipse cx="22" cy="44" rx="21" ry="6" fill="#9ca3af"/><path d="M2 40q20 12 40 0v-6H2z" fill="#a8a29e"/><ellipse cx="22" cy="34" rx="20" ry="5" fill="#60a5fa"/><rect x="19" y="14" width="6" height="22" fill="#a8a29e"/><ellipse cx="22" cy="16" rx="12" ry="3.6" fill="#a8a29e"/><ellipse cx="22" cy="15" rx="9" ry="2.4" fill="#93c5fd"/><path d="M22 4v10M16 6q6 -4 12 0" stroke="#93c5fd" stroke-width="2" fill="none" stroke-linecap="round"/>`,
+  },
   // ----- Exclusivos (caja misteriosa) -----
   guirnalda: {
     w: 348, h: 26,
@@ -168,6 +215,8 @@ export const ITEM_ART = {
     svg: `<rect x="2" y="96" width="34" height="8" rx="2" fill="#8b5a2b"/><rect x="15" y="26" width="8" height="72" fill="#d6b27a"/><path d="M15 34h8M15 44h8M15 54h8M15 64h8M15 74h8M15 84h8" stroke="#b58a52" stroke-width="1.6"/><rect x="0" y="18" width="38" height="9" rx="3" fill="#8b5a2b"/><rect x="3" y="12" width="32" height="8" rx="3" fill="#a9703a"/><circle cx="31" cy="46" r="4" fill="#ef4444"/><path d="M31 27v15" stroke="#374151" stroke-width="1"/>`,
   },
 };
+
+Object.assign(ITEM_ART, CLOTHES_THUMB);
 
 /** Miniatura de un objeto (tienda y listas). */
 export const itemThumb = (id, cls = 'thumb') => {

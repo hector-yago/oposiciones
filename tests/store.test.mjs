@@ -67,16 +67,39 @@ test('exportar e importar conserva los datos y deja copia previa', async () => {
   await assert.rejects(() => b.importJson('no json'), /JSON válido/);
 });
 
-test('el fixture v2 (0.2.0) se carga sin perder nada y recibe los ajustes nuevos por defecto', () => {
+test('el fixture v2 (0.2.0 y 0.3.0) se carga sin perder nada y recibe lo nuevo por defecto', () => {
   const raw = fixture('v2.json');
   const { doc, from, to } = migrate(raw);
   assert.equal(from, 2);
   assert.equal(to, CURRENT_SCHEMA);
-  assert.equal(doc.settings.sceneMode, 'auto');
-  assert.deepEqual({ ...doc, settings: { theme: doc.settings.theme } }, raw);
+  const { settings, inventory, schemaVersion, ...rest } = doc;
+  const { settings: s0, inventory: i0, schemaVersion: v0, ...rest0 } = raw;
+  assert.equal(v0, 2);
+  assert.equal(schemaVersion, CURRENT_SCHEMA);
+  for (const k of Object.keys(rest0)) {
+    // los contadores nuevos de «stats» (juegos, misiones) se añaden con valor 0
+    const got = k === 'stats' ? (({ games, missions, ...r }) => r)(rest[k]) : rest[k];
+    assert.deepEqual(got, rest0[k], k);
+  }
+  assert.equal(rest.stats.games, 0);
+  assert.equal(rest.stats.missions, 0);
+  assert.equal(settings.theme, s0.theme);
+  assert.equal(settings.sceneMode, 'auto');
+  assert.deepEqual(inventory.map(({ variant, ...i }) => i), i0);
+  assert.deepEqual(rest.exams, []);
+  assert.equal(rest.goal.daily, 20);
+  assert.deepEqual(rest.outfit, { hat: '', face: '', neck: '', top: '' });
 });
 
 test('ajuste de escena: valores no válidos vuelven a automático', () => {
   assert.equal(migrate({ schemaVersion: 2, settings: { sceneMode: 'tarde' } }).doc.settings.sceneMode, 'auto');
   assert.equal(migrate({ schemaVersion: 2, settings: { sceneMode: 'night' } }).doc.settings.sceneMode, 'night');
+});
+
+test('el fixture v3 (0.4.0) se carga sin cambios (formato actual estable)', () => {
+  const raw = fixture('v3.json');
+  const { doc, from, to } = migrate(raw);
+  assert.equal(from, 3);
+  assert.equal(to, CURRENT_SCHEMA);
+  assert.deepEqual(doc, raw);
 });

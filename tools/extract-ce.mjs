@@ -57,4 +57,6 @@ while ((m = re.exec(xml))) {
 writeFileSync(new URL('ce.txt', dir), lines.join('\n') + '\n');
 const out = Object.fromEntries(Object.entries(articles).map(([n, a]) => [n, { titulo: a.titulo, texto: a.texto }]));
 writeFileSync(new URL('ce.json', dir), JSON.stringify(out, null, 1));
+// Copia compacta que sirve la app para enseñar el texto oficial de cada artículo (visor y tarjetas).
+writeFileSync(new URL('../data/ce-articulos.json', import.meta.url), JSON.stringify(out));
 console.log(`Artículos: ${Object.keys(out).length} (último: ${Math.max(...Object.keys(out).map(Number))})`);

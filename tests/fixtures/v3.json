@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 3,
+  "profile": {
+    "name": "Eva",
+    "gender": "chica"
+  },
+  "coins": 42,
+  "streak": {
+    "current": 1,
+    "best": 9,
+    "tens": 2,
+    "wrong": 0
+  },
+  "progress": {},
+  "stats": {
+    "answered": 120,
+    "correct": 90,
+    "earned": 300,
+    "byTitle": {
+      "Título I": {
+        "ok": 50,
+        "ko": 10
+      }
+    },
+    "byDay": {
+      "2026-11-24": {
+        "n": 20,
+        "ok": 15
+      }
+    },
+    "care": {
+      "cleaned": 3,
+      "calmed": 2,
+      "coins": 1
+    },
+    "games": 4,
+    "missions": 6
+  },
+  "inventory": [
+    {
+      "uid": 1,
+      "itemId": "jardin",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 1,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    },
+    {
+      "uid": 2,
+      "itemId": "patito",
+      "name": "Cua",
+      "xp": 55,
+      "boughtAt": 2,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 4,
+      "coin": false,
+      "variant": "dorado"
+    },
+    {
+      "uid": 3,
+      "itemId": "gorra",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 3,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    },
+    {
+      "uid": 4,
+      "itemId": "gafas",
+      "name": "",
+      "xp": 0,
+      "boughtAt": 4,
+      "mood": "ok",
+      "mess": 0,
+      "joy": 0,
+      "coin": false,
+      "variant": ""
+    }
+  ],
+  "nextUid": 5,
+  "joker": {
+    "lastUsed": 0,
+    "uses": 0
+  },
+  "daily": {
+    "last": "",
+    "streak": 0,
+    "boxes": 0,
+    "opened": 0
+  },
+  "achievements": {},
+  "exams": [
+    {
+      "at": 1700000000000,
+      "n": 20,
+      "ok": 15,
+      "ko": 3,
+      "blank": 2,
+      "score": 7,
+      "secs": 600
+    }
+  ],
+  "missions": {
+    "day": "2026-11-24",
+    "daily": [
+      {
+        "id": "answer-10",
+        "type": "answer",
+        "target": 10,
+        "titulo": "",
+        "progress": 10,
+        "reward": 2,
+        "claimed": true
+      }
+    ],
+    "week": "2026-W48",
+    "weekly": [
+      {
+        "id": "exam-1",
+        "type": "exam",
+        "target": 1,
+        "titulo": "",
+        "progress": 1,
+        "reward": 12,
+        "claimed": false
+      }
+    ]
+  },
+  "outfit": {
+    "hat": "gorra",
+    "face": "gafas",
+    "neck": "",
+    "top": ""
+  },
+  "goal": {
+    "examDate": "2027-03-01",
+    "daily": 25,
+    "bonusDay": "2026-11-24"
+  },
+  "minigames": {
+    "day": "2026-11-24",
+    "plays": 2
+  },
+  "breed": {
+    "patito": 1700000000000
+  },
+  "flags": {
+    "introSeen": true,
+    "shopSeen": true,
+    "lampOff": true
+  },
+  "settings": {
+    "theme": "dark",
+    "sceneMode": "night",
+    "fontScale": "large",
+    "calm": true,
+    "season": "off"
+  },
+  "meta": {}
+}

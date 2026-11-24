@@ -21,3 +21,4 @@ Nota: el banco de preguntas (`data/*.json`) **no** forma parte del documento del
 ## Historial de esquemas
 - **1** (app 0.1.0): perfil, monedas, racha, progreso por pregunta, estadísticas por Título.
 - **2** (app 0.2.0): inventario con mascotas (nombre, XP, ánimo, suciedad, alegría, moneda), comodín, entrada diaria y cajas, logros, estadísticas por día y cuidados. Migración 1→2 en `js/migrations.js`; fixtures `tests/fixtures/v1.json` y `v2.json`.
+- **3** (app 0.4.0): exámenes, misiones, ropa puesta, objetivo de estudio, minijuegos, crías, variantes de color y ajustes de accesibilidad. Migración 2→3 en `js/migrations.js`; fixture `tests/fixtures/v3.json`. Además, `stats.games` y `stats.missions` (contadores) y `settings.sceneMode` se añadieron con valor por defecto sin cambiar de versión mientras 0.3.0 no estaba publicada.

@@ -1,61 +1,89 @@
-// Catálogo de la tienda (datos puros). Los dibujos están en js/art/items.js y js/art/pets.js.
+// Catálogo de la tienda (datos puros). Los dibujos están en js/art/items.js, js/art/pets.js y js/art/clothes.js.
 export const CATEGORIES = [
   { id: 'vivos', name: 'Seres vivos' },
   { id: 'herramientas', name: 'Herramientas' },
   { id: 'accesorios', name: 'Accesorios' },
+  { id: 'ropa', name: 'Ropa' },
+  { id: 'jardin', name: 'Jardín' },
 ];
 
 // Mascotas: etapas por XP acumulada (cría → joven → adulto), herramienta principal (+50 % de crecimiento)
 // y extras (+25 % cada uno). Cuanto más cara la mascota, más tarda en crecer. `max` = ejemplares por especie;
-// `size` = tamaño relativo en la escena (los animales pequeños se dibujan más pequeños).
+// `size` = tamaño relativo en la escena; `room` = dónde viven (por defecto el salón; las del jardín necesitan el jardín).
 export const SPECIES = {
   cactus: { tool: 'regadera', extras: ['abono'], stages: [0, 10, 30], max: 3, size: 1 },
   margarita: { tool: 'regadera', extras: ['abono'], stages: [0, 8, 25], max: 3, size: 1 },
   pez: { tool: 'pecera', extras: [], stages: [0, 15, 45], max: 3, size: 1 },
+  pollito: { tool: 'nido', extras: ['comedero'], stages: [0, 12, 35], max: 4, size: 0.6, room: 'jardin' },
   hamster: { tool: 'rueda', extras: ['comedero'], stages: [0, 18, 55], max: 2, size: 0.7 },
   canario: { tool: 'jaula', extras: [], stages: [0, 20, 60], max: 2, size: 1 },
+  patito: { tool: 'estanque', extras: ['comedero'], stages: [0, 18, 50], max: 3, size: 0.75, room: 'jardin' },
   tortuga: { tool: 'terrario', extras: ['comedero'], stages: [0, 25, 75], max: 2, size: 0.8 },
+  erizo: { tool: 'cuenco-agua', extras: ['comedero'], stages: [0, 25, 70], max: 2, size: 0.7, room: 'jardin' },
   gato: { tool: 'cuenco-agua', extras: ['rascador', 'cama', 'cepillo', 'comedero'], stages: [0, 30, 90], max: 2, size: 1 },
   bonsai: { tool: 'regadera', extras: ['abono'], stages: [0, 35, 100], max: 2, size: 1 },
+  cerdito: { tool: 'corral', extras: ['comedero', 'cepillo'], stages: [0, 35, 100], max: 2, size: 0.95, room: 'jardin' },
   conejo: { tool: 'conejera', extras: ['cepillo', 'comedero'], stages: [0, 35, 100], max: 2, size: 0.9 },
+  ovejita: { tool: 'corral', extras: ['comedero', 'cepillo'], stages: [0, 40, 115], max: 3, size: 0.95, room: 'jardin' },
   loro: { tool: 'percha', extras: ['comedero'], stages: [0, 45, 130], max: 2, size: 0.9 },
+  zorro: { tool: 'madriguera', extras: ['comedero', 'cepillo'], stages: [0, 50, 140], max: 2, size: 0.9, room: 'jardin' },
   perro: { tool: 'cuenco-agua', extras: ['cama', 'juguete', 'cepillo', 'comedero'], stages: [0, 40, 120], max: 2, size: 1 },
+  panda: { tool: 'bambu', extras: ['comedero'], stages: [0, 60, 170], max: 2, size: 1, room: 'jardin' },
 };
 /** Plantas: no ensucian; cuando se «enfadan» se marchitan. */
 export const PLANTS = ['cactus', 'margarita', 'bonsai'];
 export const STAGE_NAMES = ['Cría', 'Joven', 'Adulto'];
+/** Habitaciones: el salón (siempre) y el jardín (se compra). */
+export const ROOMS = [
+  { id: 'casa', name: 'Salón' },
+  { id: 'jardin', name: 'Jardín', req: 'jardin' },
+];
+
+const J = 'jardin'; // los objetos del jardín necesitan haberlo comprado
 
 export const CATALOG = [
   // --- Seres vivos (de más barato a más caro) ---
   { id: 'cactus', cat: 'vivos', name: 'Cactus', price: 1, desc: 'Resistente y poco exigente. Crece más deprisa con una regadera.' },
   { id: 'margarita', cat: 'vivos', name: 'Margarita', price: 2, desc: 'Florece con tus aciertos y pierde pétalos si fallas. Le encanta la regadera.' },
   { id: 'pez', cat: 'vivos', name: 'Pez', price: 5, desc: 'Nada tranquilo. Crece más deprisa con una pecera.' },
+  { id: 'pollito', cat: 'vivos', name: 'Pollito', price: 6, desc: 'Pío, pío. Vive en el jardín y necesita su nido.', req: J },
   { id: 'hamster', cat: 'vivos', name: 'Hámster', price: 8, desc: 'Pequeño y activo. Crece más deprisa con una rueda.' },
   { id: 'canario', cat: 'vivos', name: 'Canario', price: 10, desc: 'Canta cuando estudias. Crece más deprisa con una jaula.' },
+  { id: 'patito', cat: 'vivos', name: 'Patito', price: 12, desc: 'Cua, cua. Vive en el jardín y adora su estanque.', req: J },
   { id: 'tortuga', cat: 'vivos', name: 'Tortuga', price: 14, desc: 'Lenta pero constante, como tú. Le gusta su terrario.' },
+  { id: 'erizo', cat: 'vivos', name: 'Erizo', price: 16, desc: 'Tímido y pinchudo. Vive en el jardín.', req: J },
   { id: 'gato', cat: 'vivos', name: 'Gato', price: 20, desc: 'Independiente y mimoso. Le gustan el cuenco, el rascador, la cama y el cepillo.' },
   { id: 'bonsai', cat: 'vivos', name: 'Bonsái', price: 25, desc: 'Paciencia y calma. Crece muy despacio; ayudan la regadera y el abono.' },
+  { id: 'cerdito', cat: 'vivos', name: 'Cerdito', price: 28, desc: 'Rosado y revolcón. Vive en el jardín y necesita un corral.', req: J },
   { id: 'conejo', cat: 'vivos', name: 'Conejo', price: 30, desc: 'Suave y juguetón. Necesita su conejera.' },
+  { id: 'ovejita', cat: 'vivos', name: 'Ovejita', price: 35, desc: 'Lanuda y tranquila. Vive en el jardín y necesita un corral.', req: J },
   { id: 'loro', cat: 'vivos', name: 'Loro', price: 40, desc: 'Charlatán y colorido. Necesita su percha.' },
+  { id: 'zorro', cat: 'vivos', name: 'Zorro', price: 45, desc: 'Listo y astuto. Vive en el jardín y necesita su madriguera.', req: J },
   { id: 'perro', cat: 'vivos', name: 'Perro', price: 50, desc: 'El mejor compañero de estudio. Le gustan el cuenco, la cama, la pelota y el cepillo.' },
+  { id: 'panda', cat: 'vivos', name: 'Panda', price: 60, desc: 'El tesoro del jardín. Necesita bambú y mucha paciencia.', req: J },
 
   // --- Herramientas ---
   { id: 'regadera', cat: 'herramientas', name: 'Regadera', price: 3, desc: 'Para cuidar tus plantas.' },
-  { id: 'cuenco-agua', cat: 'herramientas', name: 'Cuenco de agua', price: 4, desc: 'Para gatos y perros.' },
+  { id: 'cuenco-agua', cat: 'herramientas', name: 'Cuenco de agua', price: 4, desc: 'Para gatos, perros y erizos.' },
   { id: 'abono', cat: 'herramientas', name: 'Abono', price: 4, desc: 'Extra para cactus, margaritas y bonsáis.' },
   { id: 'comedero', cat: 'herramientas', name: 'Comedero', price: 5, desc: 'Extra para casi todos los animales.' },
   { id: 'juguete', cat: 'herramientas', name: 'Pelota', price: 6, desc: 'Para jugar con tu perro.' },
-  { id: 'cepillo', cat: 'herramientas', name: 'Cepillo', price: 6, desc: 'Extra para gatos, perros y conejos.' },
+  { id: 'cepillo', cat: 'herramientas', name: 'Cepillo', price: 6, desc: 'Extra para gatos, perros, conejos y animales de granja.' },
+  { id: 'nido', cat: 'herramientas', name: 'Nido', price: 6, desc: 'Casa de tus pollitos.', req: J },
   { id: 'rueda', cat: 'herramientas', name: 'Rueda', price: 7, desc: 'Para que tu hámster corra.' },
   { id: 'pecera', cat: 'herramientas', name: 'Pecera', price: 8, desc: 'Casa para tus peces.' },
   { id: 'terrario', cat: 'herramientas', name: 'Terrario', price: 9, desc: 'Casa para tus tortugas.' },
   { id: 'jaula', cat: 'herramientas', name: 'Jaula', price: 10, desc: 'Casa para tus canarios.' },
   { id: 'cama', cat: 'herramientas', name: 'Cama', price: 12, desc: 'Para gatos y perros.' },
+  { id: 'estanque', cat: 'herramientas', name: 'Estanque', price: 14, desc: 'Un chapuzón para tus patitos.', req: J },
   { id: 'rascador', cat: 'herramientas', name: 'Rascador', price: 15, desc: 'Para tu gato.' },
   { id: 'conejera', cat: 'herramientas', name: 'Conejera', price: 16, desc: 'Casa para tus conejos.' },
   { id: 'percha', cat: 'herramientas', name: 'Percha', price: 18, desc: 'Un buen sitio para tu loro.' },
+  { id: 'corral', cat: 'herramientas', name: 'Corral', price: 20, desc: 'Para cerditos y ovejitas.', req: J },
+  { id: 'madriguera', cat: 'herramientas', name: 'Madriguera', price: 24, desc: 'El refugio de tu zorro.', req: J },
+  { id: 'bambu', cat: 'herramientas', name: 'Bambú', price: 28, desc: 'La comida favorita de tu panda.', req: J },
 
-  // --- Accesorios ---
+  // --- Accesorios del salón ---
   { id: 'cuadro', cat: 'accesorios', name: 'Cuadro', price: 5, desc: 'Da vida a la pared.' },
   { id: 'planta', cat: 'accesorios', name: 'Maceta', price: 6, desc: 'Un toque de verde.' },
   { id: 'reloj', cat: 'accesorios', name: 'Reloj de pared', price: 7, desc: 'Para controlar el tiempo de estudio.' },
@@ -73,6 +101,26 @@ export const CATALOG = [
   { id: 'tele', cat: 'accesorios', name: 'Televisión', price: 30, desc: 'Un descanso bien merecido.' },
   { id: 'disco', cat: 'accesorios', name: 'Bola de discoteca', price: 35, desc: 'Para celebrar cada logro.' },
   { id: 'trofeo', cat: 'accesorios', name: 'Trofeo de estudio', price: 40, desc: 'Para los más constantes.' },
+
+  // --- Ropa (se equipa en el Armario; `slot` = dónde se lleva) ---
+  { id: 'pajarita', cat: 'ropa', slot: 'neck', name: 'Pajarita', price: 5, desc: 'Elegancia para opositar.' },
+  { id: 'gafas', cat: 'ropa', slot: 'face', name: 'Gafas', price: 6, desc: 'Aspecto de estudioso.' },
+  { id: 'camiseta-roja', cat: 'ropa', slot: 'top', name: 'Camiseta roja', price: 6, desc: 'Un color con carácter.' },
+  { id: 'camiseta-amarilla', cat: 'ropa', slot: 'top', name: 'Camiseta amarilla', price: 6, desc: 'Rojigualda, ¡a medias!' },
+  { id: 'bufanda', cat: 'ropa', slot: 'neck', name: 'Bufanda', price: 7, desc: 'Para los días fríos de estudio.' },
+  { id: 'gorra', cat: 'ropa', slot: 'hat', name: 'Gorra', price: 8, desc: 'Informal y práctica.' },
+  { id: 'gafas-sol', cat: 'ropa', slot: 'face', name: 'Gafas de sol', price: 9, desc: 'Para mirar al futuro sin pestañear.' },
+  { id: 'birrete', cat: 'ropa', slot: 'hat', name: 'Birrete', price: 20, desc: 'Solo para quien lo merece.' },
+  { id: 'traje', cat: 'ropa', slot: 'top', name: 'Traje', price: 25, desc: 'Para el día del examen.' },
+  { id: 'corona', cat: 'ropa', slot: 'hat', name: 'Corona', price: 40, desc: 'Reina o rey de las oposiciones.' },
+
+  // --- Jardín (nueva habitación) ---
+  { id: 'jardin', cat: 'jardin', name: 'Jardín', price: 40, desc: 'Desbloquea una nueva habitación al aire libre con sitio para animales de granja y más.' },
+  { id: 'farola', cat: 'jardin', name: 'Farola', price: 12, desc: 'Ilumina el jardín de noche. Se enciende y apaga tocándola.', req: J },
+  { id: 'banco', cat: 'jardin', name: 'Banco', price: 15, desc: 'Para sentarse a repasar al aire libre.', req: J },
+  { id: 'huerto', cat: 'jardin', name: 'Huerto', price: 18, desc: 'Lechugas y zanahorias.', req: J },
+  { id: 'columpio', cat: 'jardin', name: 'Columpio', price: 25, desc: 'Para despejar la mente.', req: J },
+  { id: 'fuente', cat: 'jardin', name: 'Fuente', price: 30, desc: 'El agua siempre relaja.', req: J },
 ];
 
 // Objetos exclusivos: no se venden; salen de la caja misteriosa semanal (ver js/daily.js).
@@ -85,8 +133,13 @@ export const EXCLUSIVES = [
 ];
 
 /** Objetos que dan luz de noche (se encienden y apagan tocándolos). */
-export const LAMPS = ['lampara', 'lampara-pie'];
+export const LAMPS = ['lampara', 'lampara-pie', 'farola'];
+/** Objetos de cada habitación (los que no figuran aquí son del salón). */
+export const GARDEN_ITEMS = ['farola', 'banco', 'huerto', 'columpio', 'fuente', 'nido', 'estanque', 'corral', 'madriguera', 'bambu'];
+export const CLOTHES = CATALOG.filter((i) => i.cat === 'ropa');
 
 export const BY_ID = Object.fromEntries([...CATALOG, ...EXCLUSIVES].map((i) => [i.id, i]));
 export const isPet = (itemId) => itemId in SPECIES;
 export const isPlant = (itemId) => PLANTS.includes(itemId);
+/** Habitación donde se ve un objeto o mascota: 'casa' o 'jardin'. */
+export const roomOf = (itemId) => (isPet(itemId) ? SPECIES[itemId].room ?? 'casa' : GARDEN_ITEMS.includes(itemId) ? 'jardin' : 'casa');

@@ -30,3 +30,14 @@
 2. Comprar una lámpara: de noche ilumina la casa; tocarla la apaga y la enciende.
 3. Comprar una mascota nueva (margarita, hámster, tortuga, bonsái, conejo, loro) y su herramienta: viven en su casa dentro de la escena.
 4. Fallar 3 seguidas con una margarita: se marchita (pierde pétalos) y se cuida tocándola.
+
+## 0.4.0 — qué probar a mano
+1. Tienda → Jardín: comprar el jardín; aparece «Jardín» en Casa; comprar un patito (+ estanque) y comprobar que vive allí.
+2. Ropa: comprar una prenda, abrir Armario desde Casa y ponérsela; se ve en el personaje.
+3. Preguntas → Modo examen (10 preguntas): sin explicación inmediata, temporizador, nota al final y repaso de errores.
+4. «Repasar falladas», «Estudiar un Título», «Tarjetas de artículos» y el botón «Ver artículo» tras responder.
+5. Minijuegos: emparejar y verdadero/falso; premio con tope de 3 partidas al día.
+6. Ajustes: fecha de examen y objetivo diario; en Casa aparece la cuenta atrás y el progreso de hoy. Misiones: cobrar una terminada.
+7. Cría: con 2 adultos felices de una especie aparece el botón «Criar».
+8. Compartir mi casa (iPhone: hoja de compartir; PC: descarga PNG). Copiar código en un dispositivo y Pegar código en otro.
+9. Texto grande y «Menos movimiento» en Ajustes; temporadas (Navidad del 15/12 al 6/1, etc.).

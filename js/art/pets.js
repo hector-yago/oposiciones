@@ -64,6 +64,13 @@ const perro = () => `
 
 const ANGER_MARK = '<path d="M43 5c3 0 4 3 4 5M51 5c-3 0-4 3-4 5M43 17c3 0 4-3 4-5M51 17c-3 0-4-3-4-5" stroke="#dc2626" stroke-width="2.4" fill="none" stroke-linecap="round"/>';
 const BROWS = {
+  pollito: '<path d="M18 27l8 3M42 27l-8 3" stroke="#a16207" stroke-width="2.2" stroke-linecap="round"/>',
+  patito: '<path d="M32 16l9 3" stroke="#a16207" stroke-width="2.2" stroke-linecap="round"/>',
+  erizo: '<path d="M41 39l8 3" stroke="#3f2d20" stroke-width="2.2" stroke-linecap="round"/>',
+  cerdito: '<path d="M18 19l9 3M42 19l-9 3" stroke="#9d174d" stroke-width="2.2" stroke-linecap="round"/>',
+  ovejita: '<path d="M21 21l8 3M39 21l-8 3" stroke="#f1f5f9" stroke-width="2.2" stroke-linecap="round"/>',
+  zorro: '<path d="M18 20l9 3M42 20l-9 3" stroke="#7c2d12" stroke-width="2.2" stroke-linecap="round"/>',
+  panda: '<path d="M18 15l9 4M42 15l-9 4" stroke="#e5e7eb" stroke-width="2.2" stroke-linecap="round"/>',
   hamster: '<path d="M19 22l8 3M41 22l-8 3" stroke="#7c4a21" stroke-width="2.2" stroke-linecap="round"/>',
   tortuga: '<path d="M49 38l9 3" stroke="#33691e" stroke-width="2.2" stroke-linecap="round"/>',
   conejo: '<path d="M20 20l8 3M38 20l-8 3" stroke="#475569" stroke-width="2.2" stroke-linecap="round"/>',
@@ -153,7 +160,75 @@ const loro = () => `
   <circle cx="30" cy="18" r="2.6" fill="#fff"/><circle cx="30.4" cy="18" r="1.3" fill="#1f2937"/>
   <path d="M23 57h4M31 57h4" stroke="#f97316" stroke-width="2.2" stroke-linecap="round"/>`;
 
-const DRAW = { cactus, margarita, pez, hamster, canario, tortuga, gato, bonsai, conejo, loro, perro };
+const pollito = () => `
+  <path d="M26 56v-4M34 56v-4M23 57h6M31 57h6" stroke="#f97316" stroke-width="2.2" stroke-linecap="round"/>
+  <ellipse cx="30" cy="38" rx="17" ry="16" fill="#fde047"/>
+  <ellipse cx="17" cy="42" rx="5" ry="8" fill="#facc15" transform="rotate(15 17 42)"/><ellipse cx="43" cy="42" rx="5" ry="8" fill="#facc15" transform="rotate(-15 43 42)"/>
+  <path d="M30 22c-3-5-7-4-8-1M30 22c1-6 5-7 7-4" stroke="#facc15" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="23" cy="33" r="2.3" fill="#1f2937"/><circle cx="37" cy="33" r="2.3" fill="#1f2937"/><circle cx="23.7" cy="32.3" r=".8" fill="#fff"/><circle cx="37.7" cy="32.3" r=".8" fill="#fff"/>
+  <path d="M26 38l4 5 4-5z" fill="#fb923c"/>
+  <circle cx="18" cy="38" r="3" fill="#fca5a5" opacity=".55"/><circle cx="42" cy="38" r="3" fill="#fca5a5" opacity=".55"/>`;
+
+const patito = () => `
+  <path d="M24 57l-4 2h9zM36 57l-4 2h9z" fill="#fb923c"/>
+  <path d="M14 38l-8-4 3 8z" fill="#fde047"/>
+  <ellipse cx="30" cy="44" rx="16" ry="13" fill="#fde047"/>
+  <ellipse cx="25" cy="45" rx="9" ry="6" fill="#facc15"/>
+  <circle cx="34" cy="24" r="11" fill="#fde047"/>
+  <ellipse cx="45" cy="27" rx="7" ry="3.6" fill="#fb923c"/><path d="M40 28h10" stroke="#c2410c" stroke-width=".8"/>
+  <circle cx="37" cy="21" r="2.1" fill="#1f2937"/><circle cx="37.6" cy="20.4" r=".7" fill="#fff"/>
+  <circle cx="30" cy="27" r="2.6" fill="#fca5a5" opacity=".55"/>`;
+
+const erizo = () => `
+  <ellipse cx="22" cy="57" rx="5" ry="2.5" fill="#e8c9a0"/><ellipse cx="38" cy="57" rx="5" ry="2.5" fill="#e8c9a0"/>
+  <path d="M8 50L5 41l7 2-2-9 8 5 1-10 7 7 4-9 4 9 7-6 1 10 8-4-2 9 7 0-4 8z" fill="#5b4332"/>
+  <ellipse cx="28" cy="49" rx="19" ry="10" fill="#7a5a43"/>
+  <path d="M14 40l4 4M22 36l3 5M31 34l1 6M40 36l-2 5M47 42l-4 3" stroke="#3f2d20" stroke-width="1.6" stroke-linecap="round"/>
+  <ellipse cx="44" cy="48" rx="11" ry="9" fill="#e8c9a0"/>
+  <circle cx="52" cy="48" r="2.6" fill="#1f2937"/>
+  <circle cx="45" cy="43" r="1.9" fill="#1f2937"/><circle cx="45.6" cy="42.4" r=".6" fill="#fff"/>
+  <path d="M46 53q3 2 6 0" fill="none" stroke="#7a3b2e" stroke-width="1.1" stroke-linecap="round"/>`;
+
+const cerdito = () => `
+  <path d="M12 46c-7-3-8 5-1 4 3-.5 3-4 1-4" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="30" cy="45" rx="17" ry="13" fill="#f9a8d4"/>
+  <rect x="17" y="54" width="7" height="5" rx="2" fill="#f472b6"/><rect x="36" y="54" width="7" height="5" rx="2" fill="#f472b6"/>
+  <path d="M18 18l-3-10 11 5zM42 18l3-10-11 5z" fill="#f472b6"/>
+  <circle cx="30" cy="26" r="13" fill="#f9a8d4"/>
+  <ellipse cx="30" cy="31" rx="7.5" ry="5.5" fill="#fbcfe8"/><circle cx="27.5" cy="31" r="1.2" fill="#be185d"/><circle cx="32.5" cy="31" r="1.2" fill="#be185d"/>
+  <circle cx="23" cy="23" r="2.1" fill="#1f2937"/><circle cx="37" cy="23" r="2.1" fill="#1f2937"/><circle cx="23.6" cy="22.4" r=".7" fill="#fff"/><circle cx="37.6" cy="22.4" r=".7" fill="#fff"/>
+  <circle cx="19" cy="29" r="3" fill="#fb7185" opacity=".4"/><circle cx="41" cy="29" r="3" fill="#fb7185" opacity=".4"/>`;
+
+const ovejita = () => `
+  <rect x="22" y="53" width="4.5" height="6" rx="2" fill="#374151"/><rect x="35" y="53" width="4.5" height="6" rx="2" fill="#374151"/>
+  <g fill="#f8fafc" stroke="#e2e8f0" stroke-width=".8"><circle cx="16" cy="42" r="10"/><circle cx="44" cy="42" r="10"/><circle cx="30" cy="36" r="12"/><circle cx="22" cy="49" r="9"/><circle cx="38" cy="49" r="9"/></g>
+  <ellipse cx="20" cy="27" rx="5" ry="3" fill="#374151" transform="rotate(20 20 27)"/><ellipse cx="40" cy="27" rx="5" ry="3" fill="#374151" transform="rotate(-20 40 27)"/>
+  <ellipse cx="30" cy="29" rx="9" ry="10.5" fill="#4b5563"/>
+  <circle cx="30" cy="17" r="6.5" fill="#f8fafc" stroke="#e2e8f0" stroke-width=".8"/>
+  <circle cx="26" cy="27" r="2.2" fill="#fff"/><circle cx="34" cy="27" r="2.2" fill="#fff"/><circle cx="26.4" cy="27" r="1.1" fill="#1f2937"/><circle cx="34.4" cy="27" r="1.1" fill="#1f2937"/>
+  <ellipse cx="30" cy="33" rx="2.6" ry="1.8" fill="#f9a8d4"/>`;
+
+const zorro = () => `
+  <path d="M42 52C58 52 62 38 54 32 54 44 46 44 40 46z" fill="#f97316"/><path d="M54 32c4 3 6 8 4 12-2-3-4-5-4-12z" fill="#fff7ed"/>
+  <ellipse cx="28" cy="47" rx="13" ry="11" fill="#f97316"/><ellipse cx="28" cy="51" rx="7" ry="8" fill="#fff7ed"/>
+  <ellipse cx="22" cy="57" rx="5" ry="2.5" fill="#1f2937"/><ellipse cx="34" cy="57" rx="5" ry="2.5" fill="#1f2937"/>
+  <path d="M17 24L15 6l12 10zM43 24l2-18-12 10z" fill="#f97316"/><path d="M19 18l-1-8 6 5zM41 18l1-8-6 5z" fill="#1f2937"/>
+  <circle cx="30" cy="26" r="13" fill="#f97316"/>
+  <path d="M30 40C20 40 17 31 19 28c5 3 8 1 11 5 3-4 6-2 11-5 2 3-1 12-11 12z" fill="#fff7ed"/>
+  <ellipse cx="30" cy="32.5" rx="2.4" ry="1.8" fill="#1f2937"/>
+  <path d="M23 24l3 1.5M37 24l-3 1.5" stroke="#1f2937" stroke-width="2.4" stroke-linecap="round"/>`;
+
+const panda = () => `
+  <ellipse cx="30" cy="45" rx="16" ry="14" fill="#f8fafc" stroke="#e2e8f0"/>
+  <ellipse cx="14" cy="46" rx="5" ry="9" fill="#1f2937" transform="rotate(12 14 46)"/><ellipse cx="46" cy="46" rx="5" ry="9" fill="#1f2937" transform="rotate(-12 46 46)"/>
+  <ellipse cx="21" cy="57" rx="7" ry="3.6" fill="#1f2937"/><ellipse cx="39" cy="57" rx="7" ry="3.6" fill="#1f2937"/>
+  <circle cx="19" cy="12" r="5.5" fill="#1f2937"/><circle cx="41" cy="12" r="5.5" fill="#1f2937"/>
+  <circle cx="30" cy="24" r="14" fill="#f8fafc" stroke="#e2e8f0"/>
+  <ellipse cx="23.5" cy="23" rx="4.2" ry="5.2" fill="#1f2937" transform="rotate(-20 23.5 23)"/><ellipse cx="36.5" cy="23" rx="4.2" ry="5.2" fill="#1f2937" transform="rotate(20 36.5 23)"/>
+  <circle cx="24" cy="23" r="1.5" fill="#fff"/><circle cx="36" cy="23" r="1.5" fill="#fff"/>
+  <ellipse cx="30" cy="30" rx="3.2" ry="2.2" fill="#1f2937"/><path d="M30 32v2M27 34.5q3 2 6 0" fill="none" stroke="#1f2937" stroke-width="1.2" stroke-linecap="round"/>`;
+
+const DRAW = { cactus, margarita, pez, pollito, hamster, canario, patito, tortuga, erizo, gato, bonsai, cerdito, conejo, ovejita, loro, zorro, perro, panda };
 
 /** Dibujo local (caja 60×60) de una mascota en la etapa dada. */
 export const petSvg = (species, stage = 2, mood = 'ok') => DRAW[species](stage, mood) + (mood === 'angry' ? angryOverlay(species) : '');

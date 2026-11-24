@@ -3,6 +3,7 @@
     "id": "ce",
     "nombre": "Constitución Española",
     "descripcion": "Título Preliminar, derechos y deberes, la Corona, las Cortes, el Gobierno, el Poder Judicial, la organización territorial y la reforma.",
-    "archivo": "data/ce.json"
+    "archivo": "data/ce.json",
+    "articulos": "data/ce-articulos.json"
   }
 ]

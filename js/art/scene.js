@@ -2,7 +2,9 @@
 // Casa vacía: solo pared, ventana y suelo. Lo que compras aparece en huecos fijos; las mascotas crecen con las etapas.
 import { ITEM_ART } from './items.js';
 import { COIN, HEART, PET_BOX, POOP, STAGE_SCALE, petSvg } from './pets.js';
-import { LAMPS, SPECIES } from '../catalog.js';
+import { LAMPS, SPECIES, roomOf } from '../catalog.js';
+import { outfitSvg } from './clothes.js';
+import { seasonRoom, seasonSky } from './seasons.js';
 import { JOY_TARGET, isHappy, stageOf } from '../shop.js';
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -44,47 +46,28 @@ function face(cy) {
   <path d="M-6 ${cy + 11} Q0 ${cy + 17} 6 ${cy + 11}" fill="none" stroke="#7a3b2e" stroke-width="2.2" stroke-linecap="round"/>`;
 }
 
-const place = (id, x, y, extra = '') => (ITEM_ART[id] ? `<g class="obj obj-${id}" transform="translate(${x} ${y})" ${extra}>${ITEM_ART[id].svg}</g>` : '');
+export const place = (id, x, y, extra = '') => (ITEM_ART[id] ? `<g class="obj obj-${id}" transform="translate(${x} ${y})" ${extra}>${ITEM_ART[id].svg}</g>` : '');
 
-const shadow = (x, y, rx) => `<ellipse cx="${x}" cy="${y + 2}" rx="${rx}" ry="4" fill="#000" opacity=".14"/>`;
+export const shadow = (x, y, rx) => `<ellipse cx="${x}" cy="${y + 2}" rx="${rx}" ry="4" fill="#000" opacity=".14"/>`;
 
-const poopAt = (uid, x, y) =>
+export const poopAt = (uid, x, y) =>
   `<g class="poop" data-poop="${uid}" transform="translate(${x} ${y})" role="button" aria-label="Limpiar"><rect x="-4" y="-4" width="28" height="24" fill="transparent"/><g class="poop-in">${POOP.svg}</g></g>`;
-const coinAt = (uid, x, y) =>
+export const coinAt = (uid, x, y) =>
   `<g class="petcoin" data-petcoin="${uid}" transform="translate(${x - 12} ${y - 12})" role="button" aria-label="Coger moneda"><rect x="-6" y="-6" width="36" height="36" fill="transparent"/><g class="coin-in" transform="scale(1.2)">${COIN.svg}</g></g>`;
-const heartAt = (x, y) => `<g class="heart" transform="translate(${x} ${y})">${HEART.svg}</g>`;
+export const heartAt = (x, y) => `<g class="heart" transform="translate(${x} ${y})">${HEART.svg}</g>`;
 
-/** Animales que viven en su «casa» si tienes la herramienta; los que sobran (o sin casa) van al suelo. */
-const HOMES = {
-  hamster: { tool: 'rueda', spots: [[109, 294, 0.55]] },
-  tortuga: { tool: 'terrario', spots: [[152, 296, 0.65], [176, 296, 0.65]] },
-  conejo: { tool: 'conejera', spots: [[318, 276, 0.8], [342, 276, 0.8]] },
-  loro: { tool: 'percha', spots: [[176, 192, 0.7]] },
-};
-const LAMP_SPOT = { lampara: [314, 44], 'lampara-pie': [308, 160] }; // dónde brilla cada lámpara
-
-/** Hueco de las lámparas (para pulsarlas): su dibujo en la escena. */
-const LAMP_AT = { lampara: [296, 0], 'lampara-pie': [296, 150] };
-
-/** ¿Es de noche? De 18:00 a 06:00. */
-export const isNightHour = (hour) => hour < 6 || hour >= 18;
+/** El personaje con su ropa puesta, en coordenadas locales (pies en el origen). */
+export const avatarSvg = (gender, outfit = {}) => (gender === 'chica' ? avatarGirl() : avatarBoy()) + outfitSvg(outfit, gender);
 
 /**
- * @param {{gender:'chico'|'chica', inventory?:object[], hopUid?:number|null, night?:boolean, lampOff?:boolean}} opts
+ * Dibuja una mascota con los pies en (x, y), con su estado: enfado, cacas (`messAt` da los huecos), corazón, moneda y color raro.
+ * @param {number|null} hopUid mascota que da un saltito
  */
-export function sceneSvg({ gender, inventory = [], hopUid = null, night = false, lampOff = false }) {
-  const has = new Set(inventory.filter((i) => !(i.itemId in SPECIES)).map((i) => i.itemId));
-  const pets = inventory.filter((i) => i.itemId in SPECIES);
-  const avatar = gender === 'chica' ? avatarGirl() : avatarBoy();
-  const out = [];
-  const lamps = LAMPS.filter((id) => has.has(id));
-  const lit = night && lamps.length > 0 && !lampOff;
-
-  /** Una mascota con los pies en (x, y), con su estado: enfado, cacas (`messAt` da los huecos), corazón y moneda. */
-  function drawPet(p, x, y, s = 1, messAt = null) {
+export function makePetDrawer(hopUid) {
+  return function drawPet(p, x, y, s = 1, messAt = null) {
     const stage = stageOf(p.itemId, p.xp);
     const k = STAGE_SCALE[stage] * s * (SPECIES[p.itemId].size ?? 1);
-    const cls = [p.uid === hopUid ? 'hop' : '', p.mood === 'angry' ? 'angry' : ''].filter(Boolean).join(' ');
+    const cls = [p.uid === hopUid ? 'hop' : '', p.mood === 'angry' ? 'angry' : '', p.variant ? `v-${p.variant}` : ''].filter(Boolean).join(' ');
     let g = `<g class="pet ${cls}" data-pet="${p.uid}" transform="translate(${x - 30 * k} ${y - 58 * k}) scale(${k})" role="button" aria-label="${esc(p.name)}">
       <g class="pet-in"><rect x="0" y="0" width="${PET_BOX.w}" height="${PET_BOX.h}" fill="transparent"/>${petSvg(p.itemId, stage, p.mood)}</g></g>`;
     const spot = messAt ?? ((i) => ({ x: x + 14 * k + 11 * i, y: y - 12 }));
@@ -95,7 +78,33 @@ export function sceneSvg({ gender, inventory = [], hopUid = null, night = false,
     if (p.coin) g += coinAt(p.uid, x, y - 64 * k - 6);
     else if (isHappy(p) && p.joy >= JOY_TARGET / 2) g += heartAt(x + 10 * k, y - 62 * k);
     return g;
-  }
+  };
+}
+
+/** Animales que viven en su «casa» si tienes la herramienta; los que sobran (o sin casa) van al suelo. */
+const HOMES = {
+  hamster: { tool: 'rueda', spots: [[109, 294, 0.55]] },
+  tortuga: { tool: 'terrario', spots: [[152, 296, 0.65], [176, 296, 0.65]] },
+  conejo: { tool: 'conejera', spots: [[318, 276, 0.8], [342, 276, 0.8]] },
+  loro: { tool: 'percha', spots: [[176, 192, 0.7]] },
+};
+const LAMP_SPOT = { lampara: [314, 44], 'lampara-pie': [308, 160] }; // dónde brilla cada lámpara
+const LAMP_AT = { lampara: [296, 0], 'lampara-pie': [296, 150] }; // dónde se dibuja cada lámpara
+
+/** ¿Es de noche? De 18:00 a 06:00. */
+export const isNightHour = (hour) => hour < 6 || hour >= 18;
+
+/**
+ * Salón.
+ * @param {{gender:'chico'|'chica', inventory?:object[], hopUid?:number|null, night?:boolean, lampOff?:boolean, outfit?:object, season?:string|null}} opts
+ */
+export function sceneSvg({ gender, inventory = [], hopUid = null, night = false, lampOff = false, outfit = {}, season = null }) {
+  const has = new Set(inventory.filter((i) => !(i.itemId in SPECIES)).map((i) => i.itemId));
+  const pets = inventory.filter((i) => i.itemId in SPECIES && roomOf(i.itemId) === 'casa');
+  const out = [];
+  const lamps = LAMPS.filter((id) => has.has(id) && roomOf(id) === 'casa');
+  const lit = night && lamps.length > 0 && !lampOff;
+  const drawPet = makePetDrawer(hopUid);
 
   const lampArt = (id) => `<g class="lamp ${lit ? 'lit' : ''}" data-lamp="${id}" role="button" aria-label="Encender o apagar la lámpara">${place(id, ...LAMP_AT[id])}</g>`;
 
@@ -111,6 +120,7 @@ export function sceneSvg({ gender, inventory = [], hopUid = null, night = false,
         : `<g class="cloud"><ellipse cx="78" cy="70" rx="20" ry="8" fill="#fff"/><ellipse cx="94" cy="64" rx="14" ry="8" fill="#fff"/></g>
     <circle cx="128" cy="58" r="9" fill="#ffd34d"/>`
     }
+    ${seasonSky(season, night, { x: 38, y: 38, w: 114, h: 108 })}
     <rect x="36" y="36" width="118" height="112" rx="4" fill="none" stroke="var(--frame)" stroke-width="7"/>
     <line x1="95" y1="36" x2="95" y2="148" stroke="var(--frame)" stroke-width="5"/>
     <line x1="36" y1="92" x2="154" y2="92" stroke="var(--frame)" stroke-width="5"/>
@@ -157,6 +167,7 @@ export function sceneSvg({ gender, inventory = [], hopUid = null, night = false,
   if (has.has('cuenco-agua')) out.push(place('cuenco-agua', 168, 250));
   if (has.has('juguete')) out.push(place('juguete', 206, 254));
   if (has.has('regadera')) out.push(place('regadera', 18, 238));
+  out.push(seasonRoom(season));
 
   // Plantas pequeñas (cactus y margaritas) en la repisa de la ventana
   pets
@@ -207,7 +218,7 @@ export function sceneSvg({ gender, inventory = [], hopUid = null, night = false,
 
   // Avatar
   out.push(shadow(AVATAR_X, FLOOR_Y, 34));
-  out.push(`<g class="avatar" transform="translate(${AVATAR_X} ${FLOOR_Y})">${avatar}</g>`);
+  out.push(`<g class="avatar" transform="translate(${AVATAR_X} ${FLOOR_Y})">${avatarSvg(gender, outfit)}</g>`);
 
   // Noche: la casa se oscurece; con una lámpara encendida se ilumina y brilla alrededor
   if (night) {
@@ -218,12 +229,17 @@ export function sceneSvg({ gender, inventory = [], hopUid = null, night = false,
     }
   }
 
-  return `<svg class="scene ${night ? 'night' : 'day'}" viewBox="0 0 360 300" role="img" aria-label="Tu casa de ${night ? 'noche' : 'día'}" xmlns="http://www.w3.org/2000/svg">
+  return svgWrap(out.join('\n'), { night, label: `Tu casa de ${night ? 'noche' : 'día'}` });
+}
+
+/** Envoltorio SVG común (degradados de cielo y brillo) para el salón y el jardín. */
+export function svgWrap(inner, { night, label, room = 'casa' }) {
+  return `<svg class="scene ${night ? 'night' : 'day'} room-${room}" viewBox="0 0 360 300" role="img" aria-label="${label}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ec5fc"/><stop offset="1" stop-color="#e0f1ff"/></linearGradient>
     <linearGradient id="sky-night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070d2e"/><stop offset="1" stop-color="#2d3b7c"/></linearGradient>
     <radialGradient id="glow"><stop offset="0" stop-color="#ffd27a" stop-opacity=".8"/><stop offset=".5" stop-color="#ffc861" stop-opacity=".28"/><stop offset="1" stop-color="#ffc861" stop-opacity="0"/></radialGradient>
   </defs>
-  ${out.join('\n')}
+  ${inner}
 </svg>`;
 }

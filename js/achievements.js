@@ -1,6 +1,6 @@
 // Logros (lógica pura). Cada logro tiene un valor actual `val(ctx)` y un objetivo `target`; está hecho si val >= target.
 // ctx = { doc, questions (banco completo), now }
-import { CATALOG, EXCLUSIVES, LAMPS, SPECIES } from './catalog.js';
+import { CATALOG, CLOTHES, EXCLUSIVES, LAMPS, SPECIES } from './catalog.js';
 import { ownedIds, petsOf, stageOf } from './shop.js';
 import { studyStreak } from './stats.js';
 import { statusOf } from './scheduler.js';
@@ -62,6 +62,17 @@ export const ACHIEVEMENTS = [
   A('ce_mastered', 'Preguntas', 'Constitución dominada', 'Domina por completo el tema de la Constitución Española.', (c) => bool(temaPct(c, 'ce') >= 100), 1, { txt: 'CE' }),
   A('tema_mastered', 'Preguntas', 'Tema completo', 'Domina todas las preguntas de un tema entero.', temasMastered, 1, { txt: '100%' }),
 
+  // --- Exámenes, minijuegos y misiones ---
+  A('exam_first', 'Exámenes y misiones', 'Primer examen', 'Termina un examen.', (c) => c.doc.exams.length, 1, { txt: '📝' }),
+  A('exam_5', 'Exámenes y misiones', 'Opositor curtido', 'Termina 5 exámenes.', (c) => c.doc.exams.length, 5, { txt: '5×' }),
+  A('exam_pass', 'Exámenes y misiones', 'Aprobado', 'Aprueba un examen (5 o más).', (c) => c.doc.exams.filter((e) => e.score >= 5).length, 1, { txt: '5+' }),
+  A('exam_8', 'Exámenes y misiones', 'Notable alto', 'Saca un 8 o más en un examen.', (c) => c.doc.exams.filter((e) => e.score >= 8).length, 1, { txt: '8+' }),
+  A('exam_10', 'Exámenes y misiones', '¡Un 10!', 'Saca un 10 en un examen de 20 preguntas o más.', (c) => c.doc.exams.filter((e) => e.score >= 10 && e.n >= 20).length, 1, { txt: '10' }),
+  A('game_first', 'Exámenes y misiones', 'A jugar', 'Juega tu primer minijuego.', (c) => c.doc.stats.games, 1, { txt: '🎮' }),
+  A('game_20', 'Exámenes y misiones', 'Jugador habitual', 'Juega 20 minijuegos.', (c) => c.doc.stats.games, 20, { txt: '20' }),
+  A('mission_first', 'Exámenes y misiones', 'Misión cumplida', 'Cobra tu primera misión.', (c) => c.doc.stats.missions, 1, { txt: '✓' }),
+  A('mission_25', 'Exámenes y misiones', 'Misionero', 'Cobra 25 misiones.', (c) => c.doc.stats.missions, 25, { txt: '25' }),
+
   // --- Constancia ---
   A('streak_3', 'Constancia', 'Buena racha', 'Encadena 3 aciertos seguidos.', (c) => c.doc.streak.best, 3, { txt: '3' }),
   A('streak_10', 'Constancia', 'Racha perfecta', 'Completa una racha de 10 aciertos seguidos.', (c) => c.doc.streak.tens, 1, { txt: '10' }),
@@ -104,6 +115,16 @@ export const ACHIEVEMENTS = [
   A('clean_50', 'Cuidados', 'Reluciente', 'Limpia 50 cacas.', (c) => care(c).cleaned, 50, { txt: '50' }),
   A('petcoin_1', 'Cuidados', 'Mascota afortunada', 'Recoge una moneda que te haya traído una mascota feliz.', (c) => care(c).coins, 1, { txt: '$' }),
   A('petcoin_10', 'Cuidados', 'Lluvia de monedas', 'Recoge 10 monedas de tus mascotas.', (c) => care(c).coins, 10, { txt: '10$' }),
+
+  // --- Cría y ropa ---
+  A('breed_first', 'Mascotas', 'Familia numerosa', 'Consigue tu primera cría.', (c) => Object.keys(c.doc.breed).length, 1, { pet: 'conejo' }),
+  A('rare_pet', 'Mascotas', 'Color especial', 'Consigue una cría de color azul, dorado o arcoíris.', (c) => petsOf(c.doc).filter((p) => p.variant).length, 1, { pet: 'gato' }),
+  A('rainbow_pet', 'Mascotas', 'Arcoíris', 'Consigue una cría arcoíris.', (c) => petsOf(c.doc).filter((p) => p.variant === 'arcoiris').length, 1, { pet: 'perro' }),
+  A('garden_open', 'Casa', 'Con jardín', 'Desbloquea el jardín.', (c) => bool(has(c, 'jardin')), 1, { item: 'jardin' }),
+  A('farm', 'Mascotas', 'Granjero', 'Ten un cerdito, una ovejita y un patito a la vez.', (c) => ['cerdito', 'ovejita', 'patito'].filter((sp) => speciesCount(c, sp) > 0).length, 3, { pet: 'cerdito' }),
+  A('panda_pet', 'Mascotas', 'Tesoro del jardín', 'Consigue un panda.', (c) => speciesCount(c, 'panda'), 1, { pet: 'panda' }),
+  A('dressed', 'Casa', 'Con estilo', 'Lleva una prenda en cada sitio (sombrero, cara, cuello y camiseta).', (c) => Object.values(c.doc.outfit).filter(Boolean).length, 4, { item: 'gorra' }),
+  A('wardrobe_all', 'Casa', 'Vestidor completo', 'Compra toda la ropa.', (c) => CLOTHES.filter((i) => has(c, i.id)).length, CLOTHES.length, { item: 'corona' }),
 
   // --- Casa ---
   A('first_tool', 'Casa', 'Manos a la obra', 'Compra tu primera herramienta.', (c) => CATALOG.filter((i) => i.cat === 'herramientas' && has(c, i.id)).length, 1, { item: 'regadera' }),

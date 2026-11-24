@@ -2,6 +2,8 @@
 import { updateProgress } from './scheduler.js';
 import { awardXp, mischief } from './shop.js';
 import { recordDay } from './stats.js';
+import { trackAnswer } from './missions.js';
+import { claimGoalBonus } from './goal.js';
 
 export const STREAK_BONUS = [
   { at: 3, coins: 1 }, // racha de 3 → +1 moneda
@@ -29,7 +31,8 @@ export function applyAnswer(doc, question, correct, nowMs) {
     doc.streak.current = 0;
     doc.streak.wrong += 1;
     const bad = doc.streak.wrong % WRONG_LIMIT === 0 ? mischief(doc) : [];
-    return { correct, coins: 0, bonus: 0, streak: 0, grown: [], found: [], mischief: bad, wrong: doc.streak.wrong };
+    trackAnswer(doc, question, false, 0, nowMs);
+    return { correct, coins: 0, bonus: 0, streak: 0, grown: [], found: [], mischief: bad, wrong: doc.streak.wrong, goalBonus: claimGoalBonus(doc, nowMs) };
   }
   t.ok += 1;
   doc.stats.correct += 1;
@@ -42,5 +45,6 @@ export function applyAnswer(doc, question, correct, nowMs) {
   doc.coins += reward.total;
   doc.stats.earned += reward.total;
   const { grown, found } = awardXp(doc);
-  return { correct, coins: reward.total, bonus: reward.bonus, streak: next, grown, found, mischief: [], wrong: 0 };
+  trackAnswer(doc, question, true, next, nowMs);
+  return { correct, coins: reward.total, bonus: reward.bonus, streak: next, grown, found, mischief: [], wrong: 0, goalBonus: claimGoalBonus(doc, nowMs) };
 }

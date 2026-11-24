@@ -43,7 +43,7 @@ export function studyStreak(doc, nowMs) {
  * Dónde más fallas: agrega los fallos por artículo (nº de artículo sin apartado) con las preguntas del banco.
  * @returns {{articulo:string, titulo:string, ok:number, ko:number, pct:number}[]} ordenado de peor a mejor %
  */
-export function byArticle(doc, questions, { minAnswers = 2, limit = 8 } = {}) {
+export function byArticle(doc, questions, { minAnswers = 1, limit = 8 } = {}) {
   const byId = new Map(questions.map((q) => [q.id, q]));
   const acc = new Map();
   for (const [id, p] of Object.entries(doc.progress)) {

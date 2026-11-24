@@ -3,7 +3,7 @@ import { VERSION } from './version.js';
 import { createStore, indexedDbAdapter, memoryAdapter } from './store.js';
 import { applyAnswer } from './economy.js';
 import { pickNext, statusOf } from './scheduler.js';
-import { BY_ID, CATALOG, CATEGORIES, LAMPS, SPECIES, STAGE_NAMES, isPet, isPlant } from './catalog.js';
+import { BY_ID, CATALOG, CATEGORIES, LAMPS, ROOMS, SPECIES, STAGE_NAMES, isPet, isPlant, roomOf } from './catalog.js';
 import { BOOST_EXTRA, BOOST_MAIN, JOY_TARGET, MOOD_TEXT, attention, boostFor, buy, calmPet, canBuy, cleanMess, coinValue, collectCoin, countOf, growthInfo, isUpset, missingTool, ownedIds, petsOf, renamePet, stageOf } from './shop.js';
 import { WEEK, claimDaily, dayOfWeek, openBox } from './daily.js';
 import { WRONG_LIMIT } from './economy.js';
@@ -11,7 +11,14 @@ import { COOLDOWN_MS, formatRemaining, isAvailable, pickHidden, remainingMs, use
 import { ACHIEVEMENTS, newlyUnlocked, progressOf, unlock } from './achievements.js';
 import { byArticle, lastDays } from './stats.js';
 import { isNightHour, sceneSvg } from './art/scene.js';
+import { gardenSvg } from './art/garden.js';
 import { petThumb } from './art/pets.js';
+import * as study from './study.js';
+import { ensureMissions } from './missions.js';
+import { seasonOf } from './seasons.js';
+import { breed, canBreed } from './breed.js';
+import { TITLE_INFO } from './minigames.js';
+import { SHARE_VARS, VARIANT_FILTERS, decodeCode, encodeCode, inlineSceneStyles } from './share.js';
 import { itemThumb } from './art/items.js';
 
 const $app = document.getElementById('app');
@@ -32,6 +39,7 @@ let houseMsg = null; // frase puntual del personaje (compra, caricias…)
 let jokerTimer = null;
 let nightTimer = null;
 let lastNight = false;
+let room = 'casa'; // habitación que se ve en Casa: 'casa' (salón) o 'jardin'
 
 /** Hora local (en localhost se puede forzar con ?hora=22 para probar). */
 function currentHour() {
@@ -46,6 +54,19 @@ function currentHour() {
 function isNight() {
   const mode = doc().settings.sceneMode;
   return mode === 'night' ? true : mode === 'day' ? false : isNightHour(currentHour());
+}
+
+/** Temporada para la decoración (en localhost se puede forzar con ?fecha=2026-12-24). */
+function currentSeason() {
+  if (doc().settings.season === 'off') return null;
+  if (location.hostname === 'localhost') {
+    const f = new URLSearchParams(location.search).get('fecha');
+    if (f && /^\d{4}-\d{2}-\d{2}$/.test(f)) {
+      const [y, m, d] = f.split('-').map(Number);
+      return seasonOf(new Date(y, m - 1, d));
+    }
+  }
+  return seasonOf(new Date());
 }
 
 const ICONS = {
@@ -103,6 +124,20 @@ async function boot() {
       }
     }),
   );
+  study.init({
+    doc,
+    get store() {
+      return store;
+    },
+    esc,
+    plural,
+    toast,
+    rerender: () => render(),
+    banks: () => banks,
+    allQuestions,
+    afterChange,
+    getTema: (id) => temas.find((t) => t.id === id),
+  });
   applyTheme();
   render();
   await checkDaily();
@@ -111,6 +146,7 @@ async function boot() {
     window.__store = () => store;
     window.__quiz = () => quiz;
     window.__daily = () => checkDaily();
+    window.__houseBlob = () => buildHouseBlob();
   }
   if (!persistent) toast('Tu navegador no permite guardar datos: el progreso se perderá al cerrar.');
   store.autoBackup().catch(() => {});
@@ -123,6 +159,8 @@ function applyTheme() {
   const t = doc().settings.theme;
   if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
   else delete document.documentElement.dataset.theme;
+  document.documentElement.style.fontSize = { normal: '16px', large: '18px', xlarge: '20px' }[doc().settings.fontScale] ?? '16px';
+  document.documentElement.classList.toggle('calm', Boolean(doc().settings.calm));
   try {
     t === 'system' ? localStorage.removeItem('op-theme') : localStorage.setItem('op-theme', t);
   } catch {
@@ -154,6 +192,8 @@ async function afterChange() {
 
 /* ---------- Navegación ---------- */
 async function go(v) {
+  if (!study.canLeave(v)) return;
+  study.resetOnEnter(v);
   if (v === 'tienda') {
     shopFirst = !doc().flags.shopSeen;
     if (!doc().flags.introSeen || !doc().flags.shopSeen) {
@@ -191,9 +231,9 @@ function render() {
   }
   const d = doc();
   if (!d.profile) return renderOnboarding();
-  const titles = { casa: 'Mi casa', tienda: 'Tienda', preguntas: 'Preguntas', quiz: quiz ? quiz.tema.nombre : 'Preguntas', logros: 'Logros', stats: 'Estadísticas', ajustes: 'Ajustes' };
-  const body = { casa: viewCasa, tienda: viewTienda, preguntas: viewPreguntas, quiz: viewQuiz, logros: viewLogros, stats: viewStats, ajustes: viewAjustes }[view]();
-  const active = view === 'quiz' ? 'preguntas' : view;
+  const titles = { casa: 'Mi casa', tienda: 'Tienda', preguntas: 'Preguntas', quiz: quiz ? quiz.tema.nombre : 'Preguntas', logros: 'Logros', stats: 'Estadísticas', ajustes: 'Ajustes', examen: 'Examen', tarjetas: 'Tarjetas', juegos: 'Minijuegos', armario: 'Armario' };
+  const body = { casa: viewCasa, tienda: viewTienda, preguntas: viewPreguntas, quiz: viewQuiz, logros: viewLogros, stats: viewStats, ajustes: viewAjustes, examen: study.viewExamen, tarjetas: study.viewTarjetas, juegos: study.viewJuegos, armario: study.viewArmario }[view]();
+  const active = { quiz: 'preguntas', examen: 'preguntas', tarjetas: 'preguntas', juegos: 'preguntas', armario: 'casa' }[view] ?? view;
   const hint = hintTab();
   const att = attention(d);
   const careNeeded = att.angry + att.mess + att.coins + att.boxes > 0;
@@ -243,6 +283,13 @@ const SOUNDS = {
   bonsai: (n) => `Le das un toque de tijera a ${n}: ¡qué elegante!`,
   conejo: (n) => `${n} mueve la nariz y da un salto de alegría.`,
   loro: (n) => `${n} repite una frase que acaba de oír… ¡«artículo catorce»!`,
+  pollito: (n) => `${n} hace «pío, pío» y te sigue a todas partes.`,
+  patito: (n) => `${n} hace «cua, cua» y chapotea contento.`,
+  erizo: (n) => `${n} se hace una bolita… y luego se asoma curioso.`,
+  cerdito: (n) => `${n} gruñe feliz y se revuelca en el barro.`,
+  ovejita: (n) => `${n} bala suavemente: ¡beee!`,
+  zorro: (n) => `${n} te mira con ojos astutos y mueve la cola.`,
+  panda: (n) => `${n} mordisquea bambú con cara de felicidad.`,
 };
 
 function houseLine() {
@@ -277,6 +324,7 @@ function houseLine() {
 
 function stateTags(p) {
   const out = [];
+  if (p.variant) out.push(`<span class="tag rare">✨ ${esc({ azul: 'Azul', dorado: 'Dorado', arcoiris: 'Arcoíris' }[p.variant])}</span>`);
   if (p.mood === 'angry') out.push(`<span class="tag bad">${esc(MOOD_TEXT[p.itemId].angry.replace('está ', '').replace(/^./, (c) => c.toUpperCase()))}</span>`);
   if (p.mess > 0) out.push(`<span class="tag bad">Sucio ×${p.mess}</span>`);
   if (p.coin) out.push(`<span class="tag ok">¡Tiene ${plural(coinValue(p), 'moneda', 'monedas')}!</span>`);
@@ -293,6 +341,24 @@ function dailyCard() {
     <p class="muted">Día ${day} de ${WEEK}. Cada día que entras ganas 1 moneda; al 7.º día seguido llega una caja misteriosa con un objeto exclusivo.</p>${box}</section>`;
 }
 
+/** Botones para criar: solo de las especies que ahora pueden. */
+function breedButtons() {
+  const d = doc();
+  const now = Date.now();
+  const ready = Object.keys(SPECIES).filter((sp) => petsOf(d).some((p) => p.itemId === sp) && canBreed(d, sp, now).ok);
+  if (!ready.length) return '';
+  return `<div class="breed"><p class="muted">Tienes mascotas adultas, felices y limpias: pueden tener una cría (a veces con un color especial).</p>${ready.map((sp) => `<button class="btn small" data-act="breed" data-sp="${sp}" data-testid="breed-${sp}">Criar: ${esc(BY_ID[sp].name)}</button>`).join(' ')}</div>`;
+}
+
+/** Aviso dentro de la app (no es una notificación push): preguntas listas para repasar. */
+function reviewBanner() {
+  const d = doc();
+  const now = Date.now();
+  const due = Object.values(d.progress).filter((p) => p.box > 0 && p.due <= now).length;
+  if (due < 5 || d.stats.answered === 0) return '';
+  return `<div class="banner" data-testid="review-banner"><span>Tienes <b>${due}</b> preguntas listas para repasar.</span><button class="btn small" data-act="go" data-v="preguntas">Repasar</button></div>`;
+}
+
 function petRows() {
   const d = doc();
   const pets = petsOf(d);
@@ -304,20 +370,26 @@ function petRows() {
       const tool = missingTool(d, p.itemId);
       const note = tool ? `Necesita ${BY_ID[tool].name.toLowerCase()} para crecer más rápido` : `Crece ×${String(boost).replace('.', ',')}`;
       return `<div class="pet-row" data-testid="pet-row">
-        <button class="pet-pic" data-pet="${p.uid}" aria-label="Acariciar a ${esc(p.name)}">${petThumb(p.itemId, g.stage)}</button>
+        <button class="pet-pic ${p.variant ? `v-${p.variant}` : ''}" data-pet="${p.uid}" aria-label="Acariciar a ${esc(p.name)}">${petThumb(p.itemId, g.stage)}</button>
         <div class="pet-info"><div class="pet-head"><b>${esc(p.name)}</b> <span class="tag">${STAGE_NAMES[g.stage]}</span>${stateTags(p)}</div>
           <span class="bar"><i style="width:${g.pct}%"></i></span>
           <small class="muted">${g.stage === 2 ? 'Ya es adulto · ' : `Faltan ${g.need} aciertos · `}${note}</small></div>
         <button class="btn small" data-act="rename" data-uid="${p.uid}">Renombrar</button></div>`;
     })
-    .join('')}</section>`;
+    .join('')}${breedButtons()}</section>`;
 }
 
 function viewCasa() {
   const d = doc();
   const guide =
     hintTab() === 'tienda' ? (d.inventory.length || !d.flags.introSeen ? 'Toca «Tienda» en el menú de abajo.' : 'Ya tienes monedas: toca «Tienda» para comprar algo.') : hintTab() === 'preguntas' ? 'Toca «Preguntas» para ganar tus primeras monedas.' : '';
-  return `${bubble(houseLine())}<div class="scene-wrap">${sceneSvg({ gender: d.profile.gender, inventory: d.inventory, hopUid, night: isNight(), lampOff: Boolean(d.flags.lampOff) })}</div>${guide ? `<p class="guide">${guide}</p>` : ''}${petRows()}${dailyCard()}`;
+  const hasGarden = ownedIds(d).has('jardin');
+  if (!hasGarden) room = 'casa';
+  const opts = { gender: d.profile.gender, inventory: d.inventory, hopUid, night: isNight(), lampOff: Boolean(d.flags.lampOff), outfit: d.outfit, season: currentSeason() };
+  const svg = room === 'jardin' ? gardenSvg(opts) : sceneSvg(opts);
+  const tabs = hasGarden ? `<div class="seg full room-tabs" role="group" aria-label="Habitación">${ROOMS.map((r) => `<button data-act="room" data-r="${r.id}" aria-pressed="${room === r.id}">${r.name}</button>`).join('')}</div>` : '';
+  const tools = '<div class="actions casa-actions"><button class="btn small" data-act="go" data-v="armario" data-testid="open-wardrobe">Armario</button><button class="btn small" data-act="share" data-testid="share">Compartir mi casa</button></div>';
+  return `${reviewBanner()}${bubble(houseLine())}${tabs}<div class="scene-wrap">${svg}</div>${tools}${guide ? `<p class="guide">${guide}</p>` : ''}${study.goalCard(Date.now())}${study.missionsCard()}${petRows()}${dailyCard()}`;
 }
 
 function thumbFor(id) {
@@ -353,17 +425,17 @@ function viewTienda() {
 /* ---------- Compra y nombres de mascota ---------- */
 function askName(mode, ref) {
   document.querySelector('.overlay')?.remove();
-  const isBuy = mode === 'buy';
+  const isBuy = mode === 'buy' || mode === 'breed';
   const pet = isBuy ? null : petsOf(doc()).find((p) => p.uid === ref);
   const item = BY_ID[isBuy ? ref : pet?.itemId];
   if (!item) return;
   const el = document.createElement('div');
   el.className = 'overlay';
   el.innerHTML = `<form class="sheet" id="nameform" data-mode="${mode}" data-ref="${ref}" autocomplete="off">
-    <h2>${isBuy ? `Ponle nombre a tu ${item.name.toLowerCase()}` : `Nuevo nombre para ${esc(pet.name)}`}</h2>
+    <h2>${mode === 'breed' ? `Ponle nombre a la cría de ${item.name.toLowerCase()}` : isBuy ? `Ponle nombre a tu ${item.name.toLowerCase()}` : `Nuevo nombre para ${esc(pet.name)}`}</h2>
     <div class="field"><label for="pname">Nombre</label><input id="pname" type="text" maxlength="20" required value="${isBuy ? '' : esc(pet.name)}" /></div>
-    ${isBuy ? `<p class="muted">Cuesta ${plural(item.price, 'moneda', 'monedas')}.</p>` : ''}
-    <div class="actions"><button type="button" class="btn grow" data-act="sheet-close">Cancelar</button><button class="btn primary grow">${isBuy ? 'Comprar' : 'Guardar'}</button></div></form>`;
+    ${mode === 'buy' ? `<p class="muted">Cuesta ${plural(item.price, 'moneda', 'monedas')}.</p>` : mode === 'breed' ? '<p class="muted">Es gratis, ¡y puede salir con un color especial!</p>' : ''}
+    <div class="actions"><button type="button" class="btn grow" data-act="sheet-close">Cancelar</button><button class="btn primary grow">${mode === 'breed' ? 'Criar' : isBuy ? 'Comprar' : 'Guardar'}</button></div></form>`;
   document.body.append(el);
   el.querySelector('input').focus();
 }
@@ -382,10 +454,12 @@ async function buyItem(itemId, name) {
   if (isPet(itemId)) {
     houseMsg = `¡Hola, ${name.trim()}! Bienvenid${item.id === 'cactus' ? 'o' : 'o'} a casa.`;
     hopUid = res.uid;
+    room = roomOf(itemId);
     await go('casa');
     setTimeout(() => (hopUid = null), 1200);
   } else {
-    toast(`Has comprado: ${item.name}${logros.length ? '' : ''}`);
+    toast(item.cat === 'ropa' ? `Has comprado: ${item.name}. Póntela en el Armario (en Casa).` : item.id === 'jardin' ? '¡Jardín desbloqueado! Míralo en Casa.' : `Has comprado: ${item.name}`);
+    void logros;
     render();
   }
 }
@@ -394,6 +468,7 @@ async function buyItem(itemId, name) {
 async function interact(uid) {
   const p = doc().inventory.find((i) => i.uid === uid);
   if (!p) return;
+  room = roomOf(p.itemId);
   hopUid = uid;
   if (p.mood === 'angry') {
     await store.update((d) => calmPet(d, uid));
@@ -412,6 +487,7 @@ async function interact(uid) {
 async function cleanUp(uid) {
   const p = doc().inventory.find((i) => i.uid === uid);
   if (!p) return;
+  room = roomOf(p.itemId);
   await store.update((d) => cleanMess(d, uid));
   houseMsg = doc().inventory.find((i) => i.uid === uid).mess > 0 ? '¡Puaj! Una menos… queda más por limpiar.' : `¡Todo limpio! ${p.name} te lo agradece.`;
   view = 'casa';
@@ -423,6 +499,7 @@ async function cleanUp(uid) {
 async function takeCoin(uid) {
   const p = doc().inventory.find((i) => i.uid === uid);
   if (!p) return;
+  room = roomOf(p.itemId);
   const v = await store.update((d) => collectCoin(d, uid));
   if (!v) return;
   houseMsg = `¡Has cogido ${plural(v, 'moneda', 'monedas')} que ${p.name} te ha traído!`;
@@ -456,8 +533,12 @@ async function openMysteryBox() {
 /** Bonus diario: 1 moneda por entrar cada día y una caja misteriosa al 7.º día seguido. */
 async function checkDaily() {
   if (!store || !doc().profile) return;
+  const fresh = await store.update((d) => ensureMissions(d, Date.now()));
   const r = await store.update((d) => claimDaily(d, Date.now()));
-  if (!r) return;
+  if (!r) {
+    if (fresh) render();
+    return;
+  }
   render();
   if (!r.first) toast(`¡Bonus diario! +${plural(r.coins, 'moneda', 'monedas')} · día ${dayOfWeek(r.streak)} de ${WEEK}${r.box ? ' · ¡Te llega una caja misteriosa!' : ''}`, 6000);
   await afterChange();
@@ -476,10 +557,22 @@ function viewPreguntas() {
       return `<button class="card topic" data-act="quiz" data-t="${t.id}"><span class="t-name">${esc(t.nombre)}</span><span class="muted">${esc(t.descripcion)}</span><span class="t-info">${info}</span></button>`;
     })
     .join('');
-  return `<p class="muted lead">Elige un tema. Cada acierto te da una moneda; con 3 seguidas ganas 1 extra y con 10 seguidas, 2 extra. Además hace crecer a tus mascotas.</p>${cards || '<p class="empty"><b>Sin temas</b>No se han podido cargar los temas.</p>'}`;
+  return `<p class="muted lead">Elige un tema. Cada acierto te da una moneda; con 3 seguidas ganas 1 extra y con 10 seguidas, 2 extra. Además hace crecer a tus mascotas.</p>${cards || '<p class="empty"><b>Sin temas</b>No se han podido cargar los temas.</p>'}${studyModes()}`;
 }
 
-async function startQuiz(id) {
+function studyModes() {
+  const d = doc();
+  const failed = allQuestions().filter((q) => (d.progress[q.id]?.ko ?? 0) > 0 && (d.progress[q.id]?.box ?? 0) <= 2).length;
+  const last = d.exams.at(-1);
+  return `<h2 class="section-title">Modos de estudio</h2>
+    <button class="card topic" data-act="quiz-failed" data-testid="mode-failed"><span class="t-name">Repasar falladas</span><span class="muted">Solo las preguntas que más se te resisten.</span><span class="t-info">${failed} para repasar</span></button>
+    <section class="card"><h3>Estudiar un Título</h3><div class="field"><select id="titulo-select" aria-label="Título">${TITLE_INFO.map((t) => `<option value="${esc(t.id)}">${esc(t.short)} · ${esc(t.desc)}</option>`).join('')}</select></div><button class="btn block" data-act="quiz-titulo" data-testid="mode-titulo">Empezar</button></section>
+    <button class="card topic" data-act="go" data-v="examen" data-testid="mode-exam"><span class="t-name">Modo examen</span><span class="muted">Con tiempo, sin pistas y con nota sobre 10.</span><span class="t-info">${last ? `Último: ${String(last.score).replace('.', ',')} sobre 10` : 'Aún no has hecho ninguno'}</span></button>
+    <button class="card topic" data-act="cards-start" data-testid="mode-cards"><span class="t-name">Tarjetas de artículos</span><span class="muted">Lee el texto oficial de los artículos donde más fallas.</span><span class="t-info">Mazo de 10</span></button>
+    <button class="card topic" data-act="go" data-v="juegos" data-testid="mode-games"><span class="t-name">Minijuegos</span><span class="muted">Emparejar y verdadero o falso, para descansar.</span><span class="t-info">Con premio hasta 3 veces al día</span></button>`;
+}
+
+async function startQuiz(id, filter = null) {
   const tema = temas.find((t) => t.id === id);
   if (!tema) return;
   try {
@@ -488,21 +581,37 @@ async function startQuiz(id) {
     toast('No se han podido cargar las preguntas. Comprueba la conexión.');
     return;
   }
-  quiz = { tema, bank: banks[id], recent: [], session: { ok: 0, total: 0 }, q: null, order: [], picked: null, result: null, hidden: new Set() };
-  nextQuestion();
+  quiz = { tema, bank: banks[id], filter, recent: [], session: { ok: 0, total: 0 }, q: null, order: [], picked: null, result: null, hidden: new Set() };
+  if (!nextQuestion()) {
+    quiz = null;
+    toast(filter?.type === 'failed' ? 'No tienes preguntas falladas pendientes: ¡enhorabuena!' : 'No hay preguntas para ese Título.');
+    return;
+  }
   view = 'quiz';
   render();
   window.scrollTo(0, 0);
 }
 
+/** Preguntas del test en curso (todas, las falladas o las de un Título). */
+function quizPool() {
+  const f = quiz.filter;
+  const d = doc();
+  if (!f) return quiz.bank;
+  if (f.type === 'titulo') return quiz.bank.filter((q) => q.titulo === f.titulo);
+  return quiz.bank.filter((q) => (d.progress[q.id]?.ko ?? 0) > 0 && (d.progress[q.id]?.box ?? 0) <= 2);
+}
+
 function nextQuestion() {
-  const q = pickNext(quiz.bank, doc().progress, { now: Date.now(), seq: doc().stats.answered, recent: quiz.recent });
+  const pool = quizPool();
+  if (!pool.length) return false;
+  const q = pickNext(pool, doc().progress, { now: Date.now(), seq: doc().stats.answered, recent: quiz.recent });
   quiz.q = q;
   quiz.order = shuffle([0, 1, 2, 3]);
   quiz.picked = null;
   quiz.result = null;
   quiz.hidden = new Set();
   quiz.recent.push(q.id);
+  return true;
 }
 
 function jokerLabel() {
@@ -546,11 +655,12 @@ function viewQuiz() {
       : pets && !result.correct && result.wrong % WRONG_LIMIT === WRONG_LIMIT - 1
         ? '<p class="mischief warn">Un fallo más y tus mascotas se enfadarán…</p>'
         : '';
-    feedback = `<div class="feedback ${result.correct ? 'ok' : 'ko'}" role="status"><p class="verdict">${result.correct ? '¡Correcto!' : 'Incorrecta'} ${coins}</p><p>${esc(q.explicacion)}</p>${grown}${found}${bad}<button class="btn primary block" data-act="next">Siguiente</button></div>`;
+    feedback = `<div class="feedback ${result.correct ? 'ok' : 'ko'}" role="status"><p class="verdict">${result.correct ? '¡Correcto!' : 'Incorrecta'} ${coins}</p><p>${esc(q.explicacion)}</p>${grown}${found}${bad}${result.goalBonus ? `<p class="grown" data-testid="goal-bonus">¡Objetivo del día cumplido! +${plural(result.goalBonus, 'moneda', 'monedas')}</p>` : ''}<div class="actions"><button class="btn grow" data-act="article" data-t="${esc(q.tema)}" data-n="${esc(q.articulo.split('.')[0])}" data-testid="see-article">Ver artículo</button><button class="btn primary grow" data-act="next">Siguiente</button></div></div>`;
   }
   const jokerOff = picked !== null || hidden.size > 0 || !isAvailable(d, Date.now());
   return `
     <div class="quiz-bar"><button class="btn small" data-act="go" data-v="preguntas">Salir</button>
+      ${quiz.filter ? `<span class="chip-stat">${quiz.filter.type === 'failed' ? 'Falladas' : esc(quiz.filter.titulo)}</span>` : ''}
       <span class="chip-stat" data-testid="streak">Racha <b>${d.streak.current}</b></span>
       <span class="chip-stat">Sesión <b>${quiz.session.ok}/${quiz.session.total}</b></span></div>
     <article class="card question"><p class="ref">${esc(q.titulo)} · Art. ${esc(q.articulo)}</p><h2 data-testid="question">${esc(q.enunciado)}</h2><div class="opts">${opts}</div>
@@ -639,10 +749,11 @@ function viewStats() {
     <section class="card"><h3>Últimos 7 días</h3>
       <div class="week" data-testid="week">${days.map((x) => `<div class="day"><span class="col"><i class="n" style="height:${(x.n / max) * 100}%"><i class="ok" style="height:${x.n ? (x.ok / x.n) * 100 : 0}%"></i></i></span><b>${x.n}</b><small>${WEEKDAY[new Date(`${x.key}T12:00:00`).getDay()]}</small></div>`).join('')}</div>
       <p class="muted">Respondidas por día (la parte oscura son los aciertos).</p></section>
+    ${d.exams.length ? `<section class="card" data-testid="exam-stats"><h3>Exámenes</h3><div class="kpis"><div><b>${d.exams.length}</b><span>hechos</span></div><div><b>${String(Math.round((d.exams.reduce((a, e) => a + e.score, 0) / d.exams.length) * 100) / 100).replace('.', ',')}</b><span>nota media</span></div><div><b>${String(Math.max(...d.exams.map((e) => e.score))).replace('.', ',')}</b><span>mejor nota</span></div></div></section>` : ''}
     <section class="card"><h3>Dónde fallas más (por Título)</h3>
       ${titles.map((x) => `<div class="bar-row"><span>${esc(x.t)} <small>(${x.n})</small></span><span class="bar"><i style="width:${x.pct}%"></i></span><b>${x.pct}%</b></div>`).join('')}
       <p class="muted">Ordenado de menos a más aciertos.</p></section>
-    ${arts.length ? `<section class="card"><h3>Artículos con más fallos</h3>${arts.map((a) => `<div class="line" data-testid="art-row"><span><b>Art. ${a.articulo}</b> <small>${esc(a.titulo)}</small></span><span><b>${a.pct}%</b> <small class="muted">${a.ok} ✓ · ${a.ko} ✗</small></span></div>`).join('')}</section>` : ''}
+    ${arts.length ? `<section class="card"><h3>Artículos con más fallos</h3>${arts.map((a) => `<button class="line link" data-testid="art-row" data-act="article" data-t="ce" data-n="${a.articulo}"><span><b>Art. ${a.articulo}</b> <small>${esc(a.titulo)}</small></span><span><b>${a.pct}%</b> <small class="muted">${a.ok} ✓ · ${a.ko} ✗</small></span></button>`).join('')}</section>` : ''}
     ${worst.length ? `<section class="card"><h3>Preguntas más falladas</h3>${worst.map(([id, p]) => `<div class="line"><span><small>${esc(byId[id].titulo)} · Art. ${esc(byId[id].articulo)}</small><br>${esc(byId[id].enunciado)}</span><b>${p.ko}×</b></div>`).join('')}</section>` : ''}
     <section class="card"><h3>Tu avance</h3><div class="kpis four">
       <div><b>${counts.new}</b><span>nuevas</span></div><div><b>${counts.failed}</b><span>falladas</span></div><div><b>${counts.learning}</b><span>aprendiendo</span></div><div><b>${counts.mastered}</b><span>dominadas</span></div></div></section>`;
@@ -657,8 +768,15 @@ function viewAjustes() {
     <section class="card"><h3>Escena de la casa</h3><div class="seg" role="group" aria-label="Escena">
       ${[['auto', 'Automática'], ['day', 'Día'], ['night', 'Noche']].map(([v, l]) => `<button data-act="scene" data-v="${v}" aria-pressed="${(d.settings.sceneMode ?? 'auto') === v}">${l}</button>`).join('')}</div>
       <p class="muted">Automática: de 6:00 a 18:00 es de día y el resto, de noche (con luna y estrellas). De noche puedes encender las lámparas tocándolas.</p></section>
-    <section class="card"><h3>Copia de seguridad</h3><p>Tus datos solo viven en este dispositivo. Guarda una copia de vez en cuando.</p>
-      <div class="actions"><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
+    <section class="card" data-testid="goal-settings"><h3>Objetivo de estudio</h3>
+      <div class="field"><label for="exam-date">Fecha de tu examen</label><input id="exam-date" type="date" value="${esc(d.goal.examDate)}" /></div>
+      <div class="field"><label for="daily-goal">Preguntas al día</label><input id="daily-goal" type="number" min="1" max="500" value="${d.goal.daily}" inputmode="numeric" /></div>
+      <button class="btn" data-act="save-goal">Guardar objetivo</button></section>
+    <section class="card"><h3>Accesibilidad y temporadas</h3><div class="field"><span class="lbl">Tamaño del texto</span><div class="seg" role="group" aria-label="Tamaño del texto">
+      ${[['normal', 'Normal'], ['large', 'Grande'], ['xlarge', 'Muy grande']].map(([v, l]) => `<button data-act="font" data-v="${v}" aria-pressed="${d.settings.fontScale === v}">${l}</button>`).join('')}</div></div>
+      <div class="actions"><button class="btn" data-act="calm" aria-pressed="${d.settings.calm}">Menos movimiento: ${d.settings.calm ? 'sí' : 'no'}</button><button class="btn" data-act="season" aria-pressed="${d.settings.season !== 'off'}">Decoración de temporada: ${d.settings.season === 'off' ? 'no' : 'sí'}</button></div></section>
+    <section class="card"><h3>Copia de seguridad</h3><p>Tus datos solo viven en este dispositivo. Guarda una copia de vez en cuando. Para pasar tu progreso a otro móvil: «Copiar código» aquí, y «Pegar código» allí.</p>
+      <div class="actions"><button class="btn" data-act="copy-code" data-testid="copy-code">Copiar código</button><button class="btn" data-act="paste-code" data-testid="paste-code">Pegar código</button><button class="btn" data-act="export">Exportar</button><label class="btn file">Importar<input type="file" accept="application/json,.json" data-act="import" hidden /></label></div></section>
     <section class="card"><h3>Reiniciar</h3><p>Borra monedas, progreso, mascotas y perfil de este dispositivo. Se guarda antes una copia automática.</p>
       <button class="btn danger" data-act="reset">Empezar de cero</button></section>
     <p class="muted center">Oposiciones v${VERSION} · comodín cada ${COOLDOWN_MS / 3600000} h · bonus ×${1 + BOOST_MAIN} con herramienta (+${BOOST_EXTRA * 100} % por extra)</p>`;
@@ -694,7 +812,40 @@ document.addEventListener('click', async (e) => {
   if (!el || el.tagName === 'INPUT') return;
   const act = el.dataset.act;
   try {
+    if (act === 'cards-start') {
+      await go('tarjetas');
+      await study.startCards('ce');
+      return;
+    }
+    if (await study.onAct(act, el)) return;
     if (act === 'go') await go(el.dataset.v);
+    else if (act === 'room') {
+      room = el.dataset.r;
+      render();
+    } else if (act === 'share') await shareHouse();
+    else if (act === 'breed') askName('breed', el.dataset.sp);
+    else if (act === 'quiz-failed') await startQuiz('ce', { type: 'failed' });
+    else if (act === 'quiz-titulo') await startQuiz('ce', { type: 'titulo', titulo: document.getElementById('titulo-select').value });
+    else if (act === 'save-goal') {
+      const date = document.getElementById('exam-date').value;
+      const daily = Math.min(500, Math.max(1, Number(document.getElementById('daily-goal').value) || 20));
+      await store.update((d) => {
+        d.goal.examDate = /^\d{4}-\d{2}-\d{2}$/.test(date) ? date : '';
+        d.goal.daily = daily;
+      });
+      toast('Objetivo guardado.');
+      render();
+    } else if (act === 'font' || act === 'calm' || act === 'season') {
+      await store.update((d) => {
+        if (act === 'font') d.settings.fontScale = el.dataset.v;
+        else if (act === 'calm') d.settings.calm = !d.settings.calm;
+        else d.settings.season = d.settings.season === 'off' ? 'auto' : 'off';
+      });
+      applyTheme();
+      render();
+    } else if (act === 'copy-code') await copyCode();
+    else if (act === 'paste-code') pasteCodeSheet();
+    else if (act === 'do-paste') await doPaste();
     else if (act === 'cat') {
       shopCat = el.dataset.c;
       render();
@@ -712,7 +863,11 @@ document.addEventListener('click', async (e) => {
     else if (act === 'answer') await answer(Number(el.dataset.p));
     else if (act === 'joker') await playJoker();
     else if (act === 'next') {
-      nextQuestion();
+      if (!nextQuestion()) {
+        toast('¡Has repasado todo lo pendiente!');
+        await go('preguntas');
+        return;
+      }
       render();
       window.scrollTo(0, 0);
     } else if (act === 'theme') {
@@ -772,7 +927,20 @@ document.addEventListener('submit', async (e) => {
     const f = e.target;
     const name = document.getElementById('pname').value;
     if (f.dataset.mode === 'buy') await buyItem(f.dataset.ref, name);
-    else {
+    else if (f.dataset.mode === 'breed') {
+      try {
+        const res = await store.update((d) => breed(d, f.dataset.ref, name, Date.now()));
+        document.querySelector('.overlay')?.remove();
+        room = roomOf(f.dataset.ref);
+        hopUid = res.uid;
+        houseMsg = res.variant ? `¡Ha nacido ${name.trim()} con un color especial (${{ azul: 'azul', dorado: 'dorado', arcoiris: 'arcoíris' }[res.variant]})! ✨` : `¡Ha nacido ${name.trim()}! Qué ternura.`;
+        await go('casa');
+        setTimeout(() => (hopUid = null), 1200);
+        await afterChange();
+      } catch (err) {
+        toast(err.message);
+      }
+    } else {
       try {
         await store.update((d) => renamePet(d, Number(f.dataset.ref), name));
         document.querySelector('.overlay')?.remove();
@@ -812,5 +980,92 @@ async function resetAll() {
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') checkDaily().catch(() => {});
 });
+
+/** Dibuja la habitación actual en un canvas y devuelve el PNG (para compartir). */
+async function buildHouseBlob() {
+  const d = doc();
+  const opts = { gender: d.profile.gender, inventory: d.inventory, night: isNight(), lampOff: Boolean(d.flags.lampOff), outfit: d.outfit, season: currentSeason() };
+  const svg = room === 'jardin' && ownedIds(d).has('jardin') ? gardenSvg(opts) : sceneSvg(opts);
+  const cs = getComputedStyle(document.documentElement);
+  const vars = Object.fromEntries(SHARE_VARS.map((n) => [n, cs.getPropertyValue(`--${n}`).trim()]));
+  const img = new Image();
+  await new Promise((resolve, reject) => {
+    img.onload = resolve;
+    img.onerror = () => reject(new Error('No se ha podido dibujar la imagen.'));
+    img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(inlineSceneStyles(svg, vars))}`;
+  });
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 900;
+  const g = canvas.getContext('2d');
+  g.drawImage(img, 0, 0, 1080, 900);
+  g.fillStyle = 'rgba(0,0,0,0.5)';
+  g.fillRect(0, 846, 1080, 54);
+  g.fillStyle = '#fff';
+  g.font = 'bold 28px sans-serif';
+  g.fillText(`Casa de ${d.profile.name} · Oposiciones`, 24, 882);
+  return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+}
+
+async function shareHouse() {
+  let blob;
+  try {
+    blob = await buildHouseBlob();
+  } catch (e) {
+    toast(e.message);
+    return;
+  }
+  const file = new File([blob], 'mi-casa-oposiciones.png', { type: 'image/png' });
+  if (navigator.canShare?.({ files: [file] })) {
+    try {
+      await navigator.share({ files: [file], title: 'Mi casa en Oposiciones' });
+      return;
+    } catch (e) {
+      if (e.name === 'AbortError') return;
+    }
+  }
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'mi-casa-oposiciones.png';
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast('Imagen guardada.');
+}
+
+async function copyCode() {
+  const code = encodeCode(store.exportJson());
+  try {
+    await navigator.clipboard.writeText(code);
+    toast('Código copiado. Pégalo en el otro dispositivo (Ajustes → Pegar código).');
+  } catch {
+    pasteCodeSheet(code); // sin permiso de portapapeles: se muestra para copiarlo a mano
+  }
+}
+
+function pasteCodeSheet(prefill = '') {
+  document.querySelector('.overlay')?.remove();
+  const el = document.createElement('div');
+  el.className = 'overlay';
+  el.innerHTML = `<div class="sheet"><h2>${prefill ? 'Tu código' : 'Pegar código'}</h2><p class="muted">${prefill ? 'Selecciona todo y cópialo.' : 'Pega aquí el código copiado en el otro dispositivo. Sustituirá tus datos actuales (se guarda antes una copia).'}</p>
+    <textarea id="code-text" rows="6" spellcheck="false" aria-label="Código">${esc(prefill)}</textarea>
+    <div class="actions"><button type="button" class="btn grow" data-act="sheet-close">Cerrar</button>${prefill ? '' : '<button type="button" class="btn primary grow" data-act="do-paste" data-testid="do-paste">Importar</button>'}</div></div>`;
+  document.body.append(el);
+  el.querySelector('textarea').focus();
+}
+
+async function doPaste() {
+  try {
+    await store.importJson(decodeCode(document.getElementById('code-text').value));
+    document.querySelector('.overlay')?.remove();
+    applyTheme();
+    view = 'casa';
+    render();
+    toast('Datos importados desde el código.');
+  } catch (e) {
+    toast(e.message);
+  }
+}
 
 boot();

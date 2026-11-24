@@ -1,7 +1,7 @@
 // Comodín, bonus diario, caja misteriosa, estadísticas y logros.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { emptyDoc, migrate } from '../js/migrations.js';
+import { CURRENT_SCHEMA, emptyDoc, migrate } from '../js/migrations.js';
 import { COOLDOWN_MS, formatRemaining, isAvailable, pickHidden, remainingMs, useJoker } from '../js/joker.js';
 import { claimDaily, dayOfWeek, openBox } from '../js/daily.js';
 import { byArticle, dayKey, lastDays, recordDay, studyStreak } from '../js/stats.js';
@@ -151,7 +151,7 @@ test('los ids de logros son únicos y cada uno tiene objetivo y arte', () => {
 test('migración 1→2: conserva datos y añade tienda, cuidados, comodín y entrada diaria', () => {
   const { doc, from, to } = migrate({ schemaVersion: 1, profile: { name: 'Ana', gender: 'chica' }, coins: 7, streak: { current: 1, best: 4 }, progress: {}, stats: { answered: 5, correct: 4, byTitle: {} }, flags: {}, settings: {}, meta: {} });
   assert.equal(from, 1);
-  assert.equal(to, 2);
+  assert.equal(to, CURRENT_SCHEMA);
   assert.equal(doc.coins, 7);
   assert.equal(doc.stats.earned, 7);
   assert.deepEqual(doc.inventory, []);

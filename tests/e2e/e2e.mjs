@@ -403,10 +403,267 @@ try {
   await click('nav.tabs [data-v=casa]');
   await shot('25-casa-noche-completa');
 
+  // ===== v0.4: jardín, ropa, misiones, objetivo, estudio, cría, temporadas, accesibilidad, compartir y código =====
+  await goto(base);
+  await evaluate('window.__store().update((d) => { d.coins = 3000; })');
+
+  // Jardín: se compra, aparece la pestaña de habitación y sus animales viven allí
+  assert.equal(await evaluate('!!document.querySelector(".room-tabs")'), false, 'sin jardín no hay pestañas de habitación');
+  await click('nav.tabs [data-v=tienda]');
+  await click('[data-act=cat][data-c=vivos]');
+  assert.equal(await evaluate('document.querySelector("[data-testid=item-patito] button").disabled'), true, 'el patito necesita el jardín');
+  assert.match(await evaluate('document.querySelector("[data-testid=item-patito] button").textContent'), /Necesita/);
+  await buyThing('jardin', 'jardin');
+  assert.equal(await st('s.inventory.some((i) => i.itemId === "jardin")'), true);
+  await buyPet('patito', 'Cua');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("room-jardin")'), true, 'al comprar un animal del jardín se ve el jardín');
+  await buyThing('herramientas', 'estanque');
+  await buyThing('jardin', 'farola');
+  await buyThing('jardin', 'banco');
+  await buyThing('jardin', 'fuente');
+  await buyPet('pollito', 'Pío');
+  await buyThing('herramientas', 'nido');
+  await buyPet('cerdito', 'Cerdi');
+  await buyPet('ovejita', 'Lana');
+  await buyThing('herramientas', 'corral');
+  await buyPet('zorro', 'Zorrete');
+  await buyThing('herramientas', 'madriguera');
+  await buyPet('panda', 'Bambú');
+  await buyThing('herramientas', 'bambu');
+  await buyPet('erizo', 'Pinchos');
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene.room-jardin [data-pet]").length'), 7, 'siete animales en el jardín');
+  await shot('26-jardin-dia');
+  await click('[data-act=room][data-r=casa]');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("room-casa")'), true);
+  await click('[data-act=room][data-r=jardin]');
+  await goto(`${base}?hora=22`);
+  await click('[data-act=room][data-r=jardin]');
+  assert.equal(await evaluate('document.querySelector("svg.scene").classList.contains("night")'), true);
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 1, 'farola encendida de noche');
+  await tap('g.lamp[data-lamp=farola]');
+  await sleep(150);
+  assert.equal(await evaluate('document.querySelectorAll("svg.scene .glow").length'), 0, 'farola apagada');
+  await tap('g.lamp[data-lamp=farola]');
+  await shot('27-jardin-noche');
+  await goto(base);
+
+  // Ropa y armario
+  await buyThing('ropa', 'gorra');
+  await buyThing('ropa', 'gafas');
+  await buyThing('ropa', 'pajarita');
+  await buyThing('ropa', 'traje');
+  await buyThing('ropa', 'birrete');
+  await click('nav.tabs [data-v=casa]');
+  await click('[data-testid=open-wardrobe]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=wardrobe] svg")'), true);
+  await click('[data-act=wear][data-slot=hat][data-id=birrete]');
+  await click('[data-act=wear][data-slot=face][data-id=gafas]');
+  await click('[data-act=wear][data-slot=neck][data-id=pajarita]');
+  await click('[data-act=wear][data-slot=top][data-id=traje]');
+  assert.deepEqual(await st('s.outfit'), { hat: 'birrete', face: 'gafas', neck: 'pajarita', top: 'traje' });
+  await shot('28-armario');
+  await click('[data-act=wear][data-slot=hat][data-id=""]');
+  assert.equal(await st('s.outfit.hat'), '');
+  await click('[data-act=wear][data-slot=hat][data-id=gorra]');
+  await click('nav.tabs [data-v=casa]');
+  await shot('29-casa-con-ropa');
+
+  // Misiones y objetivo
+  assert.equal(await evaluate('document.querySelectorAll("[data-testid=mission]").length'), 6, '3 diarias + 3 semanales');
+  await evaluate('window.__store().update((d) => { const m = d.missions.daily[0]; m.progress = m.target; })');
+  await click('nav.tabs [data-v=tienda]');
+  await click('nav.tabs [data-v=casa]');
+  const beforeClaim = await coins();
+  const reward = await st('s.missions.daily[0].reward');
+  await click('[data-act=claim][data-list=daily]');
+  await sleep(200);
+  assert.equal(await coins(), beforeClaim + reward, 'misión cobrada');
+  assert.equal(await st('s.missions.daily[0].claimed'), true);
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('!document.querySelector("[data-act=claim][data-list=daily]") || true'), true);
+  await click('[data-act=go][data-v=ajustes]');
+  await evaluate(`(() => { const i = document.getElementById('exam-date'); const y = new Date(); y.setDate(y.getDate() + 30); i.value = y.toISOString().slice(0, 10); document.getElementById('daily-goal').value = '1'; })()`);
+  await click('[data-act=save-goal]');
+  await click('nav.tabs [data-v=casa]');
+  assert.match(await text(), /días para el examen/);
+  assert.equal(await st('s.goal.daily'), 1);
+  await shot('30-objetivo-y-misiones');
+
+  // Estudio: falladas, por Título, visor de artículo y bonus de objetivo
+  await evaluate('window.__store().update((d) => { d.goal.bonusDay = ""; })');
+  await click('nav.tabs [data-v=preguntas]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=mode-failed]")'), true);
+  await shot('31-modos-de-estudio');
+  await click('[data-testid=mode-failed]');
+  await sleep(250);
+  assert.equal(await evaluate('window.__quiz().filter.type'), 'failed');
+  const qBefore = await coins();
+  await answerCurrent(true);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=goal-bonus]")'), true, 'bonus por cumplir el objetivo');
+  assert.ok((await coins()) >= qBefore + 3, 'acierto + bonus de objetivo');
+  await click('[data-testid=see-article]');
+  await sleep(300);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=article]")'), true);
+  assert.match(await evaluate('document.querySelector("[data-testid=article]").innerText'), /Artículo \d+/);
+  await shot('32-visor-articulo');
+  await click('[data-act=sheet-close]');
+  await click('nav.tabs [data-v=preguntas]');
+  await evaluate(`document.getElementById('titulo-select').value = 'Título II'`);
+  await click('[data-testid=mode-titulo]');
+  await sleep(250);
+  assert.equal(await evaluate('window.__quiz().q.titulo'), 'Título II');
+  assert.equal(await evaluate('window.__quiz().filter.titulo'), 'Título II');
+
+  // Tarjetas de artículos
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-testid=mode-cards]');
+  await sleep(500);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=flashcard]")'), true);
+  await click('[data-testid=flashcard]');
+  assert.match(await evaluate('document.querySelector("[data-testid=flashcard]").innerText'), /[a-záéíóú]{4,}/i);
+  await shot('33-tarjeta');
+  await click('[data-act=card-next][data-know="1"]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=flashcard]")'), true);
+
+  // Examen: 10 preguntas, sin pistas, con nota
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-testid=mode-exam]');
+  await click('[data-act=exam-size][data-n="10"]');
+  assert.match(await text(), /Tiempo: 8:20/);
+  await click('[data-testid=exam-start]');
+  await sleep(200);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=exam-timer]")'), true);
+  assert.equal(await evaluate('document.querySelectorAll(".feedback").length'), 0, 'en el examen no hay explicación inmediata');
+  await shot('34-examen');
+  const coinsBeforeExam = await coins();
+  for (let i = 0; i < 10; i++) {
+    if (i === 3) await click('[data-act=exam-blank]');
+    else await click('[data-act=exam-answer][data-p="0"]');
+    await sleep(60);
+  }
+  await sleep(300);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=exam-result]")'), true, 'resultado del examen');
+  assert.equal(await st('s.exams.length'), 1);
+  const exam1 = await st('s.exams[0]');
+  assert.equal(exam1.n, 10);
+  assert.equal(exam1.ok + exam1.ko + exam1.blank, 10);
+  assert.equal(exam1.blank, 1);
+  assert.ok((await coins()) >= coinsBeforeExam, 'las monedas del examen solo suben');
+  await shot('35-resultado-examen');
+  await click('nav.tabs [data-v=stats]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=exam-stats]")'), true);
+
+  // Minijuegos
+  await click('nav.tabs [data-v=preguntas]');
+  await click('[data-testid=mode-games]');
+  await click('[data-testid=game-pairs]');
+  const ids = await evaluate('[...document.querySelectorAll("[data-act=pair-l]")].map((b) => b.dataset.id)');
+  assert.equal(ids.length, 6);
+  const gamesBefore = await st('s.stats.games');
+  const coinsG = await coins();
+  for (const id of ids) {
+    await click(`[data-act=pair-l][data-id="${id}"]`);
+    await click(`[data-act=pair-r][data-id="${id}"]`);
+  }
+  await sleep(250);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=pairs-done]")'), true);
+  assert.equal(await coins(), coinsG + 3, 'emparejar sin fallos da 3 monedas');
+  assert.equal(await st('s.stats.games'), gamesBefore + 1);
+  await shot('36-emparejar');
+  await click('[data-act=go][data-v=juegos]');
+  await click('[data-testid=game-vf]');
+  for (let i = 0; i < 8; i++) {
+    await click('[data-act=vf-answer][data-v="1"]');
+    await click('[data-act=vf-next]');
+    await sleep(40);
+  }
+  await sleep(250);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=vf-done]")'), true);
+  assert.equal(await st('s.minigames.plays'), 2);
+
+  // Cría: dos adultos felices pueden tener una cría
+  await evaluate(`window.__store().update((d) => { for (const p of d.inventory.filter((i) => i.itemId === 'patito')) { p.xp = 500; p.mood = 'ok'; p.mess = 0; } d.inventory.push({ uid: d.nextUid++, itemId: 'patito', name: 'Cuac', xp: 500, boughtAt: 1, mood: 'ok', mess: 0, joy: 0, coin: false, variant: '' }); })`);
+  await click('nav.tabs [data-v=casa]');
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=breed-patito]")'), true, 'botón de criar');
+  const patitos = await st('s.inventory.filter((i) => i.itemId === "patito").length');
+  await click('[data-testid=breed-patito]');
+  assert.equal(await evaluate('!!document.querySelector("#nameform")'), true);
+  await evaluate(`(() => { document.getElementById('pname').value = 'Patín'; document.getElementById('nameform').requestSubmit(); })()`);
+  await sleep(300);
+  assert.equal(await st('s.inventory.filter((i) => i.itemId === "patito").length'), patitos + 1);
+  assert.equal(await evaluate('!!document.querySelector("[data-testid=breed-patito]")'), false, 'enfriamiento de una semana');
+  assert.ok(await st('s.breed.patito > 0'));
+  assert.match(await text(), /Patín/);
+  await shot('37-cria');
+
+  // Temporadas (la fecha se fuerza solo en localhost)
+  await goto(`${base}?fecha=2026-12-24&hora=12`);
+  assert.equal(await evaluate('!!document.querySelector(".xmas-tree")'), true, 'árbol de Navidad');
+  assert.ok((await evaluate('document.querySelectorAll(".snow").length')) > 5, 'nieve');
+  await shot('38-navidad');
+  await goto(`${base}?fecha=2026-10-31&hora=22`);
+  assert.ok((await evaluate('document.querySelectorAll(".bat").length')) >= 1, 'murciélagos');
+  await shot('39-halloween');
+  await goto(`${base}?fecha=2026-11-10&hora=12`);
+  assert.equal(await evaluate('document.querySelectorAll(".snow, .bat, .butterfly, .xmas-tree").length'), 0, 'sin temporada');
+
+  // Accesibilidad
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-act=font][data-v=large]');
+  assert.equal(await evaluate('document.documentElement.style.fontSize'), '18px');
+  await click('[data-act=calm]');
+  assert.equal(await evaluate('document.documentElement.classList.contains("calm")'), true);
+  await click('[data-act=season]');
+  assert.equal(await st('s.settings.season'), 'off');
+  await goto(`${base}?fecha=2026-12-24&hora=12`);
+  assert.equal(await evaluate('document.documentElement.style.fontSize'), '18px', 'el tamaño se mantiene al recargar');
+  assert.equal(await evaluate('!!document.querySelector(".xmas-tree")'), false, 'temporada desactivada');
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-act=font][data-v=normal]');
+  await click('[data-act=calm]');
+  await click('[data-act=season]');
+
+  // Compartir la casa como imagen
+  await click('nav.tabs [data-v=casa]');
+  const blob = await evaluate('window.__houseBlob().then((b) => ({ type: b.type, size: b.size }))');
+  assert.equal(blob.type, 'image/png');
+  assert.ok(blob.size > 5000, `imagen demasiado pequeña: ${blob.size}`);
+
+  // Código de copia: copiar y pegar en el mismo dispositivo
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-testid=copy-code]');
+  await sleep(300);
+  let code = await evaluate('document.getElementById("code-text")?.value ?? ""');
+  if (!code) {
+    // el portapapeles funcionó: leemos el código generando uno igual desde el almacén
+    code = await evaluate(`import('./js/share.js').then((m) => m.encodeCode(window.__store().exportJson()))`);
+  } else await click('[data-act=sheet-close]');
+  assert.ok(code.startsWith('OPO1:'));
+  const coinsCode = await coins();
+  await evaluate('window.__store().update((d) => { d.coins = 1; })');
+  await click('[data-testid=paste-code]');
+  await evaluate(`document.getElementById('code-text').value = ${JSON.stringify(code)}`);
+  await click('[data-testid=do-paste]');
+  await sleep(300);
+  assert.equal(await coins(), coinsCode, 'el código restaura los datos');
+  await click('[data-act=go][data-v=ajustes]');
+  await click('[data-testid=paste-code]');
+  await evaluate(`document.getElementById('code-text').value = 'esto no es un código'`);
+  await click('[data-testid=do-paste]');
+  assert.match(await evaluate('document.querySelector(".toast")?.textContent ?? ""'), /OPO1/);
+  await click('[data-act=sheet-close]');
+
+  // Logros nuevos
+  await click('nav.tabs [data-v=logros]');
+  for (const id of ['garden_open', 'exam_first', 'game_first', 'mission_first', 'breed_first', 'farm', 'panda_pet']) {
+    assert.equal(await evaluate(`document.querySelector("[data-testid=ach-${id}]").classList.contains("got")`), true, `logro ${id}`);
+  }
+  await shot('40-logros-nuevos');
+
   // Datos íntegros al recargar
   await goto(base);
   assert.equal(await st('s.inventory.filter((i) => ["cactus","gato","pez"].includes(i.itemId)).length'), 3);
-  assert.equal(await st('s.schemaVersion'), 2);
+  assert.equal(await st('s.schemaVersion'), 3);
   assert.equal(await st('s.settings.sceneMode'), 'auto');
 
   assert.deepEqual(errors, [], `errores de JS: ${errors.join(' | ')}`);

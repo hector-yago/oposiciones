@@ -1,6 +1,7 @@
 // Tienda, mascotas y cuidados. Lógica pura sobre el documento de datos (se llama sobre un borrador y lo muta).
 import { BY_ID, SPECIES, isPet, isPlant } from './catalog.js';
-import { MAX_MESS, NAME_MAX } from './migrations.js';
+import { MAX_MESS, NAME_MAX, OUTFIT_SLOTS } from './migrations.js';
+import { trackEvent } from './missions.js';
 
 export const BOOST_MAIN = 0.5;
 export const BOOST_EXTRA = 0.25;
@@ -58,6 +59,13 @@ export const MOOD_TEXT = {
   conejo: { angry: 'está enfadado', mess: 'ha hecho caca' },
   loro: { angry: 'está enfadado', mess: 'ha ensuciado la percha' },
   perro: { angry: 'está enfadado', mess: 'ha hecho caca' },
+  pollito: { angry: 'está enfadado', mess: 'ha ensuciado el nido' },
+  patito: { angry: 'está enfadado', mess: 'ha ensuciado el estanque' },
+  erizo: { angry: 'está enfadado', mess: 'ha hecho caca' },
+  cerdito: { angry: 'está enfadado', mess: 'ha ensuciado el corral' },
+  ovejita: { angry: 'está enfadada', mess: 'ha ensuciado el corral', f: true },
+  zorro: { angry: 'está enfadado', mess: 'ha hecho caca' },
+  panda: { angry: 'está enfadado', mess: 'ha ensuciado el bambú' },
 };
 
 /** Resumen de lo que hay que atender en casa. */
@@ -91,6 +99,7 @@ export function calmPet(doc, uid) {
   if (!pet || pet.mood !== 'angry') return false;
   pet.mood = 'ok';
   doc.stats.care.calmed += 1;
+  trackEvent(doc, 'care');
   return true;
 }
 
@@ -100,6 +109,7 @@ export function cleanMess(doc, uid) {
   if (!pet || pet.mess <= 0) return false;
   pet.mess -= 1;
   doc.stats.care.cleaned += 1;
+  trackEvent(doc, 'care');
   return true;
 }
 
@@ -154,6 +164,7 @@ export function canBuy(doc, itemId) {
     const max = SPECIES[itemId].max;
     if (countOf(doc, itemId) >= max) return { ok: false, reason: `Máximo ${max}`, code: 'max' };
   } else if (ownedIds(doc).has(itemId)) return { ok: false, reason: 'Ya lo tienes', code: 'owned' };
+  if (item.req && !ownedIds(doc).has(item.req)) return { ok: false, reason: `Necesita: ${BY_ID[item.req].name.toLowerCase()}`, code: 'req' };
   if (doc.coins < item.price) return { ok: false, reason: `Te faltan ${item.price - doc.coins}`, code: 'coins' };
   return { ok: true };
 }
@@ -170,10 +181,21 @@ export function buy(doc, itemId, name, nowMs) {
 }
 
 /** Añade un objeto al inventario sin cobrar (compra, caja misteriosa). */
-export function addItem(doc, itemId, name, nowMs) {
+export function addItem(doc, itemId, name, nowMs, variant = '') {
   const uid = doc.nextUid++;
-  doc.inventory.push({ uid, itemId, name, xp: 0, boughtAt: nowMs, mood: 'ok', mess: 0, joy: 0, coin: false });
+  doc.inventory.push({ uid, itemId, name, xp: 0, boughtAt: nowMs, mood: 'ok', mess: 0, joy: 0, coin: false, variant });
   return uid;
+}
+
+/** Se pone o se quita una prenda (itemId vacío = quitar). Solo ropa que tienes y en su sitio. */
+export function equip(doc, slot, itemId) {
+  if (!OUTFIT_SLOTS.includes(slot)) throw new Error('Ese sitio no existe.');
+  if (itemId) {
+    const item = BY_ID[itemId];
+    if (!item || item.cat !== 'ropa' || item.slot !== slot) throw new Error('Esa prenda no va ahí.');
+    if (!ownedIds(doc).has(itemId)) throw new Error('Todavía no tienes esa prenda.');
+  }
+  doc.outfit[slot] = itemId || '';
 }
 
 export function renamePet(doc, uid, name) {

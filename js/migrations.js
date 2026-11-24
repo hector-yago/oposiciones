@@ -3,13 +3,23 @@
 //  - Cada migración es pura e idempotente y NO elimina datos del usuario.
 //  - Antes de migrar, el almacén guarda una copia del documento original (store.js).
 //  - Cada versión publicada deja un fixture en tests/fixtures/ y un test que lo migra a la actual.
-export const CURRENT_SCHEMA = 2;
+export const CURRENT_SCHEMA = 3;
 export const APP_ID = 'oposiciones';
 export const MAX_DAYS = 120; // días de historial que se conservan
+export const MAX_EXAMS = 30; // exámenes que se conservan
 export const NAME_MAX = 20;
 export const MAX_MESS = 3; // cacas/suciedad máxima acumulada por mascota
+export const VARIANTS = ['azul', 'dorado', 'arcoiris']; // variantes raras de las crías
+export const MISSION_TYPES = ['answer', 'correct', 'streak', 'titulo', 'care', 'game', 'exam', 'days'];
+export const OUTFIT_SLOTS = ['hat', 'face', 'neck', 'top'];
 
-export const DEFAULT_SETTINGS = Object.freeze({ theme: 'system', sceneMode: 'auto' }); // theme: 'system' | 'light' | 'dark'; sceneMode: 'auto' | 'day' | 'night'
+export const DEFAULT_SETTINGS = Object.freeze({
+  theme: 'system', // 'system' | 'light' | 'dark'
+  sceneMode: 'auto', // 'auto' | 'day' | 'night'
+  fontScale: 'normal', // 'normal' | 'large' | 'xlarge'
+  calm: false, // reduce animaciones
+  season: 'auto', // 'auto' (decoración de temporada) | 'off'
+});
 
 export function emptyDoc() {
   return {
@@ -18,12 +28,18 @@ export function emptyDoc() {
     coins: 0,
     streak: { current: 0, best: 0, tens: 0, wrong: 0 }, // tens = rachas de 10 completadas; wrong = fallos seguidos
     progress: {}, // [questionId]: { box, ok, ko, last, due, failedSeq }
-    stats: { answered: 0, correct: 0, earned: 0, byTitle: {}, byDay: {}, care: { cleaned: 0, calmed: 0, coins: 0 } }, // byDay[AAAA-MM-DD] = { n, ok }
-    inventory: [], // [{ uid, itemId, name, xp, boughtAt, mood, mess, joy, coin }]  (mascotas con nombre, xp y estado; objetos sin xp)
+    stats: { answered: 0, correct: 0, earned: 0, byTitle: {}, byDay: {}, care: { cleaned: 0, calmed: 0, coins: 0 }, games: 0, missions: 0 }, // byDay[AAAA-MM-DD] = { n, ok }
+    inventory: [], // [{ uid, itemId, name, xp, boughtAt, mood, mess, joy, coin, variant }]  (mascotas con nombre, xp y estado; objetos sin xp)
     nextUid: 1,
     joker: { lastUsed: 0, uses: 0 }, // comodín 50 %: 1 uso cada 4 h
     daily: { last: '', streak: 0, boxes: 0, opened: 0 }, // bonus diario: día de la última entrada, racha de días, cajas sin abrir
     achievements: {}, // [id]: timestamp de desbloqueo
+    exams: [], // [{ at, n, ok, ko, blank, score, secs }]
+    missions: { day: '', daily: [], week: '', weekly: [] }, // [{ id, type, target, titulo, progress, reward, claimed }]
+    outfit: { hat: '', face: '', neck: '', top: '' }, // ropa puesta (ids de objetos comprados)
+    goal: { examDate: '', daily: 20, bonusDay: '' }, // fecha de examen, preguntas al día y último día con bonus
+    minigames: { day: '', plays: 0 }, // partidas con premio hoy
+    breed: {}, // [especie]: último momento de cría
     flags: {}, // introSeen, shopSeen…
     settings: { ...DEFAULT_SETTINGS },
     meta: {},
@@ -45,6 +61,17 @@ const steps = {
     daily: doc.daily ?? {},
     achievements: doc.achievements ?? {},
   }),
+  // 2 → 3: exámenes, misiones, ropa, objetivo de estudio, minijuegos, crías y ajustes de accesibilidad (todo con valores por defecto).
+  2: (doc) => ({
+    ...doc,
+    schemaVersion: 3,
+    exams: Array.isArray(doc.exams) ? doc.exams : [],
+    missions: doc.missions ?? {},
+    outfit: doc.outfit ?? {},
+    goal: doc.goal ?? {},
+    minigames: doc.minigames ?? {},
+    breed: doc.breed ?? {},
+  }),
 };
 
 export function migrate(input) {
@@ -65,8 +92,26 @@ export function migrate(input) {
 const nat = (n) => (Number.isInteger(n) && n >= 0 ? n : 0);
 const time = (n) => (Number.isFinite(n) && n >= 0 ? n : 0);
 const num = (n) => (Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : 0);
-const isDay = (k) => /^\d{4}-\d{2}-\d{2}$/.test(k);
+const isDay = (k) => typeof k === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(k);
 const obj = (o) => (o && typeof o === 'object' && !Array.isArray(o) ? o : {});
+const str = (s, max) => String(s ?? '').slice(0, max);
+
+function sanitizeMissions(list) {
+  const out = [];
+  for (const m of Array.isArray(list) ? list.slice(0, 6) : []) {
+    if (!m || typeof m.id !== 'string' || !MISSION_TYPES.includes(m.type)) continue;
+    out.push({
+      id: str(m.id, 40),
+      type: m.type,
+      target: Math.max(1, nat(m.target)),
+      titulo: str(m.titulo, 40),
+      progress: nat(m.progress),
+      reward: nat(m.reward),
+      claimed: Boolean(m.claimed),
+    });
+  }
+  return out;
+}
 
 /** Normaliza y descarta lo irrecuperable, sin tocar lo válido. Se aplica también a las importaciones. */
 export function sanitize(doc) {
@@ -103,6 +148,7 @@ export function sanitize(doc) {
       mess: Math.min(MAX_MESS, nat(it.mess)),
       joy: Math.min(99, nat(it.joy)),
       coin: Boolean(it.coin),
+      variant: VARIANTS.includes(it.variant) ? it.variant : '',
     });
   }
 
@@ -111,11 +157,31 @@ export function sanitize(doc) {
   const achievements = {};
   for (const [k, v] of Object.entries(obj(doc.achievements))) if (Number.isFinite(v)) achievements[k] = v;
 
+  const exams = [];
+  for (const e of Array.isArray(doc.exams) ? doc.exams : []) {
+    if (!e || !Number.isFinite(e.at) || nat(e.n) < 1) continue;
+    exams.push({ at: e.at, n: nat(e.n), ok: nat(e.ok), ko: nat(e.ko), blank: nat(e.blank), score: Number.isFinite(e.score) ? Math.max(0, Math.min(10, Math.round(e.score * 100) / 100)) : 0, secs: nat(e.secs) });
+  }
+
+  const missions = obj(doc.missions);
+  const ownedIds = new Set(inventory.map((i) => i.itemId));
+  const outfit = {};
+  for (const slot of OUTFIT_SLOTS) {
+    const id = typeof doc.outfit?.[slot] === 'string' ? doc.outfit[slot] : '';
+    outfit[slot] = ownedIds.has(id) ? id : ''; // solo ropa que realmente tienes
+  }
+
   const settings = { ...DEFAULT_SETTINGS, ...obj(doc.settings) };
   if (!['system', 'light', 'dark'].includes(settings.theme)) settings.theme = 'system';
   if (!['auto', 'day', 'night'].includes(settings.sceneMode)) settings.sceneMode = 'auto';
+  if (!['normal', 'large', 'xlarge'].includes(settings.fontScale)) settings.fontScale = 'normal';
+  settings.calm = Boolean(settings.calm);
+  if (!['auto', 'off'].includes(settings.season)) settings.season = 'auto';
   const meta = {};
   for (const k of ['lastExport', 'lastAutoBackup']) if (Number.isFinite(doc.meta?.[k])) meta[k] = doc.meta[k];
+
+  const breed = {};
+  for (const [k, v] of Object.entries(obj(doc.breed))) if (Number.isFinite(v) && v >= 0) breed[k] = v;
 
   const current = nat(doc.streak?.current);
   const coins = nat(doc.coins);
@@ -125,10 +191,15 @@ export function sanitize(doc) {
     coins,
     streak: { current, best: Math.max(current, nat(doc.streak?.best)), tens: nat(doc.streak?.tens), wrong: nat(doc.streak?.wrong) },
     progress,
-    stats: { answered: nat(doc.stats?.answered), correct: nat(doc.stats?.correct), earned: Math.max(nat(doc.stats?.earned), coins),
+    stats: {
+      answered: nat(doc.stats?.answered),
+      correct: nat(doc.stats?.correct),
+      earned: Math.max(nat(doc.stats?.earned), coins),
       byTitle,
       byDay,
       care: { cleaned: nat(doc.stats?.care?.cleaned), calmed: nat(doc.stats?.care?.calmed), coins: nat(doc.stats?.care?.coins) },
+      games: nat(doc.stats?.games),
+      missions: nat(doc.stats?.missions),
     },
     inventory,
     nextUid: Math.max(nat(doc.nextUid), maxUid + 1, 1),
@@ -140,6 +211,21 @@ export function sanitize(doc) {
       opened: nat(doc.daily?.opened),
     },
     achievements,
+    exams: exams.slice(-MAX_EXAMS),
+    missions: {
+      day: isDay(missions.day) ? missions.day : '',
+      daily: sanitizeMissions(missions.daily),
+      week: typeof missions.week === 'string' && /^\d{4}-W\d{2}$/.test(missions.week) ? missions.week : '',
+      weekly: sanitizeMissions(missions.weekly),
+    },
+    outfit,
+    goal: {
+      examDate: isDay(doc.goal?.examDate) ? doc.goal.examDate : '',
+      daily: Math.min(500, Math.max(1, nat(doc.goal?.daily) || 20)),
+      bonusDay: isDay(doc.goal?.bonusDay) ? doc.goal.bonusDay : '',
+    },
+    minigames: { day: isDay(doc.minigames?.day) ? doc.minigames.day : '', plays: nat(doc.minigames?.plays) },
+    breed,
     flags,
     settings,
     meta,
